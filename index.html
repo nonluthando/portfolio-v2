@@ -1,96 +1,122 @@
 
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Luthando Mbuyane | Graduate Software Developer</title>
-  <link rel="stylesheet" href="assets/css/style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-name">Luthando Mbuyane</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
-      <a href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
-    </div>
-  </nav>
 
-  <header class="hero">
-    <h1>Luthando Mbuyane</h1>
-    <h2>Graduate Software Developer</h2>
-    <p>Building accessible, practical digital solutions.</p>
-    <div class="cta">
-      <a class="btn primary" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
-      <a class="btn" href="https://github.com/nonluthando" target="_blank">GitHub</a>
-      <a class="btn" href="http://scorerent.onrender.com" target="_blank">Live Project</a>
-    </div>
-  </header>
+<nav class="nav">
+  <a href="/" class="logo">Luthando Mbuyane</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/projects/">Projects</a>
+    <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
+    <a href="/assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+  </div>
+</nav>
 
-  <section class="about">
+<main class="content">
+
+<section class="hero">
+  <h1>Luthando Mbuyane</h1>
+  <h2>Graduate Software Developer</h2>
+  <p>Building accessible, practical digital solutions.</p>
+
+  <div class="buttons">
+    <a class="btn primary" href="/assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
+    <a class="btn" href="https://github.com/nonluthando" target="_blank">GitHub</a>
+    <a class="btn" href="http://scorerent.onrender.com" target="_blank">Live Project</a>
+  </div>
+</section>
+
+<section>
+  <h3>About</h3>
+  <p>
+    Hi, I’m Luthando Mbuyane, a Computer Science graduate based in Cape Town. I build digital solutions that make people’s lives easier, with a strong focus on accessibility, simplicity, and user-first design.
+  </p>
+  <p>
+    Most of my formal coursework was assessed in Java, which gave me strong programming fundamentals. I made it a personal mission to translate that knowledge into Python by building real projects and continuously challenging myself beyond coursework.
+  </p>
+  <p>
+    I built and deployed ScoreRent, a rental decision-support web app that helps renters evaluate listings before paying application fees. I also contributed to SeaClear, a group project focused on making beach water quality information easier to access and understand through usability testing and iteration. During the GirlCode InnovateHer Hackathon, my team and I developed HealthSync, a prototype aimed at improving access to health services.
+  </p>
+  <p>
+    I’m committed to continuous growth as a developer, and I enjoy improving not only what I build, but how I build it.
+  </p>
+</section>
+
+<section>
+  <h3>Skills</h3>
+
+  <h4>Languages & Frameworks</h4>
+  <div class="pills">
+    <span>Python</span><span>Java</span><span>FastAPI</span><span>Flask</span>
+    <span>HTML</span><span>CSS</span>
+  </div>
+
+  <h4>Data, Tooling & Dev Practices</h4>
+  <div class="pills">
+    <span>PostgreSQL</span><span>SQLite</span><span>Git</span>
+    <span>GitHub Actions</span><span>pytest</span><span>Docker</span>
+  </div>
+
+  <h4>UX, Documentation & Requirements</h4>
+  <div class="pills">
+    <span>Usability Testing</span>
+    <span>Technical Documentation</span>
+    <span>Requirements Gathering</span>
+  </div>
+</section>
+
+<section>
+  <h3>Featured Projects</h3>
+
+  <div class="project-card">
+    <h4>ScoreRent <span class="tag">Live · Backend</span></h4>
     <p>
-      I’m a Computer Science graduate based in Cape Town with strong programming fundamentals developed through Java coursework and extended into Python through real-world projects.
-      I focus on building accessible, user-friendly software and translating real problems into practical, maintainable systems.
+      Live, iteratively developed backend web application helping renters evaluate listings before paying application fees.
     </p>
-  </section>
-
-  <section class="facts">
-    <div class="card"><strong>Education</strong><br/>BSc Computer Science & Psychology<br/>University of Cape Town<br/>Dean’s Merit List</div>
-    <div class="card"><strong>Location</strong><br/>Cape Town, South Africa</div>
-    <div class="card"><strong>Focus</strong><br/>Accessible, user-friendly software</div>
-  </section>
-
-  <section class="skills">
-    <h3>Skills</h3>
-
-    <div class="skill-group">
-      <h4>Languages & Frameworks</h4>
-      <div class="pills">Python Java FastAPI Flask HTML CSS</div>
+    <div class="pills">
+      <span>FastAPI</span><span>Pydantic</span><span>PostgreSQL</span>
     </div>
+    <a href="/projects/scorerent.html">Project page</a> ·
+    <a href="http://scorerent.onrender.com" target="_blank">Live demo</a>
+  </div>
 
-    <div class="skill-group">
-      <h4>Data, Tooling & Dev Practices</h4>
-      <div class="pills">PostgreSQL SQLite Git GitHub Actions pytest Docker</div>
+  <div class="project-card">
+    <h4>SeaClear <span class="tag">HCI Capstone</span></h4>
+    <p>
+      Human–computer interaction capstone focused on improving access to beach water quality information.
+    </p>
+    <div class="pills">
+      <span>HCI</span><span>Usability Testing</span><span>Accessibility</span>
     </div>
+    <a href="/projects/seaclear.html">Project page</a>
+  </div>
 
-    <div class="skill-group">
-      <h4>UX, Documentation & Requirements</h4>
-      <div class="pills">Usability Testing Technical Documentation Requirements Gathering</div>
+  <div class="project-card">
+    <h4>NetworkComm <span class="tag">Systems</span></h4>
+    <p>
+      TCP client/server messaging system implementing multithreading and structured logging.
+    </p>
+    <div class="pills">
+      <span>TCP</span><span>Threads</span><span>Logging</span>
     </div>
-  </section>
+    <a href="/projects/networkcomm.html">Project page</a>
+  </div>
 
-  <section class="projects">
-    <h3>Featured Projects</h3>
+  <p><a href="/projects/">View all projects →</a></p>
+</section>
 
-    <div class="project">
-      <h4>ScoreRent <span class="tag">Live</span></h4>
-      <p>
-        Live, iteratively developed backend web application helping renters evaluate listings before paying application fees.
-      </p>
-      <a href="http://scorerent.onrender.com" target="_blank">Live Demo</a> |
-      <a href="https://github.com/nonluthando" target="_blank">Repo</a>
-    </div>
+</main>
 
-    <div class="project">
-      <h4>SeaClear <span class="tag">HCI</span></h4>
-      <p>
-        Capstone human–computer interaction project focused on improving access to beach water quality information.
-      </p>
-      <a href="https://github.com/nonluthando" target="_blank">Repo</a>
-    </div>
+<footer class="footer">
+  <p>Cape Town, South Africa · luthandombuyane1@outlook.com</p>
+</footer>
 
-    <div class="project">
-      <h4>NetworkComm <span class="tag">Systems</span></h4>
-      <p>
-        TCP client/server messaging system implementing multithreading and structured logging.
-      </p>
-      <a href="https://github.com/nonluthando" target="_blank">Repo</a>
-    </div>
-  </section>
-
-  <footer>
-    <p>Contact: luthandombuyane1@outlook.com</p>
-  </footer>
 </body>
 </html>
