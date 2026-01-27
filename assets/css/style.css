@@ -1,0 +1,91 @@
+
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #1f1f1f;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #5a3db8;
+}
+
+.hero {
+  padding: 4rem 2rem;
+  background: #f6f4fb;
+  text-align: center;
+}
+
+.hero h1 { margin-bottom: 0.5rem; }
+.hero h2 { margin-top: 0; font-weight: 400; }
+.cta .btn {
+  margin: 0.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #5a3db8;
+  color: #5a3db8;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.cta .primary {
+  background: #5a3db8;
+  color: white;
+}
+
+section {
+  padding: 2.5rem 2rem;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.skills .pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills .pills::before {
+  content: "";
+}
+
+.skills .pills span {
+  background: #f1ecff;
+  padding: 0.4rem 0.7rem;
+  border-radius: 20px;
+}
+
+.project {
+  border: 1px solid #eee;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+.tag {
+  font-size: 0.8rem;
+  color: #5a3db8;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
