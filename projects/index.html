@@ -5,115 +5,146 @@
   <title>Projects | Luthando Mbuyane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- IMPORTANT: projects/ folder must use ../ -->
+  <!-- IMPORTANT: we are inside /projects -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 
 <nav class="nav">
   <a href="../index.html" class="logo">Luthando Mbuyane</a>
-
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <a href="index.html" class="active">Projects</a>
-    <a href="https://github.com/nonluthando" target="_blank" rel="noopener">GitHub</a>
+    <a class="active" href="index.html">Projects</a>
+    <a href="../about/index.html">About</a>
+    <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
     <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
   </div>
 </nav>
 
 <main class="content">
-  <h1>Projects</h1>
-  <p>
-    A selection of projects demonstrating backend development, systems fundamentals,
-    and human computer interaction.
-  </p>
 
-  <!-- ScoreRent -->
-  <div class="project-card">
-    <h4>ScoreRent <span class="tag">Live · Backend</span></h4>
-    <p>
-      Live, iteratively developed backend web application helping renters evaluate listings
-      before paying application fees.
-    </p>
-    <div class="pills">
-      <span>FastAPI</span>
-      <span>Pydantic</span>
-      <span>PostgreSQL</span>
+  <section>
+    <div class="section-header">
+      <h3>Projects</h3>
+      <p class="section-subtitle">
+        A selection of work demonstrating backend development, systems fundamentals, and human computer interaction.
+      </p>
     </div>
-    <p>
-      <a href="scorerent.html">Project page</a>
-      ·
-      <a href="http://scorerent.onrender.com" target="_blank" rel="noopener">Live demo</a>
-      ·
-      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
-    </p>
-  </div>
+  </section>
 
-  <!-- SeaClear -->
-  <div class="project-card">
-    <h4>SeaClear <span class="tag">HCI Capstone</span></h4>
-    <p>
-      Human computer interaction capstone focused on improving access to beach water quality
-      information through usability testing and iteration.
-    </p>
-    <div class="pills">
-      <span>HCI</span>
-      <span>Usability Testing</span>
-      <span>Accessibility</span>
-      <span>Flask</span>
+  <section class="grid two">
+
+    <!-- ScoreRent -->
+    <div class="project-card">
+      <div class="project-title">
+        <h4>ScoreRent</h4>
+        <span class="tag">Live · Backend</span>
+      </div>
+
+      <p class="muted">
+        Rental decision-support web app that outputs a confidence score (0 to 100), a verdict, reasons, and recommended actions.
+        Includes login, saved profiles, and evaluation history.
+      </p>
+
+      <div class="pills">
+        <span>FastAPI</span>
+        <span>Jinja2</span>
+        <span>PostgreSQL</span>
+        <span>pytest</span>
+        <span>GitHub Actions</span>
+        <span>Render</span>
+      </div>
+
+      <div class="project-links">
+        <a href="scorerent.html">Project page</a>
+        <a href="http://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live demo</a>
+      </div>
     </div>
-    <p>
-      <a href="seaclear.html">Project page</a>
-      ·
-      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
-    </p>
-  </div>
 
-  <!-- NetworkComm -->
-  <div class="project-card">
-    <h4>NetworkComm <span class="tag">Systems</span></h4>
-    <p>
-      TCP client server messaging system implementing multithreading and structured logging.
-    </p>
-    <div class="pills">
-      <span>TCP</span>
-      <span>Threads</span>
-      <span>Logging</span>
-      <span>Python</span>
+    <!-- SeaClear -->
+    <div class="project-card">
+      <div class="project-title">
+        <h4>SeaClear</h4>
+        <span class="tag">HCI Capstone</span>
+      </div>
+
+      <p class="muted">
+        Group HCI project focused on improving access to beach water quality information through usability testing and iterative design refinement.
+      </p>
+
+      <div class="pills">
+        <span>HCI</span>
+        <span>Usability Testing</span>
+        <span>Accessibility</span>
+        <span>User-centred design</span>
+      </div>
+
+      <div class="project-links">
+        <a href="seaclear.html">Project page</a>
+      </div>
     </div>
-    <p>
-      <a href="networkcomm.html">Project page</a>
-      ·
-      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
-    </p>
-  </div>
 
-  <!-- IncidentDesk -->
-  <div class="project-card">
-    <h4>IncidentDesk <span class="tag">CRUD</span></h4>
-    <p>
-      Incident tracking system built to practise clean CRUD patterns and backend structure.
-    </p>
-    <div class="pills">
-      <span>FastAPI</span>
-      <span>SQLite</span>
-      <span>Jinja2</span>
+    <!-- NetworkComm -->
+    <div class="project-card">
+      <div class="project-title">
+        <h4>NetworkComm</h4>
+        <span class="tag">Systems</span>
+      </div>
+
+      <p class="muted">
+        TCP client server messaging system built to strengthen my systems fundamentals, threading, and structured logging.
+      </p>
+
+      <div class="pills">
+        <span>TCP</span>
+        <span>Threads</span>
+        <span>Logging</span>
+        <span>Python</span>
+      </div>
+
+      <div class="project-links">
+        <a href="networkcomm.html">Project page</a>
+      </div>
     </div>
-    <p>
-      <a href="incidentdesk.html">Project page</a>
-      ·
-      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
-    </p>
-  </div>
 
-  <p style="margin-top: 2rem;">
-    <a href="../index.html">← Back to Home</a>
-  </p>
+    <!-- IncidentDesk -->
+    <div class="project-card">
+      <div class="project-title">
+        <h4>IncidentDesk</h4>
+        <span class="tag">CRUD</span>
+      </div>
+
+      <p class="muted">
+        Incident tracking system built to practise clean CRUD patterns, backend structure, and persistence.
+      </p>
+
+      <div class="pills">
+        <span>FastAPI</span>
+        <span>SQLite</span>
+        <span>Jinja2</span>
+      </div>
+
+      <div class="project-links">
+        <a href="incidentdesk.html">Project page</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="center mt">
+    <a class="btn" href="../index.html">Back to Home</a>
+  </section>
+
 </main>
 
 <footer class="footer">
-  <p>Cape Town, South Africa · luthandombuyane1@outlook.com</p>
+  <p>© <span id="year"></span> Luthando Mbuyane · Cape Town, South Africa</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
