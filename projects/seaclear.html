@@ -1,35 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SeaClear | Project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>SeaClear | Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
+
 <nav class="nav">
-  <a href="/" class="logo">Luthando Mbuyane</a>
-  <div>
-    <a href="/">Home</a>
-    <a href="/projects/">Projects</a>
-    <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
-    <a href="/assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+  <a href="../index.html" class="logo">Luthando Mbuyane</a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">Projects</a>
+    <a href="../about/index.html">About</a>
+    <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
   </div>
 </nav>
+
 <main class="content">
 
-<h1>SeaClear</h1>
-<p><strong>HCI Capstone</strong></p>
-<p>Human–computer interaction project improving access to beach water quality information.</p>
-<h3>My Role</h3>
-<p>Led usability testing, documented findings, and drove user-centred design decisions.</p>
-<h3>Focus Areas</h3>
-<ul><li>Usability testing</li><li>Accessibility</li><li>Information architecture</li></ul>
-<p><a href="/projects/">← Back to Projects</a></p>
+  <section>
+    <div class="section-header">
+      <h3>SeaClear</h3>
+      <p class="section-subtitle">
+        Human computer interaction project focused on making beach water quality information easier to access, understand, and act on.
+      </p>
+    </div>
+
+    <div class="pills mt">
+      <span>HCI</span>
+      <span>Usability</span>
+      <span>Accessibility</span>
+      <span>Flask</span>
+      <span>User-centred design</span>
+      <span>Documentation</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h4>Overview</h4>
+      <p class="muted">
+        SeaClear is a group-built HCI system designed to support beachgoers by improving the clarity and usability of water quality
+        information. The project combines public-facing communication with interactive features that help users report issues and
+        engage with the platform.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h3>My contributions</h3>
+      <p class="section-subtitle">
+        My work focused on user-friendly design, improving key site flows, and ensuring features were usable and well documented.
+      </p>
+    </div>
+  </section>
+
+  <!-- HCI HEURISTICS SECTION (ADDED) -->
+  <section>
+    <div class="card">
+      <h4>HCI approach</h4>
+      <p class="muted">
+        Because SeaClear is an HCI-focused project, I helped keep the user experience consistent by ensuring the team’s design decisions
+        followed usability principles and heuristic guidelines. This included prioritising clear navigation, meaningful feedback,
+        readable information structure, and predictable user flows across pages.
+      </p>
+      <div class="pills">
+        <span>Usability heuristics</span>
+        <span>Consistency</span>
+        <span>Meaningful feedback</span>
+        <span>Clear navigation</span>
+        <span>Information structure</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="grid two">
+    <div class="project-card">
+      <h4>Community reporting feature</h4>
+      <p class="muted">
+        I built the user-facing community report flow, including the reporting page and form, adding a beach selection dropdown and
+        connecting the submission to backend handling so reports could be saved correctly.
+      </p>
+      <div class="pills">
+        <span>Reporting flow</span>
+        <span>Form UX</span>
+        <span>Backend integration</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h4>Homepage revamp</h4>
+      <p class="muted">
+        I improved the home page layout and information structure, including beach card layout changes, map placement adjustments,
+        and carousel improvements to support a smoother entry experience for users.
+      </p>
+      <div class="pills">
+        <span>Layout improvements</span>
+        <span>Map widget</span>
+        <span>Carousel</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h4>News section improvements</h4>
+      <p class="muted">
+        I restructured the news tab for better readability and navigation, and linked the homepage “More News” to a dedicated page
+        so users could explore full news content without friction.
+      </p>
+      <div class="pills">
+        <span>Information structure</span>
+        <span>Navigation UX</span>
+        <span>Content clarity</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h4>Education page contributions</h4>
+      <p class="muted">
+        I helped restructure educational content into clearer sections and added or updated content focused on practical impacts,
+        including waterborne illness information and economic impact content. I also supported multimedia additions through video links.
+      </p>
+      <div class="pills">
+        <span>Educational content</span>
+        <span>Multimedia</span>
+        <span>Clarity-first design</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h4>Base UI and navigation UX</h4>
+      <p class="muted">
+        I improved navigation and base layout patterns across the site by updating the navbar, strengthening UI consistency,
+        improving flash messages, and reducing confusion in key user actions.
+      </p>
+      <div class="pills">
+        <span>Navbar UX</span>
+        <span>Flash messaging</span>
+        <span>UI consistency</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h4>Documentation and quality assurance</h4>
+      <p class="muted">
+        I contributed to the project report, authored test cases to validate key flows, and wrote a user manual to support usability
+        and reduce onboarding friction. This improved evaluation quality and strengthened maintainability.
+      </p>
+      <div class="pills">
+        <span>Test cases</span>
+        <span>User manual</span>
+        <span>Project report</span>
+        <span>QA thinking</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="card">
+      <h4>What I learned</h4>
+      <p class="muted">
+        SeaClear strengthened my HCI approach to development. I learned how to translate usability thinking into concrete changes across
+        navigation, information structure, and interface flows. It also reinforced how important documentation and structured testing are
+        when building systems meant for public use.
+      </p>
+      <div class="pills">
+        <span>HCI mindset</span>
+        <span>Usability iteration</span>
+        <span>Documentation</span>
+        <span>QA discipline</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="center mt">
+    <a class="btn" href="index.html">Back to Projects</a>
+  </section>
 
 </main>
+
 <footer class="footer">
-  Cape Town, South Africa · luthandombuyane1@outlook.com
+  <p>© <span id="year"></span> Luthando Mbuyane · Cape Town, South Africa</p>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
