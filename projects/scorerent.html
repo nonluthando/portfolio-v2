@@ -1,62 +1,168 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ScoreRent | Projects</title>
+  <title>ScoreRent | Project</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- IMPORTANT: this page is inside /projects -->
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
 <nav class="nav">
-  <a href="/" class="logo">Luthando Mbuyane</a>
+  <a href="../index.html" class="logo">Luthando Mbuyane</a>
+
   <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/projects/">Projects</a>
-    <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
+    <a href="../index.html">Home</a>
+    <a href="index.html" class="active">Projects</a>
+    <a href="https://github.com/nonluthando" target="_blank" rel="noopener">GitHub</a>
+    <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
   </div>
 </nav>
 
 <main class="content">
-  <h1>ScoreRent</h1>
-  <p><strong>Backend · Live</strong></p>
 
-  <p>
-    ScoreRent is a live, iteratively developed backend web application that helps renters evaluate property listings before paying application fees.
-  </p>
+  <section>
+    <h1>ScoreRent</h1>
+    <p class="tag">Backend · Live</p>
 
-  <h3>Overview</h3>
-  <p>
-    Renters often pay non-refundable application fees with limited information about whether a listing is worth pursuing. ScoreRent provides a structured, criteria-based way to evaluate listings, helping users make informed decisions before committing money.
-  </p>
+    <p>
+      ScoreRent is a live, iteratively developed backend web application that helps renters evaluate property
+      listings before paying application fees.
+    </p>
 
-  <h3>My Role</h3>
-  <p>
-    I designed and implemented the backend system end-to-end, including API design, scoring logic, input validation, and deployment. The system was built to support ongoing iteration rather than a one-off implementation.
-  </p>
+    <div class="buttons">
+      <a class="btn primary" href="http://scorerent.onrender.com" target="_blank" rel="noopener">Live demo</a>
+      <a class="btn" href="https://github.com/nonluthando" target="_blank" rel="noopener">Repository</a>
+      <a class="btn" href="index.html">Back to Projects</a>
+    </div>
+  </section>
 
-  <h3>Key Features</h3>
-  <ul>
-    <li>Criteria-based scoring logic</li>
-    <li>Typed input validation</li>
-    <li>RESTful API structure</li>
-    <li>Live deployment for real-world testing</li>
-  </ul>
+  <section>
+    <h3>Overview</h3>
+    <div class="project-card">
+      <p>
+        Renters often pay non refundable application fees with limited information about whether a listing is worth
+        pursuing. ScoreRent provides a structured, criteria based way to evaluate listings, helping users make
+        informed decisions before committing money.
+      </p>
+    </div>
+  </section>
 
-  <h3>Tech Stack</h3>
-  <div class="pills">
-    <span>FastAPI</span><span>Pydantic</span><span>PostgreSQL</span>
-    <span>GitHub Actions</span><span>Docker</span>
-  </div>
+  <section>
+    <h3>My Role</h3>
+    <div class="project-card">
+      <p>
+        I designed and implemented the backend system end to end, including API design, scoring logic, input
+        validation, persistence, automated testing, and deployment. The system was built to support ongoing
+        iteration rather than a one off implementation.
+      </p>
+    </div>
+  </section>
 
-  <h3>Links</h3>
-  <p>
-    <a href="http://scorerent.onrender.com" target="_blank">Live Demo</a><br>
-    <a href="https://github.com/nonluthando/scorerent" target="_blank">Repository</a>
-  </p>
+  <section>
+    <h3>Key Features</h3>
+    <div class="project-card">
+      <ul>
+        <li>Criteria based scoring logic for structured listing evaluation</li>
+        <li>Typed input validation using Pydantic models</li>
+        <li>REST API structure with clear endpoints and predictable responses</li>
+        <li>Saved evaluations with persistent storage</li>
+        <li>Live deployment on Render for real world testing and iteration</li>
+      </ul>
 
-  <p><a href="/projects/">← Back to Projects</a></p>
+      <div class="pills">
+        <span>Scoring Engine</span>
+        <span>Saved evaluations</span>
+        <span>Validation</span>
+        <span>Live deployment</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Testing and Quality</h3>
+    <div class="project-card">
+      <p>
+        I implemented automated tests for the core evaluate flow using pytest, focusing on correctness of the
+        scoring logic and input handling. I also set up CI with GitHub Actions to run tests on every push, helping
+        keep the API stable as I iterate and add new features.
+      </p>
+
+      <div class="pills">
+        <span>pytest</span>
+        <span>Evaluate logic tests</span>
+        <span>GitHub Actions CI</span>
+        <span>Regression checks</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Tech Stack</h3>
+    <div class="project-card">
+      <div class="pills">
+        <span>FastAPI</span>
+        <span>Pydantic</span>
+        <span>PostgreSQL</span>
+        <span>pytest</span>
+        <span>GitHub Actions</span>
+        <span>Docker</span>
+        <span>Render</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>What I Learned</h3>
+    <div class="project-card">
+      <p>
+        Building ScoreRent as a deployed, iterative project taught me how to design backend systems for change,
+        not just for completion. I learned how to improve API boundaries, validation, and error handling while
+        keeping the project maintainable and reliable through automated tests and CI.
+      </p>
+
+      <div class="pills">
+        <span>Iteration mindset</span>
+        <span>API boundaries</span>
+        <span>Error handling</span>
+        <span>Maintainability</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Next Up</h3>
+    <div class="project-card">
+      <p>
+        ScoreRent is actively maintained. My next focus is improving decision clarity and helping renters compare
+        options more confidently.
+      </p>
+
+      <div class="pills">
+        <span>Listing comparisons</span>
+        <span>Score breakdown explanations</span>
+        <span>More scoring criteria</span>
+        <span>Education: rental red flags</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Links</h3>
+    <div class="project-card">
+      <p><a href="http://scorerent.onrender.com" target="_blank" rel="noopener">Live Demo</a></p>
+      <p><a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repository</a></p>
+      <p><a href="index.html">Back to Projects</a></p>
+    </div>
+  </section>
+
 </main>
+
+<footer class="footer">
+  <p>Cape Town, South Africa · luthandombuyane1@outlook.com</p>
+</footer>
 
 </body>
 </html>
