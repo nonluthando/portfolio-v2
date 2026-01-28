@@ -1,19 +1,22 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Projects | Luthando Mbuyane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- IMPORTANT: projects/ folder must use ../ -->
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
 <nav class="nav">
   <a href="../index.html" class="logo">Luthando Mbuyane</a>
+
   <div class="nav-links">
     <a href="../index.html">Home</a>
-    <a href="index.html">Projects</a>
-    <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
+    <a href="index.html" class="active">Projects</a>
+    <a href="https://github.com/nonluthando" target="_blank" rel="noopener">GitHub</a>
     <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
   </div>
 </nav>
@@ -22,19 +25,94 @@
   <h1>Projects</h1>
   <p>
     A selection of projects demonstrating backend development, systems fundamentals,
-    and human–computer interaction.
+    and human computer interaction.
   </p>
 
-  <ul>
-    <li><a href="scorerent.html">ScoreRent</a> — Backend · Live</li>
-    <li><a href="seaclear.html">SeaClear</a> — HCI Capstone</li>
-    <li><a href="networkcomm.html">NetworkComm</a> — Systems</li>
-    <li><a href="incidentdesk.html">IncidentDesk</a> — CRUD</li>
-  </ul>
+  <!-- ScoreRent -->
+  <div class="project-card">
+    <h4>ScoreRent <span class="tag">Live · Backend</span></h4>
+    <p>
+      Live, iteratively developed backend web application helping renters evaluate listings
+      before paying application fees.
+    </p>
+    <div class="pills">
+      <span>FastAPI</span>
+      <span>Pydantic</span>
+      <span>PostgreSQL</span>
+    </div>
+    <p>
+      <a href="scorerent.html">Project page</a>
+      ·
+      <a href="http://scorerent.onrender.com" target="_blank" rel="noopener">Live demo</a>
+      ·
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
+    </p>
+  </div>
+
+  <!-- SeaClear -->
+  <div class="project-card">
+    <h4>SeaClear <span class="tag">HCI Capstone</span></h4>
+    <p>
+      Human computer interaction capstone focused on improving access to beach water quality
+      information through usability testing and iteration.
+    </p>
+    <div class="pills">
+      <span>HCI</span>
+      <span>Usability Testing</span>
+      <span>Accessibility</span>
+      <span>Flask</span>
+    </div>
+    <p>
+      <a href="seaclear.html">Project page</a>
+      ·
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
+    </p>
+  </div>
+
+  <!-- NetworkComm -->
+  <div class="project-card">
+    <h4>NetworkComm <span class="tag">Systems</span></h4>
+    <p>
+      TCP client server messaging system implementing multithreading and structured logging.
+    </p>
+    <div class="pills">
+      <span>TCP</span>
+      <span>Threads</span>
+      <span>Logging</span>
+      <span>Python</span>
+    </div>
+    <p>
+      <a href="networkcomm.html">Project page</a>
+      ·
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
+    </p>
+  </div>
+
+  <!-- IncidentDesk -->
+  <div class="project-card">
+    <h4>IncidentDesk <span class="tag">CRUD</span></h4>
+    <p>
+      Incident tracking system built to practise clean CRUD patterns and backend structure.
+    </p>
+    <div class="pills">
+      <span>FastAPI</span>
+      <span>SQLite</span>
+      <span>Jinja2</span>
+    </div>
+    <p>
+      <a href="incidentdesk.html">Project page</a>
+      ·
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener">Repo</a>
+    </p>
+  </div>
+
+  <p style="margin-top: 2rem;">
+    <a href="../index.html">← Back to Home</a>
+  </p>
 </main>
 
 <footer class="footer">
-  <p><a href="../index.html">← Back to Home</a></p>
+  <p>Cape Town, South Africa · luthandombuyane1@outlook.com</p>
 </footer>
 
 </body>
