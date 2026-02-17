@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallel Monte Carlo Optimisation | Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+<nav class="nav">
+
+  <div class="nav-container">
+
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html" class="active">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<main class="container">
+
+
+  <!-- HEADER -->
+  <section>
+
+    <div class="section-header">
+
+      <h2>Parallel Monte Carlo Optimisation</h2>
+
+      <p class="section-subtitle">
+        Parallelised a Monte Carlo optimisation algorithm in Java using the Fork/Join framework to evaluate performance scalability and concurrency trade-offs.
+      </p>
+
+    </div>
+
+
+    <div class="pills">
+
+      <span>Java</span>
+      <span>ForkJoinPool</span>
+      <span>Parallel computing</span>
+      <span>Concurrency</span>
+      <span>Performance benchmarking</span>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- OVERVIEW -->
+  <section>
+
+    <div class="card">
+
+      <h4>Overview</h4>
+
+      <p class="muted">
+        This project parallelises a Monte Carlo optimisation algorithm using Java’s Fork/Join framework. The goal was to understand how multi-core execution impacts performance, and to evaluate the real-world limits of parallel scalability.
+      </p>
+
+      <p class="muted">
+        The work focused on designing a correct parallel algorithm, validating correctness against a serial baseline, and benchmarking performance across different workloads.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- PARALLEL DESIGN -->
+  <section>
+
+    <div class="card">
+
+      <h4>Parallel algorithm design</h4>
+
+      <p class="muted">
+        I converted a serial Monte Carlo optimisation algorithm into a parallel implementation using divide-and-conquer recursion. Independent search tasks were executed concurrently using shared-memory parallelism.
+      </p>
+
+      <p class="muted">
+        A configurable sequential cutoff was used to balance parallel overhead with computational efficiency, ensuring tasks were only parallelised when beneficial.
+      </p>
+
+      <div class="pills">
+
+        <span>Fork/Join framework</span>
+        <span>Recursive task decomposition</span>
+        <span>Work-stealing execution</span>
+        <span>Shared-memory parallelism</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- EXECUTION AND TIMING -->
+  <section>
+
+    <div class="card">
+
+      <h4>Execution orchestration and timing</h4>
+
+      <p class="muted">
+        Parallel execution was managed using a ForkJoinPool to efficiently schedule and execute tasks across multiple CPU cores.
+      </p>
+
+      <p class="muted">
+        Execution time was measured consistently to ensure fair comparisons between serial and parallel implementations.
+      </p>
+
+      <div class="pills">
+
+        <span>ForkJoinPool</span>
+        <span>Parallel task scheduling</span>
+        <span>Execution timing</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- VALIDATION -->
+  <section>
+
+    <div class="card">
+
+      <h4>Correctness validation</h4>
+
+      <p class="muted">
+        Correctness was verified by comparing parallel results against the serial baseline under identical input conditions.
+      </p>
+
+      <p class="muted">
+        Multiple runs were performed to confirm consistency, and optimisation behaviour was validated using known test functions.
+      </p>
+
+      <div class="pills">
+
+        <span>Serial baseline comparison</span>
+        <span>Repeatability validation</span>
+        <span>Deterministic correctness</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BENCHMARKING -->
+  <section>
+
+    <div class="card">
+
+      <h4>Performance benchmarking</h4>
+
+      <p class="muted">
+        Benchmarks compared serial and parallel runtime across different grid sizes, search densities, and CPU configurations.
+      </p>
+
+      <p class="muted">
+        Median execution time was used to reduce noise from JVM scheduling and background processes.
+      </p>
+
+      <div class="pills">
+
+        <span>Serial vs parallel comparison</span>
+        <span>Scalability testing</span>
+        <span>Performance measurement</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- KEY FINDINGS -->
+  <section>
+
+    <div class="card">
+
+      <h4>Key findings</h4>
+
+      <p class="muted">
+        Parallel execution provided clear performance improvements for large workloads, but speedup was constrained by sequential components and scheduling overhead.
+      </p>
+
+      <p class="muted">
+        This demonstrated the practical limits of parallel scalability and highlighted the importance of balancing task granularity with parallel overhead.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- WHAT I LEARNED -->
+  <section>
+
+    <div class="card">
+
+      <h4>What I learned</h4>
+
+      <p class="muted">
+        This project strengthened my understanding of concurrency, task scheduling, and parallel performance trade-offs. I learned how to design parallel algorithms that maintain correctness while improving performance.
+      </p>
+
+      <p class="muted">
+        It also deepened my understanding of real-world scalability limits, and how parallelism must be applied thoughtfully to deliver meaningful performance gains.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BACK -->
+  <section class="center">
+
+    <a class="btn" href="index.html">
+      Back to Projects
+    </a>
+
+  </section>
+
+
+</main>
+
+
+
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <p>
+      © <span id="year"></span> Luthando Mbuyane
+    </p>
+
+    <p class="muted">
+      Cape Town, South Africa
+    </p>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+
+</body>
+</html>
