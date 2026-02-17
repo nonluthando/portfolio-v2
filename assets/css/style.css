@@ -7,7 +7,7 @@
 }
 
 
-/* Reset and base */
+/* Base reset */
 
 * {
   box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
 }
 
 
-/* Container (MAIN LAYOUT FIX) */
+/* Container */
 
 .container {
   max-width: 900px;
@@ -88,6 +88,26 @@ section {
   margin-top: 3rem;
 }
 
+section:first-child {
+  margin-top: 0;
+}
+
+
+/* Section headers */
+
+.section-header {
+  margin-bottom: 0.75rem;
+}
+
+.section-header h2,
+.section-header h3 {
+  margin-bottom: 0.25rem;
+}
+
+.section-subtitle {
+  color: var(--muted);
+}
+
 
 /* Headings */
 
@@ -96,13 +116,13 @@ h1 {
 }
 
 h2 {
-  margin-bottom: 0.5rem;
+  margin-top: 0;
 }
 
 h3 {
   position: relative;
   padding-left: 0.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 h3::before {
@@ -114,14 +134,6 @@ h3::before {
   height: 1.2rem;
   border-radius: 999px;
   background: var(--primary);
-}
-
-.section-header {
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  color: var(--muted);
 }
 
 
@@ -179,6 +191,7 @@ h3::before {
 
 .pills {
   margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .pills span {
@@ -193,19 +206,28 @@ h3::before {
 }
 
 
-/* Card (CRITICAL STRUCTURE FIX) */
+/* Cards */
 
 .card {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
 
+.card p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
 
-/* Project Cards */
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Project cards */
 
 .project-card {
   border: 1px solid var(--border);
@@ -220,11 +242,12 @@ h3::before {
 }
 
 
-/* Grid system (CRITICAL FIX) */
+/* Grid layout */
 
 .grid {
   display: grid;
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .grid.two {
