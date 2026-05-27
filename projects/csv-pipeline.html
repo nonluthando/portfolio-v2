@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSV Data Cleaning Pipeline | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+
+    <div class="nav-container">
+
+      <a href="../index.html" class="logo">
+        Luthando Mbuyane
+      </a>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="active" href="index.html">Projects</a>
+        <a href="../about/index.html">About</a>
+
+        <a
+          href="https://github.com/nonluthando"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
+          download
+        >
+          CV
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- MAIN -->
+  <main class="container">
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <h1>CSV Data Cleaning & Conversion Pipeline</h1>
+
+      <p class="hero-role">
+        Data Engineering · ETL Concepts · Data Validation · Python Tooling
+      </p>
+
+      <p class="hero-description">
+        Modular preprocessing pipeline designed to transform inconsistent CSV datasets
+        into clean, validated, analysis-ready Excel outputs through configurable cleaning workflows.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          class="btn primary"
+          href="https://github.com/nonluthando"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Repository
+        </a>
+
+        <a class="btn" href="index.html">
+          Back to Projects
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- OVERVIEW -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Overview</h2>
+
+        <p>
+          Building reliable preprocessing workflows for inconsistent real-world datasets.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <p>
+          This project implements a modular data-preparation pipeline designed to
+          convert raw CSV datasets into clean, analysis-ready Excel files.
+        </p>
+
+        <p>
+          The pipeline focuses on improving data quality, consistency, and reproducibility
+          before downstream analysis by handling common preprocessing challenges such as:
+        </p>
+
+        <ul>
+          <li>Missing values</li>
+          <li>Inconsistent formatting</li>
+          <li>Invalid records</li>
+          <li>Schema inconsistencies</li>
+          <li>Data validation issues</li>
+        </ul>
+
+        <p>
+          The goal was to formalise repetitive data-cleaning workflows into a reusable,
+          configurable process that reduces manual preparation time and improves reliability.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PIPELINE FLOW -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Pipeline Flow</h2>
+
+        <p>
+          High-level preprocessing workflow.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+<pre>
+Raw CSV
+   ↓
+Cleaning & Validation
+   ↓
+Standardisation
+   ↓
+Cleaned CSV
+   ↓
+CSV-to-Excel Conversion
+   ↓
+Analysis-Ready Excel Output
+</pre>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- FEATURES -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Key Features</h2>
+
+        <p>
+          Data quality and preprocessing capabilities implemented across the pipeline.
+        </p>
+
+      </div>
+
+
+      <div class="grid two">
+
+
+        <div class="card">
+
+          <h3>Data Cleaning</h3>
+
+          <p>
+            Implemented configurable cleaning workflows for handling missing values,
+            inconsistent formatting, invalid records, and basic schema validation.
+          </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <h3>Validation & Reliability</h3>
+
+          <p>
+            Added validation and logging mechanisms to improve traceability,
+            reproducibility, debugging, and downstream analytical reliability.
+          </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <h3>Excel Conversion</h3>
+
+          <p>
+            Converted cleaned CSV outputs into analysis-ready Excel files to support
+            reporting, exploration, and stakeholder workflows.
+          </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <h3>Modular Design</h3>
+
+          <p>
+            Structured the preprocessing stages into reusable components to support
+            flexibility across datasets with varying structures and requirements.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TECH STACK -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Technologies</h2>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="pills">
+
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>OpenPyXL</span>
+          <span>CLI Tooling</span>
+          <span>Data Validation</span>
+          <span>ETL Concepts</span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ENGINEERING THINKING -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Engineering Focus</h2>
+
+        <p>
+          Technical reasoning and architectural considerations behind the pipeline.
+        </p>
+
+      </div>
+
+
+      <div class="card">
+
+        <p>
+          A major focus of this project was improving maintainability and reproducibility
+          within preprocessing workflows that are often handled manually.
+        </p>
+
+        <p>
+          Instead of treating data cleaning as isolated notebook operations,
+          the project approached preprocessing as a reusable pipeline with:
+        </p>
+
+        <ul>
+          <li>Clear workflow stages</li>
+          <li>Configurable cleaning profiles</li>
+          <li>Validation checkpoints</li>
+          <li>Consistent output formatting</li>
+          <li>Structured transformation logic</li>
+        </ul>
+
+        <p>
+          This strengthened my understanding of how engineering principles such as
+          modularity, reproducibility, and validation apply within analytical workflows
+          and data engineering contexts.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- WHAT I LEARNED -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>What I Learned</h2>
+
+      </div>
+
+
+      <div class="card">
+
+        <p>
+          Through this project I gained practical experience working with:
+        </p>
+
+        <ul>
+          <li>Data validation workflows</li>
+          <li>Schema consistency challenges</li>
+          <li>Reusable preprocessing design</li>
+          <li>Handling inconsistent real-world datasets</li>
+          <li>Structuring transformation pipelines</li>
+          <li>Balancing flexibility with predictable outputs</li>
+        </ul>
+
+        <p>
+          The project also strengthened my understanding of how backend engineering,
+          analytical workflows, and data preparation intersect in production-oriented systems.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+    <section class="center">
+
+      <a class="btn" href="index.html">
+        Back to Projects
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <p>
+        © 2026 Luthando Mbuyane
+      </p>
+
+      <p class="muted">
+        Cape Town, South Africa
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
