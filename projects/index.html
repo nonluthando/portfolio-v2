@@ -1,211 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Projects | Luthando Mbuyane</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- IMPORTANT: we are inside /projects -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 
 <body>
 
-<nav class="nav">
-  <a href="../index.html" class="logo">Luthando Mbuyane</a>
-  <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a class="active" href="index.html">Projects</a>
-    <a href="../about/index.html">About</a>
-    <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav class="nav">
 
-<main class="content">
+    <div class="nav-container">
 
-  <section>
-    <div class="section-header">
-      <h3>Projects</h3>
-      <p class="section-subtitle">
-        A selection of work demonstrating backend development, systems fundamentals, and human computer interaction.
-      </p>
-    </div>
-  </section>
+      <a href="../index.html" class="logo">
+        Luthando Mbuyane
+      </a>
 
-  <section class="grid two">
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="active" href="index.html">Projects</a>
+        <a href="../about/index.html">About</a>
 
-    <!-- ScoreRent -->
-    <div class="project-card">
-      <div class="project-title">
-        <h4>ScoreRent</h4>
-        <span class="tag">Live · Backend</span>
+        <a
+          href="https://github.com/nonluthando"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
+          download
+        >
+          CV
+        </a>
+
       </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- MAIN -->
+  <main class="container">
+
+    <!-- HEADER -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Projects</h2>
+
+        <p>
+          Selected work demonstrating backend engineering, systems development,
+          concurrency, human-computer interaction, and data-focused applications.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- SOFTWARE ENGINEERING PROJECTS -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Software Engineering Projects</h2>
+
+        <p>
+          Backend systems, deployment, concurrency, and full-stack engineering work.
+        </p>
+
+      </div>
+
+
+
+      <div class="grid two">
+
+
+        <!-- ScoreRent -->
+        <div class="project-card">
+
+          <h3>ScoreRent</h3>
+
+          <p class="muted">
+            Rental decision-support platform with explainable scoring,
+            authentication flows, persistence, testing, and production deployment.
+          </p>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>pytest</span>
+            <span>GitHub Actions</span>
+            <span>Render</span>
+          </div>
+
+          <div class="project-links">
+            <a
+              href="https://scorerent.onrender.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live
+            </a>
+
+            <a href="scorerent.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- Parallel Monte Carlo -->
+        <div class="project-card">
+
+          <h3>Parallel Monte Carlo Optimisation</h3>
+
+          <p class="muted">
+            Parallelised a Monte Carlo optimisation algorithm using Java’s
+            Fork/Join framework and benchmarked scalability across workloads.
+          </p>
+
+          <div class="pills">
+            <span>Java</span>
+            <span>Concurrency</span>
+            <span>ForkJoinPool</span>
+            <span>Parallel computing</span>
+          </div>
+
+          <div class="project-links">
+            <a href="parallel-monte-carlo.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- SeaClear -->
+        <div class="project-card">
+
+          <h3>SeaClear</h3>
+
+          <p class="muted">
+            Human-computer interaction capstone focused on usability,
+            accessibility, and environmental data access using agile
+            development practices.
+          </p>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>Agile</span>
+            <span>HCI</span>
+            <span>Usability Testing</span>
+          </div>
+
+          <div class="project-links">
+            <a href="seaclear.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- NetworkComm -->
+        <div class="project-card">
+
+          <h3>NetworkComm</h3>
+
+          <p class="muted">
+            TCP client-server messaging application demonstrating networking,
+            protocol design, concurrency, and structured communication flows.
+          </p>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>TCP</span>
+            <span>Sockets</span>
+            <span>Threading</span>
+            <span>Protocol Design</span>
+          </div>
+
+          <div class="project-links">
+            <a href="networkcomm.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- IncidentDesk -->
+        <div class="project-card">
+
+          <h3>IncidentDesk</h3>
+
+          <p class="muted">
+            CRUD-focused incident management system built to practise validation,
+            persistence, and maintainable backend architecture patterns.
+          </p>
+
+          <div class="pills">
+            <span>FastAPI</span>
+            <span>SQLite</span>
+            <span>Jinja2</span>
+            <span>CRUD</span>
+            <span>Validation</span>
+          </div>
+
+          <div class="project-links">
+            <a href="incidentdesk.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- HealthSync -->
+        <div class="project-card">
+
+          <h3>HealthSync</h3>
+
+          <p class="muted">
+            Hackathon prototype designed to improve access to healthcare services
+            through guided navigation, queue visibility, and user-centred flows.
+          </p>
+
+          <div class="pills">
+            <span>Rapid Prototyping</span>
+            <span>User-Centred Design</span>
+            <span>Social Impact</span>
+            <span>Hackathon</span>
+          </div>
+
+          <div class="project-links">
+            <a href="healthsync.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- DATA PROJECTS -->
+    <section>
+
+      <div class="section-header">
+
+        <h2>Data & Analytics Projects</h2>
+
+        <p>
+          Data preparation, cleaning, transformation, and analytics-oriented workflows.
+        </p>
+
+      </div>
+
+
+
+      <div class="grid two">
+
+
+        <!-- CSV Pipeline -->
+        <div class="project-card">
+
+          <h3>CSV Data Cleaning Pipeline</h3>
+
+          <p class="muted">
+            Modular CSV preprocessing pipeline for cleaning, validating,
+            standardising, and converting raw datasets into analysis-ready Excel files.
+          </p>
+
+          <div class="pills">
+            <span>Python</span>
+            <span>Pandas</span>
+            <span>Data Cleaning</span>
+            <span>Validation</span>
+            <span>Excel Export</span>
+          </div>
+
+          <div class="project-links">
+            <a href="csv-pipeline.html">
+              Details
+            </a>
+          </div>
+
+        </div>
+
+
+
+        <!-- Future Data Project -->
+        <div class="project-card">
+
+          <h3>Data Exploration Projects</h3>
+
+          <p class="muted">
+            Ongoing experimentation with analytics workflows, data processing,
+            and scalable query tooling including SQL and DuckDB exploration.
+          </p>
+
+          <div class="pills">
+            <span>SQL</span>
+            <span>DuckDB</span>
+            <span>Analytics</span>
+            <span>Data Engineering</span>
+          </div>
+
+          <div class="project-links">
+            <a href="#">
+              Coming Soon
+            </a>
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CTA -->
+    <section class="center">
+
+      <a class="btn" href="../index.html">
+        Back to Home
+      </a>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="container footer-content">
+
+      <p>
+        © 2026 Luthando Mbuyane
+      </p>
 
       <p class="muted">
-        Rental decision-support web app that outputs a confidence score (0 to 100), a verdict, reasons, and recommended actions.
-        Includes guest evaluation and logged-in flows with saved profiles and evaluation history.
+        Cape Town, South Africa
       </p>
 
-      <div class="pills">
-        <span>Python</span>
-        <span>FastAPI</span>
-        <span>Jinja2</span>
-        <span>PostgreSQL</span>
-        <span>pytest</span>
-        <span>GitHub Actions</span>
-        <span>Render</span>
-      </div>
-
-      <div class="project-links">
-        <a href="scorerent.html">Project page</a>
-        <a href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live demo</a>
-      </div>
     </div>
 
-    <!-- SeaClear -->
-  <!-- SeaClear -->
-<div class="project-card">
-
-  <div class="project-title">
-    <h4>SeaClear</h4>
-    <span class="tag">Agile · Group project · HCI Capstone</span>
-  </div>
-
-  <p class="muted">
-    Group-developed human-computer interaction system built using an agile workflow to improve access to beach water quality information.
-    Contributed to backend-integrated reporting features, page structure, and usability improvements through iterative design and team collaboration.
-  </p>
-
-  <p class="muted">
-    Worked within a structured development process including requirement analysis, usability testing, iterative refinement, and coordinated team delivery.
-  </p>
-
-  <div class="pills">
-    <span>Python</span>
-    <span>Flask</span>
-    <span>Agile development</span>
-    <span>Team collaboration</span>
-    <span>Usability testing</span>
-    <span>Backend integration</span>
-    <span>HCI</span>
-  </div>
-
-  <div class="project-links">
-    <a href="seaclear.html">Project page</a>
-  </div>
-
-</div>
-    <div class="project-card">
-
-  <h4>Parallel Monte Carlo Optimisation</h4>
-
-  <p class="muted">
-    Parallelised a Monte Carlo optimisation algorithm using Java's Fork/Join framework and benchmarked performance scalability across workloads.
-  </p>
-
-  <div class="pills">
-    <span>Java</span>
-    <span>Concurrency</span>
-    <span>ForkJoinPool</span>
-  </div>
-
-  <div class="project-links">
-    <a href="parallel-monte-carlo.html">Project page</a>
-  </div>
-
-</div>
-
-    <!-- HealthSync -->
-    <div class="project-card">
-      <div class="project-title">
-        <h4>HealthSync</h4>
-        <span class="tag">Hackathon</span>
-      </div>
-
-      <p class="muted">
-        Prototype built during the GirlCode InnovateHer Hackathon focused on improving access to health services.
-        Designed to support guided navigation, queue visibility, and health education for users.
-      </p>
-
-      <div class="pills">
-        <span>Rapid prototyping</span>
-        <span>User-centred design</span>
-        <span>Social impact</span>
-        <span>Hackathon delivery</span>
-      </div>
-
-      <div class="project-links">
-        <a href="healthsync.html">Project page</a>
-      </div>
-    </div>
-
-    <!-- NetworkComm -->
-    <div class="project-card">
-      <div class="project-title">
-        <h4>NetworkComm</h4>
-        <span class="tag">Systems</span>
-      </div>
-
-      <p class="muted">
-        TCP client server chat application built to demonstrate networking fundamentals, protocol design, and concurrency.
-        Supports multiple clients with server-side routing, chat rooms, and structured logging enhancements.
-      </p>
-
-      <div class="pills">
-        <span>Python</span>
-        <span>TCP</span>
-        <span>sockets</span>
-        <span>threading</span>
-        <span>Protocol design</span>
-        <span>Logging</span>
-      </div>
-
-      <div class="project-links">
-        <a href="networkcomm.html">Project page</a>
-      </div>
-    </div>
-
-    <!-- IncidentDesk -->
-    <div class="project-card">
-      <div class="project-title">
-        <h4>IncidentDesk</h4>
-        <span class="tag">CRUD</span>
-      </div>
-
-      <p class="muted">
-        Incident tracking system built to practise clean CRUD patterns, validation, and persistence using a small
-        maintainable backend structure.
-      </p>
-
-      <div class="pills">
-        <span>FastAPI</span>
-        <span>SQLite</span>
-        <span>Jinja2</span>
-        <span>CRUD</span>
-        <span>Validation</span>
-      </div>
-
-      <div class="project-links">
-        <a href="incidentdesk.html">Project page</a>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="center mt">
-    <a class="btn" href="../index.html">Back to Home</a>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <p>© <span id="year"></span> Luthando Mbuyane · Cape Town, South Africa</p>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  </footer>
 
 </body>
 </html>
