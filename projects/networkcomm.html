@@ -10,449 +10,443 @@
 <body>
 
 <nav class="nav">
-  <a href="../index.html" class="logo">Luthando Mbuyane</a>
+  <div class="nav-container">
 
-  <div class="nav-links">
-    <a href="../index.html">Home</a>
-    <a href="index.html" class="active">Projects</a>
-    <a href="../about/index.html">About</a>
-    <a href="https://github.com/nonluthando"
-       target="_blank"
-       rel="noopener noreferrer">
-      GitHub
-    </a>
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
 
-    <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
-       download>
-      CV
-    </a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html" class="active">Projects</a>
+      <a href="../about/index.html">About</a>
+
+      <a
+        href="https://github.com/nonluthando"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub
+      </a>
+
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>
+        CV
+      </a>
+    </div>
+
   </div>
 </nav>
 
-<main class="content">
+<main class="container">
 
-<!-- HERO -->
+  <!-- HERO -->
+  <section class="hero">
 
-<section>
+    <p class="eyebrow">Project</p>
 
-  <div class="section-header">
-    <h3>NetworkComm</h3>
+    <h1>NetworkComm</h1>
 
-    <p class="section-subtitle">
+    <p class="hero-role">
       TCP client-server messaging application demonstrating networking,
       concurrency, protocol design, and systems fundamentals.
     </p>
-  </div>
 
-  <div class="pills mt">
-    <span>Python</span>
-    <span>TCP</span>
-    <span>sockets</span>
-    <span>threading</span>
-    <span>Concurrency</span>
-    <span>Protocol design</span>
-    <span>Systems programming</span>
-  </div>
-
-</section>
-
-<!-- OVERVIEW -->
-
-<section>
-
-  <div class="card">
-
-    <h4>Overview</h4>
-
-    <p class="muted">
-      NetworkComm is a Python-based TCP client-server messaging application
-      built to explore networking, concurrency, and protocol design through
-      real-time communication.
-    </p>
-
-    <p class="muted">
-      The system allows multiple clients to connect to a central server and
-      exchange messages using TCP sockets, multithreading, and a text-based
-      messaging protocol.
-    </p>
-
-    <p class="muted">
-      The project prioritised correctness, coordination, and realistic
-      networking behaviour over interface complexity while providing practical
-      exposure to client-server architectures and concurrent execution.
-    </p>
-
-    <p class="muted">
-      Beyond messaging functionality, the project focused on connection
-      management, coordination between users, state handling, retry behaviour,
-      and common networking failure scenarios.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- SERVER + CLIENT -->
-
-<section class="grid two">
-
-  <div class="project-card">
-
-    <h4>Server work</h4>
-
-    <p class="muted">
-      The server component was originally developed collaboratively as part
-      of coursework. I independently extended and refined it by improving
-      reliability, readability, and coordination behaviour.
-    </p>
-
-    <p class="muted">
-      Enhancements included structured logging, improved disconnect handling,
-      clearer routing behaviour, better message formatting, and stronger
-      coordination between connected clients.
-    </p>
-
-    <div class="pills">
-      <span>Message routing</span>
-      <span>Error handling</span>
-      <span>Structured logging</span>
-      <span>Client coordination</span>
-      <span>Maintainability</span>
-    </div>
-
-  </div>
-
-  <div class="project-card">
-
-    <h4>Client work</h4>
-
-    <p class="muted">
-      I implemented the client independently including user interaction,
-      connection handling, retry logic, and concurrent message processing.
-    </p>
-
-    <p class="muted">
-      Sending and receiving execute independently so incoming messages remain
-      responsive without blocking user interaction.
-    </p>
-
-    <div class="pills">
-      <span>Async receive</span>
-      <span>Retry logic</span>
-      <span>CLI interface</span>
-      <span>Thread coordination</span>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FEATURES -->
-
-<section>
-
-  <div class="section-header">
-
-    <h3>Key Features</h3>
-
-    <p class="section-subtitle">
-      Messaging functionality built on top of an explicit text protocol.
-    </p>
-
-  </div>
-
-  <div class="card">
-
-    <div class="pills">
-
-      <span>TCP socket communication</span>
-      <span>Multithreaded server</span>
-      <span>Broadcast messaging</span>
-      <span>Private messaging</span>
-      <span>Chat rooms</span>
-      <span>User visibility controls</span>
-      <span>Timestamped formatting</span>
-      <span>Graceful disconnect handling</span>
-      <span>Connection retry logic</span>
-
-    </div>
-
-    <p class="muted mt">
-      Communication is routed through the server to simplify coordination
-      and maintain consistent shared state across connected users.
-    </p>
-
-    <p class="muted">
-      Client operations execute concurrently to support interactive messaging
-      without blocking incoming traffic.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- ARCHITECTURE -->
-
-<section>
-
-  <div class="section-header">
-
-    <h3>Architecture</h3>
-
-    <p class="section-subtitle">
-      Client-server coordination and concurrent execution model.
-    </p>
-
-  </div>
-
-  <div class="card">
-
-    <p class="muted">
-      The application follows a centralised client-server architecture.
-      The server listens on a configurable host and port while clients
-      establish TCP connections and register identities.
-    </p>
-
-    <p class="muted">
-      For every connected client, the server creates a dedicated handler
-      thread responsible for receiving messages, routing communication,
-      maintaining state, and managing disconnect behaviour.
-    </p>
-
-    <p class="muted">
-      Messages are routed according to communication type including
-      broadcast messaging, private communication, and room-based
-      interactions.
-    </p>
-
-    <p class="muted">
-      Client-side sending and receiving are handled concurrently using
-      separate threads to preserve responsiveness and avoid blocking
-      socket reads.
-    </p>
-
-    <div class="pills">
-
-      <span>Thread-per-client model</span>
-      <span>Concurrent execution</span>
-      <span>Server routing</span>
-      <span>Shared state coordination</span>
-      <span>Async client behaviour</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- TECH STACK -->
-
-<section>
-
-  <div class="section-header">
-
-    <h3>Tech Stack</h3>
-
-    <p class="section-subtitle">
-      Tools and technologies used.
-    </p>
-
-  </div>
-
-  <div class="card">
-
-    <div class="pills">
-
+    <div class="pills mt">
       <span>Python</span>
-      <span>socket</span>
-      <span>threading</span>
-      <span>UTF-8</span>
-      <span>Localhost</span>
-      <span>LAN testing</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- GETTING STARTED -->
-
-<section>
-
-  <div class="section-header">
-
-    <h3>Getting Started</h3>
-
-    <p class="section-subtitle">
-      Running the server and connecting clients.
-    </p>
-
-  </div>
-
-  <div class="card">
-
-    <p class="muted">
-      Start the server, then launch multiple clients to simulate
-      concurrent users.
-    </p>
-
-    <div class="project-card">
-      <h4>Run server</h4>
-      <p class="muted">python server.py</p>
-    </div>
-
-    <div class="project-card">
-      <h4>Run client</h4>
-      <p class="muted">python mbylut003_client.py</p>
-    </div>
-
-    <p class="muted">
-      Default connection settings:
-      IP = 127.0.0.1
-      Port = 44444
-    </p>
-
-  </div>
-
-</section>
-
-<!-- LEARNING -->
-
-<section>
-
-  <div class="section-header">
-
-    <h3>What I Learned</h3>
-
-    <p class="section-subtitle">
-      Systems concepts explored during development.
-    </p>
-
-  </div>
-
-  <div class="card">
-
-    <p class="muted">
-      This project strengthened my understanding of TCP/IP communication,
-      concurrency using threads, client-server coordination, and protocol
-      behaviour.
-    </p>
-
-    <p class="muted">
-      It also introduced practical networking concerns including retry
-      behaviour, disconnect recovery, state consistency, synchronization,
-      message ordering, and failure handling.
-    </p>
-
-    <div class="pills">
-
-      <span>TCP/IP</span>
+      <span>TCP</span>
+      <span>Sockets</span>
+      <span>Threading</span>
       <span>Concurrency</span>
-      <span>Protocol design</span>
-      <span>Network debugging</span>
-      <span>Failure handling</span>
-      <span>Systems thinking</span>
+      <span>Protocol Design</span>
+      <span>Systems Programming</span>
+    </div>
+
+  </section>
+
+
+
+  <!-- OVERVIEW -->
+  <section>
+
+    <div class="section-header">
+      <h2>Overview</h2>
+      <p>
+        A practical networking project focused on real-time communication,
+        concurrent execution, and client-server coordination.
+      </p>
+    </div>
+
+    <div class="card">
+
+      <p>
+        NetworkComm is a Python-based TCP client-server messaging application
+        built to explore networking, concurrency, and protocol design through
+        real-time communication.
+      </p>
+
+      <p>
+        The system allows multiple clients to connect to a central server and
+        exchange messages using TCP sockets, multithreading, and a text-based
+        messaging protocol.
+      </p>
+
+      <p>
+        The project prioritised correctness, coordination, and realistic
+        networking behaviour over interface complexity while providing practical
+        exposure to client-server architectures and concurrent execution.
+      </p>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<!-- LIMITATIONS -->
 
-<section>
+  <!-- CONTRIBUTION -->
+  <section>
 
-  <div class="section-header">
+    <div class="section-header">
+      <h2>My Contribution</h2>
+      <p>
+        Server refinement, independent client implementation, and reliability improvements.
+      </p>
+    </div>
 
-    <h3>Limitations and Scope</h3>
+    <div class="grid two">
 
-    <p class="section-subtitle">
-      Intentionally excluded features.
-    </p>
+      <div class="project-card">
 
-  </div>
+        <h3>Server Work</h3>
 
-  <div class="card">
+        <p>
+          The server component was originally developed collaboratively as part
+          of coursework. I independently extended and refined it by improving
+          reliability, readability, and coordination behaviour.
+        </p>
 
-    <p class="muted">
-      The project prioritises networking concepts and correctness over
-      production security.
-    </p>
+        <p>
+          Enhancements included structured logging, improved disconnect handling,
+          clearer routing behaviour, better message formatting, and stronger
+          coordination between connected clients.
+        </p>
 
-    <p class="muted">
-      Authentication, encryption, persistence, distributed coordination,
-      and scalability mechanisms remain intentionally out of scope.
-    </p>
+        <div class="pills">
+          <span>Message Routing</span>
+          <span>Error Handling</span>
+          <span>Structured Logging</span>
+          <span>Client Coordination</span>
+          <span>Maintainability</span>
+        </div>
 
-    <div class="pills">
+      </div>
 
-      <span>No encryption</span>
-      <span>No authentication</span>
-      <span>In-memory state</span>
-      <span>Single-server model</span>
+      <div class="project-card">
+
+        <h3>Client Work</h3>
+
+        <p>
+          I implemented the client independently, including user interaction,
+          connection handling, retry logic, and concurrent message processing.
+        </p>
+
+        <p>
+          Sending and receiving execute independently so incoming messages remain
+          responsive without blocking user interaction.
+        </p>
+
+        <div class="pills">
+          <span>Async Receive</span>
+          <span>Retry Logic</span>
+          <span>CLI Interface</span>
+          <span>Thread Coordination</span>
+        </div>
+
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<!-- FUTURE -->
 
-<section>
+  <!-- FEATURES -->
+  <section>
 
-  <div class="card">
+    <div class="section-header">
+      <h2>Key Features</h2>
+      <p>
+        Messaging functionality built on top of an explicit text protocol.
+      </p>
+    </div>
 
-    <h4>Future Enhancements</h4>
+    <div class="card">
 
-    <p class="muted">
-      Planned improvements include protocol framing, authentication,
-      TLS support, persistent chat history, room metadata storage,
-      asynchronous I/O, configurable logging, automated testing,
-      and performance benchmarking under larger client loads.
-    </p>
+      <div class="pills">
+        <span>TCP Socket Communication</span>
+        <span>Multithreaded Server</span>
+        <span>Broadcast Messaging</span>
+        <span>Private Messaging</span>
+        <span>Chat Rooms</span>
+        <span>User Visibility Controls</span>
+        <span>Timestamped Formatting</span>
+        <span>Graceful Disconnect Handling</span>
+        <span>Connection Retry Logic</span>
+      </div>
 
-    <div class="pills">
+      <p class="mt">
+        Communication is routed through the server to simplify coordination
+        and maintain consistent shared state across connected users.
+      </p>
 
-      <span>Message framing</span>
-      <span>Authentication</span>
-      <span>TLS</span>
-      <span>Persistence</span>
-      <span>Async I/O</span>
-      <span>Testing</span>
-      <span>Benchmarking</span>
+      <p>
+        Client operations execute concurrently to support interactive messaging
+        without blocking incoming traffic.
+      </p>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-<!-- BACK -->
 
-<section class="center mt">
+  <!-- ARCHITECTURE -->
+  <section>
 
-  <a class="btn" href="index.html">
-    Back to Projects
-  </a>
+    <div class="section-header">
+      <h2>Architecture</h2>
+      <p>
+        Client-server coordination and concurrent execution model.
+      </p>
+    </div>
 
-</section>
+    <div class="card">
+
+      <p>
+        The application follows a centralised client-server architecture.
+        The server listens on a configurable host and port while clients
+        establish TCP connections and register identities.
+      </p>
+
+      <p>
+        For every connected client, the server creates a dedicated handler
+        thread responsible for receiving messages, routing communication,
+        maintaining state, and managing disconnect behaviour.
+      </p>
+
+      <p>
+        Messages are routed according to communication type, including
+        broadcast messaging, private communication, and room-based interactions.
+      </p>
+
+      <p>
+        Client-side sending and receiving are handled concurrently using
+        separate threads to preserve responsiveness and avoid blocking socket reads.
+      </p>
+
+      <div class="pills">
+        <span>Thread-per-client Model</span>
+        <span>Concurrent Execution</span>
+        <span>Server Routing</span>
+        <span>Shared State Coordination</span>
+        <span>Async Client Behaviour</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- TECH STACK -->
+  <section>
+
+    <div class="section-header">
+      <h2>Tech Stack</h2>
+      <p>
+        Tools and technologies used.
+      </p>
+    </div>
+
+    <div class="card">
+
+      <div class="pills">
+        <span>Python</span>
+        <span>socket</span>
+        <span>threading</span>
+        <span>UTF-8</span>
+        <span>Localhost</span>
+        <span>LAN Testing</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- GETTING STARTED -->
+  <section>
+
+    <div class="section-header">
+      <h2>Getting Started</h2>
+      <p>
+        Running the server and connecting clients.
+      </p>
+    </div>
+
+    <div class="card">
+
+      <p>
+        Start the server, then launch multiple clients to simulate concurrent users.
+      </p>
+
+      <div class="grid two">
+
+        <div class="project-card">
+          <h3>Run Server</h3>
+          <p><code>python server.py</code></p>
+        </div>
+
+        <div class="project-card">
+          <h3>Run Client</h3>
+          <p><code>python mbylut003_client.py</code></p>
+        </div>
+
+      </div>
+
+      <p class="mt">
+        Default connection settings: <code>127.0.0.1:44444</code>
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- LEARNING -->
+  <section>
+
+    <div class="section-header">
+      <h2>What I Learned</h2>
+      <p>
+        Systems concepts explored during development.
+      </p>
+    </div>
+
+    <div class="card">
+
+      <p>
+        This project strengthened my understanding of TCP/IP communication,
+        concurrency using threads, client-server coordination, and protocol behaviour.
+      </p>
+
+      <p>
+        It also introduced practical networking concerns including retry behaviour,
+        disconnect recovery, state consistency, synchronization, message ordering,
+        and failure handling.
+      </p>
+
+      <div class="pills">
+        <span>TCP/IP</span>
+        <span>Concurrency</span>
+        <span>Protocol Design</span>
+        <span>Network Debugging</span>
+        <span>Failure Handling</span>
+        <span>Systems Thinking</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- LIMITATIONS -->
+  <section>
+
+    <div class="section-header">
+      <h2>Limitations and Scope</h2>
+      <p>
+        Intentionally excluded production features.
+      </p>
+    </div>
+
+    <div class="card">
+
+      <p>
+        The project prioritises networking concepts and correctness over production security.
+      </p>
+
+      <p>
+        Authentication, encryption, persistence, distributed coordination,
+        and scalability mechanisms remain intentionally out of scope.
+      </p>
+
+      <div class="pills">
+        <span>No Encryption</span>
+        <span>No Authentication</span>
+        <span>In-memory State</span>
+        <span>Single-server Model</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FUTURE -->
+  <section>
+
+    <div class="section-header">
+      <h2>Future Enhancements</h2>
+      <p>
+        Logical next steps for making the system more robust.
+      </p>
+    </div>
+
+    <div class="card">
+
+      <p>
+        Planned improvements include protocol framing, authentication,
+        TLS support, persistent chat history, room metadata storage,
+        asynchronous I/O, configurable logging, automated testing,
+        and performance benchmarking under larger client loads.
+      </p>
+
+      <div class="pills">
+        <span>Message Framing</span>
+        <span>Authentication</span>
+        <span>TLS</span>
+        <span>Persistence</span>
+        <span>Async I/O</span>
+        <span>Testing</span>
+        <span>Benchmarking</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BACK -->
+  <section class="center mt">
+    <a class="btn" href="index.html">
+      Back to Projects
+    </a>
+  </section>
 
 </main>
 
 <footer class="footer">
-  <p>
-    © <span id="year"></span>
-    Luthando Mbuyane · Cape Town, South Africa
-  </p>
+  <div class="container footer-content">
+    <p>© <span id="year"></span> Luthando Mbuyane</p>
+    <p class="muted">South Africa</p>
+  </div>
 </footer>
 
 <script>
-document.getElementById(
-  "year"
-).textContent = new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
