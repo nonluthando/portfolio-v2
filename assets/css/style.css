@@ -422,3 +422,57 @@ li {
     grid-template-columns: 1fr;
   }
 }
+.project-hero {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 1.5rem;
+  align-items: stretch;
+
+  padding: 3rem;
+  border-radius: 28px;
+  border: 1px solid rgba(107, 92, 255, 0.18);
+  background:
+    linear-gradient(135deg, #ffffff 0%, #f7f5ff 55%, #ebe8ff 100%);
+  box-shadow: var(--shadow-md);
+}
+
+.project-hero-main,
+.project-hero-side {
+  min-width: 0;
+}
+
+.project-hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+}
+
+.project-hero-side {
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(107, 92, 255, 0.16);
+}
+
+.fact-list p {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+}
+
+.fact-list p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 800px) {
+  .project-hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 1.25rem;
+    border-radius: 22px;
+  }
+
+  .project-hero .buttons {
+    justify-content: stretch;
+  } 
+
+  .project-hero .btn {
+    width: 100%;
+  }
+}
