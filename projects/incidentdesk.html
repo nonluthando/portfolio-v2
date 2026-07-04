@@ -1,47 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>IncidentDesk | Project</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="UTF-8">
+  <title>IncidentDesk | Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
-<nav class="nav">
-  <a href="../index.html" class="logo">Luthando Mbuyane</a>
-  <div>
-    <a href="../index.html">Home</a>
-    <a href="index.html">Projects</a>
-    <a href="https://github.com/nonluthando" target="_blank">GitHub</a>
-    <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
-  </div>
-</nav>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links" data-nav-links>
+      <a  href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a  href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle colour theme">Theme</button>
+    </div>
+  </nav>
+</header>
 
-<main class="content">
+<main id="main">
+  <section class="case-hero">
+    <div class="container">
+      <p class="eyebrow">Case study</p>
+      <h1>IncidentDesk</h1>
+      <p class="lead">CRUD-focused incident tracking system built to practise backend structure, validation and persistence.</p>
+      <div class="pills"><span>FastAPI</span><span>SQLite</span><span>Jinja2</span><span>CRUD</span><span>Validation</span></div>
+    </div>
+  </section>
 
-<h1>IncidentDesk</h1>
-<p><strong>CRUD</strong></p>
-
-<p>
-  IncidentDesk is an internal incident tracking system built to practise
-  clean CRUD patterns, backend structure, and persistent data handling.
-</p>
-
-<h3>Key Features</h3>
-<ul>
-  <li>Create, read, update, and delete incidents</li>
-  <li>Persistent storage</li>
-  <li>Clean separation of concerns</li>
-</ul>
-
-<p><a href="index.html">← Back to Projects</a></p>
-
+  <section class="section compact">
+    <div class="container case-layout">
+      <aside class="case-sidebar">
+        <div class="card">
+          <h3>On this page</h3>
+          <ul><li><a href="#problem">Problem</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#my-contribution">My contribution</a></li><li><a href="#technical-implementation">Technical implementation</a></li><li><a href="#engineering-decisions">Engineering decisions</a></li><li><a href="#testing-and-validation">Testing and validation</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#future-improvements">Future improvements</a></li></ul>
+        </div>
+      </aside>
+      <div class="case-content">
+        <section id="problem" class="case-card">
+          <h2>Problem</h2>
+          <p>Operational issues often need a simple way to be captured and tracked. I used this project to practise clean CRUD patterns, validation and persistent storage in a small backend system.</p>
+        </section>
+        <section id="what-i-built" class="case-card mt-2">
+          <h2>What I built</h2>
+          <p>IncidentDesk is an internal incident tracker where incidents can be created, viewed, updated and deleted. The project focuses on backend structure rather than complex UI.</p>
+        </section>
+        <section id="my-contribution" class="case-card mt-2">
+          <h2>My contribution</h2>
+          <ul class="clean"><li>Created routes for incident CRUD operations.</li><li>Implemented persistence using SQLite.</li><li>Used Jinja2 templates for basic server-rendered views.</li><li>Practised validation around incident fields and status changes.</li><li>Separated concerns between routes, data handling and templates.</li></ul>
+        </section>
+        <section id="technical-implementation" class="case-card mt-2">
+          <h2>Technical implementation</h2>
+          <p>The application follows a simple server-rendered web architecture. Routes handle requests, persistence stores incident records and templates render forms and lists. The project exists primarily to practise backend fundamentals in a focused scope.</p>
+        </section>
+        <section id="engineering-decisions" class="case-card mt-2">
+          <h2>Engineering decisions</h2>
+          <ul class="clean"><li>Kept the scope small to focus on correctness and CRUD fundamentals.</li><li>Used SQLite because it is lightweight and suitable for a local learning project.</li><li>Used server-rendered templates to avoid unnecessary frontend complexity.</li><li>Structured the code so the storage layer could be expanded later.</li></ul>
+        </section>
+        <section id="testing-and-validation" class="case-card mt-2">
+          <h2>Testing and validation</h2>
+          <p>I manually tested create, read, update and delete flows and checked that invalid inputs did not break the application. This project can be strengthened with automated route and validation tests.</p>
+        </section>
+        <section id="what-i-learned" class="case-card mt-2">
+          <h2>What I learned</h2>
+          <p>IncidentDesk reinforced the fundamentals behind many larger systems: request handling, validation, persistence, templates and predictable state changes.</p>
+        </section>
+        <section id="future-improvements" class="case-card mt-2">
+          <h2>Future improvements</h2>
+          <p>Future improvements include authentication, filters, search, role-based access control, REST API endpoints and automated tests.</p>
+        </section>
+        <section class="center mt-2">
+          <a class="btn" href="index.html">Back to projects</a>
+        </section>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="footer">
-  Cape Town, South Africa · luthandombuyane1@outlook.com
+  <div class="footer-inner">
+    <p>© <span data-year></span> Luthando Mbuyane</p>
+    <p>Cape Town, South Africa · <a href="mailto:luthandombuyane1@outlook.com">luthandombuyane1@outlook.com</a></p>
+  </div>
 </footer>
+<script type="module" src="../assets/js/main.js"></script>
 
 </body>
 </html>

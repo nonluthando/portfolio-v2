@@ -1,387 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CSV Data Cleaning Pipeline | Luthando Mbuyane</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta charset="UTF-8">
+  <title>CSV Data Cleaning Pipeline | Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-
-    <div class="nav-container">
-
-      <a href="../index.html" class="logo">
-        Luthando Mbuyane
-      </a>
-
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a class="active" href="index.html">Projects</a>
-        <a href="../about/index.html">About</a>
-
-        <a
-          href="https://github.com/nonluthando"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
-          download
-        >
-          CV
-        </a>
-
-      </div>
-
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links" data-nav-links>
+      <a  href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a  href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle colour theme">Theme</button>
     </div>
-
   </nav>
-
-
-
-  <!-- MAIN -->
-  <main class="container">
-
-
-    <!-- HERO -->
-    <section class="hero">
-
-      <h1>CSV Data Cleaning & Conversion Pipeline</h1>
-
-      <p class="hero-role">
-        Data Engineering · ETL Concepts · Data Validation · Python Tooling
-      </p>
-
-      <p class="hero-description">
-        Modular preprocessing pipeline designed to transform inconsistent CSV datasets
-        into clean, validated, analysis-ready Excel outputs through configurable cleaning workflows.
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="btn primary"
-          href="https://github.com/nonluthando"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub Repository
-        </a>
-
-        <a class="btn" href="index.html">
-          Back to Projects
-        </a>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- OVERVIEW -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Overview</h2>
-
-        <p>
-          Building reliable preprocessing workflows for inconsistent real-world datasets.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <p>
-          This project implements a modular data-preparation pipeline designed to
-          convert raw CSV datasets into clean, analysis-ready Excel files.
-        </p>
-
-        <p>
-          The pipeline focuses on improving data quality, consistency, and reproducibility
-          before downstream analysis by handling common preprocessing challenges such as:
-        </p>
-
-        <ul>
-          <li>Missing values</li>
-          <li>Inconsistent formatting</li>
-          <li>Invalid records</li>
-          <li>Schema inconsistencies</li>
-          <li>Data validation issues</li>
-        </ul>
-
-        <p>
-          The goal was to formalise repetitive data-cleaning workflows into a reusable,
-          configurable process that reduces manual preparation time and improves reliability.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- PIPELINE FLOW -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Pipeline Flow</h2>
-
-        <p>
-          High-level preprocessing workflow.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-<pre>
-Raw CSV
-   ↓
-Cleaning & Validation
-   ↓
-Standardisation
-   ↓
-Cleaned CSV
-   ↓
-CSV-to-Excel Conversion
-   ↓
-Analysis-Ready Excel Output
-</pre>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- FEATURES -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Key Features</h2>
-
-        <p>
-          Data quality and preprocessing capabilities implemented across the pipeline.
-        </p>
-
-      </div>
-
-
-      <div class="grid two">
-
-
-        <div class="card">
-
-          <h3>Data Cleaning</h3>
-
-          <p>
-            Implemented configurable cleaning workflows for handling missing values,
-            inconsistent formatting, invalid records, and basic schema validation.
-          </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <h3>Validation & Reliability</h3>
-
-          <p>
-            Added validation and logging mechanisms to improve traceability,
-            reproducibility, debugging, and downstream analytical reliability.
-          </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <h3>Excel Conversion</h3>
-
-          <p>
-            Converted cleaned CSV outputs into analysis-ready Excel files to support
-            reporting, exploration, and stakeholder workflows.
-          </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <h3>Modular Design</h3>
-
-          <p>
-            Structured the preprocessing stages into reusable components to support
-            flexibility across datasets with varying structures and requirements.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- TECH STACK -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Technologies</h2>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="pills">
-
-          <span>Python</span>
-          <span>Pandas</span>
-          <span>OpenPyXL</span>
-          <span>CLI Tooling</span>
-          <span>Data Validation</span>
-          <span>ETL Concepts</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ENGINEERING THINKING -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Engineering Focus</h2>
-
-        <p>
-          Technical reasoning and architectural considerations behind the pipeline.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <p>
-          A major focus of this project was improving maintainability and reproducibility
-          within preprocessing workflows that are often handled manually.
-        </p>
-
-        <p>
-          Instead of treating data cleaning as isolated notebook operations,
-          the project approached preprocessing as a reusable pipeline with:
-        </p>
-
-        <ul>
-          <li>Clear workflow stages</li>
-          <li>Configurable cleaning profiles</li>
-          <li>Validation checkpoints</li>
-          <li>Consistent output formatting</li>
-          <li>Structured transformation logic</li>
-        </ul>
-
-        <p>
-          This strengthened my understanding of how engineering principles such as
-          modularity, reproducibility, and validation apply within analytical workflows
-          and data engineering contexts.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- WHAT I LEARNED -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>What I Learned</h2>
-
-      </div>
-
-
-      <div class="card">
-
-        <p>
-          Through this project I gained practical experience working with:
-        </p>
-
-        <ul>
-          <li>Data validation workflows</li>
-          <li>Schema consistency challenges</li>
-          <li>Reusable preprocessing design</li>
-          <li>Handling inconsistent real-world datasets</li>
-          <li>Structuring transformation pipelines</li>
-          <li>Balancing flexibility with predictable outputs</li>
-        </ul>
-
-        <p>
-          The project also strengthened my understanding of how backend engineering,
-          analytical workflows, and data preparation intersect in production-oriented systems.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- CTA -->
-    <section class="center">
-
-      <a class="btn" href="index.html">
-        Back to Projects
-      </a>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-
-    <div class="container footer-content">
-
-      <p>
-        © 2026 Luthando Mbuyane
-      </p>
-
-      <p class="muted">
-        Cape Town, South Africa
-      </p>
-
+</header>
+
+<main id="main">
+  <section class="case-hero">
+    <div class="container">
+      <p class="eyebrow">Case study</p>
+      <h1>CSV Data Cleaning Pipeline</h1>
+      <p class="lead">Modular preprocessing pipeline for cleaning, validating and converting inconsistent CSV datasets into analysis-ready Excel outputs.</p>
+      <div class="pills"><span>Python</span><span>Pandas</span><span>OpenPyXL</span><span>CLI tooling</span><span>Data validation</span><span>ETL</span></div>
     </div>
+  </section>
 
-  </footer>
+  <section class="section compact">
+    <div class="container case-layout">
+      <aside class="case-sidebar">
+        <div class="card">
+          <h3>On this page</h3>
+          <ul><li><a href="#problem">Problem</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#my-contribution">My contribution</a></li><li><a href="#technical-implementation">Technical implementation</a></li><li><a href="#engineering-decisions">Engineering decisions</a></li><li><a href="#testing-and-validation">Testing and validation</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#future-improvements">Future improvements</a></li></ul>
+        </div>
+      </aside>
+      <div class="case-content">
+        <section id="problem" class="case-card">
+          <h2>Problem</h2>
+          <p>Real-world datasets are often inconsistent. Missing values, invalid records and formatting differences can make analysis unreliable if cleaning is done manually or inconsistently.</p>
+        </section>
+        <section id="what-i-built" class="case-card mt-2">
+          <h2>What I built</h2>
+          <p>I built a reusable preprocessing pipeline that reads raw CSV files, applies cleaning and validation steps, standardises outputs and converts cleaned data into Excel files for analysis.</p>
+        </section>
+        <section id="my-contribution" class="case-card mt-2">
+          <h2>My contribution</h2>
+          <ul class="clean"><li>Implemented configurable cleaning workflows for missing values and inconsistent formats.</li><li>Added validation checks for schema and invalid records.</li><li>Structured the pipeline into reusable stages.</li><li>Converted cleaned outputs to Excel using OpenPyXL.</li><li>Used logging to improve traceability and debugging.</li></ul>
+        </section>
+        <section id="technical-implementation" class="case-card mt-2">
+          <h2>Technical implementation</h2>
+          <p>The pipeline uses Pandas for tabular transformations and OpenPyXL for Excel export. Cleaning, validation and conversion are separated into stages so the workflow can be reused across datasets with different structures.</p>
+        </section>
+        <section id="engineering-decisions" class="case-card mt-2">
+          <h2>Engineering decisions</h2>
+          <ul class="clean"><li>Used modular stages so cleaning logic is easier to test and extend.</li><li>Used validation checkpoints to catch problems before downstream analysis.</li><li>Exported to Excel because many stakeholder workflows still rely on spreadsheets.</li><li>Treated data preparation as an engineering workflow rather than ad hoc notebook cleaning.</li></ul>
+        </section>
+        <section id="testing-and-validation" class="case-card mt-2">
+          <h2>Testing and validation</h2>
+          <p>I validated the pipeline by running it on datasets with known inconsistencies and checking that outputs were cleaned, standardised and exportable. Logging supported debugging when input data did not match expectations.</p>
+        </section>
+        <section id="what-i-learned" class="case-card mt-2">
+          <h2>What I learned</h2>
+          <p>This project strengthened how I think about data quality, reproducibility and validation. It also showed how backend engineering principles apply to data workflows.</p>
+        </section>
+        <section id="future-improvements" class="case-card mt-2">
+          <h2>Future improvements</h2>
+          <p>Future improvements include schema configuration files, automated tests, support for Excel and JSON input, database ingestion and richer validation reports.</p>
+        </section>
+        <section class="center mt-2">
+          <a class="btn" href="index.html">Back to projects</a>
+        </section>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© <span data-year></span> Luthando Mbuyane</p>
+    <p>Cape Town, South Africa · <a href="mailto:luthandombuyane1@outlook.com">luthandombuyane1@outlook.com</a></p>
+  </div>
+</footer>
+<script type="module" src="../assets/js/main.js"></script>
 
 </body>
 </html>

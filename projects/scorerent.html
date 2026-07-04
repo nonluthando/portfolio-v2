@@ -1,320 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ScoreRent | Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta charset="UTF-8">
+  <title>ScoreRent | Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body>
 
-<nav class="nav">
-  <div class="nav-container">
-
-    <a href="../index.html" class="logo">Luthando Mbuyane</a>
-
-    <div class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="index.html">Projects</a>
-      <a href="../about/index.html">About</a>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links" data-nav-links>
+      <a  href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a  href="../about/index.html">About</a>
       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle colour theme">Theme</button>
     </div>
+  </nav>
+</header>
 
-  </div>
-</nav>
-
-
-<main class="container">
-
-
-  <!-- HEADER -->
-  <section>
-
-    <div class="section-header">
-
-      <h2>ScoreRent</h2>
-
-      <p class="section-subtitle">
-        Rental decision-support web app that helps renters evaluate listings before paying non-refundable application fees.
-      </p>
-
+<main id="main">
+  <section class="case-hero">
+    <div class="container">
+      <p class="eyebrow">Case study</p>
+      <h1>ScoreRent</h1>
+      <p class="lead">Rental decision-support web app that helps renters evaluate listings before paying non-refundable application fees.</p>
+      <div class="pills"><span>Python</span><span>FastAPI</span><span>Jinja2</span><span>PostgreSQL</span><span>pytest</span><span>GitHub Actions</span><span>Render</span></div>
     </div>
-
-
-    <div class="buttons">
-
-      <a class="btn primary" href="https://scorerent.onrender.com" target="_blank">
-        Live Demo
-      </a>
-
-      <a class="btn" href="https://github.com/nonluthando" target="_blank">
-        Repository
-      </a>
-
-    </div>
-
-
-    <!-- KEEP pills here (critical technical signal) -->
-    <div class="pills">
-
-      <span>Python</span>
-      <span>FastAPI</span>
-      <span>Jinja2</span>
-      <span>PostgreSQL</span>
-      <span>pytest</span>
-      <span>GitHub Actions</span>
-      <span>Render</span>
-
-    </div>
-
   </section>
 
-
-
-  <!-- INSPIRATION (no pills needed) -->
-  <section>
-
-    <div class="card">
-
-      <h4>Inspiration</h4>
-
-      <p class="muted">
-        I built ScoreRent after seeing people around me transitioning from university residence to real rentals. Many of them were paying
-        expensive application fees repeatedly, only to get rejected due to affordability, missing documents, or high demand.
-      </p>
-
-      <p class="muted">
-        I wanted a tool that could reduce that risk by making the decision clearer upfront, and by showing renters exactly what is weakening
-        their application and what they can do to improve it.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- WHAT IT DOES -->
-  <section>
-
-    <div class="card">
-
-      <h4>What it does</h4>
-
-      <p class="muted">
-        ScoreRent evaluates listing requirements against a renter profile and outputs a <strong>0 to 100 confidence score</strong> and a verdict.
-        The score is deterministic and explainable. It is intentionally designed as a confidence score, not acceptance probability.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- CORE FEATURES -->
-  <section>
-
-    <div class="section-header">
-
-      <h2>Core features shown in the live app</h2>
-
-      <p class="section-subtitle">
-        These are the product flows implemented in the deployed version.
-      </p>
-
-    </div>
-
-
-    <div class="grid two">
-
-
-      <div class="project-card">
-
-        <h4>Guest evaluation</h4>
-
-        <p class="muted">
-          A renter can enter listing details and renter information without signing up and receive a score, verdict, reasons, and actions.
-        </p>
-
-        <div class="pills">
-          <span>Evaluation engine</span>
-          <span>Decision support</span>
+  <section class="section compact">
+    <div class="container case-layout">
+      <aside class="case-sidebar">
+        <div class="card">
+          <h3>On this page</h3>
+          <ul><li><a href="#problem">Problem</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#my-contribution">My contribution</a></li><li><a href="#technical-implementation">Technical implementation</a></li><li><a href="#engineering-decisions">Engineering decisions</a></li><li><a href="#testing-and-validation">Testing and validation</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#future-improvements">Future improvements</a></li></ul>
         </div>
-
+      </aside>
+      <div class="case-content">
+        <section id="problem" class="case-card">
+          <h2>Problem</h2>
+          <p>Prospective renters can lose money repeatedly on application fees when they apply for listings that are unlikely to fit their affordability, documentation or renter-profile constraints. The problem is not only rejection. It is unclear rejection, where the renter does not know what weakened the application.</p>
+        </section>
+        <section id="what-i-built" class="case-card mt-2">
+          <h2>What I built</h2>
+          <p>ScoreRent compares a renter profile with listing requirements and returns a 0–100 confidence score, a verdict, reasons, recommended actions and a score breakdown. It supports guest evaluations as well as authenticated flows with saved profiles and evaluation history.</p>
+        </section>
+        <section id="my-contribution" class="case-card mt-2">
+          <h2>My contribution</h2>
+          <ul class="clean"><li>Designed and implemented the rule-based evaluation engine.</li><li>Built FastAPI routes, Jinja2 templates and PostgreSQL persistence.</li><li>Implemented authentication, saved renter profiles and evaluation history.</li><li>Added pytest tests for scoring behaviour and GitHub Actions for CI.</li><li>Deployed the app to Render using PostgreSQL persistence.</li></ul>
+        </section>
+        <section id="technical-implementation" class="case-card mt-2">
+          <h2>Technical implementation</h2>
+          <p>The evaluator starts from a baseline score and applies deterministic adjustments based on affordability, documents, renter type, bursary support, guarantor availability and demand level. FastAPI handles routing and validation. PostgreSQL stores users, profiles and evaluations. Jinja2 templates provide the web interface and session-based authentication controls logged-in flows.</p>
+        </section>
+        <section id="engineering-decisions" class="case-card mt-2">
+          <h2>Engineering decisions</h2>
+          <ul class="clean"><li>Used rules instead of machine learning because the output needed to be explainable and trustworthy.</li><li>Kept score breakdowns visible so users can understand why a result changed.</li><li>Supported guest evaluations to reduce friction before sign-up.</li><li>Used automated tests to protect business logic from regressions.</li></ul>
+        </section>
+        <section id="testing-and-validation" class="case-card mt-2">
+          <h2>Testing and validation</h2>
+          <p>I wrote unit tests for the evaluator logic using pytest and configured GitHub Actions to run tests on push and pull request. I also manually validated sign-up, login, profile creation, evaluation saving and dashboard history flows.</p>
+        </section>
+        <section id="what-i-learned" class="case-card mt-2">
+          <h2>What I learned</h2>
+          <p>ScoreRent taught me how to build a project where technical correctness and user trust matter at the same time. I learned to keep system boundaries clear, test business logic carefully and make decision-support outputs understandable rather than opaque.</p>
+        </section>
+        <section id="future-improvements" class="case-card mt-2">
+          <h2>Future improvements</h2>
+          <p>Future improvements include refining scoring rules from feedback, strengthening validation, adding clearer onboarding, improving UI polish and expanding external data inputs where they would genuinely improve decision support.</p>
+        </section>
+        <section class="center mt-2">
+          <a class="btn" href="index.html">Back to projects</a>
+        </section>
       </div>
-
-
-
-      <div class="project-card">
-
-        <h4>Authentication</h4>
-
-        <p class="muted">
-          Users can sign up, log in, and log out. Logged-in flows unlock saved profiles and evaluation history.
-        </p>
-
-        <div class="pills">
-          <span>User authentication</span>
-          <span>Session management</span>
-        </div>
-
-      </div>
-
-
-
-      <div class="project-card">
-
-        <h4>Saved renter profile</h4>
-
-        <p class="muted">
-          Logged-in users can save profile data such as renter type, income or support, documents available, and student fields.
-        </p>
-
-        <div class="pills">
-          <span>Persistent storage</span>
-          <span>User data model</span>
-        </div>
-
-      </div>
-
-
-
-      <div class="project-card">
-
-        <h4>Dashboard + history</h4>
-
-        <p class="muted">
-          Logged-in users can view their last evaluation from the dashboard and browse saved evaluations from their history.
-        </p>
-
-        <div class="pills">
-          <span>Dashboard</span>
-          <span>Database persistence</span>
-          <span>History tracking</span>
-        </div>
-
-      </div>
-
-
     </div>
-
   </section>
-
-
-
-  <!-- SCORING ENGINE -->
-  <section>
-
-    <div class="card">
-
-      <h4>Explainable scoring</h4>
-
-      <p class="muted">
-        The scoring engine starts at 100 and applies rule-based adjustments. Results include reasons, recommended actions, and a full
-        breakdown showing score changes (before to after deltas per rule).
-      </p>
-
-      <div class="pills">
-        <span>Rule-based engine</span>
-        <span>Deterministic logic</span>
-        <span>Explainable output</span>
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ENGINEERING QUALITY -->
-  <section>
-
-    <div class="card">
-
-      <h4>Engineering quality</h4>
-
-      <p class="muted">
-        I wrote pytest unit tests for the evaluator logic to protect scoring behaviour. I also set up GitHub Actions CI to run tests on
-        push and pull request. The app is deployed on Render with PostgreSQL persistence.
-      </p>
-
-      <div class="pills">
-
-        <span>Unit testing</span>
-        <span>CI pipeline</span>
-        <span>PostgreSQL persistence</span>
-        <span>Production deployment</span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- WHAT I LEARNED (no pills needed) -->
-  <section>
-
-    <div class="card">
-
-      <h4>What I learned</h4>
-
-      <p class="muted">
-        Building ScoreRent taught me how to design system boundaries and keep behaviour predictable while iterating. It also strengthened how I
-        think about trust and clarity in decision-support systems, where users need to understand the output, not just receive it.
-      </p>
-
-      <p class="muted">
-        From an engineering perspective, I improved my testing discipline and learned how to maintain a live deployed project while continuing
-        to build features safely.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- BACK -->
-  <section class="center">
-
-    <a class="btn" href="index.html">
-      Back to Projects
-    </a>
-
-  </section>
-
-
 </main>
 
-
-
 <footer class="footer">
-
-  <div class="container footer-content">
-
-    <p>
-      © <span id="year"></span> Luthando Mbuyane
-    </p>
-
-    <p class="muted">
-      Cape Town, South Africa
-    </p>
-
+  <div class="footer-inner">
+    <p>© <span data-year></span> Luthando Mbuyane</p>
+    <p>Cape Town, South Africa · <a href="mailto:luthandombuyane1@outlook.com">luthandombuyane1@outlook.com</a></p>
   </div>
-
 </footer>
-
-
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
+<script type="module" src="../assets/js/main.js"></script>
 
 </body>
 </html>

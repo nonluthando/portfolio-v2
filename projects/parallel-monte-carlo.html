@@ -1,430 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <title>
-    Parallel Monte Carlo Optimisation | Project
-  </title>
-
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <link rel="stylesheet"
-        href="../assets/css/style.css">
-
+  <title>Parallel Monte Carlo Optimisation | Case Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body>
 
-<nav class="nav">
-
-  <div class="nav-container">
-
-    <a href="../index.html"
-       class="logo">
-      Luthando Mbuyane
-    </a>
-
-    <div class="nav-links">
-
-      <a href="../index.html">
-        Home
-      </a>
-
-      <a href="index.html"
-         class="active">
-        Projects
-      </a>
-
-      <a href="../about/index.html">
-        About
-      </a>
-
-      <a href="https://github.com/nonluthando"
-         target="_blank">
-        GitHub
-      </a>
-
-      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
-         download>
-        CV
-      </a>
-
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links" data-nav-links>
+      <a  href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a  href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle colour theme">Theme</button>
     </div>
+  </nav>
+</header>
 
-  </div>
-
-</nav>
-
-
-
-<main class="container">
-
-
-<!-- HEADER -->
-
-<section>
-
-  <div class="section-header">
-
-    <h2>
-      Parallel Monte Carlo Optimisation
-    </h2>
-
-    <p class="section-subtitle">
-      Parallelised a Monte Carlo optimisation algorithm using Java’s
-      Fork/Join framework to explore concurrency,
-      scalability, and performance trade-offs in
-      multi-core execution environments.
-    </p>
-
-  </div>
-
-
-  <div class="pills">
-
-    <span>Java</span>
-    <span>ForkJoinPool</span>
-    <span>Parallel computing</span>
-    <span>Concurrency</span>
-    <span>Performance benchmarking</span>
-    <span>Scalability</span>
-
-  </div>
-
-</section>
-
-
-
-<!-- OVERVIEW -->
-
-<section>
-
-  <div class="card">
-
-    <h4>Overview</h4>
-
-    <p class="muted">
-      This project explored how parallel execution affects optimisation
-      performance by transforming a serial Monte Carlo optimisation
-      algorithm into a parallel implementation using Java’s
-      Fork/Join framework.
-    </p>
-
-    <p class="muted">
-      The objective was not only to improve runtime performance,
-      but also to understand practical limits of concurrency,
-      scheduling overhead, workload partitioning,
-      and scalability.
-    </p>
-
-    <p class="muted">
-      The work focused on algorithm design,
-      correctness validation,
-      benchmarking,
-      and performance analysis across varying workloads.
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- PARALLEL DESIGN -->
-
-<section>
-
-  <div class="card">
-
-    <h4>Parallel Algorithm Design</h4>
-
-    <p class="muted">
-      A serial optimisation implementation was converted into
-      a parallel divide-and-conquer algorithm.
-    </p>
-
-    <p class="muted">
-      Independent search regions were recursively decomposed into
-      smaller tasks and executed concurrently using
-      shared-memory parallelism.
-    </p>
-
-    <p class="muted">
-      A configurable sequential cutoff threshold was introduced
-      to control task granularity and minimise scheduling overhead,
-      ensuring work was only parallelised when beneficial.
-    </p>
-
-    <div class="pills">
-
-      <span>Fork/Join framework</span>
-      <span>Recursive decomposition</span>
-      <span>Work stealing</span>
-      <span>Task granularity</span>
-      <span>Shared-memory execution</span>
-
+<main id="main">
+  <section class="case-hero">
+    <div class="container">
+      <p class="eyebrow">Case study</p>
+      <h1>Parallel Monte Carlo Optimisation</h1>
+      <p class="lead">Java Fork/Join project exploring concurrency, task scheduling, scalability and performance trade-offs.</p>
+      <div class="pills"><span>Java</span><span>ForkJoinPool</span><span>Concurrency</span><span>Parallel computing</span><span>Benchmarking</span></div>
     </div>
+  </section>
 
-  </div>
-
-</section>
-
-
-
-<!-- EXECUTION -->
-
-<section>
-
-  <div class="card">
-
-    <h4>
-      Execution and Scheduling
-    </h4>
-
-    <p class="muted">
-      Parallel execution was coordinated using a
-      ForkJoinPool which distributed tasks across
-      available processor cores using work-stealing scheduling.
-    </p>
-
-    <p class="muted">
-      Runtime measurements were collected consistently to support
-      fair comparisons between serial and parallel implementations.
-    </p>
-
-    <p class="muted">
-      This phase focused on understanding scheduling behaviour,
-      execution overhead,
-      and workload distribution.
-    </p>
-
-    <div class="pills">
-
-      <span>ForkJoinPool</span>
-      <span>Parallel scheduling</span>
-      <span>Execution timing</span>
-      <span>Work distribution</span>
-
+  <section class="section compact">
+    <div class="container case-layout">
+      <aside class="case-sidebar">
+        <div class="card">
+          <h3>On this page</h3>
+          <ul><li><a href="#problem">Problem</a></li><li><a href="#what-i-built">What I built</a></li><li><a href="#my-contribution">My contribution</a></li><li><a href="#technical-implementation">Technical implementation</a></li><li><a href="#engineering-decisions">Engineering decisions</a></li><li><a href="#testing-and-validation">Testing and validation</a></li><li><a href="#what-i-learned">What I learned</a></li><li><a href="#future-improvements">Future improvements</a></li></ul>
+        </div>
+      </aside>
+      <div class="case-content">
+        <section id="problem" class="case-card">
+          <h2>Problem</h2>
+          <p>A serial optimisation algorithm can become slow for larger search spaces. The goal was to understand when parallel execution improves performance and when coordination overhead reduces the benefit.</p>
+        </section>
+        <section id="what-i-built" class="case-card mt-2">
+          <h2>What I built</h2>
+          <p>I converted a serial Monte Carlo optimisation algorithm into a parallel implementation using Java’s Fork/Join framework. Independent search regions are decomposed into tasks and executed concurrently.</p>
+        </section>
+        <section id="my-contribution" class="case-card mt-2">
+          <h2>My contribution</h2>
+          <ul class="clean"><li>Implemented recursive task decomposition using ForkJoinPool.</li><li>Introduced a sequential cutoff threshold to control task granularity.</li><li>Compared serial and parallel outputs to validate correctness.</li><li>Measured runtime across different grid sizes, workload densities and CPU configurations.</li><li>Analysed where parallelism helped and where overhead limited performance.</li></ul>
+        </section>
+        <section id="technical-implementation" class="case-card mt-2">
+          <h2>Technical implementation</h2>
+          <p>The implementation uses divide-and-conquer decomposition. Each task processes a region of the search space, returns its best result and combines results with other tasks. ForkJoinPool uses work-stealing scheduling to balance available work across threads.</p>
+        </section>
+        <section id="engineering-decisions" class="case-card mt-2">
+          <h2>Engineering decisions</h2>
+          <ul class="clean"><li>Used Fork/Join because the problem can be split into independent subproblems.</li><li>Added a cutoff threshold because too many small tasks create overhead.</li><li>Used repeated runs and median timing to reduce JVM and scheduling noise.</li><li>Validated correctness before interpreting performance results.</li></ul>
+        </section>
+        <section id="testing-and-validation" class="case-card mt-2">
+          <h2>Testing and validation</h2>
+          <p>Correctness was checked by comparing parallel output against the serial baseline under identical inputs. Performance was benchmarked across varying workloads to observe scalability and overhead.</p>
+        </section>
+        <section id="what-i-learned" class="case-card mt-2">
+          <h2>What I learned</h2>
+          <p>This project taught me that parallelism is not automatically beneficial. It depends on workload size, independence, task granularity and coordination cost. It improved how I reason about performance claims.</p>
+        </section>
+        <section id="future-improvements" class="case-card mt-2">
+          <h2>Future improvements</h2>
+          <p>Future improvements include richer benchmark reporting, charts, alternative partition strategies and comparisons with other concurrency models.</p>
+        </section>
+        <section class="center mt-2">
+          <a class="btn" href="index.html">Back to projects</a>
+        </section>
+      </div>
     </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- VALIDATION -->
-
-<section>
-
-  <div class="card">
-
-    <h4>
-      Correctness Validation
-    </h4>
-
-    <p class="muted">
-      Correctness was validated by comparing outputs from the
-      parallel implementation against the serial baseline under
-      identical inputs.
-    </p>
-
-    <p class="muted">
-      Multiple runs were performed to verify repeatability and ensure
-      concurrency introduced no behavioural differences.
-    </p>
-
-    <p class="muted">
-      Known optimisation functions were used to validate expected
-      optimisation behaviour.
-    </p>
-
-    <div class="pills">
-
-      <span>Serial comparison</span>
-      <span>Repeatability testing</span>
-      <span>Correctness checks</span>
-      <span>Deterministic validation</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- BENCHMARKING -->
-
-<section>
-
-  <div class="card">
-
-    <h4>
-      Performance Benchmarking
-    </h4>
-
-    <p class="muted">
-      Serial and parallel performance were benchmarked across
-      different grid sizes,
-      workload densities,
-      and CPU configurations.
-    </p>
-
-    <p class="muted">
-      Median execution time was used to reduce JVM scheduling noise
-      and improve measurement reliability.
-    </p>
-
-    <p class="muted">
-      Benchmarks highlighted where parallel execution delivered
-      measurable improvements and where coordination overhead
-      reduced efficiency.
-    </p>
-
-    <div class="pills">
-
-      <span>Runtime comparison</span>
-      <span>Scalability testing</span>
-      <span>Performance measurement</span>
-      <span>Benchmark analysis</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- FINDINGS -->
-
-<section>
-
-  <div class="card">
-
-    <h4>
-      Key Findings
-    </h4>
-
-    <p class="muted">
-      Parallel execution improved performance for larger workloads,
-      particularly when sufficient independent computation existed
-      to justify scheduling overhead.
-    </p>
-
-    <p class="muted">
-      Speedup remained constrained by sequential components,
-      coordination costs,
-      and task management overhead.
-    </p>
-
-    <p class="muted">
-      The project demonstrated that parallelism is not automatically
-      beneficial and depends heavily on workload characteristics
-      and task granularity.
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- LEARNING -->
-
-<section>
-
-  <div class="card">
-
-    <h4>
-      What I Learned
-    </h4>
-
-    <p class="muted">
-      This project strengthened my understanding of concurrency,
-      task scheduling,
-      work-stealing execution,
-      and scalability limits in parallel systems.
-    </p>
-
-    <p class="muted">
-      It also improved how I think about correctness validation,
-      benchmarking methodology,
-      and balancing performance gains against coordination overhead.
-    </p>
-
-    <div class="pills">
-
-      <span>Concurrency</span>
-      <span>Parallel algorithms</span>
-      <span>Performance engineering</span>
-      <span>Scalability</span>
-      <span>Benchmarking</span>
-      <span>Systems thinking</span>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- BACK -->
-
-<section class="center">
-
-  <a class="btn"
-     href="index.html">
-
-    Back to Projects
-
-  </a>
-
-</section>
-
-
+  </section>
 </main>
 
-
-
 <footer class="footer">
-
-  <div class="footer-content">
-
-    <p>
-
-      © <span id="year"></span>
-      Luthando Mbuyane
-
-    </p>
-
-    <p class="muted">
-      Cape Town, South Africa
-    </p>
-
+  <div class="footer-inner">
+    <p>© <span data-year></span> Luthando Mbuyane</p>
+    <p>Cape Town, South Africa · <a href="mailto:luthandombuyane1@outlook.com">luthandombuyane1@outlook.com</a></p>
   </div>
-
 </footer>
-
-
-
-<script>
-
-document.getElementById(
-"year"
-).textContent =
-new Date().getFullYear();
-
-</script>
-
-
+<script type="module" src="../assets/js/main.js"></script>
 
 </body>
-
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nonluthando.github.io/portfolio-v2/sitemap.xml

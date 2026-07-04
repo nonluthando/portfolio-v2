@@ -1,380 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Projects | Luthando Mbuyane</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-
-    <div class="nav-container">
-
-      <a href="../index.html" class="logo">
-        Luthando Mbuyane
-      </a>
-
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a class="active" href="index.html">Projects</a>
-        <a href="../about/index.html">About</a>
-
-        <a
-          href="https://github.com/nonluthando"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
-          download
-        >
-          CV
-        </a>
-
-      </div>
-
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <button class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <div class="nav-links" id="nav-links" data-nav-links>
+      <a  href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a  href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle colour theme">Theme</button>
     </div>
-
   </nav>
-
-
-
-  <!-- MAIN -->
-  <main class="container">
-
-    <!-- HEADER -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Projects</h2>
-
-        <p>
-          Selected work demonstrating backend engineering, systems development,
-          concurrency, human-computer interaction, and data-focused applications.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- SOFTWARE ENGINEERING PROJECTS -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Software Engineering Projects</h2>
-
-        <p>
-          Backend systems, deployment, concurrency, and full-stack engineering work.
-        </p>
-
-      </div>
-
-
-
-      <div class="grid two">
-
-
-        <!-- ScoreRent -->
-        <div class="project-card">
-
-          <h3>ScoreRent</h3>
-
-          <p class="muted">
-            Rental decision-support platform with explainable scoring,
-            authentication flows, persistence, testing, and production deployment.
-          </p>
-
-          <div class="pills">
-            <span>Python</span>
-            <span>FastAPI</span>
-            <span>PostgreSQL</span>
-            <span>pytest</span>
-            <span>GitHub Actions</span>
-            <span>Render</span>
-          </div>
-
-          <div class="project-links">
-            <a
-              href="https://scorerent.onrender.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live
-            </a>
-
-            <a href="scorerent.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-
-        <!-- Parallel Monte Carlo -->
-        <div class="project-card">
-
-          <h3>Parallel Monte Carlo Optimisation</h3>
-
-          <p class="muted">
-            Parallelised a Monte Carlo optimisation algorithm using Java’s
-            Fork/Join framework and benchmarked scalability across workloads.
-          </p>
-
-          <div class="pills">
-            <span>Java</span>
-            <span>Concurrency</span>
-            <span>ForkJoinPool</span>
-            <span>Parallel computing</span>
-          </div>
-
-          <div class="project-links">
-            <a href="parallel-monte-carlo.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-
-        <!-- SeaClear -->
-        <div class="project-card">
-
-          <h3>SeaClear</h3>
-
-          <p class="muted">
-            Human-computer interaction capstone focused on usability,
-            accessibility, and environmental data access using agile
-            development practices.
-          </p>
-
-          <div class="pills">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>Agile</span>
-            <span>HCI</span>
-            <span>Usability Testing</span>
-          </div>
-
-          <div class="project-links">
-            <a href="seaclear.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-
-        <!-- NetworkComm -->
-        <div class="project-card">
-
-          <h3>NetworkComm</h3>
-
-          <p class="muted">
-            TCP client-server messaging application demonstrating networking,
-            protocol design, concurrency, and structured communication flows.
-          </p>
-
-          <div class="pills">
-            <span>Python</span>
-            <span>TCP</span>
-            <span>Sockets</span>
-            <span>Threading</span>
-            <span>Protocol Design</span>
-          </div>
-
-          <div class="project-links">
-            <a href="networkcomm.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-
-        <!-- IncidentDesk -->
-        <div class="project-card">
-
-          <h3>IncidentDesk</h3>
-
-          <p class="muted">
-            CRUD-focused incident management system built to practise validation,
-            persistence, and maintainable backend architecture patterns.
-          </p>
-
-          <div class="pills">
-            <span>FastAPI</span>
-            <span>SQLite</span>
-            <span>Jinja2</span>
-            <span>CRUD</span>
-            <span>Validation</span>
-          </div>
-
-          <div class="project-links">
-            <a href="incidentdesk.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-
-        <!-- HealthSync -->
-        <div class="project-card">
-
-          <h3>HealthSync</h3>
-
-          <p class="muted">
-            Hackathon prototype designed to improve access to healthcare services
-            through guided navigation, queue visibility, and user-centred flows.
-          </p>
-
-          <div class="pills">
-            <span>Rapid Prototyping</span>
-            <span>User-Centred Design</span>
-            <span>Social Impact</span>
-            <span>Hackathon</span>
-          </div>
-
-          <div class="project-links">
-            <a href="healthsync.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- DATA PROJECTS -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Data & Analytics Projects</h2>
-
-        <p>
-          Data preparation, cleaning, transformation, and analytics-oriented workflows.
-        </p>
-
-      </div>
-
-
-
-      <div class="grid two">
-
-
-        <!-- CSV Pipeline -->
-        <div class="project-card">
-
-          <h3>CSV Data Cleaning Pipeline</h3>
-
-          <p class="muted">
-            Modular CSV preprocessing pipeline for cleaning, validating,
-            standardising, and converting raw datasets into analysis-ready Excel files.
-          </p>
-
-          <div class="pills">
-            <span>Python</span>
-            <span>Pandas</span>
-            <span>Data Cleaning</span>
-            <span>Validation</span>
-            <span>Excel Export</span>
-          </div>
-
-          <div class="project-links">
-            <a href="csv-pipeline.html">
-              Details
-            </a>
-          </div>
-
-        </div>
-
-
-
-        <!-- Future Data Project -->
-        <div class="project-card">
-
-          <h3>Data Exploration Projects</h3>
-
-          <p class="muted">
-            Ongoing experimentation with analytics workflows, data processing,
-            and scalable query tooling including SQL and DuckDB exploration.
-          </p>
-
-          <div class="pills">
-            <span>SQL</span>
-            <span>DuckDB</span>
-            <span>Analytics</span>
-            <span>Data Engineering</span>
-          </div>
-
-          <div class="project-links">
-            <a href="#">
-              Coming Soon
-            </a>
-          </div>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- CTA -->
-    <section class="center">
-
-      <a class="btn" href="../index.html">
-        Back to Home
-      </a>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-
-    <div class="container footer-content">
-
-      <p>
-        © 2026 Luthando Mbuyane
-      </p>
-
-      <p class="muted">
-        Cape Town, South Africa
-      </p>
-
+</header>
+
+<main id="main">
+  <section class="case-hero">
+    <div class="container">
+      <p class="eyebrow">Projects</p>
+      <h1>Backend, systems, HCI and data projects.</h1>
+      <p class="lead">Each case study shows the problem, what I built, my contribution, technical implementation, decisions, validation and future improvements.</p>
     </div>
+  </section>
 
-  </footer>
+  <section class="section compact">
+    <div class="container">
+      <div class="grid two">
+        <article class="project-card flagship">
+          <p class="eyebrow">Flagship</p>
+          <h2>ScoreRent</h2>
+          <p class="muted">Rental decision-support web app with explainable scoring, saved profiles, evaluation history, authentication, PostgreSQL persistence, tests, CI and deployment.</p>
+          <div class="pills"><span>FastAPI</span><span>PostgreSQL</span><span>Jinja2</span><span>pytest</span><span>Render</span></div>
+          <div class="button-row"><a class="btn primary" href="scorerent.html">Read case study</a><a class="btn" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a></div>
+        </article>
+        <article class="project-card">
+          <h3>SeaClear</h3>
+          <p class="muted">HCI system improving access to beach water quality information.</p>
+          <div class="pills"><span>Flask</span><span>HCI</span><span>Accessibility</span></div>
+          <a class="btn" href="seaclear.html">Read case study</a>
+        </article>
+        <article class="project-card">
+          <h3>NetworkComm</h3>
+          <p class="muted">TCP messaging app demonstrating sockets, threading and protocol design.</p>
+          <div class="pills"><span>Python</span><span>TCP</span><span>Threading</span></div>
+          <a class="btn" href="networkcomm.html">Read case study</a>
+        </article>
+        <article class="project-card">
+          <h3>Parallel Monte Carlo</h3>
+          <p class="muted">Java Fork/Join optimisation project exploring concurrency and scalability.</p>
+          <div class="pills"><span>Java</span><span>ForkJoinPool</span><span>Benchmarking</span></div>
+          <a class="btn" href="parallel-monte-carlo.html">Read case study</a>
+        </article>
+        <article class="project-card">
+          <h3>IncidentDesk</h3>
+          <p class="muted">CRUD-focused incident tracker for backend structure, validation and persistence practice.</p>
+          <div class="pills"><span>FastAPI</span><span>SQLite</span><span>CRUD</span></div>
+          <a class="btn" href="incidentdesk.html">Read case study</a>
+        </article>
+        <article class="project-card">
+          <h3>CSV Pipeline</h3>
+          <p class="muted">Python preprocessing pipeline for cleaning, validating and converting inconsistent datasets.</p>
+          <div class="pills"><span>Python</span><span>Pandas</span><span>OpenPyXL</span></div>
+          <a class="btn" href="csv-pipeline.html">Read case study</a>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© <span data-year></span> Luthando Mbuyane</p>
+    <p>Cape Town, South Africa · <a href="mailto:luthandombuyane1@outlook.com">luthandombuyane1@outlook.com</a></p>
+  </div>
+</footer>
+<script type="module" src="../assets/js/main.js"></script>
 
 </body>
 </html>
