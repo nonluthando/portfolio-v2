@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ScoreRent | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="ScoreRent is an explainable rental decision-support platform built with FastAPI, PostgreSQL, automated testing and CI/CD."
+  >
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="../index.html" class="logo">Luthando Mbuyane</a>
+
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a class="active" href="index.html">Projects</a>
+        <a href="../about/index.html">About</a>
+        <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <section class="project-hero">
+      <div class="project-hero-main">
+        <p class="eyebrow">Live Project</p>
+        <h1>ScoreRent</h1>
+
+        <p class="hero-role">
+          An explainable rental decision-support platform for renters deciding where to spend non-refundable application fees.
+        </p>
+
+        <p class="hero-description">
+          ScoreRent compares a renter profile with listing requirements and returns a confidence score,
+          verdict, reasons, recommended actions and a transparent scoring breakdown.
+        </p>
+
+        <div class="buttons">
+          <a class="btn primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open Live App</a>
+        </div>
+      </div>
+
+      <div class="project-hero-side">
+        <h3>Implemented Stack</h3>
+        <div class="fact-list">
+          <p><strong>Backend:</strong> Python and FastAPI</p>
+          <p><strong>Data:</strong> PostgreSQL</p>
+          <p><strong>Quality:</strong> pytest and GitHub Actions</p>
+          <p><strong>Delivery:</strong> Render</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Why I Built It</h2>
+        <p>The idea came from a problem I had seen around me.</p>
+      </div>
+
+      <div class="card">
+        <p>
+          I built ScoreRent after seeing people move from university residence into private rentals.
+          Applicants were paying fees without knowing whether affordability, missing documents,
+          guarantor requirements, bursary coverage or demand made an application unrealistic.
+        </p>
+
+        <p>
+          I wanted to make that decision clearer before money was spent.
+          The result shows what strengthens or weakens an application and what the renter can realistically improve.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Implemented Product Flows</h2>
+        <p>These features are available in the deployed application.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="project-card">
+          <h3>Explainable Evaluation</h3>
+          <p class="muted">
+            Guest and authenticated users receive a score, verdict, confidence level,
+            reasons, recommended actions and a rule-by-rule scoring breakdown.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Authentication and Profiles</h3>
+          <p class="muted">
+            Users can sign up, sign in, save renter information and reuse profile data across evaluations.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Evaluation History</h3>
+          <p class="muted">
+            PostgreSQL stores users, profiles and past evaluations so results can be revisited later.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Different Renter Contexts</h3>
+          <p class="muted">
+            The rules account for workers, students, bursary support, guarantors,
+            affordability, required documents, deposits and listing demand.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Engineering Decisions</h2>
+        <p>The score is useful because its behaviour can be understood and tested.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="project-card">
+          <h3>Deterministic Scoring</h3>
+          <p class="muted">
+            The evaluator uses explicit rules. The same inputs produce the same result,
+            and every score adjustment can be traced.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Confidence, Not Probability</h3>
+          <p class="muted">
+            I call the result a confidence score because the available information does not support a reliable acceptance probability.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Automated Tests</h3>
+          <p class="muted">
+            pytest coverage protects behaviour across affordability, documents, student support,
+            guarantor logic, verdicts, reasons and recommended actions.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>CI/CD and Deployment</h3>
+          <p class="muted">
+            GitHub Actions runs the test suite on repository changes.
+            The application is deployed on Render with PostgreSQL persistence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <h2>Planned Evolution</h2>
+        <p>Future work will build on the existing decision-support logic.</p>
+      </div>
+
+      <div class="grid two">
+        <div class="project-card">
+          <h3>Grounded Explanations</h3>
+          <p class="muted">
+            A future assistant could explain results in conversational language and answer rental questions
+            using trusted policy and guidance sources.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Dynamic Re-evaluation</h3>
+          <p class="muted">
+            Saved listings could be re-evaluated when a user changes income, documents,
+            bursary information, guarantor details or other profile evidence.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Change Alerts</h3>
+          <p class="muted">
+            Users could be notified when a profile change makes a saved application meaningfully stronger or weaker.
+          </p>
+        </div>
+
+        <div class="project-card">
+          <h3>Current-Profile Comparisons</h3>
+          <p class="muted">
+            Listing comparisons could use the renter's latest profile rather than an older snapshot.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header"><h2>What I Learned</h2></div>
+
+      <div class="card">
+        <p>
+          ScoreRent strengthened how I think about domain rules, system boundaries, regression testing,
+          database-backed user flows and keeping behaviour predictable while a live project changes.
+        </p>
+
+        <p>
+          It also reinforced something I care about in decision-support software:
+          users should be able to understand a result instead of being asked to trust a number without context.
+        </p>
+      </div>
+    </section>
+
+    <section class="center">
+      <a class="btn" href="index.html">Back to Projects</a>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>© 2026 Luthando Mbuyane</p>
+      <p class="muted">South Africa · Open to relocation</p>
+    </div>
+  </footer>
+
+</body>
+</html>
