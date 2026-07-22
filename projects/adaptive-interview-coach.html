@@ -2,241 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Adaptive Interview Preparation Coach | Luthando Mbuyane</title>
+  <title>ViewCoach | Luthando Mbuyane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta
-    name="description"
-    content="Product decisions, architecture and roadmap for Luthando Mbuyane's Adaptive Interview Preparation Coach."
-  >
+  <meta name="description" content="ViewCoach, a live Django interview preparation platform built by Luthando Mbuyane.">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body>
+<nav class="nav"><div class="nav-container"><a href="../index.html" class="logo">Luthando Mbuyane</a><div class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Projects</a><a href="../about/index.html">About</a><a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a></div></div></nav>
+<main class="container">
+  <section class="project-hero">
+    <div class="project-hero-main"><p class="eyebrow">Live Product</p><h1>ViewCoach</h1><p class="hero-role">A structured interview-preparation platform for creating, importing and practising technical, behavioural and repository-debugging material.</p><p class="hero-description">ViewCoach is designed around a larger product question: “Given the interview I have coming up, what should I practise now?” The live version establishes the production foundation and question library needed before planning and AI features are added.</p><div class="buttons"><a class="btn primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open Live App</a><a class="btn" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">View Repository</a></div></div>
+    <div class="project-hero-side"><h3>Implemented Stack</h3><div class="fact-list"><p><strong>Core:</strong> Django 5.2 modular monolith</p><p><strong>Data:</strong> PostgreSQL in local, test and production environments</p><p><strong>Quality:</strong> pytest, Ruff and GitHub Actions</p><p><strong>Deployment:</strong> Render</p></div></div>
+  </section>
 
-  <nav class="nav">
-    <div class="nav-container">
-      <a href="../index.html" class="logo">Luthando Mbuyane</a>
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a class="active" href="index.html">Projects</a>
-        <a href="../about/index.html">About</a>
-        <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
-      </div>
-    </div>
-  </nav>
+  <section><div class="card"><h3>The Product Decision</h3><p>Most interview-preparation tools help users store material. ViewCoach starts from a different problem: preparation already requires a lot of decisions, and choosing what to study each day adds more friction before the work begins.</p><p>The current live version focuses on structured material and reliable workflows. Spaced repetition, review scheduling, the Focus Engine, goals and AI are intentionally not claimed as implemented yet.</p></div></section>
 
-  <main class="container">
+  <section><div class="section-header"><h2>What Is Live</h2><p>The deployed product currently contains Milestones 0, 1 and 1.1.</p></div><div class="grid two">
+    <div class="project-card"><h3>Production Foundation</h3><p class="muted">Custom email-based users, registration, login, logout, protected dashboard, PostgreSQL environments, a database-aware health endpoint, CI and production settings.</p></div>
+    <div class="project-card"><h3>Structured Question Library</h3><p class="muted">Technical, behavioural and repository-debugging question types with type-specific create, edit and detail experiences.</p></div>
+    <div class="project-card"><h3>Private Study Workflows</h3><p class="muted">User-owned libraries, authorization rules, search and filters, progressive technical reveals, debugging diagnosis reveals and dashboard summaries.</p></div>
+    <div class="project-card"><h3>Bulk Import and Review</h3><p class="muted">Imports from pasted text, TXT, Markdown, CSV, DOCX and text-based PDFs, with resumable review batches, duplicate detection, editable titles, type overrides and transactional creation.</p></div>
+  </div></section>
 
-    <section class="project-hero">
-      <div class="project-hero-main">
-        <p class="eyebrow">In Development</p>
-        <h1>Adaptive Interview Preparation Coach</h1>
-        <p class="hero-role">
-          An interview-prep system built to answer: “Given the interview I have coming up, what should I practise now?”
-        </p>
-        <p class="hero-description">
-          The application is designed for early-career software engineers preparing for online assessments,
-          technical interviews, behavioural interviews and repository-debugging exercises.
-        </p>
-      </div>
+  <section><div class="section-header"><h2>Architecture Decisions</h2><p>The architecture is intentionally simple enough to understand and strong enough to grow.</p></div><div class="grid two">
+    <div class="project-card"><h3>Modular Monolith</h3><p class="muted">Django apps provide domain boundaries without introducing distributed-system complexity the project does not need.</p></div>
+    <div class="project-card"><h3>PostgreSQL From the Start</h3><p class="muted">Local, test and production environments use PostgreSQL so development behaviour matches production more closely.</p></div>
+    <div class="project-card"><h3>Typed Question Models</h3><p class="muted">A concrete base question with typed child models allows each interview format to store the information it actually needs.</p></div>
+    <div class="project-card"><h3>Deterministic Before AI</h3><p class="muted">Structured product logic remains separate from future AI behaviour so planning and progress can stay inspectable and testable.</p></div>
+  </div></section>
 
-      <div class="project-hero-side">
-        <h3>Planned Architecture</h3>
-        <div class="fact-list">
-          <p><strong>Core:</strong> Modular Django monolith</p>
-          <p><strong>Data:</strong> PostgreSQL and relational learning history</p>
-          <p><strong>Planning:</strong> Deterministic review and recommendation rules</p>
-          <p><strong>Later:</strong> Grounded retrieval with citations and evaluation</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="card">
-        <h3>The Product Decision</h3>
-        <p>
-          Interview preparation already involves a large amount of material.
-          Choosing what to study each day adds another decision before the work even starts.
-        </p>
-        <p>
-          This project aims to reduce that load. It will use the interview stage, dates, available time,
-          curriculum coverage, weak areas and review history to choose useful work for the user.
-        </p>
-        <p>
-          The planning and review features will work without an LLM.
-          Grounded retrieval comes later, once the structured product is useful on its own.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2>Current Milestone</h2>
-        <p>Milestone 1 creates the question library and the domain model needed by later features.</p>
-      </div>
-
-      <div class="grid two">
-        <div class="project-card">
-          <h3>Question Model</h3>
-          <p class="muted">
-            A shared Question model with separate technical, behavioural and debugging details.
-            Each question type can store the information that actually matters for that format.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>Type-Specific Workflows</h3>
-          <p class="muted">
-            Create, edit and detail views will change according to the question type
-            instead of forcing every question into the same form.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>Study Experience</h3>
-          <p class="muted">
-            Search, filtering and progressive reveal will support active recall
-            instead of showing the full answer immediately.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>Engineering Foundation</h3>
-          <p class="muted">
-            Authentication, ownership rules, Django Admin, migrations and automated tests
-            are part of the first milestone rather than cleanup work for later.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2>Architecture Principles</h2>
-        <p>The architecture should support growth without making the first version harder to understand.</p>
-      </div>
-
-      <div class="grid two">
-        <div class="project-card">
-          <h3>Modular Monolith First</h3>
-          <p class="muted">
-            Django apps provide clear domain boundaries without introducing distributed-system complexity
-            that the project does not need yet.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>Deterministic Planning</h3>
-          <p class="muted">
-            Review rules, curriculum coverage and study recommendations stay visible and testable.
-            The system should be able to explain why an item was selected.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>Relational Learning History</h3>
-          <p class="muted">
-            Progress, mistakes, reviews and planning inputs belong in PostgreSQL.
-            These are structured records that need clear relationships and reliable queries.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>Bounded Retrieval</h3>
-          <p class="muted">
-            Semantic retrieval will be used for notes, worked examples, debugging guides and prior mistakes.
-            It will include citations, evaluation and a fallback when the available context is weak.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2>Why This Project Fits My Background</h2>
-        <p>The product brings together the areas I have studied and the kind of engineering work I want to do.</p>
-      </div>
-
-      <div class="grid three">
-        <div class="card">
-          <h3>Software Engineering</h3>
-          <p>
-            Domain modelling, modular architecture, authentication, ownership,
-            testing, maintainability and deployment-minded decisions.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Psychology and HCI</h3>
-          <p>
-            Cognitive load, active recall, meaningful feedback and the way people prepare under pressure.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Statistics and Evaluation</h3>
-          <p>
-            Readiness needs evidence. Retrieval quality also needs clear criteria,
-            measurable behaviour and honest handling of uncertainty.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-header">
-        <h2>Roadmap</h2>
-        <p>Each stage should be useful and testable before the next one is added.</p>
-      </div>
-
-      <div class="grid two">
-        <div class="project-card">
-          <h3>1. Structured Question Library</h3>
-          <p class="muted">
-            Technical, behavioural and debugging question types with ownership,
-            search, filtering, progressive reveal, admin support and tests.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>2. Practice and Review History</h3>
-          <p class="muted">
-            Practice sessions, self-assessment, mistakes, confidence,
-            review history and records of what the user has covered.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>3. Study Planning</h3>
-          <p class="muted">
-            A deterministic planner using interview context, curriculum coverage,
-            weak areas, available time and previous reviews.
-          </p>
-        </div>
-
-        <div class="project-card">
-          <h3>4. Grounded Retrieval</h3>
-          <p class="muted">
-            Content ingestion, semantic search, cited explanations,
-            personalised retrieval, evaluation and safe fallbacks.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="center">
-      <a class="btn" href="index.html">Back to Projects</a>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© 2026 Luthando Mbuyane</p>
-      <p class="muted">South Africa · Open to relocation</p>
-    </div>
-  </footer>
-
+  <section><div class="section-header"><h2>Next Milestones</h2><p>These are future features, not part of the current live claim.</p></div><div class="grid two">
+    <div class="project-card"><h3>Practice and Review History</h3><p class="muted">Practice records, self-assessment, mistakes, confidence and review history.</p></div>
+    <div class="project-card"><h3>Focus Engine</h3><p class="muted">Deterministic recommendations based on interview context, curriculum coverage, weak areas, available time and previous reviews.</p></div>
+    <div class="project-card"><h3>Goals and Scheduling</h3><p class="muted">Interview goals, target dates, availability and readiness evidence.</p></div>
+    <div class="project-card"><h3>Grounded AI Support</h3><p class="muted">Later retrieval and explanation features with citations, evaluation and safe fallbacks.</p></div>
+  </div></section>
+  <section class="center"><a class="btn" href="index.html">Back to Projects</a></section>
+</main>
+<footer class="footer"><div class="container footer-content"><p>© 2026 Luthando Mbuyane</p><p class="muted">South Africa · Open to relocation</p></div></footer>
 </body>
 </html>
