@@ -2,45 +2,177 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Projects | Luthando Mbuyane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Backend, NLP, systems, HCI and data projects by Luthando Mbuyane.">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta
+    name="description"
+    content="Software engineering, backend, data, NLP, systems and HCI projects by Luthando Mbuyane."
+  >
+  <title>Projects | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/clean-style.css">
 </head>
 <body>
-<nav class="nav"><div class="nav-container"><a href="../index.html" class="logo">Luthando Mbuyane</a><div class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Projects</a><a href="../about/index.html">About</a><a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a></div></div></nav>
-<main class="container">
-  <section class="project-hero">
-    <div class="project-hero-main"><p class="eyebrow">Portfolio</p><h1>Projects</h1><p class="hero-role">Backend, NLP, systems, HCI and data work built around problems I wanted to understand better.</p><p class="hero-description">Each project page covers the problem, the approach, the engineering decisions and what I learned.</p></div>
-    <div class="project-hero-side"><h3>Core Strengths</h3><div class="fact-list"><p><strong>Backend:</strong> Django, FastAPI, Flask, Laravel and PostgreSQL</p><p><strong>NLP:</strong> spaCy NER, data preparation and inference integration</p><p><strong>Delivery:</strong> Testing, CI/CD, deployment and debugging</p><p><strong>Degree:</strong> BSc Computer Science and Psychology</p><p><strong>Additional coursework:</strong> Applied Statistics</p></div></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-intro container">
+    <p class="eyebrow">Project directory</p>
+    <h1>Software built around real product and engineering questions.</h1>
+    <p>
+      The strongest projects combine backend logic, structured data, tests and deployment.
+      Supporting work covers concurrency, networking, data preparation and human-centred design.
+    </p>
   </section>
 
-  <section>
-    <div class="section-header"><h2>Live Products</h2><p>My strongest evidence for graduate software engineering, backend and data-oriented roles.</p></div>
-    <div class="grid two">
-      <div class="project-card">
-        <p class="eyebrow">Live · Current Project</p><h3>ViewCoach</h3>
-        <p class="muted">A Django interview-preparation platform with private user-owned question libraries, technical, behavioural and repository-debugging question types, progressive reveal, search and filters, and resumable bulk imports from multiple document formats.</p>
-        <div class="pills"><span>Django 5.2</span><span>PostgreSQL</span><span>pytest</span><span>Ruff</span><span>GitHub Actions</span><span>Render</span></div>
-        <div class="project-links"><a href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">Repository</a><a href="adaptive-interview-coach.html">Details</a></div>
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Live products</p>
+        <h2>End-to-end builds.</h2>
       </div>
-      <div class="project-card">
-        <p class="eyebrow">Live</p><h3>ScoreRent</h3>
-        <p class="muted">A rental decision-support application with explainable scoring, authentication, user profiles, saved evaluations, PostgreSQL persistence, automated tests, CI/CD and deployment.</p>
-        <div class="pills"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>pytest</span><span>GitHub Actions</span><span>Render</span></div>
-        <div class="project-links"><a href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="scorerent.html">Details</a></div>
+      <p>Public applications with working deployments, repositories and documented engineering decisions.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-tile featured-tile">
+        <div class="tile-topline">
+          <span class="status live">Live</span>
+          <span class="tile-stack">Django · PostgreSQL</span>
+        </div>
+        <h3>ViewCoach</h3>
+        <p>
+          Structured interview-preparation platform with private libraries, polymorphic question workflows,
+          bulk document import, validation, automated tests and production deployment.
+        </p>
+        <div class="tag-list">
+          <span>Django 5.2</span>
+          <span>PostgreSQL</span>
+          <span>pytest</span>
+          <span>GitHub Actions</span>
+          <span>Render</span>
+        </div>
+        <div class="actions compact">
+          <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+          <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button text-button" href="adaptive-interview-coach.html">Case study</a>
+        </div>
+      </article>
+
+      <article class="project-tile featured-tile">
+        <div class="tile-topline">
+          <span class="status live">Live</span>
+          <span class="tile-stack">FastAPI · PostgreSQL</span>
+        </div>
+        <h3>ScoreRent</h3>
+        <p>
+          Explainable rental decision-support platform with deterministic scoring, authentication,
+          saved evaluations, PostgreSQL persistence, tests, CI and deployment.
+        </p>
+        <div class="tag-list">
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>pytest</span>
+          <span>GitHub Actions</span>
+          <span>Render</span>
+        </div>
+        <div class="actions compact">
+          <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+          <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button text-button" href="scorerent.html">Case study</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Software engineering and systems</p>
+          <h2>Supporting technical work.</h2>
+        </div>
+        <p>Projects demonstrating networking, concurrency, backend structure and collaborative product delivery.</p>
+      </div>
+
+      <div class="project-grid three-column">
+        <article class="project-tile">
+          <p class="tile-stack">Python · TCP · Threading</p>
+          <h3>NetworkComm</h3>
+          <p>A TCP client-server messaging application covering protocol design, connection handling and concurrent clients.</p>
+          <a class="inline-link" href="networkcomm.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">Java · Fork/Join</p>
+          <h3>Parallel Monte Carlo</h3>
+          <p>A parallel optimisation implementation with serial and parallel performance comparisons across workloads.</p>
+          <a class="inline-link" href="parallel-monte-carlo.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">Flask · MongoDB · HCI</p>
+          <h3>SeaClear</h3>
+          <p>A collaborative capstone improving access to beach water-quality information through maps and community workflows.</p>
+          <a class="inline-link" href="seaclear.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">FastAPI · SQLite</p>
+          <h3>IncidentDesk</h3>
+          <p>An incident-management system focused on CRUD workflows, validation, filtering and maintainable backend structure.</p>
+          <a class="inline-link" href="incidentdesk.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">Product design · Prototype</p>
+          <h3>HealthSync</h3>
+          <p>A healthcare-access prototype using guided navigation and clearer service flows.</p>
+          <a class="inline-link" href="healthsync.html">View project →</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section><div class="section-header"><h2>Software Engineering and Systems</h2><p>Projects covering networking, concurrency, backend structure and user-centred design.</p></div><div class="grid two">
-    <div class="project-card"><h3>NetworkComm</h3><p class="muted">A TCP client-server messaging application covering networking, multithreading, protocol design and concurrent client communication.</p><div class="pills"><span>Python</span><span>TCP</span><span>Sockets</span><span>Threading</span></div><div class="project-links"><a href="networkcomm.html">Details</a></div></div>
-    <div class="project-card"><h3>Parallel Monte Carlo Optimisation</h3><p class="muted">Parallelised a Monte Carlo optimisation algorithm using Java's Fork/Join framework and compared serial and parallel performance.</p><div class="pills"><span>Java</span><span>ForkJoinPool</span><span>Concurrency</span></div><div class="project-links"><a href="parallel-monte-carlo.html">Details</a></div></div>
-    <div class="project-card"><h3>SeaClear</h3><p class="muted">An HCI capstone application for Cape Town beach water-quality data, with map-based discovery, reporting, admin workflows and usability testing.</p><div class="pills"><span>Python</span><span>Flask</span><span>MongoDB</span><span>HCI</span></div><div class="project-links"><a href="seaclear.html">Details</a></div></div>
-    <div class="project-card"><h3>CSV Data Cleaning Pipeline</h3><p class="muted">A modular preprocessing pipeline for cleaning, validating and transforming inconsistent CSV datasets into analysis-ready outputs.</p><div class="pills"><span>Python</span><span>Pandas</span><span>Validation</span></div><div class="project-links"><a href="csv-pipeline.html">Details</a></div></div>
-  </div></section>
-  <section class="center"><a class="btn" href="../index.html">Back to Home</a></section>
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Data work</p>
+        <h2>Preparation and validation.</h2>
+      </div>
+      <p>Projects focused on turning inconsistent inputs into reliable, analysis-ready outputs.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-tile">
+        <p class="tile-stack">Python · Pandas</p>
+        <h3>CSV Data Cleaning Pipeline</h3>
+        <p>
+          A modular pipeline for cleaning, validating, standardising and transforming inconsistent CSV data,
+          with analysis-ready and Excel outputs.
+        </p>
+        <a class="inline-link" href="csv-pipeline.html">View project →</a>
+      </article>
+    </div>
+  </section>
 </main>
-<footer class="footer"><div class="container footer-content"><p>© 2026 Luthando Mbuyane</p><p class="muted">South Africa · Open to relocation</p></div></footer>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
 </body>
 </html>

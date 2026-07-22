@@ -2,87 +2,252 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Luthando Mbuyane | Graduate Software Engineer | Backend, NLP and Data</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Luthando Mbuyane, a graduate software engineer with experience in backend development, NLP and data-oriented systems.">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta
+    name="description"
+    content="Portfolio of Luthando Mbuyane, a graduate software engineer building backend, data-driven and AI-enabled products."
+  >
+  <title>Luthando Mbuyane | Graduate Software Engineer</title>
+  <link rel="stylesheet" href="assets/css/clean-style.css">
 </head>
 <body>
-<nav class="nav">
-  <div class="nav-container">
-    <a href="index.html" class="logo">Luthando Mbuyane</a>
-    <div class="nav-links">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
       <a class="active" href="index.html">Home</a>
       <a href="projects/index.html">Projects</a>
       <a href="about/index.html">About</a>
       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
-    </div>
+    </nav>
   </div>
-</nav>
-<main class="container">
-  <section class="hero">
-    <p class="eyebrow">Graduate Software Engineer</p>
-    <h1>Luthando Mbuyane</h1>
-    <p class="hero-role">I build backend systems and data-driven applications, with experience in NLP and production debugging.</p>
-    <p class="hero-description">I hold a BSc in Computer Science and Psychology from the University of Cape Town, with additional coursework in Applied Statistics. My work spans Python, Java, SQL, Django, FastAPI, Flask, PostgreSQL, testing, CI/CD and deployment. I care about software that works reliably and makes sense to the people using it.</p>
-    <div class="buttons">
-      <a class="btn primary" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
-      <a class="btn" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">ViewCoach Live</a>
-      <a class="btn" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">ScoreRent Live</a>
-      <a class="btn" href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </div>
-  </section>
+</header>
 
-  <section>
-    <div class="section-header"><h2>What I Bring</h2><p>My background helps me look at the code, the data and the person who has to use the result.</p></div>
-    <div class="grid three">
-      <div class="card"><h3>Backend Engineering</h3><p>I have built APIs, authentication flows, database-backed features, validation logic and deployed web applications. I have also worked with automated tests, CI/CD and production debugging.</p></div>
-      <div class="card"><h3>Applied NLP</h3><p>My commercial experience includes spaCy NER, entity classification, training data preparation, tests and inference-service integration for an educational chatbot.</p></div>
-      <div class="card"><h3>People and Evidence</h3><p>Psychology shapes how I think about usability, trust and behaviour. Applied Statistics coursework strengthened my approach to evidence, uncertainty and evaluation.</p></div>
-    </div>
-  </section>
+<main>
+  <section class="hero-home container">
+    <div class="hero-copy">
+      <p class="eyebrow">Graduate Software Engineer</p>
+      <h1>Backend systems, data-driven products, and practical AI.</h1>
+      <p class="hero-summary">
+        I build reliable web applications with Python, Django, FastAPI, PostgreSQL and testing-led workflows.
+        My background in Computer Science, Psychology and Applied Statistics also shapes how I approach product decisions,
+        data and user trust.
+      </p>
 
-  <section>
-    <div class="section-header"><h2>Commercial Experience</h2><p>Backend and NLP work in an existing EdTech product, with real tests, integrations, dependencies and deployment constraints.</p></div>
-    <div class="card">
-      <h3>Software Engineering Contractor, EdTech Startup</h3>
-      <p class="muted">Fixed-term contract, 2026</p>
-      <p>I contributed to backend work across Laravel/PHP and Python/Flask services, including database-driven features, modular packages, external integrations and API-related workflows.</p>
-      <p>I worked on spaCy Named Entity Recognition functionality, including training data preparation, entity classification, pipeline changes, tests and integration with chatbot features.</p>
-      <p>I also debugged failing tests, API behaviour, PHPUnit, GitHub Actions, Composer dependencies, PHP compatibility and deployment issues.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-header"><h2>Live Products</h2><p>Two deployed projects showing product logic, backend architecture, testing and real user problems.</p></div>
-    <div class="grid two">
-      <div class="project-card">
-        <p class="eyebrow">Live · Current Project</p>
-        <h3>ViewCoach</h3>
-        <p class="muted">A Django interview-preparation platform for building and practising structured technical, behavioural and repository-debugging material. The live version includes authentication, private question libraries, type-specific workflows, search and filtering, progressive reveal, and bulk imports from pasted text, TXT, Markdown, CSV, DOCX and text-based PDFs.</p>
-        <div class="pills"><span>Django 5.2</span><span>PostgreSQL</span><span>pytest</span><span>Ruff</span><span>GitHub Actions</span><span>Render</span></div>
-        <div class="project-links"><a href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">Repository</a><a href="projects/adaptive-interview-coach.html">Details</a></div>
-      </div>
-      <div class="project-card">
-        <p class="eyebrow">Live</p>
-        <h3>ScoreRent</h3>
-        <p class="muted">A rental decision-support platform with explainable scoring, authentication, user profiles, saved evaluations, PostgreSQL persistence, automated tests, CI/CD and production deployment.</p>
-        <div class="pills"><span>FastAPI</span><span>PostgreSQL</span><span>pytest</span><span>GitHub Actions</span><span>Render</span></div>
-        <div class="project-links"><a href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="projects/scorerent.html">Details</a></div>
+      <div class="actions">
+        <a class="button primary" href="projects/index.html">View projects</a>
+        <a class="button" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open ViewCoach</a>
+        <a class="button text-button" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
       </div>
     </div>
+
+    <aside class="profile-summary" aria-label="Profile summary">
+      <p class="profile-label">Profile</p>
+      <dl>
+        <div>
+          <dt>Focus</dt>
+          <dd>Backend and product engineering</dd>
+        </div>
+        <div>
+          <dt>Experience</dt>
+          <dd>Commercial backend and NLP work</dd>
+        </div>
+        <div>
+          <dt>Education</dt>
+          <dd>BSc Computer Science and Psychology</dd>
+        </div>
+        <div>
+          <dt>Additional study</dt>
+          <dd>Applied Statistics coursework</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>South Africa · Open to relocation</dd>
+        </div>
+      </dl>
+    </aside>
   </section>
 
-  <section>
-    <div class="section-header"><h2>Core Tools</h2><p>Technologies I have used across commercial work, deployed products and coursework.</p></div>
-    <div class="card">
-      <h3>Languages and Backend</h3><div class="pills"><span>Python</span><span>Java</span><span>SQL</span><span>PHP</span><span>Django</span><span>FastAPI</span><span>Flask</span><span>Laravel</span></div>
-      <h3>Data, Databases and NLP</h3><div class="pills"><span>PostgreSQL</span><span>SQLite</span><span>MongoDB</span><span>Pandas</span><span>spaCy NER</span><span>NLP Workflows</span><span>Data Validation</span></div>
-      <h3>Engineering Practices</h3><div class="pills"><span>REST APIs</span><span>Test-Driven Development</span><span>pytest</span><span>PHPUnit</span><span>Ruff</span><span>GitHub Actions</span><span>CI/CD</span><span>Docker</span><span>Production Debugging</span></div>
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Featured work</p>
+        <h2>Deployed products with clear engineering decisions.</h2>
+      </div>
+      <p>
+        These projects show how I move from a product problem to domain models, tested backend behaviour,
+        persistence, delivery and production deployment.
+      </p>
+    </div>
+
+    <div class="featured-list">
+      <article class="featured-project">
+        <div class="project-number">01</div>
+        <div class="project-content">
+          <div class="project-heading">
+            <div>
+              <p class="status live">Live product</p>
+              <h3>ViewCoach</h3>
+            </div>
+            <p class="project-type">Django · PostgreSQL</p>
+          </div>
+
+          <p class="project-description">
+            An interview-preparation platform with private question libraries, technical, behavioural and
+            repository-debugging workflows, progressive answer reveal, bulk document import and review-ready validation.
+          </p>
+
+          <ul class="evidence-list">
+            <li>Custom email-based authentication and user-owned data</li>
+            <li>Polymorphic question model with type-specific create, edit and detail flows</li>
+            <li>TXT, Markdown, CSV, DOCX and text-based PDF import with resumable review batches</li>
+            <li>PostgreSQL, pytest, Ruff, GitHub Actions and Render deployment</li>
+          </ul>
+
+          <div class="actions compact">
+            <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+            <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button text-button" href="projects/adaptive-interview-coach.html">Case study</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured-project">
+        <div class="project-number">02</div>
+        <div class="project-content">
+          <div class="project-heading">
+            <div>
+              <p class="status live">Live product</p>
+              <h3>ScoreRent</h3>
+            </div>
+            <p class="project-type">FastAPI · PostgreSQL</p>
+          </div>
+
+          <p class="project-description">
+            A rental decision-support application that evaluates renter and listing information using explainable,
+            deterministic scoring and returns a verdict, confidence level, reasons and practical next actions.
+          </p>
+
+          <ul class="evidence-list">
+            <li>Guest evaluation flow plus authenticated profiles and saved history</li>
+            <li>Rule-based scoring with visible reasons rather than opaque predictions</li>
+            <li>PostgreSQL persistence, pytest coverage and GitHub Actions CI</li>
+            <li>Production deployment on Render</li>
+          </ul>
+
+          <div class="actions compact">
+            <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+            <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button text-button" href="projects/scorerent.html">Case study</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Commercial experience</p>
+          <h2>Backend delivery inside an existing EdTech product.</h2>
+        </div>
+        <p>
+          Fixed-term software engineering work across Laravel/PHP and Python/Flask services,
+          including NLP functionality, tests, dependencies and production debugging.
+        </p>
+      </div>
+
+      <div class="experience-layout">
+        <div class="experience-title">
+          <h3>Software Engineering Contractor</h3>
+          <p>EdTech startup · 2026</p>
+        </div>
+
+        <div class="experience-details">
+          <div>
+            <h4>Backend</h4>
+            <p>Database-backed features, modular packages, API workflows and external service integrations.</p>
+          </div>
+          <div>
+            <h4>NLP</h4>
+            <p>spaCy NER data preparation, entity classification, pipeline changes, tests and chatbot integration.</p>
+          </div>
+          <div>
+            <h4>Delivery</h4>
+            <p>PHPUnit, GitHub Actions, Composer dependencies, compatibility issues and production debugging.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Technical profile</p>
+        <h2>Tools supported by practical use.</h2>
+      </div>
+      <p>
+        My strongest evidence is in backend development, relational data, testing and deployment,
+        with additional experience in NLP and data preparation.
+      </p>
+    </div>
+
+    <div class="capability-grid">
+      <div class="capability">
+        <h3>Backend</h3>
+        <p>Python, Java, PHP, Django, FastAPI, Flask, Laravel, REST APIs and server-rendered applications.</p>
+      </div>
+      <div class="capability">
+        <h3>Data and NLP</h3>
+        <p>PostgreSQL, SQLite, MongoDB, Pandas, data validation, spaCy NER and inference-service integration.</p>
+      </div>
+      <div class="capability">
+        <h3>Engineering practice</h3>
+        <p>pytest, PHPUnit, CI/CD, GitHub Actions, Docker, migrations, authorization testing and production debugging.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Additional work</p>
+        <h2>Supporting projects across systems, data and HCI.</h2>
+      </div>
+      <a class="inline-link" href="projects/index.html">View complete project directory →</a>
+    </div>
+
+    <div class="project-directory">
+      <a href="projects/seaclear.html">
+        <span>SeaClear</span>
+        <small>Flask · MongoDB · HCI · usability testing</small>
+      </a>
+      <a href="projects/networkcomm.html">
+        <span>NetworkComm</span>
+        <small>Python · TCP sockets · threading · protocol design</small>
+      </a>
+      <a href="projects/parallel-monte-carlo.html">
+        <span>Parallel Monte Carlo</span>
+        <small>Java · Fork/Join · concurrency · performance</small>
+      </a>
+      <a href="projects/csv-pipeline.html">
+        <span>CSV Cleaning Pipeline</span>
+        <small>Python · Pandas · validation · transformation</small>
+      </a>
     </div>
   </section>
 </main>
-<footer class="footer"><div class="container footer-content"><p>© 2026 Luthando Mbuyane</p><p class="muted">South Africa · Open to relocation</p></div></footer>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>Graduate software engineering · Backend · Data · Applied AI</p>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -2,155 +2,197 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ScoreRent | Luthando Mbuyane</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ScoreRent, a rental decision-support product by Luthando Mbuyane.">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta
+    name="description"
+    content="ScoreRent, an explainable rental decision-support application built by Luthando Mbuyane."
+  >
+  <title>ScoreRent | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/clean-style.css">
 </head>
 <body>
 
-<nav class="nav">
+<header class="nav">
   <div class="nav-inner">
-    <a href="../index.html" class="logo">Luthando Mbuyane</a>
-    <div class="nav-links">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
       <a href="../index.html">Home</a>
       <a class="active" href="index.html">Projects</a>
       <a href="../about/index.html">About</a>
       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main class="container">
-  <section class="project-hero">
-    <span class="kicker">Live product</span>
-    <h1>ScoreRent</h1>
-    <p class="lead">
-      A rental decision-support app that helps renters judge their fit for a listing before paying non-refundable application fees.
-    </p>
-    <p class="supporting">
-      The product evaluates a renter profile against listing requirements and returns a confidence score, a verdict, reasons behind the decision, and practical actions to improve the application.
-    </p>
-    <div class="meta-grid">
+<main>
+  <section class="case-hero container">
+    <div>
+      <p class="eyebrow">Live product</p>
+      <h1>ScoreRent</h1>
+      <p class="hero-summary">
+        An explainable rental decision-support application that evaluates renter and listing information
+        before the user commits to a potentially non-refundable application fee.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+        <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">View repository</a>
+        <a class="button text-button" href="index.html">Project directory</a>
+      </div>
+    </div>
+
+    <dl class="case-meta">
       <div>
-        <strong>Stack</strong>
-        FastAPI, Jinja2, PostgreSQL, pytest, GitHub Actions, Render
+        <dt>Stack</dt>
+        <dd>FastAPI, Jinja2, PostgreSQL</dd>
       </div>
       <div>
-        <strong>Focus</strong>
-        Decision support, product logic, testing, persistence, and deployment
+        <dt>Quality</dt>
+        <dd>pytest, deterministic domain rules, GitHub Actions</dd>
       </div>
       <div>
-        <strong>Status</strong>
-        Live and working, with future product expansion planned
+        <dt>Deployment</dt>
+        <dd>Render with production PostgreSQL persistence</dd>
       </div>
-    </div>
-    <div class="button-row">
-      <a class="btn primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
-      <a class="btn" href="index.html">Back to projects</a>
+      <div>
+        <dt>Product focus</dt>
+        <dd>Explainability, confidence and actionable outcomes</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section container">
+    <div class="case-layout">
+      <div class="case-main">
+        <div class="section-heading simple">
+          <div>
+            <p class="eyebrow">Problem and approach</p>
+            <h2>Reduce uncertainty without pretending to predict acceptance.</h2>
+          </div>
+        </div>
+
+        <p class="large-copy">
+          Rental applications can require fees and substantial documentation before a renter knows whether the listing
+          is realistically suitable. ScoreRent makes the underlying factors visible before that commitment.
+        </p>
+
+        <p>
+          The application compares listing requirements with the renter profile and applies deterministic scoring rules.
+          The result includes a score, verdict, confidence level, contributing reasons and practical actions.
+          The product presents this as decision support rather than a guarantee.
+        </p>
+      </div>
+
+      <aside class="case-note">
+        <span>Design principle</span>
+        <p>The user should be able to understand why the result changed.</p>
+      </aside>
     </div>
   </section>
 
-  <section class="split">
-    <div class="card">
-      <div class="section-head">
-        <h2>The problem</h2>
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Implementation</p>
+          <h2>Core product and engineering features.</h2>
+        </div>
       </div>
-      <p>
-        I built ScoreRent after seeing how expensive and uncertain rental applications can be. People were paying application fees, submitting documents, and then getting rejected for reasons they could have known upfront.
-      </p>
-      <p>
-        I wanted a tool that could make the situation clearer. Not a vague recommendation. A structured result with visible logic and useful next steps.
-      </p>
-    </div>
 
-    <div class="card">
-      <div class="section-head">
-        <h2>The shape of the solution</h2>
-      </div>
-      <p>
-        The app compares listing requirements with a renter profile and runs rule-based scoring. The output is intentionally explainable. It is a confidence score, not a fake promise of acceptance.
-      </p>
-      <div class="tags">
-        <span>Explainable logic</span>
-        <span>Profile matching</span>
-        <span>Actionable output</span>
-      </div>
-    </div>
-  </section>
+      <div class="feature-columns">
+        <article>
+          <p class="feature-number">01</p>
+          <h3>Evaluation workflow</h3>
+          <ul>
+            <li>Guest evaluation without an account</li>
+            <li>Renter and listing information validation</li>
+            <li>Score, verdict, confidence, reasons and next actions</li>
+            <li>Different logic for worker and bursary-supported student profiles</li>
+          </ul>
+        </article>
 
-  <section>
-    <div class="section-head">
-      <h2>Core product features</h2>
-    </div>
-    <div class="grid two">
-      <article class="project-card">
-        <h3>Guest evaluation flow</h3>
-        <p>
-          Users can enter listing details and renter information without signing in and immediately receive a score, verdict, reasons, and suggested actions.
-        </p>
-      </article>
-      <article class="project-card">
-        <h3>Authentication and saved history</h3>
-        <p>
-          Logged-in users can save renter details, keep evaluation history, and revisit past results.
-        </p>
-      </article>
-      <article class="project-card">
-        <h3>Explainable scoring</h3>
-        <p>
-          The scoring engine applies deterministic rules and returns a clear breakdown of what changed the score.
-        </p>
-      </article>
-      <article class="project-card">
-        <h3>Engineering discipline</h3>
-        <p>
-          The project includes tests for the scoring logic, CI checks, and a deployed environment with PostgreSQL persistence.
-        </p>
-      </article>
-    </div>
-  </section>
+        <article>
+          <p class="feature-number">02</p>
+          <h3>User accounts and persistence</h3>
+          <ul>
+            <li>Registration, login and logout</li>
+            <li>Saved renter profiles</li>
+            <li>Evaluation history and result retrieval</li>
+            <li>PostgreSQL-backed production data</li>
+          </ul>
+        </article>
 
-  <section>
-    <div class="section-head">
-      <h2>What I learned</h2>
-    </div>
-    <div class="grid two">
-      <div class="note">
-        <h3>Product lesson</h3>
-        <p>
-          Trust matters in a decision-support product. The user needs to understand the result and feel that the logic is fair, not magical.
-        </p>
-      </div>
-      <div class="note">
-        <h3>Engineering lesson</h3>
-        <p>
-          The more important the logic is, the more it needs tests. This project made me much more disciplined about protecting behaviour as a product grows.
-        </p>
+        <article>
+          <p class="feature-number">03</p>
+          <h3>Delivery and quality</h3>
+          <ul>
+            <li>Automated tests protecting scoring behaviour</li>
+            <li>CI checks through GitHub Actions</li>
+            <li>Deployed application on Render</li>
+            <li>Clear separation between rules and presentation</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
 
-  <section>
-    <div class="section-head">
-      <h2>Next steps</h2>
-      <p>
-        These are product improvements I would like to build next.
-      </p>
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Engineering decisions</p>
+        <h2>Explainability is part of the architecture.</h2>
+      </div>
     </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <strong>Dynamic re-evaluation</strong>
-        Update earlier results when a renter profile changes.
+
+    <div class="decision-list">
+      <div>
+        <h3>Deterministic scoring</h3>
+        <p>Important thresholds and penalties remain explicit, inspectable and directly testable.</p>
       </div>
-      <div class="timeline-item">
-        <strong>Smarter comparisons</strong>
-        Compare multiple listings using the renter's current profile.
+      <div>
+        <h3>Structured output</h3>
+        <p>The score is accompanied by reasons and actions so that the result can support a decision rather than replace it.</p>
       </div>
-      <div class="timeline-item">
-        <strong>Guided support</strong>
-        Add a grounded assistant layer that can explain outcomes and answer product-specific questions without hiding the underlying rules.
+      <div>
+        <h3>Tests around domain behaviour</h3>
+        <p>Changes to affordability, documentation, guarantor and bursary rules are protected by automated tests.</p>
+      </div>
+      <div>
+        <h3>Incremental product growth</h3>
+        <p>Authentication, persistence and deployment were added around the core evaluation behaviour without hiding the rules.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Potential extensions</p>
+        <h2>Useful next product work.</h2>
+      </div>
+    </div>
+
+    <div class="roadmap-list">
+      <div>
+        <span>01</span>
+        <div>
+          <h3>Dynamic re-evaluation</h3>
+          <p>Recalculate earlier results when profile or listing information changes.</p>
+        </div>
+      </div>
+      <div>
+        <span>02</span>
+        <div>
+          <h3>Listing comparisons</h3>
+          <p>Compare multiple options using the same renter profile and visible criteria.</p>
+        </div>
+      </div>
+      <div>
+        <span>03</span>
+        <div>
+          <h3>Grounded assistance</h3>
+          <p>Explain product-specific outcomes without replacing the underlying deterministic logic.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -159,7 +201,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <p>© 2026 Luthando Mbuyane</p>
-    <p>South Africa · Open to graduate and junior software roles</p>
+    <p>ScoreRent · FastAPI · PostgreSQL · Explainable decision support</p>
   </div>
 </footer>
 
