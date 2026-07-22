@@ -1,0 +1,1373 @@
+diff --git a/about/index.html b/about/index.html
+index f1bd80c..7490fe7 100644
+--- a/about/index.html
++++ b/about/index.html
+@@ -2,140 +2,174 @@
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+-  <title>About | Luthando Mbuyane</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <meta name="description" content="About Luthando Mbuyane, a graduate software engineer interested in backend systems, data, NLP, and human-centred software.">
+-  <link rel="stylesheet" href="../assets/css/style.css">
++  <meta
++    name="description"
++    content="About Luthando Mbuyane, a graduate software engineer with backend, NLP and data-oriented experience."
++  >
++  <title>About | Luthando Mbuyane</title>
++  <link rel="stylesheet" href="../assets/css/clean-style.css">
+ </head>
+ <body>
+ 
+-<nav class="nav">
++<header class="nav">
+   <div class="nav-inner">
+-    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+-    <div class="nav-links">
++    <a class="logo" href="../index.html">Luthando Mbuyane</a>
++    <nav class="nav-links" aria-label="Primary navigation">
+       <a href="../index.html">Home</a>
+       <a href="../projects/index.html">Projects</a>
+       <a class="active" href="index.html">About</a>
+       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+       <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+-    </div>
++    </nav>
+   </div>
+-</nav>
++</header>
+ 
+-<main class="container">
+-  <section class="page-header">
+-    <span class="kicker">About</span>
+-    <h1>Systems, numbers, and people.</h1>
+-    <p class="lead">
+-      That combination explains most of what I enjoy building.
+-    </p>
+-    <p class="supporting">
+-      I studied Computer Science and Psychology at the University of Cape Town, with additional Applied Statistics coursework. I like software that has structure behind it and a clear reason to exist.
++<main>
++  <section class="page-intro container">
++    <p class="eyebrow">About</p>
++    <h1>Technical depth with a broader product perspective.</h1>
++    <p>
++      I am a graduate software engineer with a foundation in Computer Science, commercial backend and NLP exposure,
++      and additional training in Psychology and Applied Statistics.
+     </p>
+   </section>
+ 
+-  <section class="split">
+-    <div class="card">
+-      <div class="section-head">
+-        <h2>My route into software</h2>
+-      </div>
+-      <p>
+-        Computer Science gave me the technical base. I built strength in programming, algorithms, databases, networks, operating systems, and software engineering. Psychology shaped how I think about people using the systems we build. Applied Statistics added another layer. It made me more comfortable reasoning with data, uncertainty, and evidence.
+-      </p>
+-      <p>
+-        Together, those areas made me especially interested in products that sit between data and decision-making. I like systems that help people understand something, choose something, or act with more confidence.
+-      </p>
+-    </div>
++  <section class="section container">
++    <div class="profile-layout">
++      <div class="profile-main">
++        <div class="section-heading simple">
++          <div>
++            <p class="eyebrow">Professional profile</p>
++            <h2>Backend engineering is my strongest current fit.</h2>
++          </div>
++        </div>
++
++        <p class="large-copy">
++          My work centres on application logic, relational data, authentication, validation, testing and deployment.
++          I have built independent products in Django and FastAPI and contributed to existing Laravel and Flask services
++          in a commercial EdTech environment.
++        </p>
+ 
+-    <div class="card">
+-      <div class="section-head">
+-        <h2>What I value in a build</h2>
++        <p>
++          I am also interested in data-oriented and AI-enabled products, particularly where models or scoring systems
++          have to operate inside clear, testable workflows. My Psychology background adds useful context around usability,
++          behaviour and trust, while Applied Statistics coursework supports evidence-based evaluation.
++        </p>
+       </div>
+-      <div class="fact-list">
+-        <div>
+-          <strong>Clarity</strong>
+-          The logic should make sense and the user should not be left guessing.
+-        </div>
++
++      <aside class="qualification-list">
+         <div>
+-          <strong>Reliability</strong>
+-          Tests, validation, and predictable behaviour matter.
++          <span>Degree</span>
++          <strong>BSc Computer Science and Psychology</strong>
++          <small>University of Cape Town</small>
+         </div>
+         <div>
+-          <strong>Honesty</strong>
+-          A product should make clear what it knows, what it assumes, and where its limits are.
++          <span>Additional coursework</span>
++          <strong>Applied Statistics</strong>
++          <small>Regression, time series, resampling, statistical learning and evaluation</small>
+         </div>
+         <div>
+-          <strong>Usefulness</strong>
+-          I want to build things that solve a real friction point rather than just showcase a stack.
++          <span>Current direction</span>
++          <strong>Graduate and junior software roles</strong>
++          <small>Backend, applied AI/NLP and data-oriented product engineering</small>
+         </div>
+-      </div>
++      </aside>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-head">
+-      <h2>Commercial experience</h2>
+-      <p>
+-        I worked as a software engineering contractor in an EdTech startup environment. The work moved across backend features, product logic, NLP functionality, and production debugging.
+-      </p>
+-    </div>
+-
+-    <div class="grid two">
+-      <div class="card">
+-        <h3>Backend and product work</h3>
++  <section class="section section-tinted">
++    <div class="container">
++      <div class="section-heading">
++        <div>
++          <p class="eyebrow">Commercial experience</p>
++          <h2>Engineering in a real product environment.</h2>
++        </div>
+         <p>
+-          I contributed across Laravel and Flask services, worked with database-backed functionality, and dealt with the sort of issues that appear in real teams: failing tests, awkward edge cases, dependency problems, and things that work locally but break in CI.
++          My contractor experience exposed me to existing codebases, integration constraints,
++          automated tests and the difference between a local fix and a production-ready change.
+         </p>
+       </div>
+-      <div class="card">
+-        <h3>NLP exposure</h3>
+-        <p>
+-          I also worked with spaCy NER workflows and related product work. That gave me hands-on exposure to the practical side of AI-enabled software, where model behaviour, integration, and product context all matter.
+-        </p>
++
++      <div class="experience-layout">
++        <div class="experience-title">
++          <h3>Software Engineering Contractor</h3>
++          <p>EdTech startup · Fixed-term contract · 2026</p>
++        </div>
++
++        <div class="experience-details">
++          <div>
++            <h4>Application work</h4>
++            <p>Laravel/PHP and Flask services, database-backed features, API workflows and external integrations.</p>
++          </div>
++          <div>
++            <h4>NLP work</h4>
++            <p>spaCy NER training data, entity classification, pipeline changes, tests and chatbot feature integration.</p>
++          </div>
++          <div>
++            <h4>Debugging and delivery</h4>
++            <p>Failing tests, GitHub Actions, Composer dependencies, PHP compatibility and deployment issues.</p>
++          </div>
++        </div>
+       </div>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-head">
+-      <h2>What kinds of roles suit me</h2>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">How I work</p>
++        <h2>A practical engineering approach.</h2>
++      </div>
++      <p>
++        The goal is not only to produce working code, but to make the behaviour understandable,
++        verifiable and maintainable.
++      </p>
+     </div>
+-    <div class="grid three">
+-      <div class="card">
+-        <h3>Backend engineering</h3>
+-        <p>
+-          APIs, product logic, database design, testing, and deployment are the most natural fit for me right now.
+-        </p>
++
++    <div class="principle-list">
++      <div>
++        <span>01</span>
++        <h3>Define behaviour clearly</h3>
++        <p>I prefer explicit domain rules, useful acceptance criteria and outputs that can be explained.</p>
+       </div>
+-      <div class="card">
+-        <h3>Data-oriented product work</h3>
+-        <p>
+-          I am drawn to products where decisions, scoring, analytics, or structured information play a central role.
+-        </p>
++      <div>
++        <span>02</span>
++        <h3>Protect important logic</h3>
++        <p>Validation, authorization and automated tests are part of implementation rather than later cleanup.</p>
+       </div>
+-      <div class="card">
+-        <h3>AI-enabled systems</h3>
++      <div>
++        <span>03</span>
++        <h3>Use AI as an engineering tool</h3>
+         <p>
+-          Especially where AI is part of a bigger product and has to live inside real workflows, not just a demo.
++          I use AI for architecture critique, planning, test ideas, debugging hypotheses and documentation,
++          while retaining responsibility for design decisions, code review, behaviour tracing and final verification.
+         </p>
+       </div>
++      <div>
++        <span>04</span>
++        <h3>Keep product context visible</h3>
++        <p>Technical choices should support the user workflow and the actual risk or friction the product addresses.</p>
++      </div>
+     </div>
+   </section>
+ 
+-  <section class="note">
+-    <div class="section-head">
+-      <h2>A few things that matter to me</h2>
++  <section class="section container contact-band">
++    <div>
++      <p class="eyebrow">Current search</p>
++      <h2>Open to graduate and junior software engineering opportunities.</h2>
++    </div>
++    <div class="actions">
++      <a class="button primary" href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
++      <a class="button" href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+     </div>
+-    <p>
+-      I like thoughtful teams. I like direct feedback. I like work that asks both technical and product questions. I also care a lot about whether a system respects the person using it. That shows up in my projects again and again.
+-    </p>
+   </section>
+ </main>
+ 
+ <footer class="footer">
+   <div class="footer-inner">
+     <p>© 2026 Luthando Mbuyane</p>
+-    <p>South Africa · Open to graduate and junior software roles</p>
++    <p>South Africa · Open to relocation</p>
+   </div>
+ </footer>
+ 
+diff --git a/index.html b/index.html
+index 331f025..637c589 100644
+--- a/index.html
++++ b/index.html
+@@ -2,87 +2,252 @@
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+-  <title>Luthando Mbuyane | Graduate Software Engineer | Backend, NLP and Data</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <meta name="description" content="Portfolio of Luthando Mbuyane, a graduate software engineer with experience in backend development, NLP and data-oriented systems.">
+-  <link rel="stylesheet" href="assets/css/style.css">
++  <meta
++    name="description"
++    content="Portfolio of Luthando Mbuyane, a graduate software engineer building backend, data-driven and AI-enabled products."
++  >
++  <title>Luthando Mbuyane | Graduate Software Engineer</title>
++  <link rel="stylesheet" href="assets/css/clean-style.css">
+ </head>
+ <body>
+-<nav class="nav">
+-  <div class="nav-container">
+-    <a href="index.html" class="logo">Luthando Mbuyane</a>
+-    <div class="nav-links">
++
++<header class="nav">
++  <div class="nav-inner">
++    <a class="logo" href="index.html">Luthando Mbuyane</a>
++    <nav class="nav-links" aria-label="Primary navigation">
+       <a class="active" href="index.html">Home</a>
+       <a href="projects/index.html">Projects</a>
+       <a href="about/index.html">About</a>
+       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+       <a href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+-    </div>
++    </nav>
+   </div>
+-</nav>
+-<main class="container">
+-  <section class="hero">
+-    <p class="eyebrow">Graduate Software Engineer</p>
+-    <h1>Luthando Mbuyane</h1>
+-    <p class="hero-role">I build backend systems and data-driven applications, with experience in NLP and production debugging.</p>
+-    <p class="hero-description">I hold a BSc in Computer Science and Psychology from the University of Cape Town, with additional coursework in Applied Statistics. My work spans Python, Java, SQL, Django, FastAPI, Flask, PostgreSQL, testing, CI/CD and deployment. I care about software that works reliably and makes sense to the people using it.</p>
+-    <div class="buttons">
+-      <a class="btn primary" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
+-      <a class="btn" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">ViewCoach Live</a>
+-      <a class="btn" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">ScoreRent Live</a>
+-      <a class="btn" href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
++</header>
++
++<main>
++  <section class="hero-home container">
++    <div class="hero-copy">
++      <p class="eyebrow">Graduate Software Engineer</p>
++      <h1>Backend systems, data-driven products, and practical AI.</h1>
++      <p class="hero-summary">
++        I build reliable web applications with Python, Django, FastAPI, PostgreSQL and testing-led workflows.
++        My background in Computer Science, Psychology and Applied Statistics also shapes how I approach product decisions,
++        data and user trust.
++      </p>
++
++      <div class="actions">
++        <a class="button primary" href="projects/index.html">View projects</a>
++        <a class="button" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open ViewCoach</a>
++        <a class="button text-button" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
++      </div>
+     </div>
++
++    <aside class="profile-summary" aria-label="Profile summary">
++      <p class="profile-label">Profile</p>
++      <dl>
++        <div>
++          <dt>Focus</dt>
++          <dd>Backend and product engineering</dd>
++        </div>
++        <div>
++          <dt>Experience</dt>
++          <dd>Commercial backend and NLP work</dd>
++        </div>
++        <div>
++          <dt>Education</dt>
++          <dd>BSc Computer Science and Psychology</dd>
++        </div>
++        <div>
++          <dt>Additional study</dt>
++          <dd>Applied Statistics coursework</dd>
++        </div>
++        <div>
++          <dt>Location</dt>
++          <dd>South Africa · Open to relocation</dd>
++        </div>
++      </dl>
++    </aside>
+   </section>
+ 
+-  <section>
+-    <div class="section-header"><h2>What I Bring</h2><p>My background helps me look at the code, the data and the person who has to use the result.</p></div>
+-    <div class="grid three">
+-      <div class="card"><h3>Backend Engineering</h3><p>I have built APIs, authentication flows, database-backed features, validation logic and deployed web applications. I have also worked with automated tests, CI/CD and production debugging.</p></div>
+-      <div class="card"><h3>Applied NLP</h3><p>My commercial experience includes spaCy NER, entity classification, training data preparation, tests and inference-service integration for an educational chatbot.</p></div>
+-      <div class="card"><h3>People and Evidence</h3><p>Psychology shapes how I think about usability, trust and behaviour. Applied Statistics coursework strengthened my approach to evidence, uncertainty and evaluation.</p></div>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Featured work</p>
++        <h2>Deployed products with clear engineering decisions.</h2>
++      </div>
++      <p>
++        These projects show how I move from a product problem to domain models, tested backend behaviour,
++        persistence, delivery and production deployment.
++      </p>
++    </div>
++
++    <div class="featured-list">
++      <article class="featured-project">
++        <div class="project-number">01</div>
++        <div class="project-content">
++          <div class="project-heading">
++            <div>
++              <p class="status live">Live product</p>
++              <h3>ViewCoach</h3>
++            </div>
++            <p class="project-type">Django · PostgreSQL</p>
++          </div>
++
++          <p class="project-description">
++            An interview-preparation platform with private question libraries, technical, behavioural and
++            repository-debugging workflows, progressive answer reveal, bulk document import and review-ready validation.
++          </p>
++
++          <ul class="evidence-list">
++            <li>Custom email-based authentication and user-owned data</li>
++            <li>Polymorphic question model with type-specific create, edit and detail flows</li>
++            <li>TXT, Markdown, CSV, DOCX and text-based PDF import with resumable review batches</li>
++            <li>PostgreSQL, pytest, Ruff, GitHub Actions and Render deployment</li>
++          </ul>
++
++          <div class="actions compact">
++            <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
++            <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub</a>
++            <a class="button text-button" href="projects/adaptive-interview-coach.html">Case study</a>
++          </div>
++        </div>
++      </article>
++
++      <article class="featured-project">
++        <div class="project-number">02</div>
++        <div class="project-content">
++          <div class="project-heading">
++            <div>
++              <p class="status live">Live product</p>
++              <h3>ScoreRent</h3>
++            </div>
++            <p class="project-type">FastAPI · PostgreSQL</p>
++          </div>
++
++          <p class="project-description">
++            A rental decision-support application that evaluates renter and listing information using explainable,
++            deterministic scoring and returns a verdict, confidence level, reasons and practical next actions.
++          </p>
++
++          <ul class="evidence-list">
++            <li>Guest evaluation flow plus authenticated profiles and saved history</li>
++            <li>Rule-based scoring with visible reasons rather than opaque predictions</li>
++            <li>PostgreSQL persistence, pytest coverage and GitHub Actions CI</li>
++            <li>Production deployment on Render</li>
++          </ul>
++
++          <div class="actions compact">
++            <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
++            <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub</a>
++            <a class="button text-button" href="projects/scorerent.html">Case study</a>
++          </div>
++        </div>
++      </article>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-header"><h2>Commercial Experience</h2><p>Backend and NLP work in an existing EdTech product, with real tests, integrations, dependencies and deployment constraints.</p></div>
+-    <div class="card">
+-      <h3>Software Engineering Contractor, EdTech Startup</h3>
+-      <p class="muted">Fixed-term contract, 2026</p>
+-      <p>I contributed to backend work across Laravel/PHP and Python/Flask services, including database-driven features, modular packages, external integrations and API-related workflows.</p>
+-      <p>I worked on spaCy Named Entity Recognition functionality, including training data preparation, entity classification, pipeline changes, tests and integration with chatbot features.</p>
+-      <p>I also debugged failing tests, API behaviour, PHPUnit, GitHub Actions, Composer dependencies, PHP compatibility and deployment issues.</p>
++  <section class="section section-tinted">
++    <div class="container">
++      <div class="section-heading">
++        <div>
++          <p class="eyebrow">Commercial experience</p>
++          <h2>Backend delivery inside an existing EdTech product.</h2>
++        </div>
++        <p>
++          Fixed-term software engineering work across Laravel/PHP and Python/Flask services,
++          including NLP functionality, tests, dependencies and production debugging.
++        </p>
++      </div>
++
++      <div class="experience-layout">
++        <div class="experience-title">
++          <h3>Software Engineering Contractor</h3>
++          <p>EdTech startup · 2026</p>
++        </div>
++
++        <div class="experience-details">
++          <div>
++            <h4>Backend</h4>
++            <p>Database-backed features, modular packages, API workflows and external service integrations.</p>
++          </div>
++          <div>
++            <h4>NLP</h4>
++            <p>spaCy NER data preparation, entity classification, pipeline changes, tests and chatbot integration.</p>
++          </div>
++          <div>
++            <h4>Delivery</h4>
++            <p>PHPUnit, GitHub Actions, Composer dependencies, compatibility issues and production debugging.</p>
++          </div>
++        </div>
++      </div>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-header"><h2>Live Products</h2><p>Two deployed projects showing product logic, backend architecture, testing and real user problems.</p></div>
+-    <div class="grid two">
+-      <div class="project-card">
+-        <p class="eyebrow">Live · Current Project</p>
+-        <h3>ViewCoach</h3>
+-        <p class="muted">A Django interview-preparation platform for building and practising structured technical, behavioural and repository-debugging material. The live version includes authentication, private question libraries, type-specific workflows, search and filtering, progressive reveal, and bulk imports from pasted text, TXT, Markdown, CSV, DOCX and text-based PDFs.</p>
+-        <div class="pills"><span>Django 5.2</span><span>PostgreSQL</span><span>pytest</span><span>Ruff</span><span>GitHub Actions</span><span>Render</span></div>
+-        <div class="project-links"><a href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">Repository</a><a href="projects/adaptive-interview-coach.html">Details</a></div>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Technical profile</p>
++        <h2>Tools supported by practical use.</h2>
++      </div>
++      <p>
++        My strongest evidence is in backend development, relational data, testing and deployment,
++        with additional experience in NLP and data preparation.
++      </p>
++    </div>
++
++    <div class="capability-grid">
++      <div class="capability">
++        <h3>Backend</h3>
++        <p>Python, Java, PHP, Django, FastAPI, Flask, Laravel, REST APIs and server-rendered applications.</p>
+       </div>
+-      <div class="project-card">
+-        <p class="eyebrow">Live</p>
+-        <h3>ScoreRent</h3>
+-        <p class="muted">A rental decision-support platform with explainable scoring, authentication, user profiles, saved evaluations, PostgreSQL persistence, automated tests, CI/CD and production deployment.</p>
+-        <div class="pills"><span>FastAPI</span><span>PostgreSQL</span><span>pytest</span><span>GitHub Actions</span><span>Render</span></div>
+-        <div class="project-links"><a href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="projects/scorerent.html">Details</a></div>
++      <div class="capability">
++        <h3>Data and NLP</h3>
++        <p>PostgreSQL, SQLite, MongoDB, Pandas, data validation, spaCy NER and inference-service integration.</p>
++      </div>
++      <div class="capability">
++        <h3>Engineering practice</h3>
++        <p>pytest, PHPUnit, CI/CD, GitHub Actions, Docker, migrations, authorization testing and production debugging.</p>
+       </div>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-header"><h2>Core Tools</h2><p>Technologies I have used across commercial work, deployed products and coursework.</p></div>
+-    <div class="card">
+-      <h3>Languages and Backend</h3><div class="pills"><span>Python</span><span>Java</span><span>SQL</span><span>PHP</span><span>Django</span><span>FastAPI</span><span>Flask</span><span>Laravel</span></div>
+-      <h3>Data, Databases and NLP</h3><div class="pills"><span>PostgreSQL</span><span>SQLite</span><span>MongoDB</span><span>Pandas</span><span>spaCy NER</span><span>NLP Workflows</span><span>Data Validation</span></div>
+-      <h3>Engineering Practices</h3><div class="pills"><span>REST APIs</span><span>Test-Driven Development</span><span>pytest</span><span>PHPUnit</span><span>Ruff</span><span>GitHub Actions</span><span>CI/CD</span><span>Docker</span><span>Production Debugging</span></div>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Additional work</p>
++        <h2>Supporting projects across systems, data and HCI.</h2>
++      </div>
++      <a class="inline-link" href="projects/index.html">View complete project directory →</a>
++    </div>
++
++    <div class="project-directory">
++      <a href="projects/seaclear.html">
++        <span>SeaClear</span>
++        <small>Flask · MongoDB · HCI · usability testing</small>
++      </a>
++      <a href="projects/networkcomm.html">
++        <span>NetworkComm</span>
++        <small>Python · TCP sockets · threading · protocol design</small>
++      </a>
++      <a href="projects/parallel-monte-carlo.html">
++        <span>Parallel Monte Carlo</span>
++        <small>Java · Fork/Join · concurrency · performance</small>
++      </a>
++      <a href="projects/csv-pipeline.html">
++        <span>CSV Cleaning Pipeline</span>
++        <small>Python · Pandas · validation · transformation</small>
++      </a>
+     </div>
+   </section>
+ </main>
+-<footer class="footer"><div class="container footer-content"><p>© 2026 Luthando Mbuyane</p><p class="muted">South Africa · Open to relocation</p></div></footer>
++
++<footer class="footer">
++  <div class="footer-inner">
++    <p>© 2026 Luthando Mbuyane</p>
++    <p>Graduate software engineering · Backend · Data · Applied AI</p>
++  </div>
++</footer>
++
+ </body>
+ </html>
+diff --git a/projects/adaptive-interview-coach.html b/projects/adaptive-interview-coach.html
+index 372edea..d06290f 100644
+--- a/projects/adaptive-interview-coach.html
++++ b/projects/adaptive-interview-coach.html
+@@ -2,43 +2,225 @@
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+-  <title>ViewCoach | Luthando Mbuyane</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <meta name="description" content="ViewCoach, a live Django interview preparation platform built by Luthando Mbuyane.">
+-  <link rel="stylesheet" href="../assets/css/style.css">
++  <meta
++    name="description"
++    content="ViewCoach, a deployed Django interview-preparation platform built by Luthando Mbuyane."
++  >
++  <title>ViewCoach | Luthando Mbuyane</title>
++  <link rel="stylesheet" href="../assets/css/clean-style.css">
+ </head>
+ <body>
+-<nav class="nav"><div class="nav-container"><a href="../index.html" class="logo">Luthando Mbuyane</a><div class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Projects</a><a href="../about/index.html">About</a><a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a></div></div></nav>
+-<main class="container">
+-  <section class="project-hero">
+-    <div class="project-hero-main"><p class="eyebrow">Live Product</p><h1>ViewCoach</h1><p class="hero-role">A structured interview-preparation platform for creating, importing and practising technical, behavioural and repository-debugging material.</p><p class="hero-description">ViewCoach is designed around a larger product question: “Given the interview I have coming up, what should I practise now?” The live version establishes the production foundation and question library needed before planning and AI features are added.</p><div class="buttons"><a class="btn primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open Live App</a><a class="btn" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">View Repository</a></div></div>
+-    <div class="project-hero-side"><h3>Implemented Stack</h3><div class="fact-list"><p><strong>Core:</strong> Django 5.2 modular monolith</p><p><strong>Data:</strong> PostgreSQL in local, test and production environments</p><p><strong>Quality:</strong> pytest, Ruff and GitHub Actions</p><p><strong>Deployment:</strong> Render</p></div></div>
++
++<header class="nav">
++  <div class="nav-inner">
++    <a class="logo" href="../index.html">Luthando Mbuyane</a>
++    <nav class="nav-links" aria-label="Primary navigation">
++      <a href="../index.html">Home</a>
++      <a class="active" href="index.html">Projects</a>
++      <a href="../about/index.html">About</a>
++      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
++      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
++    </nav>
++  </div>
++</header>
++
++<main>
++  <section class="case-hero container">
++    <div>
++      <p class="eyebrow">Live product</p>
++      <h1>ViewCoach</h1>
++      <p class="hero-summary">
++        A Django interview-preparation platform for creating, importing and reviewing structured technical,
++        behavioural and repository-debugging questions.
++      </p>
++      <div class="actions">
++        <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
++        <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">View repository</a>
++        <a class="button text-button" href="index.html">Project directory</a>
++      </div>
++    </div>
++
++    <dl class="case-meta">
++      <div>
++        <dt>Stack</dt>
++        <dd>Django 5.2, PostgreSQL, server-rendered templates</dd>
++      </div>
++      <div>
++        <dt>Quality</dt>
++        <dd>pytest, Ruff, authorization tests, GitHub Actions</dd>
++      </div>
++      <div>
++        <dt>Deployment</dt>
++        <dd>Render with production settings and database health checks</dd>
++      </div>
++      <div>
++        <dt>Current release</dt>
++        <dd>Production foundation, question library and bulk import</dd>
++      </div>
++    </dl>
++  </section>
++
++  <section class="section container">
++    <div class="case-layout">
++      <div class="case-main">
++        <div class="section-heading simple">
++          <div>
++            <p class="eyebrow">Product overview</p>
++            <h2>Structured preparation before automated planning.</h2>
++          </div>
++        </div>
++        <p class="large-copy">
++          ViewCoach starts with the underlying study material and workflows. Users can maintain a private question library,
++          work with different interview formats, progressively reveal answers and import existing material for review.
++        </p>
++        <p>
++          Spaced repetition, review scheduling, the Focus Engine, goals and generative AI are intentionally separated from
++          the current release. The structured foundation is designed to remain useful and testable before those layers are added.
++        </p>
++      </div>
++
++      <aside class="case-note">
++        <span>Core product question</span>
++        <p>Given the interview context, what should the user practise next?</p>
++      </aside>
++    </div>
++  </section>
++
++  <section class="section section-tinted">
++    <div class="container">
++      <div class="section-heading">
++        <div>
++          <p class="eyebrow">Implemented</p>
++          <h2>Current product capability.</h2>
++        </div>
++        <p>The live release contains Milestones 0, 1 and 1.1.</p>
++      </div>
++
++      <div class="feature-columns">
++        <article>
++          <p class="feature-number">01</p>
++          <h3>Production foundation</h3>
++          <ul>
++            <li>Custom email-based user model</li>
++            <li>Registration, login, logout and protected dashboard</li>
++            <li>PostgreSQL across local, test and production settings</li>
++            <li>Database-aware health endpoint</li>
++            <li>pytest, Ruff and GitHub Actions CI</li>
++          </ul>
++        </article>
++
++        <article>
++          <p class="feature-number">02</p>
++          <h3>Structured question library</h3>
++          <ul>
++            <li>Technical, behavioural and repository-debugging question types</li>
++            <li>Type-specific create, edit and detail experiences</li>
++            <li>Private user-owned libraries</li>
++            <li>Search and filters for type, status and difficulty</li>
++            <li>Progressive technical-answer and diagnosis reveal</li>
++          </ul>
++        </article>
++
++        <article>
++          <p class="feature-number">03</p>
++          <h3>Bulk import and review</h3>
++          <ul>
++            <li>Pasted text, TXT, Markdown, CSV, DOCX and text-based PDF input</li>
++            <li>Resumable review batches and editable generated titles</li>
++            <li>Per-item type overrides and duplicate detection</li>
++            <li>Transactional, idempotent creation</li>
++            <li>Needs-notes and mark-ready validation workflows</li>
++          </ul>
++        </article>
++      </div>
++    </div>
++  </section>
++
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Architecture</p>
++        <h2>Decisions made for clarity and controlled growth.</h2>
++      </div>
++    </div>
++
++    <div class="decision-list">
++      <div>
++        <h3>Modular Django monolith</h3>
++        <p>Clear domain boundaries without introducing distributed-system complexity before the product requires it.</p>
++      </div>
++      <div>
++        <h3>PostgreSQL from the beginning</h3>
++        <p>One relational data model across local, test and production environments, with no application SQLite fallback.</p>
++      </div>
++      <div>
++        <h3>Concrete base question with typed children</h3>
++        <p>Shared behaviour remains central while each interview format stores and presents its own relevant detail.</p>
++      </div>
++      <div>
++        <h3>Deterministic logic before AI</h3>
++        <p>Study planning and review behaviour will remain visible, explainable and testable independently of future AI features.</p>
++      </div>
++    </div>
+   </section>
+ 
+-  <section><div class="card"><h3>The Product Decision</h3><p>Most interview-preparation tools help users store material. ViewCoach starts from a different problem: preparation already requires a lot of decisions, and choosing what to study each day adds more friction before the work begins.</p><p>The current live version focuses on structured material and reliable workflows. Spaced repetition, review scheduling, the Focus Engine, goals and AI are intentionally not claimed as implemented yet.</p></div></section>
+-
+-  <section><div class="section-header"><h2>What Is Live</h2><p>The deployed product currently contains Milestones 0, 1 and 1.1.</p></div><div class="grid two">
+-    <div class="project-card"><h3>Production Foundation</h3><p class="muted">Custom email-based users, registration, login, logout, protected dashboard, PostgreSQL environments, a database-aware health endpoint, CI and production settings.</p></div>
+-    <div class="project-card"><h3>Structured Question Library</h3><p class="muted">Technical, behavioural and repository-debugging question types with type-specific create, edit and detail experiences.</p></div>
+-    <div class="project-card"><h3>Private Study Workflows</h3><p class="muted">User-owned libraries, authorization rules, search and filters, progressive technical reveals, debugging diagnosis reveals and dashboard summaries.</p></div>
+-    <div class="project-card"><h3>Bulk Import and Review</h3><p class="muted">Imports from pasted text, TXT, Markdown, CSV, DOCX and text-based PDFs, with resumable review batches, duplicate detection, editable titles, type overrides and transactional creation.</p></div>
+-  </div></section>
+-
+-  <section><div class="section-header"><h2>Architecture Decisions</h2><p>The architecture is intentionally simple enough to understand and strong enough to grow.</p></div><div class="grid two">
+-    <div class="project-card"><h3>Modular Monolith</h3><p class="muted">Django apps provide domain boundaries without introducing distributed-system complexity the project does not need.</p></div>
+-    <div class="project-card"><h3>PostgreSQL From the Start</h3><p class="muted">Local, test and production environments use PostgreSQL so development behaviour matches production more closely.</p></div>
+-    <div class="project-card"><h3>Typed Question Models</h3><p class="muted">A concrete base question with typed child models allows each interview format to store the information it actually needs.</p></div>
+-    <div class="project-card"><h3>Deterministic Before AI</h3><p class="muted">Structured product logic remains separate from future AI behaviour so planning and progress can stay inspectable and testable.</p></div>
+-  </div></section>
+-
+-  <section><div class="section-header"><h2>Next Milestones</h2><p>These are future features, not part of the current live claim.</p></div><div class="grid two">
+-    <div class="project-card"><h3>Practice and Review History</h3><p class="muted">Practice records, self-assessment, mistakes, confidence and review history.</p></div>
+-    <div class="project-card"><h3>Focus Engine</h3><p class="muted">Deterministic recommendations based on interview context, curriculum coverage, weak areas, available time and previous reviews.</p></div>
+-    <div class="project-card"><h3>Goals and Scheduling</h3><p class="muted">Interview goals, target dates, availability and readiness evidence.</p></div>
+-    <div class="project-card"><h3>Grounded AI Support</h3><p class="muted">Later retrieval and explanation features with citations, evaluation and safe fallbacks.</p></div>
+-  </div></section>
+-  <section class="center"><a class="btn" href="index.html">Back to Projects</a></section>
++  <section class="section container">
++    <div class="development-panel">
++      <div>
++        <p class="eyebrow">Development workflow</p>
++        <h2>AI-assisted, verification-led delivery.</h2>
++      </div>
++      <p>
++        I use AI to challenge architecture choices, turn agreed decisions into implementation plans,
++        generate test ideas, investigate bugs and improve documentation. I retain ownership of the product rules,
++        architecture, trade-offs and acceptance criteria, then review the code, trace the behaviour and run the tests
++        before accepting a change.
++      </p>
++    </div>
++  </section>
++
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Next scope</p>
++        <h2>Planned product layers.</h2>
++      </div>
++      <p>These features are not presented as part of the current release.</p>
++    </div>
++
++    <div class="roadmap-list">
++      <div>
++        <span>01</span>
++        <div>
++          <h3>Practice and review history</h3>
++          <p>Practice sessions, confidence, mistakes, review records and curriculum coverage.</p>
++        </div>
++      </div>
++      <div>
++        <span>02</span>
++        <div>
++          <h3>Deterministic Focus Engine</h3>
++          <p>Recommendations based on interview stage, dates, weak areas, available time and prior reviews.</p>
++        </div>
++      </div>
++      <div>
++        <span>03</span>
++        <div>
++          <h3>Grounded retrieval</h3>
++          <p>Cited access to notes, worked examples, debugging guidance and previous mistakes, with evaluation and fallback behaviour.</p>
++        </div>
++      </div>
++    </div>
++  </section>
+ </main>
+-<footer class="footer"><div class="container footer-content"><p>© 2026 Luthando Mbuyane</p><p class="muted">South Africa · Open to relocation</p></div></footer>
++
++<footer class="footer">
++  <div class="footer-inner">
++    <p>© 2026 Luthando Mbuyane</p>
++    <p>ViewCoach · Django · PostgreSQL · Testing · Deployment</p>
++  </div>
++</footer>
++
+ </body>
+ </html>
+diff --git a/projects/index.html b/projects/index.html
+index 52e6dd0..5689543 100644
+--- a/projects/index.html
++++ b/projects/index.html
+@@ -2,45 +2,177 @@
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+-  <title>Projects | Luthando Mbuyane</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <meta name="description" content="Backend, NLP, systems, HCI and data projects by Luthando Mbuyane.">
+-  <link rel="stylesheet" href="../assets/css/style.css">
++  <meta
++    name="description"
++    content="Software engineering, backend, data, NLP, systems and HCI projects by Luthando Mbuyane."
++  >
++  <title>Projects | Luthando Mbuyane</title>
++  <link rel="stylesheet" href="../assets/css/clean-style.css">
+ </head>
+ <body>
+-<nav class="nav"><div class="nav-container"><a href="../index.html" class="logo">Luthando Mbuyane</a><div class="nav-links"><a href="../index.html">Home</a><a class="active" href="index.html">Projects</a><a href="../about/index.html">About</a><a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a><a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a></div></div></nav>
+-<main class="container">
+-  <section class="project-hero">
+-    <div class="project-hero-main"><p class="eyebrow">Portfolio</p><h1>Projects</h1><p class="hero-role">Backend, NLP, systems, HCI and data work built around problems I wanted to understand better.</p><p class="hero-description">Each project page covers the problem, the approach, the engineering decisions and what I learned.</p></div>
+-    <div class="project-hero-side"><h3>Core Strengths</h3><div class="fact-list"><p><strong>Backend:</strong> Django, FastAPI, Flask, Laravel and PostgreSQL</p><p><strong>NLP:</strong> spaCy NER, data preparation and inference integration</p><p><strong>Delivery:</strong> Testing, CI/CD, deployment and debugging</p><p><strong>Degree:</strong> BSc Computer Science and Psychology</p><p><strong>Additional coursework:</strong> Applied Statistics</p></div></div>
++
++<header class="nav">
++  <div class="nav-inner">
++    <a class="logo" href="../index.html">Luthando Mbuyane</a>
++    <nav class="nav-links" aria-label="Primary navigation">
++      <a href="../index.html">Home</a>
++      <a class="active" href="index.html">Projects</a>
++      <a href="../about/index.html">About</a>
++      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
++      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
++    </nav>
++  </div>
++</header>
++
++<main>
++  <section class="page-intro container">
++    <p class="eyebrow">Project directory</p>
++    <h1>Software built around real product and engineering questions.</h1>
++    <p>
++      The strongest projects combine backend logic, structured data, tests and deployment.
++      Supporting work covers concurrency, networking, data preparation and human-centred design.
++    </p>
+   </section>
+ 
+-  <section>
+-    <div class="section-header"><h2>Live Products</h2><p>My strongest evidence for graduate software engineering, backend and data-oriented roles.</p></div>
+-    <div class="grid two">
+-      <div class="project-card">
+-        <p class="eyebrow">Live · Current Project</p><h3>ViewCoach</h3>
+-        <p class="muted">A Django interview-preparation platform with private user-owned question libraries, technical, behavioural and repository-debugging question types, progressive reveal, search and filters, and resumable bulk imports from multiple document formats.</p>
+-        <div class="pills"><span>Django 5.2</span><span>PostgreSQL</span><span>pytest</span><span>Ruff</span><span>GitHub Actions</span><span>Render</span></div>
+-        <div class="project-links"><a href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">Repository</a><a href="adaptive-interview-coach.html">Details</a></div>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Live products</p>
++        <h2>End-to-end builds.</h2>
+       </div>
+-      <div class="project-card">
+-        <p class="eyebrow">Live</p><h3>ScoreRent</h3>
+-        <p class="muted">A rental decision-support application with explainable scoring, authentication, user profiles, saved evaluations, PostgreSQL persistence, automated tests, CI/CD and deployment.</p>
+-        <div class="pills"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>pytest</span><span>GitHub Actions</span><span>Render</span></div>
+-        <div class="project-links"><a href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live App</a><a href="scorerent.html">Details</a></div>
++      <p>Public applications with working deployments, repositories and documented engineering decisions.</p>
++    </div>
++
++    <div class="project-grid">
++      <article class="project-tile featured-tile">
++        <div class="tile-topline">
++          <span class="status live">Live</span>
++          <span class="tile-stack">Django · PostgreSQL</span>
++        </div>
++        <h3>ViewCoach</h3>
++        <p>
++          Structured interview-preparation platform with private libraries, polymorphic question workflows,
++          bulk document import, validation, automated tests and production deployment.
++        </p>
++        <div class="tag-list">
++          <span>Django 5.2</span>
++          <span>PostgreSQL</span>
++          <span>pytest</span>
++          <span>GitHub Actions</span>
++          <span>Render</span>
++        </div>
++        <div class="actions compact">
++          <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
++          <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub</a>
++          <a class="button text-button" href="adaptive-interview-coach.html">Case study</a>
++        </div>
++      </article>
++
++      <article class="project-tile featured-tile">
++        <div class="tile-topline">
++          <span class="status live">Live</span>
++          <span class="tile-stack">FastAPI · PostgreSQL</span>
++        </div>
++        <h3>ScoreRent</h3>
++        <p>
++          Explainable rental decision-support platform with deterministic scoring, authentication,
++          saved evaluations, PostgreSQL persistence, tests, CI and deployment.
++        </p>
++        <div class="tag-list">
++          <span>FastAPI</span>
++          <span>PostgreSQL</span>
++          <span>pytest</span>
++          <span>GitHub Actions</span>
++          <span>Render</span>
++        </div>
++        <div class="actions compact">
++          <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
++          <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub</a>
++          <a class="button text-button" href="scorerent.html">Case study</a>
++        </div>
++      </article>
++    </div>
++  </section>
++
++  <section class="section section-tinted">
++    <div class="container">
++      <div class="section-heading">
++        <div>
++          <p class="eyebrow">Software engineering and systems</p>
++          <h2>Supporting technical work.</h2>
++        </div>
++        <p>Projects demonstrating networking, concurrency, backend structure and collaborative product delivery.</p>
++      </div>
++
++      <div class="project-grid three-column">
++        <article class="project-tile">
++          <p class="tile-stack">Python · TCP · Threading</p>
++          <h3>NetworkComm</h3>
++          <p>A TCP client-server messaging application covering protocol design, connection handling and concurrent clients.</p>
++          <a class="inline-link" href="networkcomm.html">View project →</a>
++        </article>
++
++        <article class="project-tile">
++          <p class="tile-stack">Java · Fork/Join</p>
++          <h3>Parallel Monte Carlo</h3>
++          <p>A parallel optimisation implementation with serial and parallel performance comparisons across workloads.</p>
++          <a class="inline-link" href="parallel-monte-carlo.html">View project →</a>
++        </article>
++
++        <article class="project-tile">
++          <p class="tile-stack">Flask · MongoDB · HCI</p>
++          <h3>SeaClear</h3>
++          <p>A collaborative capstone improving access to beach water-quality information through maps and community workflows.</p>
++          <a class="inline-link" href="seaclear.html">View project →</a>
++        </article>
++
++        <article class="project-tile">
++          <p class="tile-stack">FastAPI · SQLite</p>
++          <h3>IncidentDesk</h3>
++          <p>An incident-management system focused on CRUD workflows, validation, filtering and maintainable backend structure.</p>
++          <a class="inline-link" href="incidentdesk.html">View project →</a>
++        </article>
++
++        <article class="project-tile">
++          <p class="tile-stack">Product design · Prototype</p>
++          <h3>HealthSync</h3>
++          <p>A healthcare-access prototype using guided navigation and clearer service flows.</p>
++          <a class="inline-link" href="healthsync.html">View project →</a>
++        </article>
+       </div>
+     </div>
+   </section>
+ 
+-  <section><div class="section-header"><h2>Software Engineering and Systems</h2><p>Projects covering networking, concurrency, backend structure and user-centred design.</p></div><div class="grid two">
+-    <div class="project-card"><h3>NetworkComm</h3><p class="muted">A TCP client-server messaging application covering networking, multithreading, protocol design and concurrent client communication.</p><div class="pills"><span>Python</span><span>TCP</span><span>Sockets</span><span>Threading</span></div><div class="project-links"><a href="networkcomm.html">Details</a></div></div>
+-    <div class="project-card"><h3>Parallel Monte Carlo Optimisation</h3><p class="muted">Parallelised a Monte Carlo optimisation algorithm using Java's Fork/Join framework and compared serial and parallel performance.</p><div class="pills"><span>Java</span><span>ForkJoinPool</span><span>Concurrency</span></div><div class="project-links"><a href="parallel-monte-carlo.html">Details</a></div></div>
+-    <div class="project-card"><h3>SeaClear</h3><p class="muted">An HCI capstone application for Cape Town beach water-quality data, with map-based discovery, reporting, admin workflows and usability testing.</p><div class="pills"><span>Python</span><span>Flask</span><span>MongoDB</span><span>HCI</span></div><div class="project-links"><a href="seaclear.html">Details</a></div></div>
+-    <div class="project-card"><h3>CSV Data Cleaning Pipeline</h3><p class="muted">A modular preprocessing pipeline for cleaning, validating and transforming inconsistent CSV datasets into analysis-ready outputs.</p><div class="pills"><span>Python</span><span>Pandas</span><span>Validation</span></div><div class="project-links"><a href="csv-pipeline.html">Details</a></div></div>
+-  </div></section>
+-  <section class="center"><a class="btn" href="../index.html">Back to Home</a></section>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Data work</p>
++        <h2>Preparation and validation.</h2>
++      </div>
++      <p>Projects focused on turning inconsistent inputs into reliable, analysis-ready outputs.</p>
++    </div>
++
++    <div class="project-grid">
++      <article class="project-tile">
++        <p class="tile-stack">Python · Pandas</p>
++        <h3>CSV Data Cleaning Pipeline</h3>
++        <p>
++          A modular pipeline for cleaning, validating, standardising and transforming inconsistent CSV data,
++          with analysis-ready and Excel outputs.
++        </p>
++        <a class="inline-link" href="csv-pipeline.html">View project →</a>
++      </article>
++    </div>
++  </section>
+ </main>
+-<footer class="footer"><div class="container footer-content"><p>© 2026 Luthando Mbuyane</p><p class="muted">South Africa · Open to relocation</p></div></footer>
++
++<footer class="footer">
++  <div class="footer-inner">
++    <p>© 2026 Luthando Mbuyane</p>
++    <p>South Africa · Open to graduate and junior software roles</p>
++  </div>
++</footer>
++
+ </body>
+ </html>
+diff --git a/projects/scorerent.html b/projects/scorerent.html
+index 9b89293..17163d2 100644
+--- a/projects/scorerent.html
++++ b/projects/scorerent.html
+@@ -2,155 +2,197 @@
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+-  <title>ScoreRent | Luthando Mbuyane</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-  <meta name="description" content="ScoreRent, a rental decision-support product by Luthando Mbuyane.">
+-  <link rel="stylesheet" href="../assets/css/style.css">
++  <meta
++    name="description"
++    content="ScoreRent, an explainable rental decision-support application built by Luthando Mbuyane."
++  >
++  <title>ScoreRent | Luthando Mbuyane</title>
++  <link rel="stylesheet" href="../assets/css/clean-style.css">
+ </head>
+ <body>
+ 
+-<nav class="nav">
++<header class="nav">
+   <div class="nav-inner">
+-    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+-    <div class="nav-links">
++    <a class="logo" href="../index.html">Luthando Mbuyane</a>
++    <nav class="nav-links" aria-label="Primary navigation">
+       <a href="../index.html">Home</a>
+       <a class="active" href="index.html">Projects</a>
+       <a href="../about/index.html">About</a>
+       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+       <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+-    </div>
++    </nav>
+   </div>
+-</nav>
+-
+-<main class="container">
+-  <section class="project-hero">
+-    <span class="kicker">Live product</span>
+-    <h1>ScoreRent</h1>
+-    <p class="lead">
+-      A rental decision-support app that helps renters judge their fit for a listing before paying non-refundable application fees.
+-    </p>
+-    <p class="supporting">
+-      The product evaluates a renter profile against listing requirements and returns a confidence score, a verdict, reasons behind the decision, and practical actions to improve the application.
+-    </p>
+-    <div class="meta-grid">
++</header>
++
++<main>
++  <section class="case-hero container">
++    <div>
++      <p class="eyebrow">Live product</p>
++      <h1>ScoreRent</h1>
++      <p class="hero-summary">
++        An explainable rental decision-support application that evaluates renter and listing information
++        before the user commits to a potentially non-refundable application fee.
++      </p>
++      <div class="actions">
++        <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
++        <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">View repository</a>
++        <a class="button text-button" href="index.html">Project directory</a>
++      </div>
++    </div>
++
++    <dl class="case-meta">
+       <div>
+-        <strong>Stack</strong>
+-        FastAPI, Jinja2, PostgreSQL, pytest, GitHub Actions, Render
++        <dt>Stack</dt>
++        <dd>FastAPI, Jinja2, PostgreSQL</dd>
+       </div>
+       <div>
+-        <strong>Focus</strong>
+-        Decision support, product logic, testing, persistence, and deployment
++        <dt>Quality</dt>
++        <dd>pytest, deterministic domain rules, GitHub Actions</dd>
+       </div>
+       <div>
+-        <strong>Status</strong>
+-        Live and working, with future product expansion planned
++        <dt>Deployment</dt>
++        <dd>Render with production PostgreSQL persistence</dd>
+       </div>
+-    </div>
+-    <div class="button-row">
+-      <a class="btn primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+-      <a class="btn" href="index.html">Back to projects</a>
+-    </div>
++      <div>
++        <dt>Product focus</dt>
++        <dd>Explainability, confidence and actionable outcomes</dd>
++      </div>
++    </dl>
+   </section>
+ 
+-  <section class="split">
+-    <div class="card">
+-      <div class="section-head">
+-        <h2>The problem</h2>
++  <section class="section container">
++    <div class="case-layout">
++      <div class="case-main">
++        <div class="section-heading simple">
++          <div>
++            <p class="eyebrow">Problem and approach</p>
++            <h2>Reduce uncertainty without pretending to predict acceptance.</h2>
++          </div>
++        </div>
++
++        <p class="large-copy">
++          Rental applications can require fees and substantial documentation before a renter knows whether the listing
++          is realistically suitable. ScoreRent makes the underlying factors visible before that commitment.
++        </p>
++
++        <p>
++          The application compares listing requirements with the renter profile and applies deterministic scoring rules.
++          The result includes a score, verdict, confidence level, contributing reasons and practical actions.
++          The product presents this as decision support rather than a guarantee.
++        </p>
+       </div>
+-      <p>
+-        I built ScoreRent after seeing how expensive and uncertain rental applications can be. People were paying application fees, submitting documents, and then getting rejected for reasons they could have known upfront.
+-      </p>
+-      <p>
+-        I wanted a tool that could make the situation clearer. Not a vague recommendation. A structured result with visible logic and useful next steps.
+-      </p>
++
++      <aside class="case-note">
++        <span>Design principle</span>
++        <p>The user should be able to understand why the result changed.</p>
++      </aside>
+     </div>
++  </section>
+ 
+-    <div class="card">
+-      <div class="section-head">
+-        <h2>The shape of the solution</h2>
++  <section class="section section-tinted">
++    <div class="container">
++      <div class="section-heading">
++        <div>
++          <p class="eyebrow">Implementation</p>
++          <h2>Core product and engineering features.</h2>
++        </div>
+       </div>
+-      <p>
+-        The app compares listing requirements with a renter profile and runs rule-based scoring. The output is intentionally explainable. It is a confidence score, not a fake promise of acceptance.
+-      </p>
+-      <div class="tags">
+-        <span>Explainable logic</span>
+-        <span>Profile matching</span>
+-        <span>Actionable output</span>
++
++      <div class="feature-columns">
++        <article>
++          <p class="feature-number">01</p>
++          <h3>Evaluation workflow</h3>
++          <ul>
++            <li>Guest evaluation without an account</li>
++            <li>Renter and listing information validation</li>
++            <li>Score, verdict, confidence, reasons and next actions</li>
++            <li>Different logic for worker and bursary-supported student profiles</li>
++          </ul>
++        </article>
++
++        <article>
++          <p class="feature-number">02</p>
++          <h3>User accounts and persistence</h3>
++          <ul>
++            <li>Registration, login and logout</li>
++            <li>Saved renter profiles</li>
++            <li>Evaluation history and result retrieval</li>
++            <li>PostgreSQL-backed production data</li>
++          </ul>
++        </article>
++
++        <article>
++          <p class="feature-number">03</p>
++          <h3>Delivery and quality</h3>
++          <ul>
++            <li>Automated tests protecting scoring behaviour</li>
++            <li>CI checks through GitHub Actions</li>
++            <li>Deployed application on Render</li>
++            <li>Clear separation between rules and presentation</li>
++          </ul>
++        </article>
+       </div>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-head">
+-      <h2>Core product features</h2>
+-    </div>
+-    <div class="grid two">
+-      <article class="project-card">
+-        <h3>Guest evaluation flow</h3>
+-        <p>
+-          Users can enter listing details and renter information without signing in and immediately receive a score, verdict, reasons, and suggested actions.
+-        </p>
+-      </article>
+-      <article class="project-card">
+-        <h3>Authentication and saved history</h3>
+-        <p>
+-          Logged-in users can save renter details, keep evaluation history, and revisit past results.
+-        </p>
+-      </article>
+-      <article class="project-card">
+-        <h3>Explainable scoring</h3>
+-        <p>
+-          The scoring engine applies deterministic rules and returns a clear breakdown of what changed the score.
+-        </p>
+-      </article>
+-      <article class="project-card">
+-        <h3>Engineering discipline</h3>
+-        <p>
+-          The project includes tests for the scoring logic, CI checks, and a deployed environment with PostgreSQL persistence.
+-        </p>
+-      </article>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Engineering decisions</p>
++        <h2>Explainability is part of the architecture.</h2>
++      </div>
+     </div>
+-  </section>
+ 
+-  <section>
+-    <div class="section-head">
+-      <h2>What I learned</h2>
+-    </div>
+-    <div class="grid two">
+-      <div class="note">
+-        <h3>Product lesson</h3>
+-        <p>
+-          Trust matters in a decision-support product. The user needs to understand the result and feel that the logic is fair, not magical.
+-        </p>
++    <div class="decision-list">
++      <div>
++        <h3>Deterministic scoring</h3>
++        <p>Important thresholds and penalties remain explicit, inspectable and directly testable.</p>
+       </div>
+-      <div class="note">
+-        <h3>Engineering lesson</h3>
+-        <p>
+-          The more important the logic is, the more it needs tests. This project made me much more disciplined about protecting behaviour as a product grows.
+-        </p>
++      <div>
++        <h3>Structured output</h3>
++        <p>The score is accompanied by reasons and actions so that the result can support a decision rather than replace it.</p>
++      </div>
++      <div>
++        <h3>Tests around domain behaviour</h3>
++        <p>Changes to affordability, documentation, guarantor and bursary rules are protected by automated tests.</p>
++      </div>
++      <div>
++        <h3>Incremental product growth</h3>
++        <p>Authentication, persistence and deployment were added around the core evaluation behaviour without hiding the rules.</p>
+       </div>
+     </div>
+   </section>
+ 
+-  <section>
+-    <div class="section-head">
+-      <h2>Next steps</h2>
+-      <p>
+-        These are product improvements I would like to build next.
+-      </p>
++  <section class="section container">
++    <div class="section-heading">
++      <div>
++        <p class="eyebrow">Potential extensions</p>
++        <h2>Useful next product work.</h2>
++      </div>
+     </div>
+-    <div class="timeline">
+-      <div class="timeline-item">
+-        <strong>Dynamic re-evaluation</strong>
+-        Update earlier results when a renter profile changes.
++
++    <div class="roadmap-list">
++      <div>
++        <span>01</span>
++        <div>
++          <h3>Dynamic re-evaluation</h3>
++          <p>Recalculate earlier results when profile or listing information changes.</p>
++        </div>
+       </div>
+-      <div class="timeline-item">
+-        <strong>Smarter comparisons</strong>
+-        Compare multiple listings using the renter's current profile.
++      <div>
++        <span>02</span>
++        <div>
++          <h3>Listing comparisons</h3>
++          <p>Compare multiple options using the same renter profile and visible criteria.</p>
++        </div>
+       </div>
+-      <div class="timeline-item">
+-        <strong>Guided support</strong>
+-        Add a grounded assistant layer that can explain outcomes and answer product-specific questions without hiding the underlying rules.
++      <div>
++        <span>03</span>
++        <div>
++          <h3>Grounded assistance</h3>
++          <p>Explain product-specific outcomes without replacing the underlying deterministic logic.</p>
++        </div>
+       </div>
+     </div>
+   </section>
+@@ -159,7 +201,7 @@
+ <footer class="footer">
+   <div class="footer-inner">
+     <p>© 2026 Luthando Mbuyane</p>
+-    <p>South Africa · Open to graduate and junior software roles</p>
++    <p>ScoreRent · FastAPI · PostgreSQL · Explainable decision support</p>
+   </div>
+ </footer>
+ 
