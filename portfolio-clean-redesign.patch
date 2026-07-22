@@ -1,0 +1,2119 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ ! -d "assets/css" ] || [ ! -d "projects" ] || [ ! -d "about" ]; then
+  echo "Run this patch from the root of portfolio-v2." >&2
+  exit 1
+fi
+
+mkdir -p .
+cat > index.html <<'PORTFOLIO_CLEAN_REDESIGN_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Portfolio of Luthando Mbuyane, a graduate software engineer building backend, data-driven and AI-enabled products."
+  >
+  <title>Luthando Mbuyane | Graduate Software Engineer</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="projects/index.html">Projects</a>
+      <a href="about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero-home container">
+    <div class="hero-copy">
+      <p class="eyebrow">Graduate Software Engineer</p>
+      <h1>Backend systems, data-driven products, and practical AI.</h1>
+      <p class="hero-summary">
+        I build reliable web applications with Python, Django, FastAPI, PostgreSQL and testing-led workflows.
+        My background in Computer Science, Psychology and Applied Statistics also shapes how I approach product decisions,
+        data and user trust.
+      </p>
+
+      <div class="actions">
+        <a class="button primary" href="projects/index.html">View projects</a>
+        <a class="button" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open ViewCoach</a>
+        <a class="button text-button" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
+      </div>
+    </div>
+
+    <aside class="profile-summary" aria-label="Profile summary">
+      <p class="profile-label">Profile</p>
+      <dl>
+        <div>
+          <dt>Focus</dt>
+          <dd>Backend and product engineering</dd>
+        </div>
+        <div>
+          <dt>Experience</dt>
+          <dd>Commercial backend and NLP work</dd>
+        </div>
+        <div>
+          <dt>Education</dt>
+          <dd>BSc Computer Science and Psychology</dd>
+        </div>
+        <div>
+          <dt>Additional study</dt>
+          <dd>Applied Statistics coursework</dd>
+        </div>
+        <div>
+          <dt>Location</dt>
+          <dd>South Africa · Open to relocation</dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Featured work</p>
+        <h2>Deployed products with clear engineering decisions.</h2>
+      </div>
+      <p>
+        These projects show how I move from a product problem to domain models, tested backend behaviour,
+        persistence, delivery and production deployment.
+      </p>
+    </div>
+
+    <div class="featured-list">
+      <article class="featured-project">
+        <div class="project-number">01</div>
+        <div class="project-content">
+          <div class="project-heading">
+            <div>
+              <p class="status live">Live product</p>
+              <h3>ViewCoach</h3>
+            </div>
+            <p class="project-type">Django · PostgreSQL</p>
+          </div>
+
+          <p class="project-description">
+            An interview-preparation platform with private question libraries, technical, behavioural and
+            repository-debugging workflows, progressive answer reveal, bulk document import and review-ready validation.
+          </p>
+
+          <ul class="evidence-list">
+            <li>Custom email-based authentication and user-owned data</li>
+            <li>Polymorphic question model with type-specific create, edit and detail flows</li>
+            <li>TXT, Markdown, CSV, DOCX and text-based PDF import with resumable review batches</li>
+            <li>PostgreSQL, pytest, Ruff, GitHub Actions and Render deployment</li>
+          </ul>
+
+          <div class="actions compact">
+            <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+            <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button text-button" href="projects/adaptive-interview-coach.html">Case study</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured-project">
+        <div class="project-number">02</div>
+        <div class="project-content">
+          <div class="project-heading">
+            <div>
+              <p class="status live">Live product</p>
+              <h3>ScoreRent</h3>
+            </div>
+            <p class="project-type">FastAPI · PostgreSQL</p>
+          </div>
+
+          <p class="project-description">
+            A rental decision-support application that evaluates renter and listing information using explainable,
+            deterministic scoring and returns a verdict, confidence level, reasons and practical next actions.
+          </p>
+
+          <ul class="evidence-list">
+            <li>Guest evaluation flow plus authenticated profiles and saved history</li>
+            <li>Rule-based scoring with visible reasons rather than opaque predictions</li>
+            <li>PostgreSQL persistence, pytest coverage and GitHub Actions CI</li>
+            <li>Production deployment on Render</li>
+          </ul>
+
+          <div class="actions compact">
+            <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+            <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="button text-button" href="projects/scorerent.html">Case study</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Commercial experience</p>
+          <h2>Backend delivery inside an existing EdTech product.</h2>
+        </div>
+        <p>
+          Fixed-term software engineering work across Laravel/PHP and Python/Flask services,
+          including NLP functionality, tests, dependencies and production debugging.
+        </p>
+      </div>
+
+      <div class="experience-layout">
+        <div class="experience-title">
+          <h3>Software Engineering Contractor</h3>
+          <p>EdTech startup · 2026</p>
+        </div>
+
+        <div class="experience-details">
+          <div>
+            <h4>Backend</h4>
+            <p>Database-backed features, modular packages, API workflows and external service integrations.</p>
+          </div>
+          <div>
+            <h4>NLP</h4>
+            <p>spaCy NER data preparation, entity classification, pipeline changes, tests and chatbot integration.</p>
+          </div>
+          <div>
+            <h4>Delivery</h4>
+            <p>PHPUnit, GitHub Actions, Composer dependencies, compatibility issues and production debugging.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Technical profile</p>
+        <h2>Tools supported by practical use.</h2>
+      </div>
+      <p>
+        My strongest evidence is in backend development, relational data, testing and deployment,
+        with additional experience in NLP and data preparation.
+      </p>
+    </div>
+
+    <div class="capability-grid">
+      <div class="capability">
+        <h3>Backend</h3>
+        <p>Python, Java, PHP, Django, FastAPI, Flask, Laravel, REST APIs and server-rendered applications.</p>
+      </div>
+      <div class="capability">
+        <h3>Data and NLP</h3>
+        <p>PostgreSQL, SQLite, MongoDB, Pandas, data validation, spaCy NER and inference-service integration.</p>
+      </div>
+      <div class="capability">
+        <h3>Engineering practice</h3>
+        <p>pytest, PHPUnit, CI/CD, GitHub Actions, Docker, migrations, authorization testing and production debugging.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Additional work</p>
+        <h2>Supporting projects across systems, data and HCI.</h2>
+      </div>
+      <a class="inline-link" href="projects/index.html">View complete project directory →</a>
+    </div>
+
+    <div class="project-directory">
+      <a href="projects/seaclear.html">
+        <span>SeaClear</span>
+        <small>Flask · MongoDB · HCI · usability testing</small>
+      </a>
+      <a href="projects/networkcomm.html">
+        <span>NetworkComm</span>
+        <small>Python · TCP sockets · threading · protocol design</small>
+      </a>
+      <a href="projects/parallel-monte-carlo.html">
+        <span>Parallel Monte Carlo</span>
+        <small>Java · Fork/Join · concurrency · performance</small>
+      </a>
+      <a href="projects/csv-pipeline.html">
+        <span>CSV Cleaning Pipeline</span>
+        <small>Python · Pandas · validation · transformation</small>
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>Graduate software engineering · Backend · Data · Applied AI</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_CLEAN_REDESIGN_EOF
+
+mkdir -p projects
+cat > projects/index.html <<'PORTFOLIO_CLEAN_REDESIGN_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Software engineering, backend, data, NLP, systems and HCI projects by Luthando Mbuyane."
+  >
+  <title>Projects | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-intro container">
+    <p class="eyebrow">Project directory</p>
+    <h1>Software built around real product and engineering questions.</h1>
+    <p>
+      The strongest projects combine backend logic, structured data, tests and deployment.
+      Supporting work covers concurrency, networking, data preparation and human-centred design.
+    </p>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Live products</p>
+        <h2>End-to-end builds.</h2>
+      </div>
+      <p>Public applications with working deployments, repositories and documented engineering decisions.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-tile featured-tile">
+        <div class="tile-topline">
+          <span class="status live">Live</span>
+          <span class="tile-stack">Django · PostgreSQL</span>
+        </div>
+        <h3>ViewCoach</h3>
+        <p>
+          Structured interview-preparation platform with private libraries, polymorphic question workflows,
+          bulk document import, validation, automated tests and production deployment.
+        </p>
+        <div class="tag-list">
+          <span>Django 5.2</span>
+          <span>PostgreSQL</span>
+          <span>pytest</span>
+          <span>GitHub Actions</span>
+          <span>Render</span>
+        </div>
+        <div class="actions compact">
+          <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+          <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button text-button" href="adaptive-interview-coach.html">Case study</a>
+        </div>
+      </article>
+
+      <article class="project-tile featured-tile">
+        <div class="tile-topline">
+          <span class="status live">Live</span>
+          <span class="tile-stack">FastAPI · PostgreSQL</span>
+        </div>
+        <h3>ScoreRent</h3>
+        <p>
+          Explainable rental decision-support platform with deterministic scoring, authentication,
+          saved evaluations, PostgreSQL persistence, tests, CI and deployment.
+        </p>
+        <div class="tag-list">
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>pytest</span>
+          <span>GitHub Actions</span>
+          <span>Render</span>
+        </div>
+        <div class="actions compact">
+          <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+          <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button text-button" href="scorerent.html">Case study</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Software engineering and systems</p>
+          <h2>Supporting technical work.</h2>
+        </div>
+        <p>Projects demonstrating networking, concurrency, backend structure and collaborative product delivery.</p>
+      </div>
+
+      <div class="project-grid three-column">
+        <article class="project-tile">
+          <p class="tile-stack">Python · TCP · Threading</p>
+          <h3>NetworkComm</h3>
+          <p>A TCP client-server messaging application covering protocol design, connection handling and concurrent clients.</p>
+          <a class="inline-link" href="networkcomm.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">Java · Fork/Join</p>
+          <h3>Parallel Monte Carlo</h3>
+          <p>A parallel optimisation implementation with serial and parallel performance comparisons across workloads.</p>
+          <a class="inline-link" href="parallel-monte-carlo.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">Flask · MongoDB · HCI</p>
+          <h3>SeaClear</h3>
+          <p>A collaborative capstone improving access to beach water-quality information through maps and community workflows.</p>
+          <a class="inline-link" href="seaclear.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">FastAPI · SQLite</p>
+          <h3>IncidentDesk</h3>
+          <p>An incident-management system focused on CRUD workflows, validation, filtering and maintainable backend structure.</p>
+          <a class="inline-link" href="incidentdesk.html">View project →</a>
+        </article>
+
+        <article class="project-tile">
+          <p class="tile-stack">Product design · Prototype</p>
+          <h3>HealthSync</h3>
+          <p>A healthcare-access prototype using guided navigation and clearer service flows.</p>
+          <a class="inline-link" href="healthsync.html">View project →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Data work</p>
+        <h2>Preparation and validation.</h2>
+      </div>
+      <p>Projects focused on turning inconsistent inputs into reliable, analysis-ready outputs.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-tile">
+        <p class="tile-stack">Python · Pandas</p>
+        <h3>CSV Data Cleaning Pipeline</h3>
+        <p>
+          A modular pipeline for cleaning, validating, standardising and transforming inconsistent CSV data,
+          with analysis-ready and Excel outputs.
+        </p>
+        <a class="inline-link" href="csv-pipeline.html">View project →</a>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_CLEAN_REDESIGN_EOF
+
+mkdir -p about
+cat > about/index.html <<'PORTFOLIO_CLEAN_REDESIGN_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="About Luthando Mbuyane, a graduate software engineer with backend, NLP and data-oriented experience."
+  >
+  <title>About | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../projects/index.html">Projects</a>
+      <a class="active" href="index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-intro container">
+    <p class="eyebrow">About</p>
+    <h1>Technical depth with a broader product perspective.</h1>
+    <p>
+      I am a graduate software engineer with a foundation in Computer Science, commercial backend and NLP exposure,
+      and additional training in Psychology and Applied Statistics.
+    </p>
+  </section>
+
+  <section class="section container">
+    <div class="profile-layout">
+      <div class="profile-main">
+        <div class="section-heading simple">
+          <div>
+            <p class="eyebrow">Professional profile</p>
+            <h2>Backend engineering is my strongest current fit.</h2>
+          </div>
+        </div>
+
+        <p class="large-copy">
+          My work centres on application logic, relational data, authentication, validation, testing and deployment.
+          I have built independent products in Django and FastAPI and contributed to existing Laravel and Flask services
+          in a commercial EdTech environment.
+        </p>
+
+        <p>
+          I am also interested in data-oriented and AI-enabled products, particularly where models or scoring systems
+          have to operate inside clear, testable workflows. My Psychology background adds useful context around usability,
+          behaviour and trust, while Applied Statistics coursework supports evidence-based evaluation.
+        </p>
+      </div>
+
+      <aside class="qualification-list">
+        <div>
+          <span>Degree</span>
+          <strong>BSc Computer Science and Psychology</strong>
+          <small>University of Cape Town</small>
+        </div>
+        <div>
+          <span>Additional coursework</span>
+          <strong>Applied Statistics</strong>
+          <small>Regression, time series, resampling, statistical learning and evaluation</small>
+        </div>
+        <div>
+          <span>Current direction</span>
+          <strong>Graduate and junior software roles</strong>
+          <small>Backend, applied AI/NLP and data-oriented product engineering</small>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Commercial experience</p>
+          <h2>Engineering in a real product environment.</h2>
+        </div>
+        <p>
+          My contractor experience exposed me to existing codebases, integration constraints,
+          automated tests and the difference between a local fix and a production-ready change.
+        </p>
+      </div>
+
+      <div class="experience-layout">
+        <div class="experience-title">
+          <h3>Software Engineering Contractor</h3>
+          <p>EdTech startup · Fixed-term contract · 2026</p>
+        </div>
+
+        <div class="experience-details">
+          <div>
+            <h4>Application work</h4>
+            <p>Laravel/PHP and Flask services, database-backed features, API workflows and external integrations.</p>
+          </div>
+          <div>
+            <h4>NLP work</h4>
+            <p>spaCy NER training data, entity classification, pipeline changes, tests and chatbot feature integration.</p>
+          </div>
+          <div>
+            <h4>Debugging and delivery</h4>
+            <p>Failing tests, GitHub Actions, Composer dependencies, PHP compatibility and deployment issues.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">How I work</p>
+        <h2>A practical engineering approach.</h2>
+      </div>
+      <p>
+        The goal is not only to produce working code, but to make the behaviour understandable,
+        verifiable and maintainable.
+      </p>
+    </div>
+
+    <div class="principle-list">
+      <div>
+        <span>01</span>
+        <h3>Define behaviour clearly</h3>
+        <p>I prefer explicit domain rules, useful acceptance criteria and outputs that can be explained.</p>
+      </div>
+      <div>
+        <span>02</span>
+        <h3>Protect important logic</h3>
+        <p>Validation, authorization and automated tests are part of implementation rather than later cleanup.</p>
+      </div>
+      <div>
+        <span>03</span>
+        <h3>Use AI as an engineering tool</h3>
+        <p>
+          I use AI for architecture critique, planning, test ideas, debugging hypotheses and documentation,
+          while retaining responsibility for design decisions, code review, behaviour tracing and final verification.
+        </p>
+      </div>
+      <div>
+        <span>04</span>
+        <h3>Keep product context visible</h3>
+        <p>Technical choices should support the user workflow and the actual risk or friction the product addresses.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container contact-band">
+    <div>
+      <p class="eyebrow">Current search</p>
+      <h2>Open to graduate and junior software engineering opportunities.</h2>
+    </div>
+    <div class="actions">
+      <a class="button primary" href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
+      <a class="button" href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to relocation</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_CLEAN_REDESIGN_EOF
+
+mkdir -p projects
+cat > projects/adaptive-interview-coach.html <<'PORTFOLIO_CLEAN_REDESIGN_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="ViewCoach, a deployed Django interview-preparation platform built by Luthando Mbuyane."
+  >
+  <title>ViewCoach | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="case-hero container">
+    <div>
+      <p class="eyebrow">Live product</p>
+      <h1>ViewCoach</h1>
+      <p class="hero-summary">
+        A Django interview-preparation platform for creating, importing and reviewing structured technical,
+        behavioural and repository-debugging questions.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+        <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">View repository</a>
+        <a class="button text-button" href="index.html">Project directory</a>
+      </div>
+    </div>
+
+    <dl class="case-meta">
+      <div>
+        <dt>Stack</dt>
+        <dd>Django 5.2, PostgreSQL, server-rendered templates</dd>
+      </div>
+      <div>
+        <dt>Quality</dt>
+        <dd>pytest, Ruff, authorization tests, GitHub Actions</dd>
+      </div>
+      <div>
+        <dt>Deployment</dt>
+        <dd>Render with production settings and database health checks</dd>
+      </div>
+      <div>
+        <dt>Current release</dt>
+        <dd>Production foundation, question library and bulk import</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section container">
+    <div class="case-layout">
+      <div class="case-main">
+        <div class="section-heading simple">
+          <div>
+            <p class="eyebrow">Product overview</p>
+            <h2>Structured preparation before automated planning.</h2>
+          </div>
+        </div>
+        <p class="large-copy">
+          ViewCoach starts with the underlying study material and workflows. Users can maintain a private question library,
+          work with different interview formats, progressively reveal answers and import existing material for review.
+        </p>
+        <p>
+          Spaced repetition, review scheduling, the Focus Engine, goals and generative AI are intentionally separated from
+          the current release. The structured foundation is designed to remain useful and testable before those layers are added.
+        </p>
+      </div>
+
+      <aside class="case-note">
+        <span>Core product question</span>
+        <p>Given the interview context, what should the user practise next?</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Implemented</p>
+          <h2>Current product capability.</h2>
+        </div>
+        <p>The live release contains Milestones 0, 1 and 1.1.</p>
+      </div>
+
+      <div class="feature-columns">
+        <article>
+          <p class="feature-number">01</p>
+          <h3>Production foundation</h3>
+          <ul>
+            <li>Custom email-based user model</li>
+            <li>Registration, login, logout and protected dashboard</li>
+            <li>PostgreSQL across local, test and production settings</li>
+            <li>Database-aware health endpoint</li>
+            <li>pytest, Ruff and GitHub Actions CI</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">02</p>
+          <h3>Structured question library</h3>
+          <ul>
+            <li>Technical, behavioural and repository-debugging question types</li>
+            <li>Type-specific create, edit and detail experiences</li>
+            <li>Private user-owned libraries</li>
+            <li>Search and filters for type, status and difficulty</li>
+            <li>Progressive technical-answer and diagnosis reveal</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">03</p>
+          <h3>Bulk import and review</h3>
+          <ul>
+            <li>Pasted text, TXT, Markdown, CSV, DOCX and text-based PDF input</li>
+            <li>Resumable review batches and editable generated titles</li>
+            <li>Per-item type overrides and duplicate detection</li>
+            <li>Transactional, idempotent creation</li>
+            <li>Needs-notes and mark-ready validation workflows</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Architecture</p>
+        <h2>Decisions made for clarity and controlled growth.</h2>
+      </div>
+    </div>
+
+    <div class="decision-list">
+      <div>
+        <h3>Modular Django monolith</h3>
+        <p>Clear domain boundaries without introducing distributed-system complexity before the product requires it.</p>
+      </div>
+      <div>
+        <h3>PostgreSQL from the beginning</h3>
+        <p>One relational data model across local, test and production environments, with no application SQLite fallback.</p>
+      </div>
+      <div>
+        <h3>Concrete base question with typed children</h3>
+        <p>Shared behaviour remains central while each interview format stores and presents its own relevant detail.</p>
+      </div>
+      <div>
+        <h3>Deterministic logic before AI</h3>
+        <p>Study planning and review behaviour will remain visible, explainable and testable independently of future AI features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="development-panel">
+      <div>
+        <p class="eyebrow">Development workflow</p>
+        <h2>AI-assisted, verification-led delivery.</h2>
+      </div>
+      <p>
+        I use AI to challenge architecture choices, turn agreed decisions into implementation plans,
+        generate test ideas, investigate bugs and improve documentation. I retain ownership of the product rules,
+        architecture, trade-offs and acceptance criteria, then review the code, trace the behaviour and run the tests
+        before accepting a change.
+      </p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Next scope</p>
+        <h2>Planned product layers.</h2>
+      </div>
+      <p>These features are not presented as part of the current release.</p>
+    </div>
+
+    <div class="roadmap-list">
+      <div>
+        <span>01</span>
+        <div>
+          <h3>Practice and review history</h3>
+          <p>Practice sessions, confidence, mistakes, review records and curriculum coverage.</p>
+        </div>
+      </div>
+      <div>
+        <span>02</span>
+        <div>
+          <h3>Deterministic Focus Engine</h3>
+          <p>Recommendations based on interview stage, dates, weak areas, available time and prior reviews.</p>
+        </div>
+      </div>
+      <div>
+        <span>03</span>
+        <div>
+          <h3>Grounded retrieval</h3>
+          <p>Cited access to notes, worked examples, debugging guidance and previous mistakes, with evaluation and fallback behaviour.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>ViewCoach · Django · PostgreSQL · Testing · Deployment</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_CLEAN_REDESIGN_EOF
+
+mkdir -p projects
+cat > projects/scorerent.html <<'PORTFOLIO_CLEAN_REDESIGN_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="ScoreRent, an explainable rental decision-support application built by Luthando Mbuyane."
+  >
+  <title>ScoreRent | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="case-hero container">
+    <div>
+      <p class="eyebrow">Live product</p>
+      <h1>ScoreRent</h1>
+      <p class="hero-summary">
+        An explainable rental decision-support application that evaluates renter and listing information
+        before the user commits to a potentially non-refundable application fee.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+        <a class="button" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">View repository</a>
+        <a class="button text-button" href="index.html">Project directory</a>
+      </div>
+    </div>
+
+    <dl class="case-meta">
+      <div>
+        <dt>Stack</dt>
+        <dd>FastAPI, Jinja2, PostgreSQL</dd>
+      </div>
+      <div>
+        <dt>Quality</dt>
+        <dd>pytest, deterministic domain rules, GitHub Actions</dd>
+      </div>
+      <div>
+        <dt>Deployment</dt>
+        <dd>Render with production PostgreSQL persistence</dd>
+      </div>
+      <div>
+        <dt>Product focus</dt>
+        <dd>Explainability, confidence and actionable outcomes</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="section container">
+    <div class="case-layout">
+      <div class="case-main">
+        <div class="section-heading simple">
+          <div>
+            <p class="eyebrow">Problem and approach</p>
+            <h2>Reduce uncertainty without pretending to predict acceptance.</h2>
+          </div>
+        </div>
+
+        <p class="large-copy">
+          Rental applications can require fees and substantial documentation before a renter knows whether the listing
+          is realistically suitable. ScoreRent makes the underlying factors visible before that commitment.
+        </p>
+
+        <p>
+          The application compares listing requirements with the renter profile and applies deterministic scoring rules.
+          The result includes a score, verdict, confidence level, contributing reasons and practical actions.
+          The product presents this as decision support rather than a guarantee.
+        </p>
+      </div>
+
+      <aside class="case-note">
+        <span>Design principle</span>
+        <p>The user should be able to understand why the result changed.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Implementation</p>
+          <h2>Core product and engineering features.</h2>
+        </div>
+      </div>
+
+      <div class="feature-columns">
+        <article>
+          <p class="feature-number">01</p>
+          <h3>Evaluation workflow</h3>
+          <ul>
+            <li>Guest evaluation without an account</li>
+            <li>Renter and listing information validation</li>
+            <li>Score, verdict, confidence, reasons and next actions</li>
+            <li>Different logic for worker and bursary-supported student profiles</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">02</p>
+          <h3>User accounts and persistence</h3>
+          <ul>
+            <li>Registration, login and logout</li>
+            <li>Saved renter profiles</li>
+            <li>Evaluation history and result retrieval</li>
+            <li>PostgreSQL-backed production data</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">03</p>
+          <h3>Delivery and quality</h3>
+          <ul>
+            <li>Automated tests protecting scoring behaviour</li>
+            <li>CI checks through GitHub Actions</li>
+            <li>Deployed application on Render</li>
+            <li>Clear separation between rules and presentation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Engineering decisions</p>
+        <h2>Explainability is part of the architecture.</h2>
+      </div>
+    </div>
+
+    <div class="decision-list">
+      <div>
+        <h3>Deterministic scoring</h3>
+        <p>Important thresholds and penalties remain explicit, inspectable and directly testable.</p>
+      </div>
+      <div>
+        <h3>Structured output</h3>
+        <p>The score is accompanied by reasons and actions so that the result can support a decision rather than replace it.</p>
+      </div>
+      <div>
+        <h3>Tests around domain behaviour</h3>
+        <p>Changes to affordability, documentation, guarantor and bursary rules are protected by automated tests.</p>
+      </div>
+      <div>
+        <h3>Incremental product growth</h3>
+        <p>Authentication, persistence and deployment were added around the core evaluation behaviour without hiding the rules.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Potential extensions</p>
+        <h2>Useful next product work.</h2>
+      </div>
+    </div>
+
+    <div class="roadmap-list">
+      <div>
+        <span>01</span>
+        <div>
+          <h3>Dynamic re-evaluation</h3>
+          <p>Recalculate earlier results when profile or listing information changes.</p>
+        </div>
+      </div>
+      <div>
+        <span>02</span>
+        <div>
+          <h3>Listing comparisons</h3>
+          <p>Compare multiple options using the same renter profile and visible criteria.</p>
+        </div>
+      </div>
+      <div>
+        <span>03</span>
+        <div>
+          <h3>Grounded assistance</h3>
+          <p>Explain product-specific outcomes without replacing the underlying deterministic logic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>ScoreRent · FastAPI · PostgreSQL · Explainable decision support</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_CLEAN_REDESIGN_EOF
+
+mkdir -p assets/css
+cat > assets/css/style.css <<'PORTFOLIO_CLEAN_REDESIGN_EOF'
+:root {
+  --cream: #f3eee4;
+  --cream-light: #fbf8f2;
+  --paper: #fffdf8;
+  --green-950: #183126;
+  --green-800: #294b3a;
+  --green-700: #3e624d;
+  --green-500: #78907c;
+  --green-200: #d7e0d3;
+  --green-100: #e8eee5;
+  --ink: #1f2923;
+  --muted: #667069;
+  --line: #d8d4c9;
+  --shadow: 0 18px 45px rgba(35, 48, 39, 0.07);
+  --content: 1160px;
+  --narrow: 850px;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream-light);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--green-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 6.2rem);
+  letter-spacing: -0.055em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  letter-spacing: -0.04em;
+}
+
+h3 {
+  font-size: 1.45rem;
+  letter-spacing: -0.018em;
+}
+
+h4 {
+  margin-bottom: 0.35rem;
+  color: var(--green-800);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container,
+.nav-inner,
+.nav-container,
+.footer-inner,
+.footer-content {
+  width: min(var(--content), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(251, 248, 242, 0.92);
+  border-bottom: 1px solid rgba(41, 75, 58, 0.1);
+  backdrop-filter: blur(14px);
+}
+
+.nav-inner,
+.nav-container {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--green-950);
+  font-weight: 750;
+  letter-spacing: -0.015em;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+}
+
+.nav-links a {
+  padding: 0.48rem 0.75rem;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.91rem;
+  font-weight: 650;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--green-100);
+  color: var(--green-950);
+}
+
+.eyebrow,
+.kicker {
+  margin-bottom: 0.9rem;
+  color: var(--green-700);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.hero-home {
+  min-height: 670px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.65fr);
+  align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+.hero-copy h1 {
+  max-width: 850px;
+}
+
+.hero-summary,
+.hero-role,
+.lead {
+  max-width: 740px;
+  margin-top: 1.5rem;
+  color: #435048;
+  font-size: clamp(1.08rem, 2vw, 1.32rem);
+}
+
+.hero-description,
+.supporting {
+  max-width: 740px;
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+.actions,
+.buttons,
+.button-row,
+.link-row,
+.project-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.7rem;
+}
+
+.actions.compact,
+.link-row,
+.project-links {
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.button,
+.btn {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--green-200);
+  border-radius: 9px;
+  background: var(--paper);
+  color: var(--green-800);
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1;
+  box-shadow: 0 5px 14px rgba(35, 48, 39, 0.04);
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--green-500);
+  background: var(--green-100);
+}
+
+.button.primary,
+.btn.primary {
+  border-color: var(--green-800);
+  background: var(--green-800);
+  color: #fff;
+}
+
+.button.primary:hover,
+.btn.primary:hover {
+  background: var(--green-950);
+}
+
+.button.text-button {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.profile-summary {
+  padding: 1.6rem;
+  border-top: 4px solid var(--green-800);
+  background: var(--cream);
+}
+
+.profile-label {
+  margin-bottom: 1rem;
+  color: var(--green-800);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.profile-summary dl,
+.case-meta {
+  margin: 0;
+}
+
+.profile-summary dl div {
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(41, 75, 58, 0.15);
+}
+
+.profile-summary dt,
+.case-meta dt {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.profile-summary dd,
+.case-meta dd {
+  margin: 0.15rem 0 0;
+  color: var(--green-950);
+  font-weight: 680;
+}
+
+.section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.section + .section {
+  border-top: 1px solid rgba(41, 75, 58, 0.1);
+}
+
+.section-tinted {
+  background: var(--cream);
+  border-block: 1px solid rgba(41, 75, 58, 0.1);
+}
+
+.section-heading,
+.section-head,
+.section-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.68fr);
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2.6rem;
+}
+
+.section-heading.simple,
+.section-head.simple {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading h2,
+.section-head h2,
+.section-header h2 {
+  max-width: 760px;
+  margin-bottom: 0;
+}
+
+.section-heading > p,
+.section-head > p,
+.section-header > p {
+  color: var(--muted);
+}
+
+.inline-link {
+  color: var(--green-800);
+  font-weight: 750;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.featured-list {
+  border-top: 1px solid var(--line);
+}
+
+.featured-project {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 1.3rem;
+  padding-block: 2.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-number,
+.feature-number {
+  color: var(--green-500);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.project-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.project-heading h3 {
+  margin-bottom: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.project-type,
+.tile-stack {
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+}
+
+.status {
+  width: fit-content;
+  margin-bottom: 0.55rem;
+  padding: 0.22rem 0.48rem;
+  border-radius: 5px;
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.status.live {
+  background: var(--green-100);
+  color: var(--green-800);
+}
+
+.project-description {
+  max-width: 820px;
+  margin-top: 1.15rem;
+  color: #46524a;
+  font-size: 1.05rem;
+}
+
+.evidence-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem 2rem;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.evidence-list li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.evidence-list li::before {
+  position: absolute;
+  left: 0;
+  content: "—";
+  color: var(--green-500);
+}
+
+.experience-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.68fr) minmax(0, 1.5fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  padding-top: 1rem;
+}
+
+.experience-title h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.85rem;
+}
+
+.experience-title p {
+  color: var(--muted);
+}
+
+.experience-details {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.experience-details > div {
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(41, 75, 58, 0.16);
+}
+
+.experience-details p {
+  color: var(--muted);
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.capability {
+  min-height: 220px;
+  padding: 1.8rem 1.5rem 1.8rem 0;
+  border-right: 1px solid var(--line);
+}
+
+.capability + .capability {
+  padding-left: 1.5rem;
+}
+
+.capability:last-child {
+  border-right: 0;
+}
+
+.capability p {
+  color: var(--muted);
+}
+
+.project-directory {
+  border-top: 1px solid var(--line);
+}
+
+.project-directory a {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.6fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-directory span {
+  color: var(--green-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-directory small {
+  color: var(--muted);
+}
+
+.project-directory a:hover span {
+  color: var(--green-700);
+}
+
+.page-intro,
+.page-header,
+.project-hero {
+  padding-block: clamp(4rem, 9vw, 7rem);
+}
+
+.page-intro h1,
+.page-header h1,
+.project-hero h1,
+.case-hero h1 {
+  max-width: 1000px;
+  margin-bottom: 0;
+}
+
+.page-intro > p:last-child,
+.page-header .supporting,
+.project-hero .supporting {
+  max-width: 760px;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.project-grid,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-grid.three-column,
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-tile,
+.card,
+.project-card,
+.panel,
+.note,
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.55rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+}
+
+.featured-tile {
+  min-height: 420px;
+  border-top: 4px solid var(--green-800);
+}
+
+.project-tile h3,
+.card h3,
+.project-card h3,
+.panel h3,
+.note h3,
+.timeline-item h3 {
+  margin-bottom: 0.7rem;
+}
+
+.project-tile p,
+.card p,
+.project-card p,
+.panel p,
+.note p,
+.timeline-item p,
+.muted {
+  color: var(--muted);
+}
+
+.project-tile .actions,
+.project-card .actions,
+.project-card .link-row,
+.project-card .project-links {
+  margin-top: auto;
+  padding-top: 1.4rem;
+}
+
+.tile-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1.8rem;
+}
+
+.tag-list,
+.tags,
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+}
+
+.tag-list span,
+.tags span,
+.pills span {
+  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--green-200);
+  border-radius: 5px;
+  background: var(--green-100);
+  color: var(--green-800);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.65fr);
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.profile-main {
+  max-width: 760px;
+}
+
+.large-copy {
+  margin-bottom: 1.3rem;
+  color: #3e4b43;
+  font-size: 1.2rem;
+}
+
+.profile-main > p:last-child {
+  color: var(--muted);
+}
+
+.qualification-list {
+  border-top: 4px solid var(--green-800);
+  background: var(--cream);
+}
+
+.qualification-list > div {
+  padding: 1.35rem;
+  border-bottom: 1px solid rgba(41, 75, 58, 0.15);
+}
+
+.qualification-list span,
+.qualification-list small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.qualification-list span {
+  margin-bottom: 0.3rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.qualification-list strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--green-950);
+}
+
+.principle-list {
+  border-top: 1px solid var(--line);
+}
+
+.principle-list > div {
+  display: grid;
+  grid-template-columns: 60px minmax(180px, 0.6fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1.6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.principle-list span {
+  color: var(--green-500);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.principle-list h3 {
+  margin-bottom: 0;
+}
+
+.principle-list p {
+  color: var(--muted);
+}
+
+.contact-band {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  border-top: 4px solid var(--green-800) !important;
+}
+
+.contact-band h2 {
+  max-width: 720px;
+}
+
+.contact-band .actions {
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+.case-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.65fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: end;
+  padding-block: clamp(4rem, 9vw, 7rem);
+}
+
+.case-meta {
+  border-top: 4px solid var(--green-800);
+  background: var(--cream);
+}
+
+.case-meta div {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid rgba(41, 75, 58, 0.14);
+}
+
+.case-layout,
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.case-main {
+  max-width: 780px;
+}
+
+.case-main > p:last-child {
+  color: var(--muted);
+}
+
+.case-note {
+  align-self: start;
+  padding: 1.4rem;
+  border-left: 4px solid var(--green-800);
+  background: var(--green-100);
+}
+
+.case-note span {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--green-700);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-note p {
+  color: var(--green-950);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.feature-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid rgba(41, 75, 58, 0.18);
+}
+
+.feature-columns article {
+  padding: 1.7rem 1.7rem 0 0;
+  border-right: 1px solid rgba(41, 75, 58, 0.18);
+}
+
+.feature-columns article + article {
+  padding-left: 1.7rem;
+}
+
+.feature-columns article:last-child {
+  border-right: 0;
+}
+
+.feature-columns h3 {
+  margin-top: 0.5rem;
+}
+
+.feature-columns ul {
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.feature-columns li + li {
+  margin-top: 0.5rem;
+}
+
+.decision-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.decision-list > div {
+  min-height: 180px;
+  padding: 1.5rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.decision-list p {
+  color: var(--muted);
+}
+
+.development-panel {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+  gap: 2rem;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  border-top: 4px solid var(--green-800);
+  background: var(--cream);
+}
+
+.development-panel h2 {
+  margin-bottom: 0;
+}
+
+.development-panel > p {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.roadmap-list,
+.timeline,
+.fact-list {
+  border-top: 1px solid var(--line);
+}
+
+.roadmap-list > div,
+.timeline-item,
+.fact-list > div {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.roadmap-list > div > span {
+  color: var(--green-500);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.roadmap-list h3 {
+  margin-bottom: 0.3rem;
+}
+
+.roadmap-list p {
+  color: var(--muted);
+}
+
+.footer {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(41, 75, 58, 0.14);
+  background: var(--cream);
+}
+
+.footer-inner,
+.footer-content {
+  min-height: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.center {
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero-home,
+  .case-hero,
+  .profile-layout,
+  .case-layout,
+  .split,
+  .experience-layout,
+  .development-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-home {
+    min-height: auto;
+  }
+
+  .section-heading,
+  .section-head,
+  .section-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .capability-grid,
+  .feature-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .capability,
+  .capability + .capability,
+  .feature-columns article,
+  .feature-columns article + article {
+    min-height: auto;
+    padding: 1.4rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .project-grid.three-column,
+  .grid.three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-band {
+    display: block;
+  }
+
+  .contact-band .actions {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .nav-inner,
+  .nav-container {
+    padding-block: 0.65rem;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 0.15rem;
+  }
+
+  .nav-links a {
+    white-space: nowrap;
+  }
+
+  .hero-home {
+    padding-block: 4rem;
+  }
+
+  h1 {
+    font-size: clamp(2.7rem, 15vw, 4.4rem);
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+
+  .project-number {
+    display: none;
+  }
+
+  .project-heading {
+    display: block;
+  }
+
+  .project-type {
+    margin-top: 0.55rem;
+  }
+
+  .evidence-list,
+  .project-grid,
+  .grid.two,
+  .grid.three,
+  .project-grid.three-column,
+  .decision-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-directory a {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .principle-list > div {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .principle-list p {
+    grid-column: 2;
+  }
+
+  .footer-inner,
+  .footer-content {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 1.3rem;
+  }
+
+  .actions,
+  .buttons,
+  .button-row,
+  .link-row,
+  .project-links {
+    align-items: stretch;
+  }
+
+  .actions .button,
+  .actions .btn,
+  .buttons .button,
+  .buttons .btn,
+  .button-row .button,
+  .button-row .btn,
+  .link-row .button,
+  .link-row .btn,
+  .project-links .button,
+  .project-links .btn {
+    width: 100%;
+  }
+
+  .button.text-button {
+    border: 1px solid var(--green-200);
+    background: var(--paper);
+  }
+}
+PORTFOLIO_CLEAN_REDESIGN_EOF
+
+echo "Clean portfolio redesign applied."
+echo "Review the changes with: git diff"
