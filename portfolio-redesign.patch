@@ -1,0 +1,1358 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ ! -f "index.html" || ! -d "projects" || ! -d "assets/css" ]]; then
+  echo "Run this script from the root of the portfolio-v2 repository." >&2
+  exit 1
+fi
+
+mkdir -p about projects assets/css
+
+cat > 'index.html' <<'PORTFOLIO_PATCH_1_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luthando Mbuyane | Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Luthando Mbuyane, a graduate software engineer working across backend, data, NLP, and human-centred software.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Luthando Mbuyane</a>
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="projects/index.html">Projects</a>
+      <a href="about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero-shell">
+    <div class="hero">
+      <div class="hero-main">
+        <span class="kicker">Software Engineer</span>
+        <h1>Luthando builds calm, useful systems.</h1>
+        <p class="lead">
+          Backend, data, and NLP work shaped by strong fundamentals and a real interest in how people interact with software.
+        </p>
+        <p class="supporting">
+          I have a BSc in Computer Science and Psychology from the University of Cape Town. My work sits at the point where systems, numbers, and people meet. I like software that is reliable, explainable, and worth using.
+        </p>
+        <div class="button-row">
+          <a class="btn primary" href="projects/index.html">See Projects</a>
+          <a class="btn" href="projects/adaptive-interview-coach.html">Current Project</a>
+          <a class="btn" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">ScoreRent Live</a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <div class="hero-quote">
+          <h3>What I do best</h3>
+          <p class="muted" style="margin-top:0.8rem;">
+            I turn a messy problem into something structured. That can mean a decision-support product, a backend workflow, a data cleaning pipeline, or a study system with clear logic behind it.
+          </p>
+        </div>
+        <div class="hero-facts">
+          <h3>Quick snapshot</h3>
+          <div class="fact-list">
+            <div>
+              <strong>Core strengths</strong>
+              Backend development, debugging, testing, and product thinking.
+            </div>
+            <div>
+              <strong>Commercial work</strong>
+              Laravel, Flask, NLP workflows, failing tests, CI, and production issues.
+            </div>
+            <div>
+              <strong>Lens</strong>
+              Computer Science, Psychology, and Applied Statistics coursework.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="stat-row">
+      <div class="stat-card">
+        <strong>5+</strong>
+        <span>substantial portfolio projects across backend, data, HCI, and systems</span>
+      </div>
+      <div class="stat-card">
+        <strong>Live</strong>
+        <span>deployment experience with a production-style decision-support app</span>
+      </div>
+      <div class="stat-card">
+        <strong>NLP</strong>
+        <span>commercial exposure to entity recognition and AI-enabled product work</span>
+      </div>
+      <div class="stat-card">
+        <strong>TDD</strong>
+        <span>iterative development with tests, feedback, and small releases</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Selected work</h2>
+      <p>
+        These are the projects I would want a hiring team to open first.
+      </p>
+    </div>
+
+    <div class="grid three">
+      <article class="project-card">
+        <span class="kicker">Live product</span>
+        <h3>ScoreRent</h3>
+        <p>
+          A rental decision-support app that scores applications, explains the result, and helps renters see what is helping or hurting them before they pay application fees.
+        </p>
+        <div class="tags">
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>pytest</span>
+          <span>Render</span>
+        </div>
+        <div class="link-row">
+          <a class="btn" href="projects/scorerent.html">Open project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="kicker">Current build</span>
+        <h3>Adaptive Interview Preparation Coach</h3>
+        <p>
+          An interview-prep platform built around one question: what should I practise right now, and why? It is opinionated, structured, and built for real study behaviour.
+        </p>
+        <div class="tags">
+          <span>Django</span>
+          <span>PostgreSQL</span>
+          <span>TDD</span>
+          <span>RAG planned</span>
+        </div>
+        <div class="link-row">
+          <a class="btn" href="projects/adaptive-interview-coach.html">Open project</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="kicker">Capstone</span>
+        <h3>SeaClear</h3>
+        <p>
+          A beach water quality platform focused on accessibility, maps, reporting, and usability. This is where my interest in trust, clarity, and design really took shape.
+        </p>
+        <div class="tags">
+          <span>Flask</span>
+          <span>MongoDB</span>
+          <span>HCI</span>
+          <span>Usability</span>
+        </div>
+        <div class="link-row">
+          <a class="btn" href="projects/index.html">See all projects</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="panel">
+      <div class="section-head">
+        <h2>How I think about software</h2>
+      </div>
+      <p>
+        I do not only care that something works. I care that the behaviour makes sense, that the structure can hold future changes, and that the output is understandable to the person receiving it.
+      </p>
+      <p>
+        That is why I am drawn to decision-support systems, backend flows, and products where trust matters. I like asking what the logic should be, where the data should live, what the user needs to understand, and how the system should fail when things go wrong.
+      </p>
+    </div>
+
+    <div class="panel">
+      <div class="section-head">
+        <h2>Tools I reach for</h2>
+      </div>
+      <div class="tags">
+        <span>Python</span>
+        <span>Java</span>
+        <span>SQL</span>
+        <span>FastAPI</span>
+        <span>Flask</span>
+        <span>Django</span>
+        <span>Laravel</span>
+        <span>PostgreSQL</span>
+        <span>MongoDB</span>
+        <span>GitHub Actions</span>
+        <span>Docker</span>
+        <span>spaCy NER</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="note">
+    <div class="section-head">
+      <h2>Why this portfolio looks different</h2>
+    </div>
+    <p>
+      I am not trying to look like a finished senior engineer. I want the site to show how I think, what I build, and what kind of problems pull me in. That is the thread running through the whole portfolio.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_PATCH_1_EOF
+
+cat > 'about/index.html' <<'PORTFOLIO_PATCH_2_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Luthando Mbuyane, a graduate software engineer interested in backend systems, data, NLP, and human-centred software.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../projects/index.html">Projects</a>
+      <a class="active" href="index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="page-header">
+    <span class="kicker">About</span>
+    <h1>Systems, numbers, and people.</h1>
+    <p class="lead">
+      That combination explains most of what I enjoy building.
+    </p>
+    <p class="supporting">
+      I studied Computer Science and Psychology at the University of Cape Town, with additional Applied Statistics coursework. I like software that has structure behind it and a clear reason to exist.
+    </p>
+  </section>
+
+  <section class="split">
+    <div class="card">
+      <div class="section-head">
+        <h2>My route into software</h2>
+      </div>
+      <p>
+        Computer Science gave me the technical base. I built strength in programming, algorithms, databases, networks, operating systems, and software engineering. Psychology shaped how I think about people using the systems we build. Applied Statistics added another layer. It made me more comfortable reasoning with data, uncertainty, and evidence.
+      </p>
+      <p>
+        Together, those areas made me especially interested in products that sit between data and decision-making. I like systems that help people understand something, choose something, or act with more confidence.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="section-head">
+        <h2>What I value in a build</h2>
+      </div>
+      <div class="fact-list">
+        <div>
+          <strong>Clarity</strong>
+          The logic should make sense and the user should not be left guessing.
+        </div>
+        <div>
+          <strong>Reliability</strong>
+          Tests, validation, and predictable behaviour matter.
+        </div>
+        <div>
+          <strong>Honesty</strong>
+          A product should make clear what it knows, what it assumes, and where its limits are.
+        </div>
+        <div>
+          <strong>Usefulness</strong>
+          I want to build things that solve a real friction point rather than just showcase a stack.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Commercial experience</h2>
+      <p>
+        I worked as a software engineering contractor in an EdTech startup environment. The work moved across backend features, product logic, NLP functionality, and production debugging.
+      </p>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Backend and product work</h3>
+        <p>
+          I contributed across Laravel and Flask services, worked with database-backed functionality, and dealt with the sort of issues that appear in real teams: failing tests, awkward edge cases, dependency problems, and things that work locally but break in CI.
+        </p>
+      </div>
+      <div class="card">
+        <h3>NLP exposure</h3>
+        <p>
+          I also worked with spaCy NER workflows and related product work. That gave me hands-on exposure to the practical side of AI-enabled software, where model behaviour, integration, and product context all matter.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>What kinds of roles suit me</h2>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <h3>Backend engineering</h3>
+        <p>
+          APIs, product logic, database design, testing, and deployment are the most natural fit for me right now.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Data-oriented product work</h3>
+        <p>
+          I am drawn to products where decisions, scoring, analytics, or structured information play a central role.
+        </p>
+      </div>
+      <div class="card">
+        <h3>AI-enabled systems</h3>
+        <p>
+          Especially where AI is part of a bigger product and has to live inside real workflows, not just a demo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="note">
+    <div class="section-head">
+      <h2>A few things that matter to me</h2>
+    </div>
+    <p>
+      I like thoughtful teams. I like direct feedback. I like work that asks both technical and product questions. I also care a lot about whether a system respects the person using it. That shows up in my projects again and again.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_PATCH_2_EOF
+
+cat > 'projects/index.html' <<'PORTFOLIO_PATCH_3_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Luthando Mbuyane across backend, data, systems, HCI, and AI-enabled software.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="page-header">
+    <span class="kicker">Portfolio</span>
+    <h1>Projects that show how I work.</h1>
+    <p class="lead">
+      Backend products, systems work, HCI, and data projects. Some are stronger on engineering depth. Some are stronger on product judgement. Together they tell the full story.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Featured</h2>
+      <p>These are the projects I would lead with in a job conversation.</p>
+    </div>
+    <div class="grid two">
+      <article class="project-card">
+        <span class="kicker">Live product</span>
+        <h3>ScoreRent</h3>
+        <p>
+          A rental decision-support application that evaluates listing fit, produces a confidence score, explains the outcome, and points the renter toward practical next steps.
+        </p>
+        <div class="tags">
+          <span>FastAPI</span>
+          <span>PostgreSQL</span>
+          <span>Authentication</span>
+          <span>Testing</span>
+          <span>CI</span>
+        </div>
+        <div class="link-row">
+          <a class="btn" href="scorerent.html">View details</a>
+          <a class="btn" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <span class="kicker">Current build</span>
+        <h3>Adaptive Interview Preparation Coach</h3>
+        <p>
+          An interview preparation platform built around planning, progress, review, and skill coverage. It is designed to reduce the mental load of deciding what to study next.
+        </p>
+        <div class="tags">
+          <span>Django</span>
+          <span>PostgreSQL</span>
+          <span>TDD</span>
+          <span>RAG planned</span>
+        </div>
+        <div class="link-row">
+          <a class="btn" href="adaptive-interview-coach.html">View details</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Software engineering work</h2>
+    </div>
+    <div class="grid three">
+      <article class="project-card">
+        <h3>SeaClear</h3>
+        <p>
+          A capstone web app for beach water quality information with map-based discovery, reporting, admin flows, and usability testing.
+        </p>
+        <div class="tags">
+          <span>Flask</span>
+          <span>MongoDB</span>
+          <span>Leaflet</span>
+          <span>HCI</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Parallel Monte Carlo Optimisation</h3>
+        <p>
+          A Java concurrency project using Fork/Join to parallelise a Monte Carlo optimisation process and compare serial and parallel performance.
+        </p>
+        <div class="tags">
+          <span>Java</span>
+          <span>Concurrency</span>
+          <span>ForkJoinPool</span>
+          <span>Performance</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>NetworkComm</h3>
+        <p>
+          A TCP client-server messaging application focused on sockets, message routing, thread management, and protocol design.
+        </p>
+        <div class="tags">
+          <span>Python</span>
+          <span>TCP</span>
+          <span>Sockets</span>
+          <span>Threading</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Data and product work</h2>
+    </div>
+    <div class="grid three">
+      <article class="project-card">
+        <h3>CSV Data Cleaning Pipeline</h3>
+        <p>
+          A modular preprocessing pipeline for cleaning and standardising messy CSV data into analysis-ready outputs.
+        </p>
+        <div class="tags">
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>Validation</span>
+          <span>ETL concepts</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>IncidentDesk</h3>
+        <p>
+          A CRUD-focused app used to practise request handling, validation, persistence, and maintainable backend structure.
+        </p>
+        <div class="tags">
+          <span>FastAPI</span>
+          <span>SQLite</span>
+          <span>Jinja2</span>
+          <span>CRUD</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>HealthSync</h3>
+        <p>
+          A hackathon prototype aimed at improving healthcare access through guided service flows and user-centred thinking.
+        </p>
+        <div class="tags">
+          <span>Prototype</span>
+          <span>Product thinking</span>
+          <span>User flows</span>
+          <span>Hackathon</span>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_PATCH_3_EOF
+
+cat > 'projects/scorerent.html' <<'PORTFOLIO_PATCH_4_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ScoreRent | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ScoreRent, a rental decision-support product by Luthando Mbuyane.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="project-hero">
+    <span class="kicker">Live product</span>
+    <h1>ScoreRent</h1>
+    <p class="lead">
+      A rental decision-support app that helps renters judge their fit for a listing before paying non-refundable application fees.
+    </p>
+    <p class="supporting">
+      The product evaluates a renter profile against listing requirements and returns a confidence score, a verdict, reasons behind the decision, and practical actions to improve the application.
+    </p>
+    <div class="meta-grid">
+      <div>
+        <strong>Stack</strong>
+        FastAPI, Jinja2, PostgreSQL, pytest, GitHub Actions, Render
+      </div>
+      <div>
+        <strong>Focus</strong>
+        Decision support, product logic, testing, persistence, and deployment
+      </div>
+      <div>
+        <strong>Status</strong>
+        Live and working, with future product expansion planned
+      </div>
+    </div>
+    <div class="button-row">
+      <a class="btn primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+      <a class="btn" href="index.html">Back to projects</a>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="card">
+      <div class="section-head">
+        <h2>The problem</h2>
+      </div>
+      <p>
+        I built ScoreRent after seeing how expensive and uncertain rental applications can be. People were paying application fees, submitting documents, and then getting rejected for reasons they could have known upfront.
+      </p>
+      <p>
+        I wanted a tool that could make the situation clearer. Not a vague recommendation. A structured result with visible logic and useful next steps.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="section-head">
+        <h2>The shape of the solution</h2>
+      </div>
+      <p>
+        The app compares listing requirements with a renter profile and runs rule-based scoring. The output is intentionally explainable. It is a confidence score, not a fake promise of acceptance.
+      </p>
+      <div class="tags">
+        <span>Explainable logic</span>
+        <span>Profile matching</span>
+        <span>Actionable output</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Core product features</h2>
+    </div>
+    <div class="grid two">
+      <article class="project-card">
+        <h3>Guest evaluation flow</h3>
+        <p>
+          Users can enter listing details and renter information without signing in and immediately receive a score, verdict, reasons, and suggested actions.
+        </p>
+      </article>
+      <article class="project-card">
+        <h3>Authentication and saved history</h3>
+        <p>
+          Logged-in users can save renter details, keep evaluation history, and revisit past results.
+        </p>
+      </article>
+      <article class="project-card">
+        <h3>Explainable scoring</h3>
+        <p>
+          The scoring engine applies deterministic rules and returns a clear breakdown of what changed the score.
+        </p>
+      </article>
+      <article class="project-card">
+        <h3>Engineering discipline</h3>
+        <p>
+          The project includes tests for the scoring logic, CI checks, and a deployed environment with PostgreSQL persistence.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>What I learned</h2>
+    </div>
+    <div class="grid two">
+      <div class="note">
+        <h3>Product lesson</h3>
+        <p>
+          Trust matters in a decision-support product. The user needs to understand the result and feel that the logic is fair, not magical.
+        </p>
+      </div>
+      <div class="note">
+        <h3>Engineering lesson</h3>
+        <p>
+          The more important the logic is, the more it needs tests. This project made me much more disciplined about protecting behaviour as a product grows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Next steps</h2>
+      <p>
+        These are product improvements I would like to build next.
+      </p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>Dynamic re-evaluation</strong>
+        Update earlier results when a renter profile changes.
+      </div>
+      <div class="timeline-item">
+        <strong>Smarter comparisons</strong>
+        Compare multiple listings using the renter's current profile.
+      </div>
+      <div class="timeline-item">
+        <strong>Guided support</strong>
+        Add a grounded assistant layer that can explain outcomes and answer product-specific questions without hiding the underlying rules.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_PATCH_4_EOF
+
+cat > 'projects/adaptive-interview-coach.html' <<'PORTFOLIO_PATCH_5_EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adaptive Interview Preparation Coach | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adaptive Interview Preparation Coach, a current project by Luthando Mbuyane.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <section class="project-hero">
+    <span class="kicker">Current project</span>
+    <h1>Adaptive Interview Preparation Coach</h1>
+    <p class="lead">
+      An interview-prep platform built around one practical question: what should the user study right now, and why?
+    </p>
+    <p class="supporting">
+      I wanted to build something more opinionated than a flashcard tool. The point is to reduce the mental load of deciding what to practise and to make progress visible.
+    </p>
+    <div class="meta-grid">
+      <div>
+        <strong>Current direction</strong>
+        Django, PostgreSQL, modular monolith, iterative delivery
+      </div>
+      <div>
+        <strong>Development style</strong>
+        Small milestones, test-driven development, and progressive product shaping
+      </div>
+      <div>
+        <strong>Future layer</strong>
+        RAG support for grounded notes, examples, and explanations
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <div class="card">
+      <div class="section-head">
+        <h2>The product idea</h2>
+      </div>
+      <p>
+        Most interview-prep tools help people store content. I am interested in a different problem. Interview prep already takes a lot of effort. Deciding what to study every day adds another layer of friction.
+      </p>
+      <p>
+        This project is meant to help with planning, prioritisation, and feedback. It should tell the user what to study, why it matters, how to approach it, and when to revisit it.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="section-head">
+        <h2>Why I like this problem</h2>
+      </div>
+      <p>
+        It brings together backend architecture, product design, learning behaviour, and future AI support. It also fits the way I naturally think. The hardest part is not only storing information. It is deciding what should happen next.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>What exists in the plan now</h2>
+    </div>
+    <div class="grid two">
+      <article class="project-card">
+        <h3>Structured question library</h3>
+        <p>
+          Technical, behavioural, and debugging content modelled as distinct question types rather than forcing everything into one generic shape.
+        </p>
+      </article>
+      <article class="project-card">
+        <h3>Practice and review history</h3>
+        <p>
+          A history of what the user studied, where they struggled, and what needs to come back again later.
+        </p>
+      </article>
+      <article class="project-card">
+        <h3>Deterministic planning</h3>
+        <p>
+          Recommendations based on the interview goal, time available, topic coverage, weak areas, and review history.
+        </p>
+      </article>
+      <article class="project-card">
+        <h3>Future grounded support</h3>
+        <p>
+          A later RAG layer for notes, examples, and explanations, built as a support system rather than the core brain of the product.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Build principles</h2>
+    </div>
+    <div class="grid three">
+      <div class="card">
+        <h3>Structure first</h3>
+        <p>
+          Planning, coverage, and review logic should be explicit and testable.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Iterative delivery</h3>
+        <p>
+          I would rather have a small working slice than a large vague plan.
+        </p>
+      </div>
+      <div class="card">
+        <h3>TDD</h3>
+        <p>
+          Behaviour comes first, then implementation. That keeps the product honest as it grows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Why it matters in my portfolio</h2>
+    </div>
+    <div class="note">
+      <p>
+        This project shows more than my ability to code. It shows how I think about scope, architecture, user friction, domain modelling, and what role AI should play inside a real product. That is why it matters so much to me.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>South Africa · Open to graduate and junior software roles</p>
+  </div>
+</footer>
+
+</body>
+</html>
+PORTFOLIO_PATCH_5_EOF
+
+cat > 'assets/css/style.css' <<'PORTFOLIO_PATCH_6_EOF'
+:root {
+  --bg: #efe7da;
+  --bg-soft: #f7f2e9;
+  --surface: #fffaf2;
+  --surface-strong: #f3eadc;
+  --line: #d8ccbc;
+  --text: #243126;
+  --muted: #5f685e;
+  --green: #4f6b4b;
+  --green-deep: #37503a;
+  --green-soft: #dfe7d8;
+  --gold: #b08b4f;
+  --shadow: 0 14px 35px rgba(45, 56, 42, 0.08);
+  --radius: 22px;
+  --radius-lg: 30px;
+  --content: 1160px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(127, 155, 115, 0.12), transparent 24rem),
+    linear-gradient(180deg, #f6f0e6 0%, var(--bg) 34%, #f4eee4 100%);
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.12;
+  color: #203020;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--green-deep);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container,
+.nav-inner,
+.footer-inner {
+  width: min(var(--content), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(246, 240, 230, 0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(79, 107, 75, 0.08);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--green-soft);
+  color: var(--green-deep);
+}
+
+main.container {
+  padding: 2rem 0 4rem;
+}
+
+section {
+  margin-top: 1.6rem;
+}
+
+.hero-shell,
+.panel,
+.card,
+.project-card,
+.stat-card,
+.note,
+.timeline-item {
+  background: rgba(255, 250, 242, 0.92);
+  border: 1px solid rgba(79, 107, 75, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.hero-shell {
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.hero-main,
+.hero-side,
+.panel,
+.card,
+.project-card,
+.note,
+.timeline-item {
+  border-radius: var(--radius);
+}
+
+.hero-main {
+  background: linear-gradient(135deg, #fffaf2 0%, #f5ecdf 100%);
+  padding: 2.5rem;
+  border: 1px solid rgba(79, 107, 75, 0.08);
+}
+
+.hero-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-quote,
+.hero-facts {
+  height: 100%;
+  padding: 1.6rem;
+  background: linear-gradient(180deg, #eef3e7 0%, #e2ead9 100%);
+  border: 1px solid rgba(79, 107, 75, 0.08);
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green-deep);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.page-header h1,
+.project-hero h1 {
+  margin-top: 1rem;
+  font-size: clamp(2.8rem, 5vw, 5.2rem);
+  letter-spacing: -0.05em;
+}
+
+.lead {
+  margin-top: 1rem;
+  max-width: 42rem;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  color: #314233;
+}
+
+.supporting {
+  margin-top: 1rem;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.button-row,
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.button-row {
+  margin-top: 1.6rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(79, 107, 75, 0.18);
+  background: var(--surface);
+  color: var(--green-deep);
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(45, 56, 42, 0.06);
+}
+
+.btn:hover {
+  background: #f3f7ef;
+}
+
+.btn.primary {
+  background: var(--green);
+  color: #f7f2e9;
+  border-color: var(--green);
+}
+
+.btn.primary:hover {
+  background: var(--green-deep);
+  color: #fff9f0;
+}
+
+.fact-list {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.8rem;
+}
+
+.fact-list div {
+  padding: 0.9rem 1rem;
+  background: rgba(255, 250, 242, 0.65);
+  border-radius: 16px;
+  border: 1px solid rgba(79, 107, 75, 0.08);
+}
+
+.fact-list strong,
+.meta-grid strong,
+.timeline-item strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--green-deep);
+  font-size: 0.92rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.section-head {
+  margin-bottom: 1rem;
+}
+
+.section-head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  letter-spacing: -0.04em;
+}
+
+.section-head p {
+  margin-top: 0.45rem;
+  max-width: 46rem;
+  color: var(--muted);
+}
+
+.card,
+.project-card,
+.panel,
+.note,
+.timeline-item {
+  padding: 1.4rem;
+}
+
+.card h3,
+.project-card h3,
+.panel h3,
+.note h3,
+.timeline-item h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+}
+
+.card p + p,
+.note p + p,
+.panel p + p,
+.timeline-item p + p {
+  margin-top: 0.85rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.72rem;
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: #3f5541;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 1px solid rgba(79, 107, 75, 0.08);
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.project-card p {
+  color: var(--muted);
+}
+
+.project-card .link-row {
+  margin-top: auto;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.stat-card {
+  padding: 1.1rem;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.75rem;
+  color: var(--green-deep);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.stat-card span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.page-header,
+.project-hero {
+  background: linear-gradient(135deg, #fff9f0 0%, #efe5d5 100%);
+  border-radius: var(--radius-lg);
+  padding: 2.4rem;
+  border: 1px solid rgba(79, 107, 75, 0.1);
+  box-shadow: var(--shadow);
+}
+
+.project-hero .supporting,
+.page-header .supporting {
+  max-width: 52rem;
+}
+
+.meta-grid {
+  margin-top: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.meta-grid div {
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 250, 242, 0.78);
+  border: 1px solid rgba(79, 107, 75, 0.08);
+}
+
+.timeline {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.footer {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(79, 107, 75, 0.08);
+  background: rgba(255, 249, 240, 0.8);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0 2.2rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.center {
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .split,
+  .grid.two,
+  .grid.three,
+  .stat-row,
+  .meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-main,
+  .project-hero,
+  .page-header {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-inner,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-row .btn,
+  .link-row .btn {
+    width: 100%;
+  }
+
+  main.container {
+    padding-top: 1.2rem;
+  }
+}
+PORTFOLIO_PATCH_6_EOF
+
+echo "Portfolio redesign applied."
+echo "Review the changes with: git diff --stat && git diff"
+echo "To undo before committing: git restore index.html about/index.html projects/index.html projects/scorerent.html assets/css/style.css && rm -f projects/adaptive-interview-coach.html"
