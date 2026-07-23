@@ -1,0 +1,487 @@
+diff --git a/assets/css/project-filter.css b/assets/css/project-filter.css
+new file mode 100644
+index 0000000..18d8d6d
+--- /dev/null
++++ b/assets/css/project-filter.css
+@@ -0,0 +1,104 @@
++.filter-heading {
++  display: flex;
++  align-items: end;
++  justify-content: space-between;
++  gap: 2rem;
++  margin-bottom: 1.25rem;
++}
++
++.filter-heading h2 {
++  max-width: 760px;
++  margin-bottom: 0;
++}
++
++.project-count {
++  flex-shrink: 0;
++  color: var(--muted);
++  font-size: 0.9rem;
++}
++
++.skill-filters {
++  display: flex;
++  flex-wrap: wrap;
++  gap: 0.55rem;
++  margin-bottom: 2rem;
++}
++
++.skill-filter {
++  min-height: 40px;
++  padding: 0.62rem 0.9rem;
++  border: 1px solid var(--green-200);
++  border-radius: 999px;
++  background: var(--paper);
++  color: var(--green-800);
++  font: inherit;
++  font-size: 0.86rem;
++  font-weight: 750;
++  cursor: pointer;
++  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
++}
++
++.skill-filter:hover {
++  transform: translateY(-1px);
++  border-color: var(--green-500);
++  background: var(--green-100);
++}
++
++.skill-filter.active,
++.skill-filter[aria-pressed="true"] {
++  border-color: var(--green-800);
++  background: var(--green-800);
++  color: #fff;
++}
++
++.filtered-project-grid {
++  align-items: stretch;
++}
++
++.project-tile[hidden] {
++  display: none;
++}
++
++.status.active-build {
++  background: #eee7d4;
++  color: #755d25;
++}
++
++.status.academic {
++  background: #e9e6ee;
++  color: #554b67;
++}
++
++.empty-filter-message {
++  padding: 1rem 1.1rem;
++  border-left: 4px solid var(--green-800);
++  background: var(--green-100);
++  color: var(--green-950);
++}
++
++@media (max-width: 650px) {
++  .filter-heading {
++    display: block;
++  }
++
++  .project-count {
++    margin-top: 0.7rem;
++  }
++
++  .skill-filters {
++    margin-inline: -1rem;
++    padding-inline: 1rem;
++    overflow-x: auto;
++    flex-wrap: nowrap;
++    scrollbar-width: none;
++  }
++
++  .skill-filters::-webkit-scrollbar {
++    display: none;
++  }
++
++  .skill-filter {
++    flex: 0 0 auto;
++    white-space: nowrap;
++  }
++}
+diff --git a/assets/js/project-filter.js b/assets/js/project-filter.js
+new file mode 100644
+index 0000000..8e3300d
+--- /dev/null
++++ b/assets/js/project-filter.js
+@@ -0,0 +1,58 @@
++(() => {
++  const buttons = Array.from(document.querySelectorAll(".skill-filter"));
++  const projects = Array.from(document.querySelectorAll("[data-project]"));
++  const count = document.getElementById("project-count");
++  const emptyMessage = document.getElementById("empty-filter-message");
++
++  if (!buttons.length || !projects.length) {
++    return;
++  }
++
++  const availableFilters = new Set(buttons.map((button) => button.dataset.filter));
++
++  const applyFilter = (requestedFilter, updateUrl = true) => {
++    const filter = availableFilters.has(requestedFilter) ? requestedFilter : "all";
++    let visibleCount = 0;
++
++    projects.forEach((project) => {
++      const skills = (project.dataset.skills || "").split(/\s+/).filter(Boolean);
++      const visible = filter === "all" || skills.includes(filter);
++
++      project.hidden = !visible;
++      if (visible) {
++        visibleCount += 1;
++      }
++    });
++
++    buttons.forEach((button) => {
++      const selected = button.dataset.filter === filter;
++      button.classList.toggle("active", selected);
++      button.setAttribute("aria-pressed", String(selected));
++    });
++
++    if (count) {
++      count.textContent = `${visibleCount} ${visibleCount === 1 ? "project" : "projects"}`;
++    }
++
++    if (emptyMessage) {
++      emptyMessage.hidden = visibleCount !== 0;
++    }
++
++    if (updateUrl) {
++      const url = new URL(window.location.href);
++      if (filter === "all") {
++        url.searchParams.delete("skill");
++      } else {
++        url.searchParams.set("skill", filter);
++      }
++      window.history.replaceState({}, "", url);
++    }
++  };
++
++  buttons.forEach((button) => {
++    button.addEventListener("click", () => applyFilter(button.dataset.filter));
++  });
++
++  const requestedFilter = new URL(window.location.href).searchParams.get("skill") || "all";
++  applyFilter(requestedFilter, false);
++})();
+diff --git a/projects/index.html b/projects/index.html
+index 3d6b88e..dfaa130 100644
+--- a/projects/index.html
++++ b/projects/index.html
+@@ -5,10 +5,12 @@
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta
+     name="description"
+-    content="Full-stack software engineering, data, NLP, systems and HCI projects by Luthando Mbuyane."
++    content="Full-stack, Java, Python, data, systems and testing projects by Luthando Mbuyane."
+   >
+   <title>Projects | Luthando Mbuyane</title>
+   <link rel="stylesheet" href="../assets/css/clean-style.css">
++  <link rel="stylesheet" href="../assets/css/project-filter.css">
++  <script src="../assets/js/project-filter.js" defer></script>
+ </head>
+ <body>
+ 
+@@ -28,39 +30,45 @@
+ <main>
+   <section class="page-intro container">
+     <p class="eyebrow">Project directory</p>
+-    <h1>Software built around real product and engineering questions.</h1>
++    <h1>Explore the work by skill.</h1>
+     <p>
+-      The strongest projects combine complete user workflows, application logic, structured data, tests and deployment.
+-      Supporting work covers concurrency, networking, data preparation and human-centred design.
++      A curated selection of deployed products, Java and Python systems work,
++      data pipelines, testing-led builds and collaborative full-stack projects.
+     </p>
+   </section>
+ 
+-  <section class="section container">
+-    <div class="section-heading">
++  <section class="project-browser section container">
++    <div class="filter-heading">
+       <div>
+-        <p class="eyebrow">Live products</p>
+-        <h2>End-to-end builds.</h2>
++        <p class="eyebrow">Filter projects</p>
++        <h2>Choose the evidence most relevant to the role.</h2>
+       </div>
+-      <p>Public applications with working deployments, repositories and documented engineering decisions.</p>
++      <p id="project-count" class="project-count" aria-live="polite">9 projects</p>
+     </div>
+ 
+-    <div class="project-grid">
+-      <article class="project-tile featured-tile">
++    <div class="skill-filters" role="group" aria-label="Filter projects by skill">
++      <button class="skill-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
++      <button class="skill-filter" type="button" data-filter="full-stack" aria-pressed="false">Full Stack</button>
++      <button class="skill-filter" type="button" data-filter="java" aria-pressed="false">Java</button>
++      <button class="skill-filter" type="button" data-filter="python" aria-pressed="false">Python</button>
++      <button class="skill-filter" type="button" data-filter="data" aria-pressed="false">Data</button>
++      <button class="skill-filter" type="button" data-filter="systems" aria-pressed="false">Systems</button>
++      <button class="skill-filter" type="button" data-filter="testing" aria-pressed="false">Testing</button>
++    </div>
++
++    <div class="project-grid filtered-project-grid" id="project-grid">
++      <article class="project-tile featured-tile" data-project data-skills="full-stack python data testing">
+         <div class="tile-topline">
+-          <span class="status live">Live</span>
++          <span class="status live">Live product</span>
+           <span class="tile-stack">Django · PostgreSQL</span>
+         </div>
+         <h3>ViewCoach</h3>
+         <p>
+-          Structured interview-preparation platform with private libraries, polymorphic question workflows,
+-          bulk document import, validation, automated tests and production deployment.
++          Interview-preparation platform with private libraries, type-specific question workflows,
++          document import, validation, automated tests and production deployment.
+         </p>
+         <div class="tag-list">
+-          <span>Django 5.2</span>
+-          <span>PostgreSQL</span>
+-          <span>pytest</span>
+-          <span>GitHub Actions</span>
+-          <span>Render</span>
++          <span>Django</span><span>PostgreSQL</span><span>pytest</span><span>CI/CD</span>
+         </div>
+         <div class="actions compact">
+           <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+@@ -69,22 +77,18 @@
+         </div>
+       </article>
+ 
+-      <article class="project-tile featured-tile">
++      <article class="project-tile featured-tile" data-project data-skills="full-stack python data testing">
+         <div class="tile-topline">
+-          <span class="status live">Live</span>
++          <span class="status live">Live product</span>
+           <span class="tile-stack">FastAPI · PostgreSQL</span>
+         </div>
+         <h3>ScoreRent</h3>
+         <p>
+           Explainable rental decision-support platform with deterministic scoring, authentication,
+-          saved evaluations, PostgreSQL persistence, tests, CI and deployment.
++          saved evaluations, persistence, tests, CI and deployment.
+         </p>
+         <div class="tag-list">
+-          <span>FastAPI</span>
+-          <span>PostgreSQL</span>
+-          <span>pytest</span>
+-          <span>GitHub Actions</span>
+-          <span>Render</span>
++          <span>FastAPI</span><span>PostgreSQL</span><span>pytest</span><span>Docker</span>
+         </div>
+         <div class="actions compact">
+           <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app</a>
+@@ -92,78 +96,141 @@
+           <a class="button text-button" href="scorerent.html">Case study</a>
+         </div>
+       </article>
+-    </div>
+-  </section>
+ 
+-  <section class="section section-tinted">
+-    <div class="container">
+-      <div class="section-heading">
+-        <div>
+-          <p class="eyebrow">Software engineering and systems</p>
+-          <h2>Supporting technical work.</h2>
++      <article class="project-tile featured-tile" data-project data-skills="python data testing">
++        <div class="tile-topline">
++          <span class="status active-build">Active build</span>
++          <span class="tile-stack">Python · Parquet · pytest</span>
+         </div>
+-        <p>Projects demonstrating networking, concurrency, application structure and collaborative product delivery.</p>
+-      </div>
++        <h3>SA Tech Job Market Intelligence</h3>
++        <p>
++          Multi-source data pipeline that preserves raw job snapshots, normalises postings,
++          classifies role evidence, deduplicates observations and publishes a quality-controlled dataset.
++        </p>
++        <div class="tag-list">
++          <span>Data engineering</span><span>Web ingestion</span><span>Parquet</span><span>Data quality</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/sa-grad-tech-job-market" target="_blank" rel="noopener noreferrer">GitHub</a>
++        </div>
++      </article>
+ 
+-      <div class="project-grid three-column">
+-        <article class="project-tile">
+-          <p class="tile-stack">Python · TCP · Threading</p>
+-          <h3>NetworkComm</h3>
+-          <p>A TCP client-server messaging application covering protocol design, connection handling and concurrent clients.</p>
+-          <a class="inline-link" href="networkcomm.html">View project →</a>
+-        </article>
+-
+-        <article class="project-tile">
+-          <p class="tile-stack">Java · Fork/Join</p>
+-          <h3>Parallel Monte Carlo</h3>
+-          <p>A parallel optimisation implementation with serial and parallel performance comparisons across workloads.</p>
+-          <a class="inline-link" href="parallel-monte-carlo.html">View project →</a>
+-        </article>
+-
+-        <article class="project-tile">
+-          <p class="tile-stack">Flask · MongoDB · HCI</p>
+-          <h3>SeaClear</h3>
+-          <p>A collaborative capstone improving access to beach water-quality information through maps and community workflows.</p>
+-          <a class="inline-link" href="seaclear.html">View project →</a>
+-        </article>
+-
+-        <article class="project-tile">
+-          <p class="tile-stack">FastAPI · SQLite</p>
+-          <h3>IncidentDesk</h3>
+-          <p>An incident-management system focused on end-to-end CRUD workflows, validation, filtering and maintainable application structure.</p>
+-          <a class="inline-link" href="incidentdesk.html">View project →</a>
+-        </article>
+-
+-        <article class="project-tile">
+-          <p class="tile-stack">Product design · Prototype</p>
+-          <h3>HealthSync</h3>
+-          <p>A healthcare-access prototype using guided navigation and clearer service flows.</p>
+-          <a class="inline-link" href="healthsync.html">View project →</a>
+-        </article>
+-      </div>
+-    </div>
+-  </section>
++      <article class="project-tile" data-project data-skills="full-stack python data">
++        <div class="tile-topline">
++          <span class="status academic">Team capstone</span>
++          <span class="tile-stack">Flask · MongoDB · JavaScript</span>
++        </div>
++        <h3>SeaClear</h3>
++        <p>
++          Mobile-friendly beach water-quality platform with maps, community reporting,
++          role-based administration and formal HCI and usability work.
++        </p>
++        <div class="tag-list">
++          <span>Flask</span><span>MongoDB</span><span>JavaScript</span><span>HCI</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/SeaClear" target="_blank" rel="noopener noreferrer">GitHub</a>
++          <a class="button text-button" href="seaclear.html">Case study</a>
++        </div>
++      </article>
+ 
+-  <section class="section container">
+-    <div class="section-heading">
+-      <div>
+-        <p class="eyebrow">Data work</p>
+-        <h2>Preparation and validation.</h2>
+-      </div>
+-      <p>Projects focused on turning inconsistent inputs into reliable, analysis-ready outputs.</p>
+-    </div>
++      <article class="project-tile" data-project data-skills="java systems testing">
++        <div class="tile-topline">
++          <span class="status academic">Coursework extension</span>
++          <span class="tile-stack">Java · Concurrency</span>
++        </div>
++        <h3>CPU Scheduling Simulation</h3>
++        <p>
++          FCFS and SJF comparison using blocking queues, coordinated thread startup,
++          metric collection and repeated experiments under varying load.
++        </p>
++        <div class="tag-list">
++          <span>Java</span><span>Blocking queues</span><span>CountDownLatch</span><span>Operating systems</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/cpu-scheduling-simulation" target="_blank" rel="noopener noreferrer">GitHub</a>
++        </div>
++      </article>
+ 
+-    <div class="project-grid">
+-      <article class="project-tile">
+-        <p class="tile-stack">Python · Pandas</p>
++      <article class="project-tile" data-project data-skills="java systems testing">
++        <div class="tile-topline">
++          <span class="status academic">Coursework</span>
++          <span class="tile-stack">Java · Fork/Join</span>
++        </div>
++        <h3>Parallel Monte Carlo</h3>
++        <p>
++          Parallel optimisation with correctness validation and serial-versus-parallel
++          performance benchmarking across workloads.
++        </p>
++        <div class="tag-list">
++          <span>Java</span><span>Fork/Join</span><span>Concurrency</span><span>Benchmarking</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/parallel-monte-carlo-optimization" target="_blank" rel="noopener noreferrer">GitHub</a>
++          <a class="button text-button" href="parallel-monte-carlo.html">Case study</a>
++        </div>
++      </article>
++
++      <article class="project-tile" data-project data-skills="python systems">
++        <div class="tile-topline">
++          <span class="status academic">Coursework</span>
++          <span class="tile-stack">Python · TCP · Threading</span>
++        </div>
++        <h3>NetworkComm</h3>
++        <p>
++          TCP client-server chat system covering concurrent clients, protocol design,
++          connection retries, private messaging and structured logging.
++        </p>
++        <div class="tag-list">
++          <span>Python</span><span>TCP</span><span>Threading</span><span>Networking</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/NetworkComm" target="_blank" rel="noopener noreferrer">GitHub</a>
++          <a class="button text-button" href="networkcomm.html">Case study</a>
++        </div>
++      </article>
++
++      <article class="project-tile" data-project data-skills="systems">
++        <div class="tile-topline">
++          <span class="status academic">Coursework</span>
++          <span class="tile-stack">Assembly · File I/O</span>
++        </div>
++        <h3>Assembly Image Processing</h3>
++        <p>
++          PPM brightness processing using direct RGB manipulation, ASCII conversion,
++          bounds checking and low-level file input and output.
++        </p>
++        <div class="tag-list">
++          <span>Assembly</span><span>Image data</span><span>Bounds checking</span><span>Low level</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/arch-assignment" target="_blank" rel="noopener noreferrer">GitHub</a>
++        </div>
++      </article>
++
++      <article class="project-tile" data-project data-skills="python data testing">
++        <div class="tile-topline">
++          <span class="status">Data tool</span>
++          <span class="tile-stack">Python · Pandas</span>
++        </div>
+         <h3>CSV Data Cleaning Pipeline</h3>
+         <p>
+-          A modular pipeline for cleaning, validating, standardising and transforming inconsistent CSV data,
+-          with analysis-ready and Excel outputs.
++          Configurable cleaning, validation and standardisation pipeline that produces
++          reproducible CSV and Excel outputs for downstream analysis.
+         </p>
+-        <a class="inline-link" href="csv-pipeline.html">View project →</a>
++        <div class="tag-list">
++          <span>Python</span><span>Pandas</span><span>Validation</span><span>Automation</span>
++        </div>
++        <div class="actions compact">
++          <a class="button" href="https://github.com/nonluthando/cleaning_data" target="_blank" rel="noopener noreferrer">GitHub</a>
++          <a class="button text-button" href="csv-pipeline.html">Case study</a>
++        </div>
+       </article>
+     </div>
++
++    <p class="empty-filter-message" id="empty-filter-message" hidden>
++      No displayed projects match this filter.
++    </p>
+   </section>
+ </main>
+ 
