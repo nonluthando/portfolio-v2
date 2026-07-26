@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Portfolio of Luthando Mbuyane, a graduate software engineer with commercial full-stack, backend, NLP and data-oriented experience."
+  >
+  <title>Luthando Mbuyane | Software Engineer</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="home-page">
+
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="brand" href="index.html" aria-label="Luthando Mbuyane home">
+      <span class="brand-mark">LM</span>
+      <span class="brand-name">Luthando Mbuyane</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="projects/index.html">Projects</a>
+      <a href="about/index.html">About</a>
+      <a href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="kicker">Graduate software engineer · Commercial experience</p>
+      <h1>Thoughtful software, grounded in real product work.</h1>
+      <p class="hero-text">
+        I have commercial experience contributing to Laravel/PHP and Python/Flask services in an EdTech product environment.
+        I also build end-to-end products with strong backend, data and testing foundations, supported by Psychology and
+        Applied Statistics training.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#experience">View commercial experience</a>
+        <a class="button button-secondary" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
+      </div>
+    </div>
+
+    <aside class="hero-note" aria-label="Profile overview">
+      <p class="note-label">Professional profile</p>
+      <p class="note-main">
+        BSc Computer Science and Psychology graduate. Strongest fit: full-stack product engineering,
+        with applied AI/NLP and data-oriented experience.
+      </p>
+      <div class="note-details">
+        <span>Commercial EdTech</span>
+        <span>Django / FastAPI</span>
+        <span>Laravel / PHP</span>
+        <span>Python / Flask</span>
+        <span>PostgreSQL</span>
+        <span>Testing</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="experience-section container" id="experience">
+    <div class="section-intro">
+      <div>
+        <p class="kicker">Commercial experience</p>
+        <h2>Engineering inside an existing product and codebase.</h2>
+      </div>
+      <p>
+        Fixed-term work across Laravel/PHP and Python/Flask services, including database-backed features,
+        NLP functionality, automated tests, dependency work and production debugging.
+      </p>
+    </div>
+
+    <div class="experience-grid">
+      <div class="experience-heading">
+        <p class="experience-role">Software Engineering Contractor</p>
+        <p>EdTech startup · Fixed-term contract · 2026</p>
+      </div>
+
+      <div class="experience-item">
+        <span>01</span>
+        <h3>Backend delivery</h3>
+        <p>Contributed to existing services, database-backed features, API workflows and third-party integrations.</p>
+      </div>
+
+      <div class="experience-item">
+        <span>02</span>
+        <h3>NLP implementation</h3>
+        <p>Prepared spaCy NER data and entity rules, updated pipelines, added tests and integrated chatbot changes.</p>
+      </div>
+
+      <div class="experience-item">
+        <span>03</span>
+        <h3>Testing and production work</h3>
+        <p>Worked through PHPUnit and pytest failures, GitHub Actions, Composer constraints, compatibility issues and production debugging.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="browse-section container" aria-labelledby="browse-title">
+    <div class="section-intro compact-intro">
+      <div>
+        <p class="kicker">Browse by area</p>
+        <h2 id="browse-title">Find the work most relevant to you.</h2>
+      </div>
+    </div>
+
+    <div class="filter-links">
+      <a href="projects/index.html">All projects</a>
+      <a href="projects/index.html?skill=full-stack">Full Stack</a>
+      <a href="projects/index.html?skill=java">Java</a>
+      <a href="projects/index.html?skill=python">Python</a>
+      <a href="projects/index.html?skill=data">Data</a>
+      <a href="projects/index.html?skill=systems">Systems</a>
+      <a href="projects/index.html?skill=testing">Testing</a>
+    </div>
+  </section>
+
+  <section class="work-section" id="featured-work">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">Selected work</p>
+          <h2>Products with visible decisions behind them.</h2>
+        </div>
+        <p>
+          Each project combines technical implementation with a clear user problem,
+          deliberate trade-offs, testing and evidence of delivery.
+        </p>
+      </div>
+
+      <article class="project-card project-card-wide">
+        <div class="project-visual project-visual-desktop">
+          <img src="assets/images/viewcoach-review.jpeg" alt="ViewCoach review session interface">
+        </div>
+
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="status-pill">Live product</span>
+            <span>01</span>
+          </div>
+
+          <h3>ViewCoach</h3>
+          <p class="project-tagline">Interview preparation that tells users what to practise next.</p>
+          <p>
+            An adaptive Django platform combining structured questions, spaced review, 12 learning roadmaps,
+            daily study planning, mock interviews, interview goals and reusable personal evidence.
+          </p>
+
+          <div class="project-highlights">
+            <span>Deterministic planner</span>
+            <span>12 roadmaps · 419 topics</span>
+            <span>Mock interviews</span>
+            <span>pytest + CI</span>
+          </div>
+
+          <div class="project-links">
+            <a class="button button-primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+            <a class="text-link" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="text-link" href="projects/adaptive-interview-coach.html">Case study →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card project-card-reverse">
+        <div class="project-visual project-visual-phone">
+          <div class="phone-frame">
+            <img src="assets/images/scorerent-mobile.jpeg" alt="ScoreRent rental application guide on mobile">
+          </div>
+        </div>
+
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="status-pill">Live product</span>
+            <span>02</span>
+          </div>
+
+          <h3>ScoreRent</h3>
+          <p class="project-tagline">Explainable rental decision support, not a black-box score.</p>
+          <p>
+            A FastAPI application that evaluates renter and listing information using deterministic rules,
+            then returns a verdict, confidence level, reasons and practical next steps.
+          </p>
+
+          <div class="project-highlights">
+            <span>Explainable scoring</span>
+            <span>Authentication</span>
+            <span>Saved history</span>
+            <span>PostgreSQL</span>
+          </div>
+
+          <div class="project-links">
+            <a class="button button-primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
+            <a class="text-link" href="https://github.com/nonluthando/scorerent" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="text-link" href="projects/scorerent.html">Case study →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="additional-section">
+    <div class="container">
+      <div class="section-intro">
+        <div>
+          <p class="kicker">More work</p>
+          <h2>Systems, data and human-centred computing.</h2>
+        </div>
+        <a class="text-link" href="projects/index.html">View all projects →</a>
+      </div>
+
+      <div class="project-list">
+        <a href="projects/seaclear.html">
+          <span class="project-list-number">03</span>
+          <span class="project-list-title">SeaClear</span>
+          <span class="project-list-tech">Flask · MongoDB · HCI</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="projects/networkcomm.html">
+          <span class="project-list-number">04</span>
+          <span class="project-list-title">NetworkComm</span>
+          <span class="project-list-tech">Python · TCP sockets · threading</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="projects/parallel-monte-carlo.html">
+          <span class="project-list-number">05</span>
+          <span class="project-list-title">Parallel Monte Carlo</span>
+          <span class="project-list-tech">Java · Fork/Join · concurrency</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="projects/csv-pipeline.html">
+          <span class="project-list-number">06</span>
+          <span class="project-list-title">CSV Cleaning Pipeline</span>
+          <span class="project-list-tech">Python · Pandas · validation</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section container" id="contact">
+    <div class="contact-card">
+      <div>
+        <p class="kicker">Contact</p>
+        <h2>Let’s talk about the work.</h2>
+        <p>Open to graduate and junior software engineering roles in South Africa, including relocation.</p>
+      </div>
+
+      <div class="contact-links">
+        <a href="mailto:Luthandombuyane1@outlook.com">
+          <span>Email</span>
+          <strong>Luthandombuyane1@outlook.com</strong>
+        </a>
+        <a href="tel:+27847398148">
+          <span>Phone</span>
+          <strong>+27 84 739 8148</strong>
+        </a>
+        <a href="https://www.linkedin.com/in/luthandombuyane213" target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span>
+          <strong>luthandombuyane213 ↗</strong>
+        </a>
+        <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
+          <strong>nonluthando ↗</strong>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
