@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="ViewCoach, a deployed Django interview-preparation platform built by Luthando Mbuyane."
+    content="ViewCoach, an adaptive Django interview-preparation platform built by Luthando Mbuyane."
   >
   <title>ViewCoach | Luthando Mbuyane</title>
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -31,8 +31,9 @@
       <p class="eyebrow">Live product</p>
       <h1>ViewCoach</h1>
       <p class="hero-summary">
-        A Django interview-preparation platform for creating, importing and reviewing structured technical,
-        behavioural and repository-debugging questions.
+        An adaptive Django interview-preparation platform that combines structured questions,
+        learning roadmaps, spaced review, interview goals, mock interviews and personal evidence
+        into a focused daily study plan.
       </p>
       <div class="actions">
         <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
@@ -44,19 +45,19 @@
     <dl class="case-meta">
       <div>
         <dt>Stack</dt>
-        <dd>Django 5.2, PostgreSQL, server-rendered templates</dd>
+        <dd>Django 5.2, PostgreSQL and server-rendered templates</dd>
       </div>
       <div>
         <dt>Quality</dt>
-        <dd>pytest, Ruff, authorization tests, GitHub Actions</dd>
+        <dd>pytest, Ruff, ownership and authorization tests, GitHub Actions</dd>
       </div>
       <div>
         <dt>Deployment</dt>
-        <dd>Render with production settings and database health checks</dd>
+        <dd>Render with production settings, PostgreSQL and database health checks</dd>
       </div>
       <div>
         <dt>Current release</dt>
-        <dd>Production foundation, question library and bulk import</dd>
+        <dd>Milestones 0 to 3.5: reviews, roadmaps, planning, goals, mocks and evidence</dd>
       </div>
     </dl>
   </section>
@@ -67,22 +68,24 @@
         <div class="section-heading simple">
           <div>
             <p class="eyebrow">Product overview</p>
-            <h2>Structured preparation before automated planning.</h2>
+            <h2>One system for deciding what to study, practise and explain next.</h2>
           </div>
         </div>
         <p class="large-copy">
-          ViewCoach starts with the underlying study material and workflows. Users can maintain a private question library,
-          work with different interview formats, progressively reveal answers and import existing material for review.
+          ViewCoach helps users move from collecting interview material to following a structured
+          preparation process. It combines a private question library, spaced review, role-based
+          roadmaps, mock interviews, interview goals and reusable evidence from real projects and experiences.
         </p>
         <p>
-          Spaced repetition, review scheduling, the Focus Engine, goals and generative AI are intentionally separated from
-          the current release. The structured foundation is designed to remain useful and testable before those layers are added.
+          Its adaptive study planner turns due reviews, roadmap progress, recently difficult questions,
+          deadlines and available study time into a clear daily plan. Recommendations remain deterministic,
+          visible and explainable rather than being hidden behind an AI model.
         </p>
       </div>
 
       <aside class="case-note">
         <span>Core product question</span>
-        <p>Given the interview context, what should the user practise next?</p>
+        <p>Given the user's goals, deadlines, progress, weak areas and evidence, what should they practise next and why?</p>
       </aside>
     </div>
   </section>
@@ -94,7 +97,7 @@
           <p class="eyebrow">Implemented</p>
           <h2>Current product capability.</h2>
         </div>
-        <p>The live release contains Milestones 0, 1 and 1.1.</p>
+        <p>The live product now contains Milestones 0 through 3.5.</p>
       </div>
 
       <div class="feature-columns">
@@ -102,35 +105,71 @@
           <p class="feature-number">01</p>
           <h3>Production foundation</h3>
           <ul>
-            <li>Custom email-based user model</li>
-            <li>Registration, login, logout and protected dashboard</li>
-            <li>PostgreSQL across local, test and production settings</li>
+            <li>Custom email-based user accounts</li>
+            <li>Registration, authentication and protected interfaces</li>
+            <li>PostgreSQL across local, test and production environments</li>
             <li>Database-aware health endpoint</li>
-            <li>pytest, Ruff and GitHub Actions CI</li>
+            <li>Automated testing, linting and continuous integration</li>
           </ul>
         </article>
 
         <article>
           <p class="feature-number">02</p>
-          <h3>Structured question library</h3>
+          <h3>Question library and import</h3>
           <ul>
-            <li>Technical, behavioural and repository-debugging question types</li>
-            <li>Type-specific create, edit and detail experiences</li>
-            <li>Private user-owned libraries</li>
-            <li>Search and filters for type, status and difficulty</li>
-            <li>Progressive technical-answer and diagnosis reveal</li>
+            <li>Technical, conceptual, behavioural and debugging question formats</li>
+            <li>Private user-owned questions and shared built-in questions</li>
+            <li>Search, filters, bookmarks, notes and progressive reveal</li>
+            <li>TXT, Markdown, CSV, DOCX and text-based PDF imports</li>
+            <li>Resumable review, duplicate detection and validation</li>
           </ul>
         </article>
 
         <article>
           <p class="feature-number">03</p>
-          <h3>Bulk import and review</h3>
+          <h3>Review engine</h3>
           <ul>
-            <li>Pasted text, TXT, Markdown, CSV, DOCX and text-based PDF input</li>
-            <li>Resumable review batches and editable generated titles</li>
-            <li>Per-item type overrides and duplicate detection</li>
-            <li>Transactional, idempotent creation</li>
-            <li>Needs-notes and mark-ready validation workflows</li>
+            <li>Again, Hard, Good and Easy review ratings</li>
+            <li>Deterministic spaced-review scheduling</li>
+            <li>Due and upcoming review queues</li>
+            <li>Review history and dashboard summaries</li>
+            <li>Ownership validation around every review state</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">04</p>
+          <h3>Roadmaps and study planning</h3>
+          <ul>
+            <li>12 built-in role, skill and practice roadmaps</li>
+            <li>419 structured learning topics</li>
+            <li>Per-user roadmap and topic progress</li>
+            <li>Private notes and saved learning resources</li>
+            <li>Daily plans based on a 15-minute to 16-hour study budget</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">05</p>
+          <h3>Mock interviews and goals</h3>
+          <ul>
+            <li>Technical, conceptual, behavioural and debugging sessions</li>
+            <li>Timed and mixed interview formats</li>
+            <li>Saved answers, confidence ratings and session debriefs</li>
+            <li>Multiple interview goals, stages and deadlines</li>
+            <li>Explainable readiness across preparation activity</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">06</p>
+          <h3>Personal evidence</h3>
+          <ul>
+            <li>Project, work, coursework, leadership and technical-incident records</li>
+            <li>Reusable architecture and decision logs</li>
+            <li>Structured behavioural interview stories</li>
+            <li>Evidence linked to roadmap topics, questions and goals</li>
+            <li>Explicit evidence-readiness levels</li>
           </ul>
         </article>
       </div>
@@ -141,26 +180,52 @@
     <div class="section-heading">
       <div>
         <p class="eyebrow">Architecture</p>
-        <h2>Decisions made for clarity and controlled growth.</h2>
+        <h2>Decisions made for explainability, ownership and controlled growth.</h2>
       </div>
     </div>
 
     <div class="decision-list">
       <div>
         <h3>Modular Django monolith</h3>
-        <p>Clear domain boundaries without introducing distributed-system complexity before the product requires it.</p>
+        <p>
+          Questions, reviews, roadmaps, planning, mock interviews, goals and evidence have clear
+          domain boundaries without premature distributed-system complexity.
+        </p>
       </div>
       <div>
         <h3>PostgreSQL from the beginning</h3>
-        <p>One relational data model across local, test and production environments, with no application SQLite fallback.</p>
+        <p>
+          The application uses one relational data model across local, test and production environments,
+          with no application SQLite fallback.
+        </p>
       </div>
       <div>
-        <h3>Concrete base question with typed children</h3>
-        <p>Shared behaviour remains central while each interview format stores and presents its own relevant detail.</p>
+        <h3>Concrete questions with typed detail</h3>
+        <p>
+          Shared question behaviour remains central while each interview format stores and presents
+          the information relevant to that format.
+        </p>
+      </div>
+      <div>
+        <h3>Persisted daily planning</h3>
+        <p>
+          Each daily plan is stored as a stable snapshot, allowing users to complete recommendations,
+          track study sessions and deliberately regenerate their plan.
+        </p>
+      </div>
+      <div>
+        <h3>Reusable personal evidence</h3>
+        <p>
+          Projects, decisions and behavioural stories are stored once and linked to different questions,
+          roadmap topics and interview goals without duplicating the underlying facts.
+        </p>
       </div>
       <div>
         <h3>Deterministic logic before AI</h3>
-        <p>Study planning and review behaviour will remain visible, explainable and testable independently of future AI features.</p>
+        <p>
+          Review scheduling, prioritisation and readiness remain visible, testable and explainable
+          independently of future AI features.
+        </p>
       </div>
     </div>
   </section>
@@ -183,32 +248,40 @@
   <section class="section container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Next scope</p>
-        <h2>Planned product layers.</h2>
+        <p class="eyebrow">Future extensions</p>
+        <h2>Potential next product layers.</h2>
       </div>
-      <p>These features are not presented as part of the current release.</p>
+      <p>These capabilities are not presented as part of the current release.</p>
     </div>
 
     <div class="roadmap-list">
       <div>
         <span>01</span>
         <div>
-          <h3>Practice and review history</h3>
-          <p>Practice sessions, confidence, mistakes, review records and curriculum coverage.</p>
+          <h3>Grounded retrieval</h3>
+          <p>
+            Cited access to approved notes, evidence, worked examples, previous mistakes and debugging guidance.
+          </p>
         </div>
       </div>
       <div>
         <span>02</span>
         <div>
-          <h3>Deterministic Focus Engine</h3>
-          <p>Recommendations based on interview stage, dates, weak areas, available time and prior reviews.</p>
+          <h3>Evidence-aware AI coaching</h3>
+          <p>
+            Practice questions, follow-up simulations and answer support grounded in the user's approved
+            experience rather than invented claims.
+          </p>
         </div>
       </div>
       <div>
         <span>03</span>
         <div>
-          <h3>Grounded retrieval</h3>
-          <p>Cited access to notes, worked examples, debugging guidance and previous mistakes, with evaluation and fallback behaviour.</p>
+          <h3>Deeper preparation analytics</h3>
+          <p>
+            Expanded mastery, curriculum coverage and consistency insights, alongside user controls
+            for the preferred practice mix.
+          </p>
         </div>
       </div>
     </div>
@@ -218,7 +291,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <p>© 2026 Luthando Mbuyane</p>
-    <p>ViewCoach · Django · PostgreSQL · Testing · Deployment</p>
+    <p>ViewCoach · Django · PostgreSQL · Adaptive planning · Interview preparation</p>
   </div>
 </footer>
 
