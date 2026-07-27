@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Portfolio of Luthando Mbuyane — software, data and intelligent systems."
+    content="Portfolio of Luthando Mbuyane — software engineering, data analysis and intelligent systems."
   >
-  <title>Luthando Mbuyane | Software Engineer</title>
+  <title>Luthando Mbuyane | Software, Data & Intelligent Systems</title>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="home-page">
@@ -29,12 +29,14 @@
 </header>
 
 <main>
-  <section class="hero container">
+  <section class="hero container" id="top">
     <div class="hero-copy">
       <p class="kicker">Software · Data · Intelligent systems</p>
       <h1>Thoughtful software, grounded in real problems.</h1>
       <p class="hero-text">
-        A selection of full-stack products, data work and systems projects — from interview preparation and rental decision support to networking, concurrency and NLP.
+        I build full-stack products, data workflows and decision-support systems.
+        My computer science, applied statistics and psychology background helps me move
+        from implementation to evidence, behaviour and practical decisions.
       </p>
 
       <div class="hero-actions">
@@ -45,14 +47,14 @@
 
     <aside class="hero-note" aria-label="Profile overview">
       <p class="note-label">Current focus</p>
-      <p class="note-main">Full-stack product engineering with strong backend and data foundations.</p>
+      <p class="note-main">Full-stack and AI-enabled product engineering with strong backend, data and analytical foundations.</p>
       <div class="note-details">
         <span>Django</span>
         <span>FastAPI</span>
+        <span>Python</span>
         <span>PostgreSQL</span>
         <span>Java</span>
-        <span>Testing</span>
-        <span>NLP</span>
+        <span>R</span>
       </div>
     </aside>
   </section>
@@ -70,7 +72,8 @@
       <a href="projects/index.html?skill=full-stack">Full Stack</a>
       <a href="projects/index.html?skill=java">Java</a>
       <a href="projects/index.html?skill=python">Python</a>
-      <a href="projects/index.html?skill=data">Data</a>
+      <a href="projects/data-analysis.html">Analytics & Statistics</a>
+      <a href="projects/index.html?skill=data">Data Engineering</a>
       <a href="projects/index.html?skill=systems">Systems</a>
       <a href="projects/index.html?skill=testing">Testing</a>
     </div>
@@ -84,7 +87,8 @@
           <h2>Products with visible decisions behind them.</h2>
         </div>
         <p>
-          Each project combines technical implementation with a clear user problem, deliberate trade-offs and evidence of delivery.
+          Each project combines technical implementation with a clear user problem,
+          deliberate trade-offs and evidence of delivery.
         </p>
       </div>
 
@@ -102,7 +106,8 @@
           <h3>ViewCoach</h3>
           <p class="project-tagline">Interview preparation that tells users what to practise next.</p>
           <p>
-            A Django platform for technical, behavioural and repository-debugging preparation, with private question libraries, structured review workflows and multi-format document import.
+            A Django platform for technical, behavioural and repository-debugging preparation,
+            with private question libraries, structured review workflows and multi-format document import.
           </p>
 
           <div class="project-highlights">
@@ -136,7 +141,8 @@
           <h3>ScoreRent</h3>
           <p class="project-tagline">Explainable rental decision support, not a black-box score.</p>
           <p>
-            A FastAPI application that evaluates renter and listing information using deterministic rules, then returns a verdict, confidence level, reasons and practical next steps.
+            A FastAPI application that evaluates renter and listing information using deterministic rules,
+            then returns a verdict, confidence level, reasons and practical next steps.
           </p>
 
           <div class="project-highlights">
@@ -148,7 +154,7 @@
 
           <div class="project-links">
             <a class="button button-primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
-            <a class="text-link" href="https://github.com/nonluthando/scorerent" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="text-link" href="https://github.com/nonluthando/ScoreRent" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
             <a class="text-link" href="projects/scorerent.html">Case study →</a>
           </div>
         </div>
@@ -163,7 +169,8 @@
         <h2>Commercial software work inside an existing product.</h2>
       </div>
       <p>
-        Fixed-term engineering work across Laravel/PHP and Python/Flask services, including NLP functionality, testing, dependency work and production debugging.
+        Fixed-term engineering work inside established Laravel/PHP and Python/Flask codebases,
+        including behaviour tracing, maintainable implementation, code review, testing and production debugging.
       </p>
     </div>
 
@@ -175,20 +182,20 @@
 
       <div class="experience-item">
         <span>01</span>
-        <h3>Backend delivery</h3>
-        <p>Database-backed features, modular packages, API workflows and third-party service integration.</p>
+        <h3>Established codebases</h3>
+        <p>Navigated existing Laravel and Flask services before making focused backend, API and NLP changes.</p>
       </div>
 
       <div class="experience-item">
         <span>02</span>
-        <h3>NLP implementation</h3>
-        <p>spaCy NER preparation, entity classification, pipeline changes, tests and chatbot integration.</p>
+        <h3>Clean code and review</h3>
+        <p>Applied established conventions, wrote maintainable changes and worked through code-review feedback.</p>
       </div>
 
       <div class="experience-item">
         <span>03</span>
-        <h3>Testing and production work</h3>
-        <p>PHPUnit, GitHub Actions, Composer dependencies, compatibility issues and production debugging.</p>
+        <h3>Testing and production delivery</h3>
+        <p>Worked through PHPUnit and pytest failures, GitHub Actions, Composer constraints and production issues.</p>
       </div>
     </div>
   </section>
@@ -204,28 +211,34 @@
       </div>
 
       <div class="project-list">
-        <a href="projects/seaclear.html">
+        <a href="projects/data-analysis.html">
           <span class="project-list-number">03</span>
+          <span class="project-list-title">Data & Statistical Analysis</span>
+          <span class="project-list-tech">Python · SQL · Excel · R</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="projects/seaclear.html">
+          <span class="project-list-number">04</span>
           <span class="project-list-title">SeaClear</span>
           <span class="project-list-tech">Flask · MongoDB · HCI</span>
           <span aria-hidden="true">↗</span>
         </a>
         <a href="projects/networkcomm.html">
-          <span class="project-list-number">04</span>
+          <span class="project-list-number">05</span>
           <span class="project-list-title">NetworkComm</span>
           <span class="project-list-tech">Python · TCP sockets · threading</span>
           <span aria-hidden="true">↗</span>
         </a>
         <a href="projects/parallel-monte-carlo.html">
-          <span class="project-list-number">05</span>
+          <span class="project-list-number">06</span>
           <span class="project-list-title">Parallel Monte Carlo</span>
           <span class="project-list-tech">Java · Fork/Join · concurrency</span>
           <span aria-hidden="true">↗</span>
         </a>
         <a href="projects/csv-pipeline.html">
-          <span class="project-list-number">06</span>
-          <span class="project-list-title">CSV Cleaning Pipeline</span>
-          <span class="project-list-tech">Python · Pandas · validation</span>
+          <span class="project-list-number">07</span>
+          <span class="project-list-title">Data Cleaning & Conversion Utility</span>
+          <span class="project-list-tech">Python · Pandas · CSV/XLSX/Parquet</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
