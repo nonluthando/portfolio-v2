@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Data and statistical analysis by Luthando Mbuyane: product analytics, customer segmentation, experiment evaluation, R statistics and analytics engineering."
+  >
+  <title>Data & Statistical Analysis | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .analysis-shell { padding-bottom: 6rem; }
+    .analysis-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 2rem;
+      align-items: end;
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+    .analysis-hero h1 { max-width: 850px; }
+    .analysis-lede { max-width: 760px; font-size: 1.12rem; line-height: 1.75; }
+    .analysis-summary {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 24px;
+      padding: 1.5rem;
+      background: rgba(255,255,255,.035);
+    }
+    .analysis-summary strong { display: block; font-size: 2.5rem; line-height: 1; margin-bottom: .35rem; }
+    .analysis-summary p { margin: 0; }
+    .analysis-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.4rem;
+    }
+    .analysis-metric {
+      padding: 1rem;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+    }
+    .analysis-metric strong { font-size: 1.45rem; }
+    .analysis-section { padding: 4rem 0 0; }
+    .analysis-section-head {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, .7fr);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2rem;
+    }
+    .analysis-section-head p { margin: 0; line-height: 1.7; }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+    .analysis-card {
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 24px;
+      overflow: hidden;
+      background: rgba(255,255,255,.03);
+    }
+    .analysis-card.featured { grid-column: 1 / -1; }
+    .analysis-card-body { padding: 1.6rem; }
+    .analysis-card h3 { margin-top: .35rem; }
+    .analysis-card p { line-height: 1.7; }
+    .analysis-card img {
+      width: 100%;
+      aspect-ratio: 16 / 8.5;
+      object-fit: cover;
+      background: #fff;
+      display: block;
+    }
+    .analysis-type {
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      font-size: .76rem;
+      opacity: .7;
+    }
+    .evidence-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .8rem;
+      margin: 1.2rem 0;
+    }
+    .evidence {
+      padding: .95rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,.045);
+    }
+    .evidence strong { display: block; font-size: 1.15rem; margin-bottom: .2rem; }
+    .analysis-actions { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 1.3rem; }
+    .analysis-actions a { text-decoration: none; }
+    .decision-note {
+      margin-top: 1.1rem;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid currentColor;
+      background: rgba(255,255,255,.04);
+      line-height: 1.65;
+    }
+    .analysis-table-wrap { overflow-x: auto; margin: 1rem 0; }
+    .analysis-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+    .analysis-table th, .analysis-table td {
+      text-align: left;
+      padding: .8rem;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .analysis-table th { font-size: .82rem; text-transform: uppercase; letter-spacing: .07em; }
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: .75rem;
+      margin: 1.4rem 0;
+    }
+    .workflow span {
+      text-align: center;
+      padding: 1rem .65rem;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.1);
+      position: relative;
+    }
+    .workflow span:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -.65rem;
+      opacity: .55;
+    }
+    @media (max-width: 850px) {
+      .analysis-hero, .analysis-section-head { grid-template-columns: 1fr; }
+      .analysis-grid { grid-template-columns: 1fr; }
+      .analysis-card.featured { grid-column: auto; }
+      .analysis-metrics, .evidence-list { grid-template-columns: 1fr; }
+      .workflow { grid-template-columns: 1fr; }
+      .workflow span:not(:last-child)::after { content: "↓"; right: auto; bottom: -.75rem; left: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+    </nav>
+  </div>
+</header>
+
+<main class="analysis-shell">
+  <section class="analysis-hero container">
+    <div>
+      <p class="eyebrow">Data & statistical analysis</p>
+      <h1>From messy inputs to evidence and decisions.</h1>
+      <p class="analysis-lede">
+        This collection brings together product analytics, customer and retail analysis,
+        intervention evaluation, applied statistics in R, reusable data tooling and an
+        employer-direct labour-market pipeline.
+      </p>
+      <div class="analysis-actions">
+        <a class="button primary" href="#analysis-work">Explore analyses</a>
+        <a class="button" href="https://github.com/nonluthando/sa-grad-tech-job-market" target="_blank" rel="noopener noreferrer">Job-market pipeline ↗</a>
+      </div>
+    </div>
+
+    <aside class="analysis-summary">
+      <span class="analysis-type">Methods used</span>
+      <strong>Python + R</strong>
+      <p>SQL, Excel, Pandas, statistical testing, matched controls, ANOVA, visualisation and data-quality workflows.</p>
+      <div class="analysis-metrics">
+        <div class="analysis-metric"><strong>7</strong><span>report downloads</span></div>
+        <div class="analysis-metric"><strong>3</strong><span>analysis domains</span></div>
+        <div class="analysis-metric"><strong>1</strong><span>data utility</span></div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="analysis-section container" id="analysis-work">
+    <div class="analysis-section-head">
+      <div>
+        <p class="eyebrow">Product & customer analytics</p>
+        <h2>Business questions translated into measurable decisions.</h2>
+      </div>
+      <p>
+        These studies combine data preparation, descriptive analysis, statistical reasoning,
+        visual interpretation and recommendations that acknowledge uncertainty.
+      </p>
+    </div>
+
+    <div class="analysis-grid">
+      <article class="analysis-card featured">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Product analytics · Python · SQL · Excel</span>
+          <h3>E-commerce Funnel & Behaviour Analysis</h3>
+          <p>
+            Reconstructed a five-stage customer journey from event-level data to identify
+            where healthy traffic stopped converting into purchases.
+          </p>
+          <div class="evidence-list">
+            <div class="evidence"><strong>20.2%</strong><span>overall purchase conversion</span></div>
+            <div class="evidence"><strong>59.9%</strong><span>product-view to cart drop-off</span></div>
+            <div class="evidence"><strong>90.0%</strong><span>checkout-stage retention</span></div>
+          </div>
+          <div class="decision-note">
+            The evidence points to product-page friction rather than poor traffic quality.
+            Prioritise product clarity, trust signals and mobile usability, then validate changes with controlled tests.
+          </div>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/funnel-analysis-report.pdf" target="_blank">Read report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Customer analytics · Segmentation · R/Python</span>
+          <h3>Retail Customer Segmentation</h3>
+          <p>
+            Analysed 264,834 cleaned retail transactions to compare customer share,
+            sales contribution, unit pricing and brand affinity across lifestage and value segments.
+          </p>
+          <div class="evidence-list">
+            <div class="evidence"><strong>8.7%</strong><span>sales from Budget Older Families</span></div>
+            <div class="evidence"><strong>6.4%</strong><span>customer share for that segment</span></div>
+            <div class="evidence"><strong>p &lt; 2.2×10⁻¹⁶</strong><span>unit-price difference</span></div>
+          </div>
+          <p>
+            Mainstream young and mid-age singles/couples paid about 4.05 per unit versus 3.69
+            for comparable Budget and Premium customers. The analysis supports targeted placement
+            and promotion rather than one-size-fits-all marketing.
+          </p>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/retail-segmentation-report.pdf" target="_blank">Read report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Experiment evaluation · Matched controls</span>
+          <h3>Trial vs Control Store Evaluation</h3>
+          <p>
+            Matched trial store 77 with control store 233 using pre-trial performance,
+            then assessed sales and customer uplift against control confidence ranges.
+          </p>
+          <div class="evidence-list">
+            <div class="evidence"><strong>2 of 3</strong><span>trial months significant</span></div>
+            <div class="evidence"><strong>7.34</strong><span>March t-value</span></div>
+            <div class="evidence"><strong>12.48</strong><span>April t-value</span></div>
+          </div>
+          <div class="decision-note">
+            The uplift was meaningful in specific periods, but not uniformly significant.
+            Extend or replicate the trial before a full rollout.
+          </div>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/trial-vs-control-report.pdf" target="_blank">Read report</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="analysis-section container">
+    <div class="analysis-section-head">
+      <div>
+        <p class="eyebrow">Applied statistics in R</p>
+        <h2>Inference, effect sizes and visual interpretation.</h2>
+      </div>
+      <p>
+        Prepared from R Markdown files and R code. The reports show the complete reasoning:
+        hypotheses, descriptive results, test selection, assumptions, exact statistics and limitations.
+      </p>
+    </div>
+
+    <div class="analysis-grid">
+      <article class="analysis-card">
+        <img src="../assets/images/data-analysis/memory-anova.png" alt="Interaction plot of spacing interval and material type on memory score">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Two-way ANOVA</span>
+          <h3>Memory Performance: Spacing × Material</h3>
+          <p>
+            Spacing, material and their interaction were not significant:
+            spacing F(2,174)=0.646, p=.525; material F(1,174)=0.144, p=.705;
+            interaction F(2,174)=0.646, p=.525.
+          </p>
+          <p>
+            Partial eta-squared values were below .01, so the visible line changes represented
+            negligible practical differences rather than a reliable experimental effect.
+          </p>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/memory-factorial-anova.pdf" target="_blank">Read report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <img src="../assets/images/data-analysis/stress-intervention.png" alt="Participant-level stress scores before and after an intervention">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Paired-samples t-test</span>
+          <h3>Stress Intervention Evaluation</h3>
+          <p>
+            Mean stress decreased from 7.4 to 4.2, a 3.2-point reduction.
+            The paired result was significant, t(4)=4.00, p=.020,
+            95% CI [0.81, 5.59].
+          </p>
+          <p>
+            Every participant moved downward in the visual, but the sample contained only five people,
+            so the effect should be treated as promising rather than broadly generalisable.
+          </p>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/stress-intervention-t-test.pdf" target="_blank">Read report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <img src="../assets/images/data-analysis/chi-square-residuals.png" alt="Adjusted residuals identifying cells driving a categorical association">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Chi-square methods</span>
+          <h3>Categorical Preference Analysis</h3>
+          <p>
+            A goodness-of-fit test found 54 versus 46 preferences did not differ from a 50/50 expectation,
+            χ²(1)=0.64, p=.424. A separate independence test found a gender–preference association,
+            χ²(1)=4.74, p=.030.
+          </p>
+          <p>
+            Adjusted residuals of approximately ±2.38 identified which cells drove the overall association,
+            moving the interpretation beyond a single p-value.
+          </p>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/categorical-preference-chi-square.pdf" target="_blank">Read report</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <img src="../assets/images/data-analysis/heart-interaction.png" alt="Interaction plot showing fasting type, exercise frequency and heart-health improvement">
+        <div class="analysis-card-body">
+          <span class="analysis-type">t-tests · Chi-square · One-way and factorial ANOVA</span>
+          <h3>Applied Statistical Analysis in R</h3>
+          <p>
+            Four studies examined anxiety interventions, personality and film preference,
+            weight-loss programmes, and fasting–exercise interactions in heart health.
+          </p>
+          <div class="analysis-table-wrap">
+            <table class="analysis-table">
+              <thead><tr><th>Study</th><th>Result</th><th>Interpretation</th></tr></thead>
+              <tbody>
+                <tr><td>Anxiety</td><td>t(18)=-2.51, p=.022, d=-1.12</td><td>Exercise scored 2.9 points lower than meditation.</td></tr>
+                <tr><td>Film preference</td><td>χ²(2)=13.19, p=.0014, V=.33</td><td>Moderate association driven by action and romantic preferences.</td></tr>
+                <tr><td>Diet programmes</td><td>F(3,36)=16.87, p&lt;.001, η²=.58</td><td>All diets beat control; low calorie had the highest mean.</td></tr>
+                <tr><td>Heart health</td><td>Fasting × exercise F(3,32)=13.40, p&lt;.001</td><td>The effect of exercise depended on fasting programme.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="decision-note">
+            The 48-hour fasting plus frequent-exercise combination produced no advantage over control
+            and performed worse than 5/2 or 16/8 with frequent exercise. This is a caution signal,
+            not proof that fasting generally harms heart health.
+          </div>
+          <div class="analysis-actions">
+            <a class="button primary" href="../assets/reports/applied-statistical-analysis-in-r.pdf" target="_blank">Read combined report</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="analysis-section container">
+    <div class="analysis-section-head">
+      <div>
+        <p class="eyebrow">Data workflows</p>
+        <h2>Analysis supported by reusable engineering.</h2>
+      </div>
+      <p>
+        The supporting tools reduce repetitive preparation and preserve a clear path
+        from raw evidence to analysis-ready outputs.
+      </p>
+    </div>
+
+    <div class="analysis-grid">
+      <article class="analysis-card">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Python utility · Pandas · OpenPyXL · PyArrow</span>
+          <h3>Data Cleaning & Format Conversion Utility</h3>
+          <p>
+            Built while working with Kaggle datasets for customer churn, product drop-off and other analyses.
+            It removes repeated manual cleaning and makes it easy to continue work in Excel with PivotTables.
+          </p>
+          <div class="workflow" aria-label="Cleaning and conversion workflow">
+            <span>Raw data</span><span>Cleaning profile</span><span>Validation + log</span><span>CSV/XLSX/Parquet</span><span>Analysis</span>
+          </div>
+          <p>
+            The cleaner preserves true missing values, handles duplicate and empty records, and applies
+            standard or aggressive rules. Runtime parameters select conversions between CSV, Excel and Parquet,
+            including Excel sheet selection and overwrite protection.
+          </p>
+          <div class="analysis-actions">
+            <a class="button primary" href="csv-pipeline.html">Read case study</a>
+            <a class="button" href="https://github.com/nonluthando/cleaning_data" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <div class="analysis-card-body">
+          <span class="analysis-type">Analytics engineering · Python · Parquet</span>
+          <h3>South African Technology Job Market Analysis</h3>
+          <p>
+            Builds a unified employer-direct dataset by collecting public vacancies from Greenhouse,
+            Lever, Workday, SuccessFactors, Oracle HCM, WordPress and custom sources.
+          </p>
+          <div class="evidence-list">
+            <div class="evidence"><strong>6+</strong><span>provider families</span></div>
+            <div class="evidence"><strong>Skills</strong><span>normalised extraction</span></div>
+            <div class="evidence"><strong>Parquet</strong><span>analytical contract</span></div>
+          </div>
+          <p>
+            The operational pipeline preserves immutable raw snapshots, standardises fields,
+            tracks vacancy observations, extracts skills and requirements, classifies roles and
+            produces a quality-controlled dataset. Current work focuses on provider reliability
+            before dashboards and published market insights.
+          </p>
+          <div class="analysis-actions">
+            <a class="button primary" href="https://github.com/nonluthando/sa-grad-tech-job-market" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p><a href="index.html">Back to projects</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

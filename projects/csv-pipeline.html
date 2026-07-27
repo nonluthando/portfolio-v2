@@ -1,387 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>CSV Data Cleaning Pipeline | Luthando Mbuyane</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <meta charset="UTF-8">
+  <title>Data Cleaning & Conversion Utility | Luthando Mbuyane</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="A reusable Python utility for cleaning analytical datasets and converting between CSV, Excel and Parquet."
+  >
+  <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-
-    <div class="nav-container">
-
-      <a href="../index.html" class="logo">
-        Luthando Mbuyane
-      </a>
-
-      <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a class="active" href="index.html">Projects</a>
-        <a href="../about/index.html">About</a>
-
-        <a
-          href="https://github.com/nonluthando"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf"
-          download
-        >
-          CV
-        </a>
-
-      </div>
-
+<nav class="nav">
+  <div class="nav-container">
+    <a href="../index.html" class="logo">Luthando Mbuyane</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a class="active" href="index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
     </div>
-
-  </nav>
-
-
-
-  <!-- MAIN -->
-  <main class="container">
-
-
-    <!-- HERO -->
-    <section class="hero">
-
-      <h1>CSV Data Cleaning & Conversion Pipeline</h1>
-
-      <p class="hero-role">
-        Data Engineering · ETL Concepts · Data Validation · Python Tooling
-      </p>
-
-      <p class="hero-description">
-        Modular preprocessing pipeline designed to transform inconsistent CSV datasets
-        into clean, validated, analysis-ready Excel outputs through configurable cleaning workflows.
-      </p>
-
-      <div class="buttons">
-
-        <a
-          class="btn primary"
-          href="https://github.com/nonluthando"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub Repository
-        </a>
-
-        <a class="btn" href="index.html">
-          Back to Projects
-        </a>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- OVERVIEW -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Overview</h2>
-
-        <p>
-          Building reliable preprocessing workflows for inconsistent real-world datasets.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <p>
-          This project implements a modular data-preparation pipeline designed to
-          convert raw CSV datasets into clean, analysis-ready Excel files.
-        </p>
-
-        <p>
-          The pipeline focuses on improving data quality, consistency, and reproducibility
-          before downstream analysis by handling common preprocessing challenges such as:
-        </p>
-
-        <ul>
-          <li>Missing values</li>
-          <li>Inconsistent formatting</li>
-          <li>Invalid records</li>
-          <li>Schema inconsistencies</li>
-          <li>Data validation issues</li>
-        </ul>
-
-        <p>
-          The goal was to formalise repetitive data-cleaning workflows into a reusable,
-          configurable process that reduces manual preparation time and improves reliability.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- PIPELINE FLOW -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Pipeline Flow</h2>
-
-        <p>
-          High-level preprocessing workflow.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-<pre>
-Raw CSV
-   ↓
-Cleaning & Validation
-   ↓
-Standardisation
-   ↓
-Cleaned CSV
-   ↓
-CSV-to-Excel Conversion
-   ↓
-Analysis-Ready Excel Output
-</pre>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- FEATURES -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Key Features</h2>
-
-        <p>
-          Data quality and preprocessing capabilities implemented across the pipeline.
-        </p>
-
-      </div>
-
-
-      <div class="grid two">
-
-
-        <div class="card">
-
-          <h3>Data Cleaning</h3>
-
-          <p>
-            Implemented configurable cleaning workflows for handling missing values,
-            inconsistent formatting, invalid records, and basic schema validation.
-          </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <h3>Validation & Reliability</h3>
-
-          <p>
-            Added validation and logging mechanisms to improve traceability,
-            reproducibility, debugging, and downstream analytical reliability.
-          </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <h3>Excel Conversion</h3>
-
-          <p>
-            Converted cleaned CSV outputs into analysis-ready Excel files to support
-            reporting, exploration, and stakeholder workflows.
-          </p>
-
-        </div>
-
-
-
-        <div class="card">
-
-          <h3>Modular Design</h3>
-
-          <p>
-            Structured the preprocessing stages into reusable components to support
-            flexibility across datasets with varying structures and requirements.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </section>
-
-
-
-    <!-- TECH STACK -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Technologies</h2>
-
-      </div>
-
-
-      <div class="card">
-
-        <div class="pills">
-
-          <span>Python</span>
-          <span>Pandas</span>
-          <span>OpenPyXL</span>
-          <span>CLI Tooling</span>
-          <span>Data Validation</span>
-          <span>ETL Concepts</span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ENGINEERING THINKING -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>Engineering Focus</h2>
-
-        <p>
-          Technical reasoning and architectural considerations behind the pipeline.
-        </p>
-
-      </div>
-
-
-      <div class="card">
-
-        <p>
-          A major focus of this project was improving maintainability and reproducibility
-          within preprocessing workflows that are often handled manually.
-        </p>
-
-        <p>
-          Instead of treating data cleaning as isolated notebook operations,
-          the project approached preprocessing as a reusable pipeline with:
-        </p>
-
-        <ul>
-          <li>Clear workflow stages</li>
-          <li>Configurable cleaning profiles</li>
-          <li>Validation checkpoints</li>
-          <li>Consistent output formatting</li>
-          <li>Structured transformation logic</li>
-        </ul>
-
-        <p>
-          This strengthened my understanding of how engineering principles such as
-          modularity, reproducibility, and validation apply within analytical workflows
-          and data engineering contexts.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- WHAT I LEARNED -->
-    <section>
-
-      <div class="section-header">
-
-        <h2>What I Learned</h2>
-
-      </div>
-
-
-      <div class="card">
-
-        <p>
-          Through this project I gained practical experience working with:
-        </p>
-
-        <ul>
-          <li>Data validation workflows</li>
-          <li>Schema consistency challenges</li>
-          <li>Reusable preprocessing design</li>
-          <li>Handling inconsistent real-world datasets</li>
-          <li>Structuring transformation pipelines</li>
-          <li>Balancing flexibility with predictable outputs</li>
-        </ul>
-
-        <p>
-          The project also strengthened my understanding of how backend engineering,
-          analytical workflows, and data preparation intersect in production-oriented systems.
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- CTA -->
-    <section class="center">
-
-      <a class="btn" href="index.html">
-        Back to Projects
-      </a>
-
-    </section>
-
-
-  </main>
-
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-
-    <div class="container footer-content">
-
+  </div>
+</nav>
+
+<main class="container">
+  <section class="hero">
+    <h1>Data Cleaning & Format Conversion Utility</h1>
+    <p class="hero-role">Python · Pandas · OpenPyXL · PyArrow · CLI Tooling</p>
+    <p class="hero-description">
+      A supporting utility created to reduce repetitive preparation while working on
+      customer churn, product drop-off and other data-analysis projects.
+    </p>
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/nonluthando/cleaning_data" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+      <a class="btn" href="data-analysis.html">View analysis collection</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>Why I Built It</h2>
+      <p>A practical response to a repeated workflow problem.</p>
+    </div>
+    <div class="card">
       <p>
-        © 2026 Luthando Mbuyane
+        Many datasets I used from Kaggle arrived as CSV files. Python and Pandas were useful for
+        cleaning and analysis, but I sometimes wanted to continue in Excel using PivotTables,
+        charts and spreadsheet exploration.
       </p>
-
-      <p class="muted">
-        Cape Town, South Africa
+      <p>
+        Instead of manually cleaning and converting every dataset, I separated the workflow into
+        two focused scripts: one for cleaning and one for format conversion.
       </p>
-
     </div>
+  </section>
 
-  </footer>
+  <section>
+    <div class="section-header">
+      <h2>Workflow</h2>
+      <p>The utility supports analysis rather than replacing it.</p>
+    </div>
+    <div class="card">
+<pre>
+Kaggle or other raw dataset
+        ↓
+clean_data.py
+        ↓
+Cleaned dataset + transformation log
+        ↓
+convert_data.py --to csv|xlsx|parquet
+        ↓
+Python, Excel, PivotTables or downstream analysis
+</pre>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>Cleaning Behaviour</h2>
+      <p>Selectable rules for common data-quality problems.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Standard Profile</h3>
+        <ul>
+          <li>Trims whitespace without turning true missing values into text</li>
+          <li>Converts blank strings to missing values</li>
+          <li>Removes duplicates</li>
+          <li>Uses medians for missing numeric values</li>
+          <li>Uses modes or N/A for missing text values</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Aggressive Profile</h3>
+        <ul>
+          <li>Removes fully empty rows</li>
+          <li>Removes duplicates</li>
+          <li>Fills missing numeric values with zero</li>
+          <li>Fills missing text values with N/A</li>
+          <li>Creates a human-readable cleaning log</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>Runtime Format Conversion</h2>
+      <p>One converter controls the direction through command-line parameters.</p>
+    </div>
+    <div class="card">
+<pre>
+python convert_data.py customers.csv --to xlsx
+python convert_data.py customers.csv --to parquet
+python convert_data.py customers.parquet --to xlsx
+python convert_data.py report.xlsx --to csv --sheet "Customer Data"
+python convert_data.py report.xlsx --to parquet --all-sheets
+</pre>
+      <p>The converter includes:</p>
+      <ul>
+        <li>Automatic input-format detection</li>
+        <li>CSV, Excel and Parquet inputs and outputs</li>
+        <li>Excel worksheet selection and all-sheet export</li>
+        <li>Automatic output naming or a custom output path</li>
+        <li>Overwrite protection unless explicitly enabled</li>
+        <li>Validation for missing files and unsupported formats</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>Design Decisions</h2>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Separate Responsibilities</h3>
+        <p>
+          <code>clean_data.py</code> handles data-quality rules.
+          <code>convert_data.py</code> handles representation and file-format changes.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Safe Defaults</h3>
+        <p>
+          Existing files are not silently replaced, Excel workbooks with multiple sheets require
+          an explicit choice, and invalid file extensions produce clear errors.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Format Awareness</h3>
+        <p>
+          CSV is treated as plain tabular data, Excel as a stakeholder-friendly analysis format,
+          and Parquet as an efficient typed analytical format.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Real Workflow Context</h3>
+        <p>
+          The utility was created because the same preparation steps appeared repeatedly across
+          actual analyses, not as an isolated demonstration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header"><h2>Technologies</h2></div>
+    <div class="card">
+      <div class="pills">
+        <span>Python</span><span>Pandas</span><span>OpenPyXL</span><span>PyArrow</span>
+        <span>CSV</span><span>Excel</span><span>Parquet</span><span>CLI</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <a class="btn" href="index.html">Back to Projects</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-content">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p class="muted">South Africa</p>
+  </div>
+</footer>
 
 </body>
 </html>
