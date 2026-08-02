@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="ViewCoach, an adaptive Django interview-preparation platform built by Luthando Mbuyane."
+    content="ViewCoach, a Django interview-preparation platform combining optimised study planning, grounded AI, learning roadmaps and structured practice."
   >
   <title>ViewCoach | Luthando Mbuyane</title>
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -31,9 +31,8 @@
       <p class="eyebrow">Live product</p>
       <h1>ViewCoach</h1>
       <p class="hero-summary">
-        An adaptive Django interview-preparation platform that combines structured questions,
-        learning roadmaps, spaced review, interview goals, mock interviews and personal evidence
-        into a focused daily study plan.
+        A Django interview-preparation platform that combines structured practice, role-based learning,
+        constraint-based study planning and carefully bounded AI features in one explainable workflow.
       </p>
       <div class="actions">
         <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
@@ -45,19 +44,19 @@
     <dl class="case-meta">
       <div>
         <dt>Stack</dt>
-        <dd>Django 5.2, PostgreSQL and server-rendered templates</dd>
+        <dd>Django 5.2, PostgreSQL, pgvector, Gemini and OR-Tools</dd>
       </div>
       <div>
         <dt>Quality</dt>
-        <dd>pytest, Ruff, ownership and authorization tests, GitHub Actions</dd>
+        <dd>pytest, Ruff, authorization tests, migration checks and GitHub Actions</dd>
       </div>
       <div>
         <dt>Deployment</dt>
         <dd>Render with production settings, PostgreSQL and database health checks</dd>
       </div>
       <div>
-        <dt>Current release</dt>
-        <dd>Milestones 0 to 3.5: reviews, roadmaps, planning, goals, mocks and evidence</dd>
+        <dt>Current scope</dt>
+        <dd>Roadmaps, reviews, mocks, goals, evidence, optimised planning and grounded AI</dd>
       </div>
     </dl>
   </section>
@@ -68,24 +67,25 @@
         <div class="section-heading simple">
           <div>
             <p class="eyebrow">Product overview</p>
-            <h2>One system for deciding what to study, practise and explain next.</h2>
+            <h2>One system for deciding what to learn, practise and explain next.</h2>
           </div>
         </div>
         <p class="large-copy">
-          ViewCoach helps users move from collecting interview material to following a structured
-          preparation process. It combines a private question library, spaced review, role-based
-          roadmaps, mock interviews, interview goals and reusable evidence from real projects and experiences.
+          ViewCoach turns disconnected interview material into a structured preparation process.
+          Users can follow curated or imported learning paths, build a private question library,
+          review weak areas, run timed mocks, prepare evidence from real experience and receive a focused daily plan.
         </p>
         <p>
-          Its adaptive study planner turns due reviews, roadmap progress, recently difficult questions,
-          deadlines and available study time into a clear daily plan. Recommendations remain deterministic,
-          visible and explainable rather than being hidden behind an AI model.
+          The core planning logic remains visible and testable. Candidate activities are scored from due reviews,
+          roadmap progress, weak areas, goals and available time, then selected under explicit constraints.
+          AI is used only where it adds clear value: generating editable drafts from the user's own notes and
+          answering Help Centre questions from trusted documentation with citations.
         </p>
       </div>
 
       <aside class="case-note">
         <span>Core product question</span>
-        <p>Given the user's goals, deadlines, progress, weak areas and evidence, what should they practise next and why?</p>
+        <p>Given the user's goals, deadlines, progress, weak areas, evidence and available time, what should they practise next and why?</p>
       </aside>
     </div>
   </section>
@@ -97,7 +97,7 @@
           <p class="eyebrow">Implemented</p>
           <h2>Current product capability.</h2>
         </div>
-        <p>The live product now contains Milestones 0 through 3.5.</p>
+        <p>The product now spans structured learning, interview practice, optimisation and grounded AI.</p>
       </div>
 
       <div class="feature-columns">
@@ -105,11 +105,11 @@
           <p class="feature-number">01</p>
           <h3>Production foundation</h3>
           <ul>
-            <li>Custom email-based user accounts</li>
-            <li>Registration, authentication and protected interfaces</li>
+            <li>Custom email-based accounts and protected interfaces</li>
             <li>PostgreSQL across local, test and production environments</li>
-            <li>Database-aware health endpoint</li>
-            <li>Automated testing, linting and continuous integration</li>
+            <li>Database-aware health endpoint and production configuration</li>
+            <li>Automated testing, linting, migration checks and CI</li>
+            <li>Server-rendered responsive application shell</li>
           </ul>
         </article>
 
@@ -117,7 +117,7 @@
           <p class="feature-number">02</p>
           <h3>Question library and import</h3>
           <ul>
-            <li>Technical, conceptual, behavioural and debugging question formats</li>
+            <li>Technical, conceptual, behavioural and debugging formats</li>
             <li>Private user-owned questions and shared built-in questions</li>
             <li>Search, filters, bookmarks, notes and progressive reveal</li>
             <li>TXT, Markdown, CSV, DOCX and text-based PDF imports</li>
@@ -127,49 +127,73 @@
 
         <article>
           <p class="feature-number">03</p>
-          <h3>Review engine</h3>
+          <h3>Grounded question generation</h3>
           <ul>
-            <li>Again, Hard, Good and Easy review ratings</li>
-            <li>Deterministic spaced-review scheduling</li>
-            <li>Due and upcoming review queues</li>
-            <li>Review history and dashboard summaries</li>
-            <li>Ownership validation around every review state</li>
+            <li>Gemini creates concept or technical draft cards from saved topic notes</li>
+            <li>Prompts prohibit unsupported facts and treat embedded instructions as data</li>
+            <li>Structured JSON output is parsed and validated before persistence</li>
+            <li>Generation batches record source topics, status and failures</li>
+            <li>Drafts remain editable and require user review before study use</li>
           </ul>
         </article>
 
         <article>
           <p class="feature-number">04</p>
-          <h3>Roadmaps and study planning</h3>
+          <h3>Reviews and mock interviews</h3>
           <ul>
-            <li>12 built-in role, skill and practice roadmaps</li>
-            <li>419 structured learning topics</li>
-            <li>Per-user roadmap and topic progress</li>
-            <li>Private notes and saved learning resources</li>
-            <li>Daily plans based on a 15-minute to 16-hour study budget</li>
+            <li>Again, Hard, Good and Easy spaced-review ratings</li>
+            <li>Due queues, upcoming reviews and review history</li>
+            <li>Timed technical, conceptual, behavioural and debugging sessions</li>
+            <li>Mixed mock formats, saved answers and confidence ratings</li>
+            <li>Resumable sessions, debriefs and difficult-question tracking</li>
           </ul>
         </article>
 
         <article>
           <p class="feature-number">05</p>
-          <h3>Mock interviews and goals</h3>
+          <h3>Learning roadmaps and sources</h3>
           <ul>
-            <li>Technical, conceptual, behavioural and debugging sessions</li>
-            <li>Timed and mixed interview formats</li>
-            <li>Saved answers, confidence ratings and session debriefs</li>
-            <li>Multiple interview goals, stages and deadlines</li>
-            <li>Explainable readiness across preparation activity</li>
+            <li>12 built-in roadmaps containing 419 structured topics</li>
+            <li>Private notes, saved resources and per-topic progress</li>
+            <li>YouTube playlist preview and user-owned roadmap import</li>
+            <li>Video metadata, privacy-enhanced playback and watched progress</li>
+            <li>Source-specific interfaces over a shared learning-progress engine</li>
           </ul>
         </article>
 
         <article>
           <p class="feature-number">06</p>
-          <h3>Personal evidence</h3>
+          <h3>Optimised daily planning</h3>
           <ul>
-            <li>Project, work, coursework, leadership and technical-incident records</li>
-            <li>Reusable architecture and decision logs</li>
-            <li>Structured behavioural interview stories</li>
-            <li>Evidence linked to roadmap topics, questions and goals</li>
-            <li>Explicit evidence-readiness levels</li>
+            <li>Candidate activities scored from urgency, weakness and goal relevance</li>
+            <li>OR-Tools CP-SAT selection within the user's study-time budget</li>
+            <li>Constraints prevent duplicate questions and topic collisions</li>
+            <li>Review, practice, roadmap and context-switch limits shape the plan</li>
+            <li>Deterministic heuristic fallback keeps planning available</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">07</p>
+          <h3>Goals and personal evidence</h3>
+          <ul>
+            <li>Multiple interview goals, stages, deadlines and one primary goal</li>
+            <li>Explainable readiness across roadmaps, reviews, mocks and consistency</li>
+            <li>Project, work, coursework, leadership and incident records</li>
+            <li>Reusable decision logs and behavioural stories</li>
+            <li>Evidence linked to topics, questions and goal-specific framing</li>
+          </ul>
+        </article>
+
+        <article>
+          <p class="feature-number">08</p>
+          <h3>Grounded Help Assistant</h3>
+          <ul>
+            <li>Trusted Markdown documentation with heading-aware overlapping chunks</li>
+            <li>Gemini embeddings stored in PostgreSQL through pgvector</li>
+            <li>Cosine-similarity retrieval with configurable evidence thresholds</li>
+            <li>Inline source citations, visible source cards and citation validation</li>
+            <li>Explicit refusal, query logging and rate limiting when evidence is insufficient</li>
           </ul>
         </article>
       </div>
@@ -188,43 +212,57 @@
       <div>
         <h3>Modular Django monolith</h3>
         <p>
-          Questions, reviews, roadmaps, planning, mock interviews, goals and evidence have clear
-          domain boundaries without premature distributed-system complexity.
+          Questions, reviews, roadmaps, planning, mock interviews, goals, evidence and knowledge retrieval
+          have clear domain boundaries without premature distributed-system complexity.
         </p>
       </div>
       <div>
-        <h3>PostgreSQL from the beginning</h3>
+        <h3>PostgreSQL as the shared data foundation</h3>
         <p>
-          The application uses one relational data model across local, test and production environments,
-          with no application SQLite fallback.
+          Relational product data and vector embeddings live in one production database,
+          with pgvector supporting cosine-similarity retrieval for the Help Assistant.
         </p>
       </div>
       <div>
-        <h3>Concrete questions with typed detail</h3>
+        <h3>Source-separated roadmaps</h3>
         <p>
-          Shared question behaviour remains central while each interview format stores and presents
-          the information relevant to that format.
+          Curated ViewCoach curricula and user-owned YouTube roadmaps reuse the same progress models,
+          while retaining separate routes, metadata, access rules and interfaces.
         </p>
       </div>
       <div>
-        <h3>Persisted daily planning</h3>
+        <h3>Constraint-based planning with a safe fallback</h3>
         <p>
-          Each daily plan is stored as a stable snapshot, allowing users to complete recommendations,
-          track study sessions and deliberately regenerate their plan.
+          CP-SAT optimises the activity mix under time, duplication and workload constraints.
+          A deterministic heuristic takes over if the optimiser is unavailable or cannot return a solution.
         </p>
       </div>
       <div>
-        <h3>Reusable personal evidence</h3>
+        <h3>AI outputs remain bounded</h3>
         <p>
-          Projects, decisions and behavioural stories are stored once and linked to different questions,
-          roadmap topics and interview goals without duplicating the underlying facts.
+          Generated question cards must be grounded in user notes, pass structural validation and remain drafts.
+          They do not silently become trusted study material.
         </p>
       </div>
       <div>
-        <h3>Deterministic logic before AI</h3>
+        <h3>Retrieval fails closed</h3>
         <p>
-          Review scheduling, prioritisation and readiness remain visible, testable and explainable
-          independently of future AI features.
+          The Help Assistant answers only from published trusted documents, validates cited source numbers
+          and refuses when retrieval or generated context cannot support a confident answer.
+        </p>
+      </div>
+      <div>
+        <h3>Ownership is enforced at the data boundary</h3>
+        <p>
+          Questions, imported roadmaps, notes, evidence, review state and generation batches are scoped to
+          the authenticated user, with authorization behaviour covered by tests.
+        </p>
+      </div>
+      <div>
+        <h3>Persisted plans and histories</h3>
+        <p>
+          Daily plans, reviews, mock sessions, query logs and generation batches create inspectable records
+          instead of hiding important behaviour inside temporary requests.
         </p>
       </div>
     </div>
@@ -258,19 +296,20 @@
       <div>
         <span>01</span>
         <div>
-          <h3>Grounded retrieval</h3>
+          <h3>Evidence-aware interview coaching</h3>
           <p>
-            Cited access to approved notes, evidence, worked examples, previous mistakes and debugging guidance.
+            Follow-up questions and answer support grounded in user-approved projects, decisions and stories,
+            without inventing experience or claims.
           </p>
         </div>
       </div>
       <div>
         <span>02</span>
         <div>
-          <h3>Evidence-aware AI coaching</h3>
+          <h3>Additional learning-source integrations</h3>
           <p>
-            Practice questions, follow-up simulations and answer support grounded in the user's approved
-            experience rather than invented claims.
+            Importers for structured external learning providers while preserving source ownership,
+            progress tracking and the existing question-generation workflow.
           </p>
         </div>
       </div>
@@ -279,8 +318,8 @@
         <div>
           <h3>Deeper preparation analytics</h3>
           <p>
-            Expanded mastery, curriculum coverage and consistency insights, alongside user controls
-            for the preferred practice mix.
+            Expanded mastery, curriculum coverage, planner-quality and consistency insights with clear
+            explanations rather than opaque readiness scores.
           </p>
         </div>
       </div>
@@ -291,7 +330,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <p>© 2026 Luthando Mbuyane</p>
-    <p>ViewCoach · Django · PostgreSQL · Adaptive planning · Interview preparation</p>
+    <p>ViewCoach · Django · PostgreSQL · Optimisation · Grounded AI · Interview preparation</p>
   </div>
 </footer>
 
