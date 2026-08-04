@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="ViewCoach, a Django interview-preparation platform combining optimised study planning, grounded AI, learning roadmaps and structured practice."
+    content="ProofLoop is an adaptive interview-readiness workspace that turns learning, practice, experience and deadlines into a focused daily preparation plan."
   >
-  <title>ViewCoach | Luthando Mbuyane</title>
+  <title>ProofLoop | Luthando Mbuyane</title>
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -28,11 +28,12 @@
 <main>
   <section class="case-hero container">
     <div>
-      <p class="eyebrow">Live product</p>
-      <h1>ViewCoach</h1>
+      <p class="eyebrow">Live product · Interview readiness workspace</p>
+      <h1>ProofLoop</h1>
       <p class="hero-summary">
-        A Django interview-preparation platform that combines structured practice, role-based learning,
-        constraint-based study planning and carefully bounded AI features in one explainable workflow.
+        An adaptive preparation workspace that turns a candidate’s target roles, learning resources,
+        recall performance, interview deadlines and real experience into a focused daily plan and
+        measurable readiness profile.
       </p>
       <div class="actions">
         <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
@@ -43,20 +44,20 @@
 
     <dl class="case-meta">
       <div>
+        <dt>Product promise</dt>
+        <dd>Know what to prepare, retain what you learn and prove what you can do</dd>
+      </div>
+      <div>
         <dt>Stack</dt>
         <dd>Django 5.2, PostgreSQL, pgvector, Gemini and OR-Tools</dd>
       </div>
       <div>
-        <dt>Quality</dt>
-        <dd>pytest, Ruff, authorization tests, migration checks and GitHub Actions</dd>
+        <dt>Core systems</dt>
+        <dd>Adaptive planning, spaced review, learning paths, evidence building and mock interviews</dd>
       </div>
       <div>
-        <dt>Deployment</dt>
-        <dd>Render with production settings, PostgreSQL and database health checks</dd>
-      </div>
-      <div>
-        <dt>Current scope</dt>
-        <dd>Roadmaps, reviews, mocks, goals, evidence, optimised planning and grounded AI</dd>
+        <dt>Deployment note</dt>
+        <dd>The live URL and repository retain the original ViewCoach working name</dd>
       </div>
     </dl>
   </section>
@@ -66,26 +67,24 @@
       <div class="case-main">
         <div class="section-heading simple">
           <div>
-            <p class="eyebrow">Product overview</p>
-            <h2>One system for deciding what to learn, practise and explain next.</h2>
+            <p class="eyebrow">The problem</p>
+            <h2>Interview preparation is usually fragmented across too many disconnected tools.</h2>
           </div>
         </div>
         <p class="large-copy">
-          ViewCoach turns disconnected interview material into a structured preparation process.
-          Users can follow curated or imported learning paths, build a private question library,
-          review weak areas, run timed mocks, prepare evidence from real experience and receive a focused daily plan.
+          Candidates collect courses, playlists, notes, coding questions, project examples and behavioural stories,
+          but still struggle to answer a more important question: what should I prepare today, and why?
         </p>
         <p>
-          The core planning logic remains visible and testable. Candidate activities are scored from due reviews,
-          roadmap progress, weak areas, goals and available time, then selected under explicit constraints.
-          AI is used only where it adds clear value: generating editable drafts from the user's own notes and
-          answering Help Centre questions from trusted documentation with citations.
+          Generic study plans ignore the role being targeted, the current interview stage, approaching deadlines,
+          weak areas and the time actually available. Progress is often measured as content consumed rather than
+          knowledge retained or evidence made interview-ready.
         </p>
       </div>
 
       <aside class="case-note">
         <span>Core product question</span>
-        <p>Given the user's goals, deadlines, progress, weak areas, evidence and available time, what should they practise next and why?</p>
+        <p>Given the user’s goal, deadline, progress, weak areas, available evidence and study time, what is the most useful next action?</p>
       </aside>
     </div>
   </section>
@@ -94,107 +93,209 @@
     <div class="container">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">Implemented</p>
-          <h2>Current product capability.</h2>
+          <p class="eyebrow">The product</p>
+          <h2>One preparation loop from learning to confident explanation.</h2>
         </div>
-        <p>The product now spans structured learning, interview practice, optimisation and grounded AI.</p>
+        <p>ProofLoop connects activities that are normally treated as separate products.</p>
       </div>
 
       <div class="feature-columns">
         <article>
           <p class="feature-number">01</p>
-          <h3>Production foundation</h3>
-          <ul>
-            <li>Custom email-based accounts and protected interfaces</li>
-            <li>PostgreSQL across local, test and production environments</li>
-            <li>Database-aware health endpoint and production configuration</li>
-            <li>Automated testing, linting, migration checks and CI</li>
-            <li>Server-rendered responsive application shell</li>
-          </ul>
+          <h3>Plan</h3>
+          <p>
+            Users define a target role, company, interview stages, deadlines and weekly capacity.
+            ProofLoop uses that context to prioritise preparation rather than serving a generic checklist.
+          </p>
         </article>
 
         <article>
           <p class="feature-number">02</p>
-          <h3>Question library and import</h3>
-          <ul>
-            <li>Technical, conceptual, behavioural and debugging formats</li>
-            <li>Private user-owned questions and shared built-in questions</li>
-            <li>Search, filters, bookmarks, notes and progressive reveal</li>
-            <li>TXT, Markdown, CSV, DOCX and text-based PDF imports</li>
-            <li>Resumable review, duplicate detection and validation</li>
-          </ul>
+          <h3>Learn</h3>
+          <p>
+            Built-in roadmaps, IBM SkillsBuild courses, YouTube playlists and custom learning paths share
+            one progress system with topic notes, saved resources and focused learning sequences.
+          </p>
         </article>
 
         <article>
           <p class="feature-number">03</p>
-          <h3>Grounded question generation</h3>
-          <ul>
-            <li>Gemini creates concept or technical draft cards from saved topic notes</li>
-            <li>Prompts prohibit unsupported facts and treat embedded instructions as data</li>
-            <li>Structured JSON output is parsed and validated before persistence</li>
-            <li>Generation batches record source topics, status and failures</li>
-            <li>Drafts remain editable and require user review before study use</li>
-          </ul>
+          <h3>Retain</h3>
+          <p>
+            Technical, conceptual, behavioural and repository-debugging questions move through a structured
+            preparation workflow and spaced-review schedule based on recall difficulty.
+          </p>
         </article>
 
         <article>
           <p class="feature-number">04</p>
-          <h3>Reviews and mock interviews</h3>
-          <ul>
-            <li>Again, Hard, Good and Easy spaced-review ratings</li>
-            <li>Due queues, upcoming reviews and review history</li>
-            <li>Timed technical, conceptual, behavioural and debugging sessions</li>
-            <li>Mixed mock formats, saved answers and confidence ratings</li>
-            <li>Resumable sessions, debriefs and difficult-question tracking</li>
-          </ul>
+          <h3>Prove</h3>
+          <p>
+            Users turn projects, work, coursework, leadership and technical incidents into reusable evidence,
+            project explanations, decision records and interview-ready behavioural stories.
+          </p>
         </article>
 
         <article>
           <p class="feature-number">05</p>
-          <h3>Learning roadmaps and sources</h3>
-          <ul>
-            <li>12 built-in roadmaps containing 419 structured topics</li>
-            <li>Private notes, saved resources and per-topic progress</li>
-            <li>YouTube playlist preview and user-owned roadmap import</li>
-            <li>Video metadata, privacy-enhanced playback and watched progress</li>
-            <li>Source-specific interfaces over a shared learning-progress engine</li>
-          </ul>
+          <h3>Rehearse</h3>
+          <p>
+            Timed technical, conceptual, behavioural, debugging and mixed mock interviews create a performance
+            history that feeds back into preparation priorities and readiness.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="case-layout">
+      <div class="case-main">
+        <div class="section-heading simple">
+          <div>
+            <p class="eyebrow">Key differentiator</p>
+            <h2>The product recommends the next action instead of merely storing preparation material.</h2>
+          </div>
+        </div>
+        <p class="large-copy">
+          ProofLoop builds a daily plan from due reviews, recently difficult questions, unfinished roadmap topics,
+          interview evidence gaps, goal relevance, deadlines and the user’s available study time.
+        </p>
+        <p>
+          Candidate activities receive explainable scores before OR-Tools CP-SAT selects a useful combination under
+          explicit time, duplication, workload and context-switching constraints. A deterministic heuristic fallback
+          keeps the planner available when the optimiser cannot return a solution.
+        </p>
+      </div>
+
+      <aside class="case-note">
+        <span>Why optimisation?</span>
+        <p>A high-priority review, roadmap topic and behavioural task may each be useful, but the best daily plan must also fit the user’s limited time without becoming fragmented.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Readiness model</p>
+          <h2>Measure preparation quality, not just activity.</h2>
+        </div>
+        <p>The readiness profile combines multiple signals instead of presenting an unexplained score.</p>
+      </div>
+
+      <div class="feature-columns">
+        <article>
+          <p class="feature-number">25%</p>
+          <h3>Roadmap coverage</h3>
+          <p>Tracks completed topics across learning paths linked to the active interview goal.</p>
         </article>
 
         <article>
-          <p class="feature-number">06</p>
-          <h3>Optimised daily planning</h3>
-          <ul>
-            <li>Candidate activities scored from urgency, weakness and goal relevance</li>
-            <li>OR-Tools CP-SAT selection within the user's study-time budget</li>
-            <li>Constraints prevent duplicate questions and topic collisions</li>
-            <li>Review, practice, roadmap and context-switch limits shape the plan</li>
-            <li>Deterministic heuristic fallback keeps planning available</li>
-          </ul>
+          <p class="feature-number">25%</p>
+          <h3>Review health</h3>
+          <p>Measures whether prepared knowledge is current or accumulating as overdue recall work.</p>
         </article>
 
         <article>
-          <p class="feature-number">07</p>
-          <h3>Goals and personal evidence</h3>
-          <ul>
-            <li>Multiple interview goals, stages, deadlines and one primary goal</li>
-            <li>Explainable readiness across roadmaps, reviews, mocks and consistency</li>
-            <li>Project, work, coursework, leadership and incident records</li>
-            <li>Reusable decision logs and behavioural stories</li>
-            <li>Evidence linked to topics, questions and goal-specific framing</li>
-          </ul>
+          <p class="feature-number">20%</p>
+          <h3>Question preparation</h3>
+          <p>Rewards a prepared library covering multiple interview formats rather than raw question volume.</p>
         </article>
 
         <article>
-          <p class="feature-number">08</p>
-          <h3>Grounded Help Assistant</h3>
-          <ul>
-            <li>Trusted Markdown documentation with heading-aware overlapping chunks</li>
-            <li>Gemini embeddings stored in PostgreSQL through pgvector</li>
-            <li>Cosine-similarity retrieval with configurable evidence thresholds</li>
-            <li>Inline source citations, visible source cards and citation validation</li>
-            <li>Explicit refusal, query logging and rate limiting when evidence is insufficient</li>
-          </ul>
+          <p class="feature-number">20%</p>
+          <h3>Mock performance</h3>
+          <p>Uses recent answer-level confidence assessments to establish a rehearsal baseline.</p>
+        </article>
+
+        <article>
+          <p class="feature-number">10%</p>
+          <h3>Consistency</h3>
+          <p>Reflects recent completed study sessions relative to the user’s preparation commitment.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Evidence system</p>
+        <h2>Knowledge is not enough if the candidate cannot connect it to real experience.</h2>
+      </div>
+      <p>ProofLoop treats interview evidence as a first-class product domain rather than a notes field.</p>
+    </div>
+
+    <div class="decision-list">
+      <div>
+        <h3>Experience inventory</h3>
+        <p>
+          Projects, work, coursework, leadership and technical incidents are stored with context, personal contribution,
+          technologies, outcomes, lessons and supporting links.
+        </p>
+      </div>
+      <div>
+        <h3>Project deep dives</h3>
+        <p>
+          Users prepare a quick pitch and two-minute explanation alongside architecture, key decisions, difficult bugs,
+          testing, AI use, trade-offs, scaling and likely follow-up questions.
+        </p>
+      </div>
+      <div>
+        <h3>Behavioural stories</h3>
+        <p>
+          Evidence becomes reusable STAR-style stories with competencies, reflection and anticipated follow-ups,
+          while completeness checks show what is still missing.
+        </p>
+      </div>
+      <div>
+        <h3>Contextual linking</h3>
+        <p>
+          Evidence can be linked to roadmap topics, individual interview questions and specific job goals so the same
+          experience can be framed appropriately in different interview contexts.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tinted">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Bounded AI</p>
+          <h2>AI removes preparation work without replacing the user’s judgement.</h2>
+        </div>
+        <p>The application uses AI in narrow workflows with explicit evidence and validation boundaries.</p>
+      </div>
+
+      <div class="feature-columns">
+        <article>
+          <p class="feature-number">01</p>
+          <h3>Questions from personal notes</h3>
+          <p>
+            Gemini converts saved topic notes into editable technical or conceptual question drafts. Prompts prohibit
+            unsupported facts, outputs must match validated JSON structures and drafts require user review before use.
+          </p>
+        </article>
+
+        <article>
+          <p class="feature-number">02</p>
+          <h3>Grounded product assistance</h3>
+          <p>
+            The Help Assistant retrieves trusted documentation from PostgreSQL with pgvector, cites the supplied sources
+            and refuses when the available evidence cannot support an answer.
+          </p>
+        </article>
+
+        <article>
+          <p class="feature-number">03</p>
+          <h3>Inspectable records</h3>
+          <p>
+            Generation batches, retrieval results, citation payloads, latency and failures are persisted so important AI
+            behaviour can be tested, reviewed and debugged rather than hidden behind a chat response.
+          </p>
         </article>
       </div>
     </div>
@@ -204,7 +305,7 @@
     <div class="section-heading">
       <div>
         <p class="eyebrow">Architecture</p>
-        <h2>Decisions made for explainability, ownership and controlled growth.</h2>
+        <h2>Designed for explainability, ownership and controlled growth.</h2>
       </div>
     </div>
 
@@ -212,57 +313,43 @@
       <div>
         <h3>Modular Django monolith</h3>
         <p>
-          Questions, reviews, roadmaps, planning, mock interviews, goals, evidence and knowledge retrieval
+          Accounts, questions, reviews, roadmaps, planning, mock interviews, goals, evidence and knowledge retrieval
           have clear domain boundaries without premature distributed-system complexity.
         </p>
       </div>
       <div>
-        <h3>PostgreSQL as the shared data foundation</h3>
+        <h3>PostgreSQL as the shared foundation</h3>
         <p>
-          Relational product data and vector embeddings live in one production database,
-          with pgvector supporting cosine-similarity retrieval for the Help Assistant.
+          Relational product data and vector embeddings live in one production database, with pgvector supporting
+          cosine-similarity retrieval for grounded assistance.
         </p>
       </div>
       <div>
-        <h3>Source-separated roadmaps</h3>
+        <h3>Shared progress across learning sources</h3>
         <p>
-          Curated ViewCoach curricula and user-owned YouTube roadmaps reuse the same progress models,
-          while retaining separate routes, metadata, access rules and interfaces.
+          Built-in curricula, imported courses, YouTube playlists and user-created roadmaps retain source-specific
+          metadata while reusing the same topic and progress model.
         </p>
       </div>
       <div>
-        <h3>Constraint-based planning with a safe fallback</h3>
+        <h3>Ownership at the data boundary</h3>
         <p>
-          CP-SAT optimises the activity mix under time, duplication and workload constraints.
-          A deterministic heuristic takes over if the optimiser is unavailable or cannot return a solution.
-        </p>
-      </div>
-      <div>
-        <h3>AI outputs remain bounded</h3>
-        <p>
-          Generated question cards must be grounded in user notes, pass structural validation and remain drafts.
-          They do not silently become trusted study material.
-        </p>
-      </div>
-      <div>
-        <h3>Retrieval fails closed</h3>
-        <p>
-          The Help Assistant answers only from published trusted documents, validates cited source numbers
-          and refuses when retrieval or generated context cannot support a confident answer.
-        </p>
-      </div>
-      <div>
-        <h3>Ownership is enforced at the data boundary</h3>
-        <p>
-          Questions, imported roadmaps, notes, evidence, review state and generation batches are scoped to
-          the authenticated user, with authorization behaviour covered by tests.
+          Questions, imported roadmaps, notes, evidence, review state and generation batches are scoped to the
+          authenticated user, with authorization behaviour covered by automated tests.
         </p>
       </div>
       <div>
         <h3>Persisted plans and histories</h3>
         <p>
-          Daily plans, reviews, mock sessions, query logs and generation batches create inspectable records
+          Daily plans, review attempts, mock sessions, generation batches and query logs create inspectable records
           instead of hiding important behaviour inside temporary requests.
+        </p>
+      </div>
+      <div>
+        <h3>Production verification</h3>
+        <p>
+          pytest, Ruff, migration checks and GitHub Actions support a production deployment on Render with PostgreSQL
+          health checks and environment-specific settings.
         </p>
       </div>
     </div>
@@ -271,14 +358,13 @@
   <section class="section container">
     <div class="development-panel">
       <div>
-        <p class="eyebrow">Development workflow</p>
-        <h2>AI-assisted, verification-led delivery.</h2>
+        <p class="eyebrow">What this project demonstrates</p>
+        <h2>Product thinking backed by full-stack implementation.</h2>
       </div>
       <p>
-        I use AI to challenge architecture choices, turn agreed decisions into implementation plans,
-        generate test ideas, investigate bugs and improve documentation. I retain ownership of the product rules,
-        architecture, trade-offs and acceptance criteria, then review the code, trace the behaviour and run the tests
-        before accepting a change.
+        ProofLoop demonstrates domain modelling across interconnected workflows, explainable recommendation logic,
+        optimisation under real constraints, secure multi-user data ownership, production AI boundaries, retrieval with
+        vector search, and the ability to evolve a Django application without reducing it to a collection of CRUD screens.
       </p>
     </div>
   </section>
@@ -286,43 +372,32 @@
   <section class="section container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Future extensions</p>
-        <h2>Potential next product layers.</h2>
+        <p class="eyebrow">Current scale</p>
+        <h2>A substantial working product rather than a static prototype.</h2>
       </div>
-      <p>These capabilities are not presented as part of the current release.</p>
     </div>
 
-    <div class="roadmap-list">
-      <div>
-        <span>01</span>
-        <div>
-          <h3>Evidence-aware interview coaching</h3>
-          <p>
-            Follow-up questions and answer support grounded in user-approved projects, decisions and stories,
-            without inventing experience or claims.
-          </p>
-        </div>
-      </div>
-      <div>
-        <span>02</span>
-        <div>
-          <h3>Additional learning-source integrations</h3>
-          <p>
-            Importers for structured external learning providers while preserving source ownership,
-            progress tracking and the existing question-generation workflow.
-          </p>
-        </div>
-      </div>
-      <div>
-        <span>03</span>
-        <div>
-          <h3>Deeper preparation analytics</h3>
-          <p>
-            Expanded mastery, curriculum coverage, planner-quality and consistency insights with clear
-            explanations rather than opaque readiness scores.
-          </p>
-        </div>
-      </div>
+    <div class="feature-columns">
+      <article>
+        <p class="feature-number">12</p>
+        <h3>Built-in roadmaps</h3>
+        <p>Role, skill and practice paths covering structured interview preparation.</p>
+      </article>
+      <article>
+        <p class="feature-number">419</p>
+        <h3>Structured topics</h3>
+        <p>Trackable learning units with notes, resources, progress and question-generation workflows.</p>
+      </article>
+      <article>
+        <p class="feature-number">4</p>
+        <h3>Question formats</h3>
+        <p>Technical, conceptual, behavioural and repository-debugging preparation.</p>
+      </article>
+      <article>
+        <p class="feature-number">1</p>
+        <h3>Connected workflow</h3>
+        <p>Learning, recall, evidence, rehearsal and planning feed into the same readiness system.</p>
+      </article>
     </div>
   </section>
 </main>
@@ -330,7 +405,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <p>© 2026 Luthando Mbuyane</p>
-    <p>ViewCoach · Django · PostgreSQL · Optimisation · Grounded AI · Interview preparation</p>
+    <p>ProofLoop · Django · PostgreSQL · Optimisation · Grounded AI · Interview readiness</p>
   </div>
 </footer>
 
