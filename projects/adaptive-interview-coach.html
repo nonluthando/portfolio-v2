@@ -68,6 +68,30 @@
     </dl>
   </section>
 
+  <section class="section container" id="screens">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The product</p>
+        <h2>Running locally, end to end.</h2>
+      </div>
+      <p>Screenshots from the application running on PostgreSQL with pgvector, using its built-in seeded demo workspace.</p>
+    </div>
+    <div class="shots">
+      <figure class="wide">
+        <img src="../assets/images/projects/proofloop-dashboard.png" alt="ProofLoop preparation command centre showing today's plan, readiness and learning journey" loading="lazy">
+        <figcaption><strong>Command centre</strong>One recommended next action, today's plan, readiness, retention and evidence in a single view.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/proofloop-plan.png" alt="Daily plan listing prioritised study blocks with the reason for each" loading="lazy">
+        <figcaption><strong>Daily plan</strong>Due reviews, STAR practice, roadmap learning and mock interviews, each with a "why this" explanation.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/proofloop-help.png" alt="Grounded Help Assistant page" loading="lazy">
+        <figcaption><strong>Help Assistant</strong>The RAG-powered assistant that answers only from trusted documentation.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section container">
     <div class="case-layout">
       <div class="case-main">
@@ -319,6 +343,15 @@
       </p>
     </div>
 
+    <div class="callout row">
+      <span class="emoji" aria-hidden="true">🧭</span>
+      <div>
+        <strong>Why I introduced it.</strong> To improve the platform’s <em>discoverability</em> and <em>learnability</em>. ProofLoop has many
+        connected features (roadmaps, reviews, planner, mock interviews, goals and evidence), and a grounded assistant lets a new user ask
+        how something works and get a cited answer, instead of hunting through the product.
+      </div>
+    </div>
+
     <div class="workflow" aria-label="RAG pipeline">
       <span>Trusted Markdown</span><span>Heading-aware chunking</span><span>Gemini embeddings</span><span>pgvector</span><span>Similarity retrieval</span><span>Cited answer or refusal</span>
     </div>
@@ -427,7 +460,53 @@
     </div>
   </section>
 
-  <section class="section container">
+    <section class="section container" id="product-decisions">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Product decisions</p>
+        <h2>Scoping a feature: what shipped, what was rejected and why.</h2>
+      </div>
+      <p>
+        Each decision was weighed against the core workflow and recorded, using the user-created roadmaps feature as the example.
+      </p>
+    </div>
+
+    <details class="toggle" open>
+      <summary>The product goal: reduce decision fatigue</summary>
+      <div class="toggle-body">Interview preparation leaves learners deciding, every day, what to study and when. ProofLoop was aimed at removing that choice: a daily plan combines due spaced reviews, roadmap topics and practice into one recommended next action, so effort goes into studying instead of deciding.</div>
+    </details>
+    <details class="toggle">
+      <summary>Why spaced review</summary>
+      <div class="toggle-body">Recall is scheduled by how difficult each question was, so the right material comes back at the right time without the learner tracking it by hand.</div>
+    </details>
+    <details class="toggle">
+      <summary>Why a user-created roadmap feature</summary>
+      <div class="toggle-body">A learner needs a private learning path when the built-in curriculum or an imported source does not match the work they need to do. The feature extends the existing roadmap hierarchy rather than adding a second curriculum model.</div>
+    </details>
+    <details class="toggle">
+      <summary>Up/down controls instead of drag-and-drop</summary>
+      <div class="toggle-body">Drag-and-drop was rejected because it adds client-side state, keyboard and mobile complexity without improving the core workflow. The trade-off is slower reordering on very large roadmaps, in exchange for deterministic, accessible, mobile-reliable controls.</div>
+    </details>
+    <details class="toggle">
+      <summary>Explicit planner focus</summary>
+      <div class="toggle-body">Saving a roadmap does not automatically send it to the daily planner. It needs at least one topic and the user must choose to add it, so the plan only contains what the learner opted into.</div>
+    </details>
+    <details class="toggle">
+      <summary>Deliberately out of this release</summary>
+      <div class="toggle-body">Sharing, templates, cloning, version history and collaborative editing. Interview goals also start at the online-assessment or interview stage, and application tracking is out of scope.</div>
+    </details>
+    <details class="toggle">
+      <summary>Safe by default</summary>
+      <div class="toggle-body">Roadmaps are private to their owner, titles can change without breaking bookmarked URLs, and deleting a topic or module requires an explicit destructive confirmation.</div>
+    </details>
+
+    <div class="decision-note">
+      <strong>Decisions are written down.</strong> The project keeps architecture decision records covering status, context, decision,
+      consequences, rejected alternatives and the conditions that would justify revisiting each choice.
+    </div>
+  </section>
+
+<section class="section container">
     <div class="development-panel">
       <div>
         <p class="eyebrow">What this project demonstrates</p>

@@ -54,6 +54,30 @@
     </dl>
   </section>
 
+  <section class="section container" id="screens">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The dashboard</p>
+        <h2>Interactive views over the validated data marts.</h2>
+      </div>
+      <p>Seven views behind shared filters. These screenshots show every collected vacancy, with the “South African tech roles” scope switched off.</p>
+    </div>
+    <div class="shots">
+      <figure class="wide">
+        <img src="../assets/images/projects/jobs-overview.png" alt="Dashboard overview with vacancy activity, role levels and key counts" loading="lazy">
+        <figcaption><strong>Overview</strong>Vacancy volume, employers, early-career roles, activity over time and the role-level mix.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/jobs-skills.png" alt="Technology and capability demand bar charts" loading="lazy">
+        <figcaption><strong>Skills</strong>Technology demand and capability demand across the filtered vacancies.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/jobs-early-career.png" alt="Early-career view of graduate, internship and junior opportunities" loading="lazy">
+        <figcaption><strong>Early career</strong>Graduate, internship and junior opportunities as a dedicated lens.</figcaption>
+      </figure>
+    </div>
+  </section>
+
   <section class="section container">
     <div class="section-heading">
       <div>
@@ -226,7 +250,56 @@
     </p>
   </section>
 
-  <section class="section container">
+    <section class="section container" id="product-decisions">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Product decisions</p>
+        <h2>Scope, trade-offs and boundaries, written down.</h2>
+      </div>
+      <p>The project records its scope decision, including what it costs, and how those risks are handled.</p>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>Benefits of the wider scope</h3>
+        <ul>
+          <li>Useful company, city, seniority and workplace analysis immediately.</li>
+          <li>Skills and requirements comparable across career stages.</li>
+          <li>Low early-career availability becomes a measurable finding, not a product failure.</li>
+          <li>Less dependence on graduate-programme recruitment seasons.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Costs and risks, and the mitigation</h3>
+        <ul>
+          <li>Senior roles can dominate aggregate skill counts unless analysis is segmented.</li>
+          <li>Findings represent supported employers, not the whole market.</li>
+          <li>The early-career sample is small, so explicit filters, sample-size warnings and source-coverage reporting are used.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>In scope</h3>
+        <ul>
+          <li>South African, technology-related roles</li>
+          <li>Public employer career pages and supported public ATS endpoints</li>
+          <li>Explainable, deterministic classifications</li>
+          <li>Aggregate market analysis</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Out of scope</h3>
+        <ul>
+          <li>Salary prediction and résumé matching</li>
+          <li>Application automation</li>
+          <li>Protected-attribute inference</li>
+          <li>Unrestricted scraping of every job platform</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted">The research question was revised with the scope, so the product answers something useful even when graduate programmes are closed.</p>
+  </section>
+
+<section class="section container">
     <div class="section-heading">
       <div>
         <p class="eyebrow">Design decisions</p>

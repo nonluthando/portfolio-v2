@@ -53,6 +53,7 @@
       <button class="skill-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
       <button class="skill-filter" type="button" data-filter="full-stack" aria-pressed="false">Full Stack</button>
       <button class="skill-filter" type="button" data-filter="ai" aria-pressed="false">AI</button>
+      <button class="skill-filter" type="button" data-filter="product" aria-pressed="false">Product</button>
       <button class="skill-filter" type="button" data-filter="java" aria-pressed="false">Java</button>
       <button class="skill-filter" type="button" data-filter="python" aria-pressed="false">Python</button>
       <button class="skill-filter" type="button" data-filter="data" aria-pressed="false">Data</button>
@@ -66,19 +67,19 @@
           <tr><th>Name</th><th>Status</th><th>Stack</th><th>Tags</th></tr>
         </thead>
         <tbody>
-          <tr data-project data-skills="ai full-stack python data testing">
+          <tr data-project data-skills="product ai full-stack python data testing">
             <td class="name">🔁 <a href="adaptive-interview-coach.html">ProofLoop</a></td>
             <td><span class="tag green">Live product</span></td>
             <td>Django · PostgreSQL</td>
             <td><div class="tags"><span class="tag blue">Django</span><span class="tag green">PostgreSQL + pgvector</span><span class="tag yellow">OR-Tools</span><span class="tag pink">Gemini</span></div></td>
           </tr>
-          <tr data-project data-skills="ai full-stack python data testing">
+          <tr data-project data-skills="product ai full-stack python data testing">
             <td class="name">🏠 <a href="scorerent.html">ScoreRent</a></td>
             <td><span class="tag green">Live product</span></td>
             <td>FastAPI · PostgreSQL</td>
             <td><div class="tags"><span class="tag blue">FastAPI</span><span class="tag green">Multimodal AI</span><span class="tag yellow">PostgreSQL</span><span class="tag pink">Geospatial APIs</span></div></td>
           </tr>
-          <tr data-project data-skills="ai python data testing">
+          <tr data-project data-skills="product ai python data testing">
             <td class="name">📈 <a href="sa-tech-job-market.html">SA Tech Job Market Intelligence</a></td>
             <td><span class="tag green">Live dashboard</span></td>
             <td>Python · Parquet · pytest</td>
@@ -90,14 +91,14 @@
             <td>Python · SQL · Excel · R</td>
             <td><div class="tags"><span class="tag blue">Product analytics</span><span class="tag green">Experiment evaluation</span><span class="tag yellow">Statistics</span><span class="tag pink">Visualisation</span></div></td>
           </tr>
-          <tr data-project data-skills="full-stack python data">
+          <tr data-project data-skills="product full-stack python data">
             <td class="name">🌊 <a href="seaclear.html">SeaClear</a></td>
             <td><span class="tag purple">Team capstone</span></td>
             <td>Flask · MongoDB · JavaScript</td>
             <td><div class="tags"><span class="tag blue">Flask</span><span class="tag green">MongoDB</span><span class="tag yellow">JavaScript</span><span class="tag pink">HCI</span></div></td>
           </tr>
           <tr data-project data-skills="java systems testing">
-            <td class="name">⚙️ <a href="https://github.com/nonluthando/cpu-scheduling-simulation" target="_blank" rel="noopener noreferrer">CPU Scheduling Simulation</a></td>
+            <td class="name">⚙️ <a href="cpu-scheduling.html">CPU Scheduling Simulation</a></td>
             <td><span class="tag purple">Coursework extension</span></td>
             <td>Java · Concurrency</td>
             <td><div class="tags"><span class="tag blue">Java</span><span class="tag green">Blocking queues</span><span class="tag yellow">CountDownLatch</span><span class="tag pink">Operating systems</span></div></td>
@@ -131,7 +132,7 @@
     </div>
 
     <div class="db-gallery">
-        <article class="db-card" data-project data-skills="ai full-stack python data testing">
+        <article class="db-card" data-project data-skills="product ai full-stack python data testing">
           <span class="emoji" aria-hidden="true">🔁</span>
           <h3>ProofLoop</h3>
           <div class="pills"><span class="tag green">Live product</span></div>
@@ -143,7 +144,7 @@
             <a class="text-link" href="adaptive-interview-coach.html">Case study →</a>
           </div>
         </article>
-        <article class="db-card" data-project data-skills="ai full-stack python data testing">
+        <article class="db-card" data-project data-skills="product ai full-stack python data testing">
           <span class="emoji" aria-hidden="true">🏠</span>
           <h3>ScoreRent</h3>
           <div class="pills"><span class="tag green">Live product</span></div>
@@ -155,7 +156,7 @@
             <a class="text-link" href="scorerent.html">Case study →</a>
           </div>
         </article>
-        <article class="db-card" data-project data-skills="ai python data testing">
+        <article class="db-card" data-project data-skills="product ai python data testing">
           <span class="emoji" aria-hidden="true">📈</span>
           <h3>SA Tech Job Market Intelligence</h3>
           <div class="pills"><span class="tag green">Live dashboard</span></div>
@@ -177,7 +178,7 @@
             <a class="button primary" href="data-analysis.html">View collection</a>
           </div>
         </article>
-        <article class="db-card" data-project data-skills="full-stack python data">
+        <article class="db-card" data-project data-skills="product full-stack python data">
           <span class="emoji" aria-hidden="true">🌊</span>
           <h3>SeaClear</h3>
           <div class="pills"><span class="tag purple">Team capstone</span></div>
@@ -195,6 +196,7 @@
           <p>FCFS and SJF comparison using blocking queues, coordinated thread startup, metric collection and repeated experiments under varying load.</p>
           <div class="tags"><span class="tag blue">Java</span><span class="tag green">Blocking queues</span><span class="tag yellow">CountDownLatch</span><span class="tag pink">Operating systems</span></div>
           <div class="actions">
+            <a class="text-link" href="cpu-scheduling.html">Case study →</a>
             <a class="button" href="https://github.com/nonluthando/cpu-scheduling-simulation" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </div>
         </article>
@@ -252,7 +254,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <p>© 2026 Luthando Mbuyane</p>
-    <p>South Africa · Open to graduate and junior software, AI and analytics roles</p>
+    <p>South Africa · Open to graduate and junior software, AI, analytics and product roles</p>
   </div>
 </footer>
 

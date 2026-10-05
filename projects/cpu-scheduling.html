@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Java simulation comparing FCFS and SJF scheduling, using blocking queues and threads to measure waiting, turnaround and response time under varying load.">
+  <title>CPU Scheduling Simulation | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/notion.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">🌿 Luthando</a><span class="sep">/</span><a href="index.html">🗂 Projects</a><span class="sep">/</span><span class="here">CPU Scheduling Simulation</span>
+    </nav>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+    </nav>
+  </div>
+</header>
+
+<div class="cover slim" role="img" aria-label="Decorative green banner"></div>
+
+<main>
+  <section class="case-hero container">
+    <p class="eyebrow">Coursework extension · Operating systems</p>
+    <h1>CPU Scheduling Simulation</h1>
+    <p class="hero-summary">
+      A Java simulation comparing First Come First Served (FCFS) and Shortest Job First (SJF) scheduling, analysing waiting time,
+      turnaround time and response time as system load increases.
+    </p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/nonluthando/cpu-scheduling-simulation" target="_blank" rel="noopener noreferrer">View repository</a>
+      <a class="button text-button" href="index.html">Project directory</a>
+    </div>
+    <dl class="case-meta">
+      <div><dt>Stack</dt><dd>Java, threads, blocking queues, CountDownLatch</dd></div>
+      <div><dt>Context</dt><dd>Operating Systems coursework, extending a provided starter codebase</dd></div>
+      <div><dt>My work</dt><dd>Scheduling policies, coordinated startup, metric collection, file logging and repeated experiments</dd></div>
+    </dl>
+  </section>
+
+  <section class="section container" id="screens">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The simulation</p>
+        <h2>Running, and measured.</h2>
+      </div>
+      <p>I ran the simulation locally at four load levels for each algorithm.</p>
+    </div>
+    <div class="shots">
+      <figure>
+        <img src="../assets/images/projects/cpu-run.png" alt="Terminal output of an SJF run with 10 patrons" loading="lazy">
+        <figcaption><strong>A run</strong>Patrons arrive, submit orders and wait, while the barman serves them in the order the chosen policy picks.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/cpu-results.png" alt="Table comparing FCFS and SJF mean turnaround and waiting time at 10, 20, 40 and 60 patrons" loading="lazy">
+        <figcaption><strong>FCFS vs SJF</strong>Similar at low load. At 40 and 60 patrons SJF's mean turnaround and waiting times were roughly 14–18% lower, in line with the expected behaviour as load grows.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Model</p>
+        <h2>A single-server system.</h2>
+      </div>
+    </div>
+    <div class="grid two">
+      <div class="card"><h3>Patrons</h3><p>Processes arriving over time at staggered intervals.</p></div>
+      <div class="card"><h3>Drink orders</h3><p>Individual units of work, equivalent to CPU bursts.</p></div>
+      <div class="card"><h3>The barman</h3><p>The CPU, serving one order at a time.</p></div>
+      <div class="card"><h3>The shared queue</h3><p>The ready queue. The scheduling policy is chosen at runtime.</p></div>
+    </div>
+
+    <h3>Scheduling policies</h3>
+    <ul>
+      <li><strong>FCFS:</strong> orders are served strictly in arrival order, using a FIFO <code>LinkedBlockingQueue</code>.</li>
+      <li><strong>SJF:</strong> the shortest orders go first, using a <code>PriorityBlockingQueue</code> ordered by execution time.</li>
+    </ul>
+
+    <h3>What I added to the provided code</h3>
+    <ul>
+      <li>Scheduling behaviour using concurrent queue selection</li>
+      <li>Coordinated thread startup with <code>CountDownLatch</code>, so thread creation order does not bias results</li>
+      <li>Metric collection for turnaround, waiting and response time</li>
+      <li>Synchronised file logging of experimental results, avoiding race conditions on the output</li>
+      <li>Repeated experimental runs under varying patron counts</li>
+    </ul>
+
+    <div class="decision-note">
+      <strong>Limitations, stated up front.</strong> Single-server only, no preemption, no context-switch overhead, and no mitigation of starvation
+      under SJF.
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>CPU Scheduling · Java · Concurrency · Operating systems</p>
+  </div>
+</footer>
+
+</body>
+</html>
