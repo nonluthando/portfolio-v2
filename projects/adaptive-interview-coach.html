@@ -8,22 +8,28 @@
     content="ProofLoop is an adaptive interview-readiness workspace that turns learning, practice, experience and deadlines into a focused daily preparation plan."
   >
   <title>ProofLoop | Luthando Mbuyane</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/notion.css">
+  <script src="../assets/js/theme.js"></script>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a class="logo" href="../index.html">Luthando Mbuyane</a>
+<header class="topbar">
+  <div class="topbar-inner">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">🌿 Luthando</a><span class="sep">/</span><a href="index.html">🗂 Projects</a><span class="sep">/</span><span class="here">ProofLoop</span>
+    </nav>
     <nav class="nav-links" aria-label="Primary navigation">
       <a href="../index.html">Home</a>
-      <a class="active" href="index.html">Projects</a>
+      <a class="active" href="../projects/index.html">Projects</a>
       <a href="../about/index.html">About</a>
       <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
     </nav>
   </div>
 </header>
+
+<div class="cover slim" role="img" aria-label="Decorative green banner"></div>
 
 <main>
   <section class="case-hero container">
@@ -298,6 +304,72 @@
           </p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="section container" id="rag">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Retrieval-augmented generation</p>
+        <h2>A Help Assistant that answers from trusted documents or says it cannot.</h2>
+      </div>
+      <p>
+        The assistant is a RAG pipeline built around one rule: an answer is only shown when retrieved
+        documentation supports it and every claim can be traced to a source.
+      </p>
+    </div>
+
+    <div class="workflow" aria-label="RAG pipeline">
+      <span>Trusted Markdown</span><span>Heading-aware chunking</span><span>Gemini embeddings</span><span>pgvector</span><span>Similarity retrieval</span><span>Cited answer or refusal</span>
+    </div>
+
+    <div class="feature-columns">
+      <article>
+        <p class="feature-number">01 · Ingest</p>
+        <h3>Chunk by document structure</h3>
+        <p>
+          Markdown is split along its headings, so each chunk keeps its section path (a parent › child heading path), with a size cap and overlap for long sections. Ingestion is idempotent:
+          checksums and the embedding model name decide whether a document needs re-embedding, and every run is recorded.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">02 · Retrieve</p>
+        <h3>Cosine similarity with a floor</h3>
+        <p>
+          Chunks are embedded with <code>gemini-embedding-001</code> (1,536 dimensions) and stored beside the relational data in
+          PostgreSQL with pgvector. A query returns the nearest published chunks, and anything below a minimum similarity is dropped
+          before the model sees it.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">03 · Generate</p>
+        <h3>Constrained, cited answers</h3>
+        <p>
+          The prompt allows only the supplied context, treats instructions inside the question or documents as data,
+          and requires a <code>[Source N]</code> citation for each important claim. The page renders inline citations and source cards.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">04 · Refuse</p>
+        <h3>Three ways to say “not enough evidence”</h3>
+        <p>
+          The assistant refuses when nothing clears the similarity floor, when the model replies <code>NOT_SUPPORTED</code>,
+          or when its answer has no valid citation. A citation pointing past the supplied sources does not count.
+        </p>
+      </article>
+    </div>
+
+    <h3>Testing and observability</h3>
+    <ul>
+      <li><strong>Retrieval evaluation:</strong> 21 question-to-document cases checking the right document is retrieved, scored with reciprocal rank.</li>
+      <li><strong>Faithfulness check:</strong> an opt-in LLM-as-judge pass that grades whether every claim in an answer is supported by its context. It is separate from the default test run because it costs extra model calls.</li>
+      <li><strong>Query log:</strong> each question records its status (answered, no evidence or error), model, latency, retrieved chunks and citations, so failures can be reviewed rather than guessed at.</li>
+      <li><strong>Protections:</strong> per-user rate limiting, and provider interfaces that let tests run against fakes with no network calls.</li>
+    </ul>
+
+    <div class="decision-note">
+      <strong>Why it is built this way.</strong> Planning and scheduling stay deterministic. The model only handles semantic
+      retrieval and wording, and the application, not the model, decides whether an answer is allowed to reach the user.
     </div>
   </section>
 
