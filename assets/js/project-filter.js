@@ -1,6 +1,7 @@
 (() => {
   const buttons = Array.from(document.querySelectorAll(".skill-filter"));
   const projects = Array.from(document.querySelectorAll("[data-project]"));
+  const rows = projects.filter((project) => project.tagName === "TR");
   const count = document.getElementById("project-count");
   const emptyMessage = document.getElementById("empty-filter-message");
 
@@ -19,7 +20,8 @@
       const visible = filter === "all" || skills.includes(filter);
 
       project.hidden = !visible;
-      if (visible) {
+      // Table rows and gallery cards mirror each other, so count one set only.
+      if (visible && (!rows.length || project.tagName === "TR")) {
         visibleCount += 1;
       }
     });
@@ -48,6 +50,16 @@
       window.history.replaceState({}, "", url);
     }
   };
+
+  const db = document.querySelector(".db");
+  document.querySelectorAll(".db-tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      db.dataset.view = tab.dataset.view;
+      document.querySelectorAll(".db-tab").forEach((other) => {
+        other.setAttribute("aria-pressed", String(other === tab));
+      });
+    });
+  });
 
   buttons.forEach((button) => {
     button.addEventListener("click", () => applyFilter(button.dataset.filter));

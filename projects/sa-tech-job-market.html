@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="An employer-direct analytics pipeline for South African technology vacancies, with explainable rules plus optional machine-learning and Gemini-assisted classification."
+  >
+  <title>SA Tech Job Market Intelligence | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/notion.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">🌿 Luthando</a><span class="sep">/</span><a href="index.html">🗂 Projects</a><span class="sep">/</span><span class="here">SA Tech Job Market Intelligence</span>
+    </nav>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+    </nav>
+  </div>
+</header>
+
+<div class="cover slim" role="img" aria-label="Decorative green banner"></div>
+
+<main>
+  <section class="case-hero container">
+    <p class="eyebrow">Active build · Analytics engineering</p>
+    <h1>SA Tech Job Market Intelligence</h1>
+    <p class="hero-summary">
+      A pipeline that collects public technology vacancies straight from employer career sites, standardises them,
+      extracts skills and classifies each role. Deterministic rules come first, with machine learning and Gemini
+      used only as separate, auditable suggestion layers.
+    </p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/nonluthando/sa-grad-tech-job-market" target="_blank" rel="noopener noreferrer">View repository</a>
+      <a class="button text-button" href="index.html">Project directory</a>
+    </div>
+
+    <dl class="case-meta">
+      <div><dt>Stack</dt><dd>Python, Parquet, DuckDB, Streamlit, scikit-learn, Gemini, pytest</dd></div>
+      <div><dt>Collection</dt><dd>10 recruitment-platform adapters, including Greenhouse, Lever, Workday and SuccessFactors</dd></div>
+      <div><dt>Output</dt><dd>Schema-controlled Parquet datasets with three quality reports</dd></div>
+      <div><dt>AI boundary</dt><dd>Suggestions only. Models never overwrite canonical fields</dd></div>
+    </dl>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The problem</p>
+        <h2>Job boards repeat each other, and job descriptions describe seniority inconsistently.</h2>
+      </div>
+    </div>
+    <p>
+      Reading employers’ own career portals gives a cleaner view of the South African technology market, but each platform
+      has its own API, pagination and location format. Titles and descriptions rarely say “graduate” or “senior” in the same way,
+      so seniority, skills and workplace type have to be inferred carefully, and the inference has to be defensible.
+    </p>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Pipeline</p>
+        <h2>From raw snapshots to analysis-ready data.</h2>
+      </div>
+    </div>
+    <div class="workflow" aria-label="Pipeline stages">
+      <span>Provider adapters</span><span>Raw snapshots + SHA-256</span><span>Cleaning</span><span>Skills + requirements</span><span>Classification</span><span>Stable-key dedupe</span><span>Parquet marts</span><span>Dashboard</span>
+    </div>
+    <ul>
+      <li><strong>Reproducible:</strong> raw responses are stored unchanged with timestamps and hashes, so any transformation can be re-run and audited.</li>
+      <li><strong>Conservative deduplication:</strong> stable provider identifiers track first-seen and last-seen dates without merging unrelated vacancies.</li>
+      <li><strong>Validated marts:</strong> <code>jobs.parquet</code> is the one-row-per-vacancy source of truth, and dashboard marts are checked against a contract before Streamlit and DuckDB read them.</li>
+    </ul>
+  </section>
+
+  <section class="section container" id="ml-ai">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Machine learning and AI</p>
+        <h2>Three layers, each doing what it is best at.</h2>
+      </div>
+      <p>
+        Classification evidence is kept so every label can be explained. Where rules cannot decide, optional models suggest a value
+        and write it to a separate, regenerable file instead of the canonical dataset.
+      </p>
+    </div>
+
+    <div class="feature-columns">
+      <article>
+        <p class="feature-number">Layer 1 · Rules</p>
+        <h3>Scored, explainable classifier</h3>
+        <p>
+          Title-word precedence and numeric experience ranges decide career level, role, domain and employment type.
+          When evidence conflicts, the label falls back to <code>unspecified</code> rather than guessing.
+          A regex audit against the live dataset found and fixed six confirmed bugs.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">Layer 2 · Machine learning</p>
+        <h3>TF-IDF + logistic regression</h3>
+        <p>
+          A scikit-learn model learns from the rules’ own high-confidence labels, then suggests a role level for vacancies still
+          <code>unspecified</code>, with a confidence score. Because the classes are heavily imbalanced, it is evaluated with macro-F1 rather than accuracy.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">Layer 3 · LLM</p>
+        <h3>Gemini-assisted suggestions</h3>
+        <p>
+          Gemini proposes role level, workplace type and city for target-market vacancies that are still missing one of them.
+          Every field comes with a confidence and rationale, and only the fields that were actually unresolved are kept.
+        </p>
+      </article>
+    </div>
+
+    <div class="decision-note">
+      <strong>Why the layers are separate.</strong> The ML and Gemini outputs are manually run, gitignored artefacts with their own
+      <code>ml_</code> and <code>llm_</code> field prefixes, so analysis can compare them with the rules instead of silently trusting them.
+      A consistency test keeps the two rule-based classifiers from drifting apart.
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">What this project demonstrates</p>
+        <h2>Data engineering, applied ML and responsible AI use in one pipeline.</h2>
+      </div>
+    </div>
+    <div class="development-panel">
+      <p>
+        It shows multi-source ingestion, immutable raw data, schema and quality validation, NLP-style skills extraction,
+        a properly evaluated scikit-learn model, and LLM output treated as evidence to be checked, not as ground truth.
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>SA Tech Job Market · Python · Parquet · scikit-learn · Gemini · Data quality</p>
+  </div>
+</footer>
+
+</body>
+</html>
