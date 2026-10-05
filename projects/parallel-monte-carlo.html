@@ -77,6 +77,31 @@
 
 
 
+<section id="screens">
+
+  <div class="section-header">
+    <h2>The project running</h2>
+    <p class="section-subtitle">
+      The project's web UI runs the serial baseline and the Fork/Join version on the same random seed and shows the terrain, the grid points the searches visited
+      and the global minimum found. The command line gives the benchmark numbers.
+    </p>
+  </div>
+
+  <div class="shots">
+    <figure class="wide">
+      <img src="../assets/images/projects/montecarlo-ui.png" alt="Web UI showing serial and parallel results and a heatmap of the terrain with search coverage" loading="lazy">
+      <figcaption><strong>Web UI</strong>A 3000×3000 grid with 900,000 searches: both versions find the same global minimum. At this size the parallel version is only slightly faster, since task overhead matters more than the work saved.</figcaption>
+    </figure>
+    <figure class="wide">
+      <img src="../assets/images/projects/montecarlo-cli.png" alt="Terminal showing serial and parallel timings for a 5000 by 5000 grid" loading="lazy">
+      <figcaption><strong>Command line</strong>On a 5000×5000 grid with 2.5 million searches, serial takes about 3.4 s and the Fork/Join version about 1.9 s on a four-core machine, with the same global minimum of −1889.</figcaption>
+    </figure>
+  </div>
+
+</section>
+
+
+
 <!-- OVERVIEW -->
 
 <section>

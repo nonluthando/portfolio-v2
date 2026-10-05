@@ -369,3 +369,13 @@ section.contact-band.container { margin-top: 2.5rem; padding-top: 1.5rem; border
 body:has(main.wide) .footer-inner { max-width: var(--wide); }
 .decision-note { display: block; }
 .feature-columns > article:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+/* ---------- Screenshot gallery (case studies) ---------- */
+.shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0; }
+.shots figure { margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg); }
+.shots figure.wide { grid-column: 1 / -1; }
+.shots img { width: 100%; height: auto; border-bottom: 1px solid var(--line); background: #fff; }
+.shots figcaption { padding: .6rem .9rem .75rem; font-size: .88rem; color: var(--ink-soft); }
+.shots figcaption strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: .1rem; }
+.shots a { display: block; }
+@media (max-width: 720px) { .shots { grid-template-columns: 1fr; } }
