@@ -36,9 +36,9 @@
     <p class="eyebrow">Active build · Analytics engineering</p>
     <h1>SA Tech Job Market Intelligence</h1>
     <p class="hero-summary">
-      A pipeline that collects public technology vacancies straight from employer career sites, standardises them,
-      extracts skills and classifies each role. Deterministic rules come first, with machine learning and Gemini
-      used only as separate, auditable suggestion layers.
+      An end-to-end analytics engineering pipeline that collects public technology vacancies directly from employer
+      career websites, then standardises, enriches and classifies them for labour-market analysis. Deterministic,
+      explainable rules come first, with machine learning and Gemini as separate, optional suggestion layers.
     </p>
     <div class="actions">
       <a class="button primary" href="https://github.com/nonluthando/sa-grad-tech-job-market" target="_blank" rel="noopener noreferrer">View repository</a>
@@ -46,53 +46,117 @@
     </div>
 
     <dl class="case-meta">
-      <div><dt>Stack</dt><dd>Python, Parquet, DuckDB, Streamlit, scikit-learn, Gemini, pytest</dd></div>
-      <div><dt>Collection</dt><dd>10 recruitment-platform adapters, including Greenhouse, Lever, Workday and SuccessFactors</dd></div>
-      <div><dt>Output</dt><dd>Schema-controlled Parquet datasets with three quality reports</dd></div>
-      <div><dt>AI boundary</dt><dd>Suggestions only. Models never overwrite canonical fields</dd></div>
+      <div><dt>Stack</dt><dd>Python, pandas, PyArrow, Parquet, DuckDB, Streamlit, Plotly, scikit-learn, Gemini, Pydantic, pytest</dd></div>
+      <div><dt>Collection</dt><dd>Ten recruitment-platform adapters, collected from employer career portals rather than job boards</dd></div>
+      <div><dt>Output</dt><dd>Schema-controlled Parquet datasets with three data-quality reports</dd></div>
+      <div><dt>Status</dt><dd>Core pipeline operational · estimated 85–90% complete</dd></div>
     </dl>
   </section>
 
   <section class="section container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">The problem</p>
-        <h2>Job boards repeat each other, and job descriptions describe seniority inconsistently.</h2>
+        <p class="eyebrow">The question</p>
+        <h2>What is the South African technology market hiring for, and what does it mean for early-career candidates?</h2>
       </div>
     </div>
     <p>
-      Reading employers’ own career portals gives a cleaner view of the South African technology market, but each platform
-      has its own API, pagination and location format. Titles and descriptions rarely say “graduate” or “senior” in the same way,
-      so seniority, skills and workplace type have to be inferred carefully, and the inference has to be defensible.
+      The project analyses hiring trends, in-demand skills, programming languages and frameworks, cloud platforms and tools,
+      career levels, employment types, technical domains, geography and early-career opportunities.
     </p>
+    <p>
+      Instead of relying mainly on traditional job boards, it collects vacancies from employer career portals. That gives an
+      employer-direct view of the market and reduces duplicate observations through conservative deduplication.
+    </p>
+
+    <div class="callout row">
+      <span class="emoji" aria-hidden="true">🎯</span>
+      <div>
+        <strong>A scope decision, made from evidence.</strong>
+        An early build with five employers produced 72 South African jobs but only 2 explicitly early-career technology roles, because most
+        open roles were senior or did not state a level. The project was widened to the whole South African technology market, with
+        graduate, internship and junior roles kept as a dedicated <em>early-career lens</em>. Two flags, <code>is_target_market</code> and
+        <code>is_early_career</code>, keep the broad market and the small early-career sample from being confused.
+      </div>
+    </div>
   </section>
 
   <section class="section container">
     <div class="section-heading">
       <div>
         <p class="eyebrow">Pipeline</p>
-        <h2>From raw snapshots to analysis-ready data.</h2>
+        <h2>From employer career sites to analysis-ready data.</h2>
       </div>
     </div>
     <div class="workflow" aria-label="Pipeline stages">
-      <span>Provider adapters</span><span>Raw snapshots + SHA-256</span><span>Cleaning</span><span>Skills + requirements</span><span>Classification</span><span>Stable-key dedupe</span><span>Parquet marts</span><span>Dashboard</span>
+      <span>Employer career sites</span><span>Provider collectors</span><span>Raw snapshots</span><span>Validation</span><span>Cleaning</span><span>Skills + requirements</span><span>Classification</span><span>Deduplication</span><span>Observation history</span><span>Parquet + quality reports</span><span>Dashboard</span>
     </div>
-    <ul>
-      <li><strong>Reproducible:</strong> raw responses are stored unchanged with timestamps and hashes, so any transformation can be re-run and audited.</li>
-      <li><strong>Conservative deduplication:</strong> stable provider identifiers track first-seen and last-seen dates without merging unrelated vacancies.</li>
-      <li><strong>Validated marts:</strong> <code>jobs.parquet</code> is the one-row-per-vacancy source of truth, and dashboard marts are checked against a contract before Streamlit and DuckDB read them.</li>
-    </ul>
+
+    <div class="feature-columns">
+      <article>
+        <p class="feature-number">01 · Collect</p>
+        <h3>Multi-provider ingestion</h3>
+        <p>
+          Dedicated adapters handle Greenhouse, Lever, Workday, SAP SuccessFactors, Oracle HCM, WordPress Job Manager, Workable,
+          Breezy HR, SmartRecruiters and Ashby. Each copes with its own API shape, pagination, detail endpoints, location formats and
+          failure behaviour, and completeness checks reduce the risk of silently truncated datasets.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">02 · Preserve</p>
+        <h3>Immutable raw snapshots</h3>
+        <p>
+          Raw JSON or HTML is stored unchanged with source metadata, collection timestamps and SHA-256 hashes. Transformations never edit
+          it, so cleaning or classification logic can improve without recollecting history.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">03 · Standardise</p>
+        <h3>One consistent schema</h3>
+        <p>
+          Descriptions are cleaned of HTML, text and locations are normalised, workplace and employment metadata are standardised, and
+          missing or ambiguous values are handled explicitly.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">04 · Extract</p>
+        <h3>Skills and requirements</h3>
+        <p>
+          A curated taxonomy extracts languages, frameworks, databases, cloud platforms, tools, capabilities and soft skills, normalising
+          naming variations to one label. Each skill counts once per vacancy and keeps the exact text that triggered it. Requirements are
+          separated into minimum and preferred, experience, education and technical capability.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">05 · Track</p>
+        <h3>Conservative deduplication and history</h3>
+        <p>
+          Stable provider job identifiers are preferred over fuzzy matching, because similar titles can be different vacancies. First-seen
+          and last-seen dates, observation history and collection evidence are all preserved.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">06 · Publish</p>
+        <h3>Parquet as the analytical contract</h3>
+        <p>
+          <code>jobs.parquet</code> is the one-row-per-vacancy source of truth, alongside <code>job_skills</code> and
+          <code>job_requirements</code> tables that keep their evidence. Validated dashboard marts are checked for job keys and joins before
+          anything reads them.
+        </p>
+      </article>
+    </div>
   </section>
 
   <section class="section container" id="ml-ai">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Machine learning and AI</p>
-        <h2>Three layers, each doing what it is best at.</h2>
+        <p class="eyebrow">Classification, machine learning and AI</p>
+        <h2>Explainable rules first, then optional ML and LLM suggestions.</h2>
       </div>
       <p>
-        Classification evidence is kept so every label can be explained. Where rules cannot decide, optional models suggest a value
-        and write it to a separate, regenerable file instead of the canonical dataset.
+        Vacancies are classified by career level, functional role, technical domain, employment type, workplace type, technology relevance
+        and early-career suitability. Evidence is retained where possible, so labels stay explainable and are not unsupported black-box
+        predictions.
       </p>
     </div>
 
@@ -101,47 +165,118 @@
         <p class="feature-number">Layer 1 · Rules</p>
         <h3>Scored, explainable classifier</h3>
         <p>
-          Title-word precedence and numeric experience ranges decide career level, role, domain and employment type.
-          When evidence conflicts, the label falls back to <code>unspecified</code> rather than guessing.
-          A regex audit against the live dataset found and fixed six confirmed bugs.
+          Title-word precedence and numeric experience ranges decide the label. When evidence is weak or conflicts, a value stays
+          <code>unspecified</code> rather than being guessed. A weak phrase like “no experience required” no longer decides the label on its
+          own when an explicit 5+ year requirement is also present.
         </p>
       </article>
       <article>
         <p class="feature-number">Layer 2 · Machine learning</p>
         <h3>TF-IDF + logistic regression</h3>
         <p>
-          A scikit-learn model learns from the rules’ own high-confidence labels, then suggests a role level for vacancies still
-          <code>unspecified</code>, with a confidence score. Because the classes are heavily imbalanced, it is evaluated with macro-F1 rather than accuracy.
+          A scikit-learn model trained on the rules’ own high-confidence labels suggests a role level for vacancies still
+          <code>unspecified</code>, with a confidence score. It is evaluated with macro-F1 rather than accuracy, because the labels are
+          heavily imbalanced.
         </p>
       </article>
       <article>
         <p class="feature-number">Layer 3 · LLM</p>
         <h3>Gemini-assisted suggestions</h3>
         <p>
-          Gemini proposes role level, workplace type and city for target-market vacancies that are still missing one of them.
-          Every field comes with a confidence and rationale, and only the fields that were actually unresolved are kept.
+          Gemini suggests role level, workplace type and city for target-market vacancies missing one or more of them. It is the only layer
+          that addresses workplace type and location, not just seniority. Responses are constrained to a Pydantic schema, with a confidence
+          and rationale for each field.
         </p>
       </article>
     </div>
 
     <div class="decision-note">
-      <strong>Why the layers are separate.</strong> The ML and Gemini outputs are manually run, gitignored artefacts with their own
-      <code>ml_</code> and <code>llm_</code> field prefixes, so analysis can compare them with the rules instead of silently trusting them.
-      A consistency test keeps the two rule-based classifiers from drifting apart.
+      <strong>Suggestions never overwrite canonical fields.</strong> Both optional layers are run manually, write to separate
+      <code>ml_</code> and <code>llm_</code> fields in gitignored, regenerable output, and a Gemini suggestion keeps only the fields that
+      were actually unresolved for that job. A consistency test checks the two rule-based role-level classifiers agree on a shared
+      fixture set, so a fix to one cannot silently drift from the other.
     </div>
+
+    <h3>A systematic audit against real data</h3>
+    <p>
+      Every regex-based classifier was verified against the live dataset. The audit confirmed and fixed six bugs, including title-word
+      precedence and a skills-extraction false positive that affected about 10% of the dataset, and each fix was re-checked against the real
+      postings that exposed it.
+    </p>
   </section>
 
   <section class="section container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">What this project demonstrates</p>
-        <h2>Data engineering, applied ML and responsible AI use in one pipeline.</h2>
+        <p class="eyebrow">Interactive dashboard</p>
+        <h2>A Streamlit dashboard that only reads the final contract.</h2>
       </div>
     </div>
+    <p>
+      The dashboard does not collect, clean, classify or enrich anything. It reads only the validated Parquet marts, and every global filter
+      runs as a parameterised DuckDB query, with SQL identifiers chosen from fixed allowlists.
+    </p>
+    <div class="pills">
+      <span>Overview</span><span>Employers</span><span>Skills</span><span>Early career</span><span>Locations &amp; work</span><span>Opportunities</span><span>Data quality</span>
+    </div>
+    <p class="muted">
+      Filters: search term, employer, industry, province, work arrangement, role level, target-market only, early-career only and talent-pool exclusion.
+    </p>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Design decisions</p>
+        <h2>Principles the pipeline is built on.</h2>
+      </div>
+    </div>
+    <details class="toggle" open>
+      <summary>Raw data remains immutable</summary>
+      <div class="toggle-body">Reproducible and auditable. Logic can improve without recollecting history.</div>
+    </details>
+    <details class="toggle">
+      <summary>Unknown is better than guessing</summary>
+      <div class="toggle-body">Missing or ambiguous values stay unknown rather than creating false precision to raise classification coverage.</div>
+    </details>
+    <details class="toggle">
+      <summary>No early destructive filtering</summary>
+      <div class="toggle-body">Technology relevance and early-career suitability are analytical flags, not reasons to delete records.</div>
+    </details>
+    <details class="toggle">
+      <summary>Provider logic is isolated</summary>
+      <div class="toggle-body">A change to one recruitment platform does not affect the rest of the pipeline, and new platforms can be added without rewriting it.</div>
+    </details>
+    <details class="toggle">
+      <summary>Provider reliability and testing</summary>
+      <div class="toggle-body">Recent work covers SuccessFactors retries, resilient Workday pagination, Oracle HCM detail retrieval and fallbacks for WordPress career portals, backed by automated tests for provider failures and incomplete responses.</div>
+    </details>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Limits and responsible use</p>
+        <h2>Honest about coverage.</h2>
+      </div>
+    </div>
+    <p>
+      The dataset covers vacancies from the configured employer portals and is not a census of every technology vacancy in South Africa.
+      Coverage depends on the employers included, public availability, platform reliability, collection dates and the accuracy of
+      rule-based extraction.
+    </p>
+    <p>
+      It collects only publicly advertised vacancy information. It does not submit applications, collect applicant data, access
+      authenticated accounts, bypass access controls or infer protected personal attributes.
+    </p>
+
     <div class="development-panel">
+      <p class="eyebrow">What this project demonstrates</p>
+      <h2>Analytics engineering, applied ML and careful LLM integration.</h2>
       <p>
-        It shows multi-source ingestion, immutable raw data, schema and quality validation, NLP-style skills extraction,
-        a properly evaluated scikit-learn model, and LLM output treated as evidence to be checked, not as ground truth.
+        API integration across ten platforms, schema design, data-quality validation, retry and fallback strategies, information extraction,
+        automated testing, applied machine learning with macro-F1 evaluation on imbalanced classes, structured-output LLM integration, and
+        systematic correctness auditing against real data.
       </p>
     </div>
   </section>
