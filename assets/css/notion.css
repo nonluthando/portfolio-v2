@@ -379,3 +379,18 @@ body:has(main.wide) .footer-inner { max-width: var(--wide); }
 .shots figcaption strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: .1rem; }
 .shots a { display: block; }
 @media (max-width: 720px) { .shots { grid-template-columns: 1fr; } }
+
+/* ---------- Technical highlights (home) ---------- */
+.hl-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+.hl-card { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; background: var(--bg); transition: box-shadow .15s, background .15s; }
+.hl-card:hover { background: var(--bg-soft); }
+.hl-img { display: block; height: 190px; overflow: hidden; border-bottom: 1px solid var(--line); background: #fff; }
+.hl-img img { width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.hl-img.contain img { object-fit: contain; object-position: center; padding: .4rem; }
+.hl-body { padding: .9rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .15rem; flex: 1; }
+.hl-body h3 { margin: 0; font-size: 1.1rem; }
+.hl-body .tagline { color: var(--ink-soft); margin: 0 0 .4rem; font-size: .92rem; }
+.hl-body ul { padding-left: 1.1rem; margin: .2rem 0 .5rem; font-size: .9rem; }
+.hl-body li { margin: .25rem 0; }
+.hl-body .actions { margin-top: auto; padding-top: .6rem; }
+@media (max-width: 860px) { .hl-grid { grid-template-columns: 1fr; } .hl-img { height: 170px; } }

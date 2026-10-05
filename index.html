@@ -94,39 +94,99 @@
   </div>
 
   <div class="actions">
-    <a class="button primary" href="projects/index.html">Browse projects</a>
+    <a class="button primary" href="#highlights">See technical highlights ↓</a>
+    <a class="button" href="projects/index.html">All projects</a>
     <a class="button" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
   </div>
 
   <p class="slash-hint">Press <kbd>/</kbd> to jump to the contents, or use the links below.</p>
   <nav class="toc" id="toc" aria-label="Contents">
-    <a href="#experience">Commercial experience</a>
+    <a href="#highlights">Technical highlights</a>
     <a href="#ai-work">AI work &amp; integrations</a>
+    <a href="#experience">Commercial experience</a>
     <a href="#product">Product thinking</a>
-    <a href="#featured-work">Selected work</a>
     <a href="#more-work">More work</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <h2 id="experience">💼 Commercial experience</h2>
+  <h2 id="highlights">⚡ Technical highlights</h2>
   <p class="muted">
-    Software Engineering Contractor · EdTech startup · Fixed-term contract · 2026.
-    Work inside established Laravel/PHP and Python/Flask codebases, requiring careful behaviour tracing,
-    maintainable implementation, code-review feedback, automated tests, dependency work and production debugging.
+    The projects with the most engineering depth, each running end to end with tests behind it. Screenshots are from the applications running locally.
   </p>
 
-  <details class="toggle" open>
-    <summary>Established codebases</summary>
-    <div class="toggle-body">Navigated and traced behaviour across existing Laravel and Flask services before making focused backend, API and NLP changes.</div>
-  </details>
-  <details class="toggle">
-    <summary>Clean code and review</summary>
-    <div class="toggle-body">Applied established conventions, wrote readable and maintainable changes, participated in code reviews and worked through feedback.</div>
-  </details>
-  <details class="toggle">
-    <summary>Testing and production delivery</summary>
-    <div class="toggle-body">Worked through PHPUnit and pytest failures, GitHub Actions, Composer constraints, compatibility issues and production debugging.</div>
-  </details>
+  <div class="hl-grid">
+    <article class="hl-card">
+      <a class="hl-img" href="projects/adaptive-interview-coach.html"><img src="assets/images/projects/proofloop-dashboard.png" alt="ProofLoop command centre with today's plan and readiness" loading="lazy"></a>
+      <div class="hl-body">
+        <h3>🔁 ProofLoop</h3>
+        <p class="tagline">Adaptive interview-preparation platform</p>
+        <ul>
+          <li><strong>Constraint-optimised planner:</strong> explainable task scores, then OR-Tools CP-SAT picks the best combination that fits the learner's time.</li>
+          <li><strong>Grounded RAG assistant:</strong> pgvector retrieval, cited answers, refusal when evidence is weak, 21 retrieval evaluation cases.</li>
+          <li><strong>Spaced review</strong> scheduled by recall difficulty; 12 roadmaps, 419 topics.</li>
+        </ul>
+        <div class="project-highlights"><span>Django 5.2</span><span>PostgreSQL + pgvector</span><span>OR-Tools</span><span>Gemini</span><span>pytest + CI</span></div>
+        <div class="actions">
+          <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+          <a class="text-link" href="projects/adaptive-interview-coach.html">Case study →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="hl-card">
+      <a class="hl-img" href="projects/sa-tech-job-market.html"><img src="assets/images/projects/jobs-overview.png" alt="Job market dashboard overview" loading="lazy"></a>
+      <div class="hl-body">
+        <h3>📈 SA Tech Job Market Intelligence</h3>
+        <p class="tagline">Analytics-engineering pipeline with a live dashboard</p>
+        <ul>
+          <li><strong>Ten recruitment-platform adapters</strong> feeding immutable, SHA-256-hashed raw snapshots.</li>
+          <li><strong>Three classification layers:</strong> explainable rules, a scikit-learn model scored with macro-F1, and schema-constrained Gemini suggestions.</li>
+          <li><strong>255 automated tests</strong> passing; validated Parquet marts behind a Streamlit + DuckDB dashboard.</li>
+        </ul>
+        <div class="project-highlights"><span>Python</span><span>Parquet</span><span>DuckDB</span><span>scikit-learn</span><span>Gemini</span><span>Streamlit</span></div>
+        <div class="actions">
+          <a class="button primary" href="https://sa-tech-job-market-3jqhrdat8echekjaasjvyv.streamlit.app" target="_blank" rel="noopener noreferrer">Live dashboard ↗</a>
+          <a class="text-link" href="projects/sa-tech-job-market.html">Case study →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="hl-card">
+      <a class="hl-img" href="projects/scorerent.html"><img src="assets/images/projects/scorerent-compare.png" alt="ScoreRent shortlist comparison" loading="lazy"></a>
+      <div class="hl-body">
+        <h3>🏠 ScoreRent</h3>
+        <p class="tagline">Explainable rental decision support</p>
+        <ul>
+          <li><strong>Multimodal extraction:</strong> Gemini turns listing screenshots into schema-validated facts the user confirms before saving.</li>
+          <li><strong>Deterministic scoring engine</strong> returns a verdict, confidence, reasons and the score change from each factor.</li>
+          <li><strong>Guest and signed-in flows,</strong> saved shortlists, side-by-side comparison, rate-limited imports, CI.</li>
+        </ul>
+        <div class="project-highlights"><span>FastAPI</span><span>PostgreSQL</span><span>Gemini</span><span>Pydantic</span><span>pytest + CI</span></div>
+        <div class="actions">
+          <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+          <a class="text-link" href="projects/scorerent.html">Case study →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="hl-card">
+      <a class="hl-img contain" href="projects/parallel-monte-carlo.html"><img src="assets/images/projects/montecarlo-speedup-size.png" alt="Chart of parallel speedup by grid size" loading="lazy"></a>
+      <div class="hl-body">
+        <h3>🎲 Parallel Monte Carlo</h3>
+        <p class="tagline">Fork/Join parallelism, benchmarked honestly</p>
+        <ul>
+          <li><strong>Divide-and-conquer</strong> parallelisation with a configurable sequential cutoff.</li>
+          <li><strong>Measured, not assumed:</strong> slower on small grids, break-even near 2000², 1.76× at 5000², scaling flattening near 1.5× across cores.</li>
+          <li>Includes a dependency-free browser UI that visualises terrain and search coverage.</li>
+        </ul>
+        <div class="project-highlights"><span>Java</span><span>ForkJoinPool</span><span>Benchmarking</span><span>JDK HTTP server</span></div>
+        <div class="actions">
+          <a class="button primary" href="projects/parallel-monte-carlo.html">Case study →</a>
+          <a class="text-link" href="https://github.com/nonluthando/parallel-monte-carlo-optimization" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+    </article>
+  </div>
 
   <h2 id="ai-work">🤖 AI work &amp; integrations</h2>
   <p class="muted">
@@ -195,6 +255,26 @@
     </article>
   </div>
 
+  <h2 id="experience">💼 Commercial experience</h2>
+  <p class="muted">
+    Software Engineering Contractor · EdTech startup · Fixed-term contract · 2026.
+    Work inside established Laravel/PHP and Python/Flask codebases, requiring careful behaviour tracing,
+    maintainable implementation, code-review feedback, automated tests, dependency work and production debugging.
+  </p>
+
+  <details class="toggle" open>
+    <summary>Established codebases</summary>
+    <div class="toggle-body">Navigated and traced behaviour across existing Laravel and Flask services before making focused backend, API and NLP changes.</div>
+  </details>
+  <details class="toggle">
+    <summary>Clean code and review</summary>
+    <div class="toggle-body">Applied established conventions, wrote readable and maintainable changes, participated in code reviews and worked through feedback.</div>
+  </details>
+  <details class="toggle">
+    <summary>Testing and production delivery</summary>
+    <div class="toggle-body">Worked through PHPUnit and pytest failures, GitHub Actions, Composer constraints, compatibility issues and production debugging.</div>
+  </details>
+
   <h2 id="product">🧭 Product thinking</h2>
   <p class="muted">
     Alongside the engineering, I work the way a product owner does: start from a real user problem, decide what is in and out of
@@ -258,62 +338,8 @@
     </div>
   </div>
 
-  <h2 id="featured-work">⭐ Selected work</h2>
-  <p class="muted">
-    Each project combines technical implementation with a clear user problem,
-    deliberate trade-offs, testing and evidence of delivery.
-  </p>
-
-  <article class="featured-card">
-    <img src="assets/images/viewcoach-review.jpeg" alt="ProofLoop review session interface">
-    <div class="body">
-      <h3>🔁 ProofLoop</h3>
-      <p class="tagline">Interview preparation that tells users what to practise next.</p>
-      <p>
-        An adaptive Django platform combining structured questions, spaced review, 12 learning roadmaps,
-        daily study planning, mock interviews, interview goals and reusable personal evidence.
-      </p>
-      <div class="project-highlights">
-        <span>Deterministic planner</span>
-        <span>12 roadmaps · 419 topics</span>
-        <span>Mock interviews</span>
-        <span>pytest + CI</span>
-      </div>
-      <div class="actions">
-        <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
-        <a class="button" href="https://github.com/nonluthando/ViewCoach" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a class="text-link" href="projects/adaptive-interview-coach.html">Case study →</a>
-      </div>
-    </div>
-  </article>
-
-  <article class="featured-card phone">
-    <div class="shot">
-      <img src="assets/images/scorerent-mobile.jpeg" alt="ScoreRent rental application guide on mobile">
-    </div>
-    <div class="body">
-      <h3>🏠 ScoreRent</h3>
-      <p class="tagline">Explainable rental decision support, not a black-box score.</p>
-      <p>
-        A FastAPI application that evaluates renter and listing information using deterministic rules,
-        then returns a verdict, confidence level, reasons and practical next steps.
-      </p>
-      <div class="project-highlights">
-        <span>Explainable scoring</span>
-        <span>Authentication</span>
-        <span>Saved history</span>
-        <span>PostgreSQL</span>
-      </div>
-      <div class="actions">
-        <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Open live app</a>
-        <a class="button" href="https://github.com/nonluthando/scorerent" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a class="text-link" href="projects/scorerent.html">Case study →</a>
-      </div>
-    </div>
-  </article>
-
   <h2 id="more-work">🗂 More work</h2>
-  <p class="muted">Systems, data and human-centred computing. <a href="projects/index.html">View all projects →</a></p>
+  <p class="muted">More systems, data and human-centred computing. <a href="projects/index.html">View all projects →</a></p>
   <div class="proj-list">
     <a class="proj-row" href="projects/seaclear.html">
       <span class="emoji" aria-hidden="true">🌊</span>
@@ -329,6 +355,16 @@
       <span class="emoji" aria-hidden="true">🎲</span>
       <span><span class="t">Parallel Monte Carlo</span></span>
       <span class="s">Java · Fork/Join · concurrency</span>
+    </a>
+    <a class="proj-row" href="projects/cpu-scheduling.html">
+      <span class="emoji" aria-hidden="true">⚙️</span>
+      <span><span class="t">CPU Scheduling Simulation</span></span>
+      <span class="s">Java · blocking queues · FCFS vs SJF</span>
+    </a>
+    <a class="proj-row" href="projects/data-analysis.html">
+      <span class="emoji" aria-hidden="true">📊</span>
+      <span><span class="t">Data &amp; Statistical Analysis</span></span>
+      <span class="s">Python · R · SQL · ANOVA · segmentation</span>
     </a>
     <a class="proj-row" href="projects/csv-pipeline.html">
       <span class="emoji" aria-hidden="true">🧹</span>
