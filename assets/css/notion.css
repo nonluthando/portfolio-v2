@@ -368,3 +368,4 @@ section.contact-band.container { margin-top: 2.5rem; padding-top: 1.5rem; border
 .tag.degree-main { font-size: 1rem; font-weight: 700; padding: .1rem .7rem; box-shadow: inset 0 0 0 1px var(--accent); }
 body:has(main.wide) .footer-inner { max-width: var(--wide); }
 .decision-note { display: block; }
+.feature-columns > article:last-child:nth-child(odd) { grid-column: 1 / -1; }
