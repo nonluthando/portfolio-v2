@@ -427,7 +427,45 @@
     </div>
   </section>
 
-  <section class="section container">
+    <section class="section container" id="product-decisions">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Product decisions</p>
+        <h2>Scoping a feature: what shipped, what was rejected and why.</h2>
+      </div>
+      <p>
+        Each decision was weighed against the core workflow and recorded, using the user-created roadmaps feature as the example.
+      </p>
+    </div>
+
+    <details class="toggle" open>
+      <summary>The problem</summary>
+      <div class="toggle-body">A learner needs a private learning path when the built-in curriculum or an imported source does not match the work they need to do. The feature extends the existing roadmap hierarchy rather than adding a second curriculum model.</div>
+    </details>
+    <details class="toggle">
+      <summary>Up/down controls instead of drag-and-drop</summary>
+      <div class="toggle-body">Drag-and-drop was rejected because it adds client-side state, keyboard and mobile complexity without improving the core workflow. The trade-off is slower reordering on very large roadmaps, in exchange for deterministic, accessible, mobile-reliable controls.</div>
+    </details>
+    <details class="toggle">
+      <summary>Explicit planner focus</summary>
+      <div class="toggle-body">Saving a roadmap does not automatically send it to the daily planner. It needs at least one topic and the user must choose to add it, so the plan only contains what the learner opted into.</div>
+    </details>
+    <details class="toggle">
+      <summary>Deliberately out of this release</summary>
+      <div class="toggle-body">Sharing, templates, cloning, version history and collaborative editing. Interview goals also start at the online-assessment or interview stage, and application tracking is out of scope.</div>
+    </details>
+    <details class="toggle">
+      <summary>Safe by default</summary>
+      <div class="toggle-body">Roadmaps are private to their owner, titles can change without breaking bookmarked URLs, and deleting a topic or module requires an explicit destructive confirmation.</div>
+    </details>
+
+    <div class="decision-note">
+      <strong>Decisions are written down.</strong> The project keeps architecture decision records covering status, context, decision,
+      consequences, rejected alternatives and the conditions that would justify revisiting each choice.
+    </div>
+  </section>
+
+<section class="section container">
     <div class="development-panel">
       <div>
         <p class="eyebrow">What this project demonstrates</p>
