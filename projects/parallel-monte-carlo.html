@@ -102,6 +102,41 @@
 
 
 
+<!-- BENCHMARK GRAPHS -->
+<section id="benchmarks">
+
+  <div class="section-header">
+    <h2>Benchmark results</h2>
+    <p class="section-subtitle">
+      Serial against Fork/Join across grid sizes and core counts, following the benchmark design in the project README: the median of repeated runs
+      to reduce noise from JVM scheduling. These charts come from a fresh run on a four-core machine using the project's own command-line programs,
+      with search density 0.1 and the default sequential cutoff of 1000.
+    </p>
+  </div>
+
+  <div class="shots">
+    <figure class="wide">
+      <img src="../assets/images/projects/montecarlo-runtime.png" alt="Line chart of median serial and parallel runtime by grid size from 500 squared to 5000 squared" loading="lazy">
+      <figcaption><strong>Runtime by grid size</strong>Both versions find the same global minimum. Serial is faster on small grids, the lines cross at roughly 2000×2000, and at 5000×5000 the parallel version takes about 1.8 s against 3.2 s serial.</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/images/projects/montecarlo-speedup-size.png" alt="Line chart of speedup by grid size, below 1 for small grids and 1.76 at 5000 squared" loading="lazy">
+      <figcaption><strong>Speedup by grid size</strong>Parallelism pays off only once the workload outweighs task-creation overhead: 0.29× at 500², break-even near 2000², 1.76× at 5000².</figcaption>
+    </figure>
+    <figure>
+      <img src="../assets/images/projects/montecarlo-speedup-cores.png" alt="Line chart of speedup against the number of cores, well below the ideal linear speedup" loading="lazy">
+      <figcaption><strong>Speedup by core count</strong>Scaling is well short of linear and flattens at about 1.5× from three cores. Even one core shows 1.28× here, so the gain is not purely from extra cores.</figcaption>
+    </figure>
+  </div>
+
+  <p class="muted">
+    Measured on a shared four-core sandbox, so absolute times will vary by machine. The shape of the results is the point: overhead dominates small problems, and speedup is limited by sequential components and scheduling cost.
+  </p>
+
+</section>
+
+
+
 <!-- OVERVIEW -->
 
 <section>
