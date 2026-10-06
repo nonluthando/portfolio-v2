@@ -200,8 +200,7 @@
         <h3>TF-IDF + logistic regression</h3>
         <p>
           A scikit-learn model trained on the rules’ own high-confidence labels suggests a role level for vacancies still
-          <code>unspecified</code>, with a confidence score. It is evaluated with macro-F1 rather than accuracy, because the labels are
-          heavily imbalanced.
+          <code>unspecified</code>, with a confidence score. It is evaluated with macro-F1 rather than accuracy, because the labels are heavily imbalanced: on held-out data it scores 91.0% macro-F1, and its weakest class is reported openly.
         </p>
       </article>
       <article>
@@ -210,7 +209,7 @@
         <p>
           Gemini suggests role level, workplace type and city for target-market vacancies missing one or more of them. It is the only layer
           that addresses workplace type and location, not just seniority. Responses are constrained to a Pydantic schema, with a confidence
-          and rationale for each field.
+          and rationale for each field. Two real examples of what it adds are below.
         </p>
       </article>
     </div>
@@ -221,6 +220,49 @@
       were actually unresolved for that job. A consistency test checks the two rule-based role-level classifiers agree on a shared
       fixture set, so a fix to one cannot silently drift from the other.
     </div>
+
+    <h3 id="measured-impact">Measured impact of the ML and Gemini layers</h3>
+    <p>
+      The project records what the two optional layers actually add, measured against the dataset at the time (1,661 jobs, 196 in the target market)
+      instead of estimated.
+    </p>
+
+    <div class="analysis-table-wrap">
+      <table class="analysis-table">
+        <thead>
+          <tr><th>Field</th><th>Unresolved by the rules alone</th><th>Share of target market</th><th>Closed by</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Role level</td><td>89</td><td>45%</td><td>scikit-learn: all 89 suggested</td></tr>
+          <tr><td>Workplace type</td><td>116</td><td>59%</td><td>Gemini only</td></tr>
+          <tr><td>City</td><td>13</td><td>7%</td><td>Gemini only</td></tr>
+          <tr><td><strong>At least one of the three</strong></td><td><strong>152</strong></td><td><strong>78%</strong></td><td>Every one now has a suggestion from one or both layers</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid two">
+      <div class="card">
+        <h3>scikit-learn: honest evaluation</h3>
+        <p>
+          Trained on the 934 jobs the rules had labelled with high confidence (747 for training, 187 held out): <strong>90.4% accuracy and 91.0% macro-F1</strong>.
+          Macro-F1 is the headline because the labels are heavily imbalanced, with 650 <code>senior</code> examples against 4 <code>mid_level</code>.
+          Per-class recall exposed the real weak point: <code>junior</code> recall is 61.3%, so the model misses roughly 2 in 5 genuine junior postings.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Gemini: what rules and regex cannot do</h3>
+        <p>It reads free text for context. From a real run:</p>
+        <ul>
+          <li>“Intermediate Software Engineer - GoLang” → <code>mid_level</code>. The title rules have no mid-level category, so it would otherwise stay <code>unspecified</code>.</li>
+          <li>“Senior Web Engineer” → <code>hybrid</code>, inferred from a clause about choosing where to work and travelling to meet in person.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="muted">
+      Operationally, model choice mattered more than retry logic: a lighter Gemini Flash model was chosen after a larger one hit frequent transient 503 errors under load.
+      Both layers are manually run and rate-limited, so coverage depends on when they were last run, and the canonical fields stay exactly as conservative and rule-derived as before.
+    </p>
 
     <h3>A systematic audit against real data</h3>
     <p>
@@ -243,8 +285,12 @@
     </p>
     <div class="actions"><a class="button primary" href="https://sa-tech-job-market-3jqhrdat8echekjaasjvyv.streamlit.app" target="_blank" rel="noopener noreferrer">Open live dashboard ↗</a></div>
     <div class="pills">
-      <span>Overview</span><span>Employers</span><span>Skills</span><span>Early career</span><span>Locations &amp; work</span><span>Opportunities</span><span>Data quality</span>
+      <span>Overview</span><span>Employers</span><span>Skills</span><span>Early career</span><span>Locations</span><span>Vacancies</span><span>Quality</span>
     </div>
+    <p>
+      The Vacancies view includes an AI-assisted suggestions panel, with coverage metrics and charts comparing the ML and Gemini suggestions, so a reviewer can
+      set them beside the canonical labels instead of mistaking one for the other.
+    </p>
     <p class="muted">
       Filters: search term, employer, industry, province, work arrangement, role level, target-market only, early-career only and talent-pool exclusion.
     </p>
@@ -350,7 +396,7 @@
       <h2>Analytics engineering, applied ML and careful LLM integration.</h2>
       <p>
         API integration across ten platforms, schema design, data-quality validation, retry and fallback strategies, information extraction,
-        automated testing, an interactive dashboard, applied machine learning with macro-F1 evaluation on imbalanced classes, structured-output LLM integration, and
+        automated testing, an interactive dashboard, applied machine learning with macro-F1 evaluation and honest per-class reporting on imbalanced classes, structured-output LLM integration, and
         systematic correctness auditing against real data.
       </p>
     </div>

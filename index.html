@@ -143,8 +143,8 @@
         <p class="tagline">Analytics-engineering pipeline with a live dashboard</p>
         <ul>
           <li><strong>Ten recruitment-platform adapters</strong> feeding immutable, SHA-256-hashed raw snapshots.</li>
-          <li><strong>Three classification layers:</strong> explainable rules, a scikit-learn model scored with macro-F1, and schema-constrained Gemini suggestions.</li>
-          <li><strong>255 automated tests</strong> passing and three data-quality reports; validated Parquet marts behind a Streamlit + DuckDB dashboard.</li>
+          <li><strong>Three classification layers:</strong> explainable rules, a scikit-learn model (91.0% macro-F1 on held-out data, weakest class reported openly) and schema-constrained Gemini suggestions for workplace type and city.</li>
+          <li><strong>256 automated tests</strong> passing and three data-quality reports; validated Parquet marts behind a Streamlit + DuckDB dashboard.</li>
         </ul>
         <div class="project-highlights"><span>Python</span><span>Parquet</span><span>DuckDB</span><span>scikit-learn</span><span>Gemini</span><span>Streamlit</span></div>
         <div class="actions">
@@ -251,7 +251,7 @@
       <p class="feature-number">SA Tech Job Market</p>
       <h3>Machine learning and Gemini classification</h3>
       <p>
-        A TF-IDF + logistic regression model, scored with macro-F1 for imbalanced classes, and Gemini suggest labels where
+        A TF-IDF + logistic regression model (91.0% macro-F1 on held-out data, with its weak junior recall reported) and Gemini suggest labels where
         explainable rules cannot decide. They write to separate fields and never overwrite the canonical data.
       </p>
       <p><a href="https://sa-tech-job-market-3jqhrdat8echekjaasjvyv.streamlit.app" target="_blank" rel="noopener noreferrer">Live dashboard ↗</a> · <a href="projects/sa-tech-job-market.html">Case study →</a></p>
