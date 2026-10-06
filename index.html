@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Portfolio of Luthando Mbuyane, a graduate software engineer with commercial full-stack, backend, NLP and data-oriented experience."
+    content="Portfolio of Luthando Mbuyane, a Computer Science and Psychology graduate building software and data systems, with commercial full-stack and NLP experience and applied machine learning projects."
   >
-  <title>Luthando Mbuyane | Software Engineer</title>
+  <title>Luthando Mbuyane | Software, Data &amp; Behaviour</title>
   <link rel="stylesheet" href="assets/css/notion.css">
   <script src="assets/js/theme.js"></script>
 </head>
@@ -37,14 +37,15 @@
 
   <dl class="props">
     <dt>💼 Role</dt>
-    <dd><span class="tag green">Graduate software engineer</span><span class="tag">Commercial experience</span></dd>
+    <dd><span class="tag green">Graduate software engineer</span><span class="tag blue">Data &amp; applied ML</span><span class="tag purple">Behavioural perspective</span><span class="tag">Commercial experience</span></dd>
     <dt>🎓 Degree</dt>
     <dd><span class="tag green degree-main">BSc Computer Science &amp; Psychology</span></dd>
-    <dt>📚 Additional coursework</dt>
+    <dt>📚 Relevant coursework</dt>
     <dd>
-      <span class="tag yellow">Applied Statistics</span>
-      <span class="tag blue">Business Statistics</span>
       <span class="tag purple">Inferential Statistics</span>
+      <span class="tag blue">Business Statistics</span>
+      <span class="tag yellow">Regression</span>
+      <span class="tag pink">Time Series</span>
       <span class="tag green">Machine Learning</span>
       <span class="tag orange">Operations Research</span>
     </dd>
@@ -62,6 +63,15 @@
       <span class="tag yellow">Python / Flask</span>
       <span class="tag pink">Testing</span>
     </dd>
+    <dt>📊 Data</dt>
+    <dd>
+      <span class="tag yellow">Python</span>
+      <span class="tag blue">SQL</span>
+      <span class="tag green">pandas</span>
+      <span class="tag orange">scikit-learn</span>
+      <span class="tag purple">R</span>
+      <span class="tag pink">Statistical testing (ANOVA, t-tests)</span>
+    </dd>
     <dt>🤖 AI</dt>
     <dd>
       <span class="tag blue">Gemini</span>
@@ -78,7 +88,7 @@
       <span class="tag purple">Decision records</span>
     </dd>
     <dt>🟢 Status</dt>
-    <dd><span class="tag green">Open to graduate &amp; junior software and product roles</span></dd>
+    <dd><span class="tag green">Open to graduate &amp; junior software, data and product roles</span></dd>
   </dl>
 
   <p>
@@ -89,16 +99,17 @@
   <p>
     I have commercial experience contributing to established Laravel/PHP and Python/Flask codebases in an EdTech
     product environment, including clean-code practices, code review, automated testing and production debugging.
-    I also build end-to-end products with strong backend and data foundations, supported by a Computer Science and
-    Psychology degree and Applied Statistics coursework.
+    I also build end-to-end products with strong backend and data foundations. With a Computer Science and Psychology degree and
+    statistics coursework behind me, I work with Python, SQL, machine learning and NLP on systems that respond to what users need and do,
+    and explain the decisions they make.
   </p>
 
   <div class="callout row">
     <span class="emoji" aria-hidden="true">💡</span>
     <div>
       <strong>Professional profile.</strong>
-      BSc Computer Science and Psychology graduate, with additional coursework in Applied Statistics. Strongest fit: full-stack product engineering,
-      with applied AI/NLP and data-oriented experience.
+      BSc Computer Science and Psychology graduate with statistics coursework. A software engineering foundation (Django, FastAPI, Laravel/PHP,
+      PostgreSQL, testing and CI) applied to data and user behaviour: personalisation, decision support and explainable machine learning and NLP.
     </div>
   </div>
 
@@ -120,28 +131,11 @@
 
   <h2 id="highlights">⚡ Technical highlights</h2>
   <p class="muted">
-    The projects with the most engineering depth, each running end to end with tests behind it. Screenshots are from the applications running locally.
+    The projects with the most engineering depth, each running end to end with tests behind it. Several turn data about what users need and do into
+    explainable decisions they can act on. Screenshots are from the applications running locally.
   </p>
 
   <div class="hl-grid">
-    <article class="hl-card">
-      <a class="hl-img" href="projects/adaptive-interview-coach.html"><img src="assets/images/projects/proofloop-dashboard.png" alt="ProofLoop command centre with today's plan and readiness" loading="lazy"></a>
-      <div class="hl-body">
-        <h3>🔁 ProofLoop</h3>
-        <p class="tagline">Adaptive interview-preparation platform</p>
-        <ul>
-          <li><strong>Constraint-optimised planner:</strong> explainable task scores, then OR-Tools CP-SAT picks the best combination that fits the learner's time.</li>
-          <li><strong>Grounded RAG assistant:</strong> pgvector retrieval, cited answers, refusal when evidence is weak, 21 retrieval evaluation cases.</li>
-          <li><strong>Spaced review</strong> scheduled by recall difficulty; 12 roadmaps, 419 topics.</li>
-        </ul>
-        <div class="project-highlights"><span>Django 5.2</span><span>PostgreSQL + pgvector</span><span>OR-Tools</span><span>Gemini</span><span>pytest + CI</span></div>
-        <div class="actions">
-          <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app ↗</a>
-          <a class="text-link" href="projects/adaptive-interview-coach.html">Case study →</a>
-        </div>
-      </div>
-    </article>
-
     <article class="hl-card">
       <a class="hl-img" href="projects/sa-tech-job-market.html"><img src="assets/images/projects/jobs-overview.png" alt="Job market dashboard overview" loading="lazy"></a>
       <div class="hl-body">
@@ -150,12 +144,30 @@
         <ul>
           <li><strong>Ten recruitment-platform adapters</strong> feeding immutable, SHA-256-hashed raw snapshots.</li>
           <li><strong>Three classification layers:</strong> explainable rules, a scikit-learn model scored with macro-F1, and schema-constrained Gemini suggestions.</li>
-          <li><strong>255 automated tests</strong> passing; validated Parquet marts behind a Streamlit + DuckDB dashboard.</li>
+          <li><strong>255 automated tests</strong> passing and three data-quality reports; validated Parquet marts behind a Streamlit + DuckDB dashboard.</li>
         </ul>
         <div class="project-highlights"><span>Python</span><span>Parquet</span><span>DuckDB</span><span>scikit-learn</span><span>Gemini</span><span>Streamlit</span></div>
         <div class="actions">
           <a class="button primary" href="https://sa-tech-job-market-3jqhrdat8echekjaasjvyv.streamlit.app" target="_blank" rel="noopener noreferrer">Live dashboard ↗</a>
           <a class="text-link" href="projects/sa-tech-job-market.html">Case study →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="hl-card">
+      <a class="hl-img" href="projects/adaptive-interview-coach.html"><img src="assets/images/projects/proofloop-dashboard.png" alt="ProofLoop command centre with today's plan and readiness" loading="lazy"></a>
+      <div class="hl-body">
+        <h3>🔁 ProofLoop</h3>
+        <p class="tagline">Adaptive interview-preparation platform</p>
+        <ul>
+          <li><strong>Personalised, constraint-optimised planner:</strong> explainable task scores built from the learner's goals, deadlines, weak areas and available time, then OR-Tools CP-SAT picks the combination that fits.</li>
+          <li><strong>Grounded RAG assistant:</strong> pgvector retrieval, cited answers, refusal when evidence is weak, 21 retrieval evaluation cases.</li>
+          <li><strong>Spaced review</strong> scheduled by recall difficulty; 12 roadmaps, 419 topics.</li>
+        </ul>
+        <div class="project-highlights"><span>Django 5.2</span><span>PostgreSQL + pgvector</span><span>OR-Tools</span><span>Gemini</span><span>pytest + CI</span></div>
+        <div class="actions">
+          <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app ↗</a>
+          <a class="text-link" href="projects/adaptive-interview-coach.html">Case study →</a>
         </div>
       </div>
     </article>
@@ -383,7 +395,7 @@
   </div>
 
   <h2 id="contact">✉️ Let’s talk about the work</h2>
-  <p class="muted">Open to graduate and junior software engineering and product owner / product management roles in South Africa, including relocation.</p>
+  <p class="muted">Open to graduate and junior software engineering, data and product owner / product management roles in South Africa, including relocation.</p>
   <div class="contact-links">
     <a href="mailto:Luthandombuyane1@outlook.com"><span>Email</span><strong>Luthandombuyane1@outlook.com</strong></a>
     <a href="tel:+27847398148"><span>Phone</span><strong>+27 84 739 8148</strong></a>
