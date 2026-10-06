@@ -353,7 +353,7 @@
     </div>
 
     <div class="workflow" aria-label="RAG pipeline">
-      <span>Trusted Markdown</span><span>Heading-aware chunking</span><span>Gemini embeddings</span><span>pgvector</span><span>Similarity retrieval</span><span>Cited answer or refusal</span>
+      <span>Trusted Markdown</span><span>Heading-aware chunking</span><span>Gemini embeddings</span><span>pgvector</span><span>Similarity retrieval (3× over-fetch + threshold)</span><span>[Source N] answer or refusal</span>
     </div>
 
     <div class="feature-columns">
@@ -361,8 +361,9 @@
         <p class="feature-number">01 · Ingest</p>
         <h3>Chunk by document structure</h3>
         <p>
-          Markdown is split along its headings, so each chunk keeps its section path (a parent › child heading path), with a size cap and overlap for long sections. Ingestion is idempotent:
-          checksums and the embedding model name decide whether a document needs re-embedding, and every run is recorded.
+          Markdown is split along its headings, so each chunk keeps its section path (a parent › child heading path), with a size cap and overlap for long sections. Ingestion is idempotent and transactional: unchanged documents are skipped by content checksum,
+          renamed source files are re-matched by slug instead of duplicated, and chunk replacement is wrapped in <code>select_for_update()</code> so nothing reads a
+          half-rebuilt document mid-swap.
         </p>
       </article>
       <article>
@@ -370,7 +371,7 @@
         <h3>Cosine similarity with a floor</h3>
         <p>
           Chunks are embedded with <code>gemini-embedding-001</code> (1,536 dimensions) and stored beside the relational data in
-          PostgreSQL with pgvector. A query returns the nearest published chunks, and anything below a minimum similarity is dropped
+          PostgreSQL with pgvector. A query over-fetches three times the results it needs, then a similarity threshold filters them, so anything weak is dropped
           before the model sees it.
         </p>
       </article>
@@ -378,26 +379,27 @@
         <p class="feature-number">03 · Generate</p>
         <h3>Constrained, cited answers</h3>
         <p>
-          The prompt allows only the supplied context, treats instructions inside the question or documents as data,
+          The prompt allows only the supplied context, treats instructions inside the question or documents as data (a defence against prompt injection),
           and requires a <code>[Source N]</code> citation for each important claim. The page renders inline citations and source cards.
         </p>
       </article>
       <article>
         <p class="feature-number">04 · Refuse</p>
-        <h3>Three ways to say “not enough evidence”</h3>
+        <h3>Refuse instead of guessing</h3>
         <p>
-          The assistant refuses when nothing clears the similarity floor, when the model replies <code>NOT_SUPPORTED</code>,
-          or when its answer has no valid citation. A citation pointing past the supplied sources does not count.
+          The assistant refuses (<code>NOT_SUPPORTED</code>) when the retrieved evidence is empty or below the threshold. Every citation is validated
+          against the chunks actually retrieved: an out-of-range or missing <code>[Source N]</code> is treated as unsupported, never defaulted to “cite everything”.
         </p>
       </article>
     </div>
 
-    <h3>Testing and observability</h3>
+    <h3>Reliability, observability and evaluation</h3>
     <ul>
-      <li><strong>Retrieval evaluation:</strong> 21 question-to-document cases checking the right document is retrieved, scored with reciprocal rank.</li>
-      <li><strong>Faithfulness check:</strong> an opt-in LLM-as-judge pass that grades whether every claim in an answer is supported by its context. It is separate from the default test run because it costs extra model calls.</li>
-      <li><strong>Query log:</strong> each question records its status (answered, no evidence or error), model, latency, retrieved chunks and citations, so failures can be reviewed rather than guessed at.</li>
-      <li><strong>Protections:</strong> per-user rate limiting, and provider interfaces that let tests run against fakes with no network calls.</li>
+      <li><strong>One error boundary:</strong> a single <code>try/except</code> wraps both retrieval and generation, so a retrieval-time failure, such as an embeddings outage, is logged and surfaced as a handled error rather than an unhandled exception.</li>
+      <li><strong>Structured query log:</strong> every call, whether answered, refused or errored, writes a row with its status, retrieved chunk IDs, citations, top similarity score, latency and, on failure, the exception type and message. The same table backs per-user rate limiting, so no separate counter store is needed.</li>
+      <li><strong>Retrieval evaluation:</strong> a hand-labelled set of 21 questions across product, interview-prep, hand-written and auto-generated documentation, scored with Mean Reciprocal Rank.</li>
+      <li><strong>Faithfulness check:</strong> an opt-in LLM-as-judge pass grading whether an answer's claims are supported by its retrieved context, which catches hallucination a retrieval-only metric would miss.</li>
+      <li><strong>Measured separately on purpose,</strong> so a regression in retrieval quality is not mistaken for a regression in answer faithfulness, and the other way round.</li>
     </ul>
 
     <div class="decision-note">

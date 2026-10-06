@@ -230,9 +230,9 @@
     <span>Markdown docs</span><span>Heading-aware chunks</span><span>Gemini embeddings</span><span>pgvector</span><span>Similarity floor</span><span>[Source N] answer</span>
   </div>
   <ul>
-    <li><strong>Grounded:</strong> embeddings and relational data share one PostgreSQL database, and chunks below a similarity threshold never reach the model.</li>
-    <li><strong>Refuses safely:</strong> no evidence, an explicit <code>NOT_SUPPORTED</code>, or an answer with no valid citation all produce a refusal.</li>
-    <li><strong>Measured:</strong> 21 retrieval evaluation cases, an opt-in faithfulness judge, and a query log with latency and citations.</li>
+    <li><strong>Grounded:</strong> embeddings and relational data share one PostgreSQL database, retrieval over-fetches then filters by a similarity threshold, and instructions found inside documents are treated as data, not commands.</li>
+    <li><strong>Refuses safely:</strong> every citation is validated against the chunks actually retrieved, and an empty, weak or uncited result becomes a refusal, never a guess.</li>
+    <li><strong>Measured and observable:</strong> 21 hand-labelled retrieval cases scored with Mean Reciprocal Rank, an opt-in faithfulness judge, and a structured log of every call with its citations, similarity score and latency.</li>
   </ul>
   <p><a href="projects/adaptive-interview-coach.html#rag">How the RAG pipeline works →</a></p>
 
