@@ -37,7 +37,7 @@
 
   <dl class="props">
     <dt>💼 Role</dt>
-    <dd><span class="tag green">Graduate software engineer</span><span class="tag blue">Data &amp; applied ML</span><span class="tag purple">Behavioural perspective</span><span class="tag">Commercial experience</span></dd>
+    <dd><span class="tag green">Graduate software engineer</span><span class="tag blue">Data &amp; applied ML</span><span class="tag purple">Behavioural perspective</span></dd>
     <dt>🎓 Degree</dt>
     <dd><span class="tag green degree-main">BSc Computer Science &amp; Psychology</span></dd>
     <dt>📚 Relevant coursework</dt>
@@ -49,45 +49,23 @@
       <span class="tag green">Machine Learning</span>
       <span class="tag orange">Operations Research</span>
     </dd>
-    <dt>🔬 Also studied</dt>
-    <dd>
-      <span class="tag orange">Research Design</span>
-      <span class="tag pink">Applied Cognitive Neuroscience</span>
-    </dd>
-    <dt>📍 Location</dt>
-    <dd>South Africa · open to relocation</dd>
     <dt>🛠 Stack</dt>
     <dd>
-      <span class="tag blue">Django / FastAPI</span>
-      <span class="tag purple">Laravel / PHP</span>
-      <span class="tag yellow">Python / Flask</span>
-      <span class="tag pink">Testing</span>
-      <span class="tag green">ASP.NET Core (C#)</span>
-    </dd>
-    <dt>📊 Data</dt>
-    <dd>
       <span class="tag yellow">Python</span>
-      <span class="tag blue">SQL</span>
-      <span class="tag green">pandas</span>
-      <span class="tag orange">scikit-learn</span>
-      <span class="tag purple">R</span>
-      <span class="tag pink">Statistical testing (ANOVA, t-tests)</span>
+      <span class="tag blue">Django / FastAPI</span>
+      <span class="tag green">ASP.NET Core (C#)</span>
+      <span class="tag purple">Laravel / PHP</span>
+      <span class="tag pink">SQL · PostgreSQL</span>
     </dd>
-    <dt>🤖 AI</dt>
+    <dt>🤖 Data &amp; AI</dt>
     <dd>
-      <span class="tag blue">Gemini</span>
-      <span class="tag green">RAG · pgvector</span>
-      <span class="tag purple">Multimodal extraction</span>
       <span class="tag orange">scikit-learn</span>
+      <span class="tag green">RAG · Gemini</span>
+      <span class="tag blue">pandas · R</span>
       <span class="tag pink">spaCy NLP</span>
     </dd>
-    <dt>🧭 Product</dt>
-    <dd>
-      <span class="tag yellow">Problem framing</span>
-      <span class="tag blue">Scoping &amp; trade-offs</span>
-      <span class="tag green">User-centred design</span>
-      <span class="tag purple">Decision records</span>
-    </dd>
+    <dt>📍 Based</dt>
+    <dd>South Africa · open to relocation</dd>
     <dt>🟢 Status</dt>
     <dd><span class="tag green">Open to graduate &amp; junior software, data and product roles</span></dd>
   </dl>
@@ -98,21 +76,9 @@
   </p>
 
   <p>
-    I have commercial experience contributing to established Laravel/PHP and Python/Flask codebases in an EdTech
-    product environment, including clean-code practices, code review, automated testing and production debugging.
-    I also build end-to-end products with strong backend and data foundations. With a Computer Science and Psychology degree and
-    statistics coursework behind me, I work with Python, SQL, machine learning and NLP on systems that respond to what users need and do,
-    and explain the decisions they make.
+    I have commercial experience in established Laravel/PHP and Python/Flask codebases, and I build end-to-end products with strong backend and data
+    foundations: systems that respond to what users need and do, and explain the decisions they make.
   </p>
-
-  <div class="callout row">
-    <span class="emoji" aria-hidden="true">💡</span>
-    <div>
-      <strong>Professional profile.</strong>
-      BSc Computer Science and Psychology graduate with statistics coursework. A software engineering foundation (Django, FastAPI, Laravel/PHP,
-      PostgreSQL, testing and CI) applied to data and user behaviour: personalisation, decision support and explainable machine learning and NLP.
-    </div>
-  </div>
 
   <div class="actions">
     <a class="button primary" href="#highlights">See technical highlights ↓</a>
@@ -120,21 +86,8 @@
     <a class="button" href="assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>Download CV</a>
   </div>
 
-  <p class="slash-hint">Press <kbd>/</kbd> to jump to the contents, or use the links below.</p>
-  <nav class="toc" id="toc" aria-label="Contents">
-    <a href="#highlights">Technical highlights</a>
-    <a href="#ai-work">AI work &amp; integrations</a>
-    <a href="#experience">Commercial experience</a>
-    <a href="#product">Product thinking</a>
-    <a href="#more-work">More work</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
   <h2 id="highlights">⚡ Technical highlights</h2>
-  <p class="muted">
-    The projects with the most engineering depth, each running end to end with tests behind it. Several turn data about what users need and do into
-    explainable decisions they can act on. Screenshots are from the applications running locally.
-  </p>
+  <p class="muted">The projects with the most engineering depth, each running end to end. Screenshots are from the applications running locally.</p>
 
   <div class="hl-grid">
     <article class="hl-card">
@@ -143,11 +96,10 @@
         <h3>📈 SA Tech Job Market Intelligence</h3>
         <p class="tagline">Analytics-engineering pipeline with a live dashboard</p>
         <ul>
-          <li><strong>Ten recruitment-platform adapters</strong> feeding immutable, SHA-256-hashed raw snapshots.</li>
-          <li><strong>Three classification layers:</strong> explainable rules, a scikit-learn model (91.0% macro-F1 on held-out data, weakest class reported openly) and schema-constrained Gemini suggestions for workplace type and city.</li>
-          <li><strong>256 automated tests</strong> passing and three data-quality reports; validated Parquet marts behind a Streamlit + DuckDB dashboard.</li>
+          <li>Ten platform adapters feed hashed raw snapshots into validated Parquet marts and a Streamlit + DuckDB dashboard.</li>
+          <li>Explainable rules, then a scikit-learn model (91.0% macro-F1 held out) and schema-constrained Gemini. 256 automated tests.</li>
         </ul>
-        <div class="project-highlights"><span>Python</span><span>Parquet</span><span>DuckDB</span><span>scikit-learn</span><span>Gemini</span><span>Streamlit</span></div>
+        <div class="project-highlights"><span>Python</span><span>Parquet</span><span>scikit-learn</span><span>Gemini</span></div>
         <div class="actions">
           <a class="button primary" href="https://sa-tech-job-market-3jqhrdat8echekjaasjvyv.streamlit.app" target="_blank" rel="noopener noreferrer">Live dashboard ↗</a>
           <a class="text-link" href="projects/sa-tech-job-market.html">Case study →</a>
@@ -161,11 +113,10 @@
         <h3>🔁 ProofLoop</h3>
         <p class="tagline">Adaptive interview-preparation platform</p>
         <ul>
-          <li><strong>Personalised, constraint-optimised planner:</strong> explainable task scores built from the learner's goals, deadlines, weak areas and available time, then OR-Tools CP-SAT picks the combination that fits.</li>
-          <li><strong>Grounded RAG assistant:</strong> pgvector retrieval, cited answers, refusal when evidence is weak, 21 retrieval evaluation cases.</li>
-          <li><strong>Spaced review</strong> scheduled by recall difficulty; 12 roadmaps, 419 topics.</li>
+          <li>Personalised planner: explainable scores from goals, deadlines, weak areas and available time, then OR-Tools CP-SAT picks what fits.</li>
+          <li>Grounded RAG assistant with pgvector, citations, refusals and 21 retrieval evaluation cases.</li>
         </ul>
-        <div class="project-highlights"><span>Django 5.2</span><span>PostgreSQL + pgvector</span><span>OR-Tools</span><span>Gemini</span><span>pytest + CI</span></div>
+        <div class="project-highlights"><span>Django</span><span>PostgreSQL + pgvector</span><span>OR-Tools</span><span>Gemini</span></div>
         <div class="actions">
           <a class="button primary" href="https://viewcoach.onrender.com" target="_blank" rel="noopener noreferrer">Live app ↗</a>
           <a class="text-link" href="projects/adaptive-interview-coach.html">Case study →</a>
@@ -179,11 +130,10 @@
         <h3>🏠 ScoreRent</h3>
         <p class="tagline">Explainable rental decision support</p>
         <ul>
-          <li><strong>Multimodal extraction:</strong> Gemini turns listing screenshots into schema-validated facts the user confirms before saving.</li>
-          <li><strong>Deterministic scoring engine</strong> returns a verdict, confidence, reasons and the score change from each factor.</li>
-          <li><strong>Guest and signed-in flows,</strong> saved shortlists, side-by-side comparison, rate-limited imports, CI.</li>
+          <li>Gemini reads listing screenshots into schema-validated facts the user confirms before saving.</li>
+          <li>A deterministic engine returns the verdict, confidence, reasons and each factor's effect.</li>
         </ul>
-        <div class="project-highlights"><span>FastAPI</span><span>PostgreSQL</span><span>Gemini</span><span>Pydantic</span><span>pytest + CI</span></div>
+        <div class="project-highlights"><span>FastAPI</span><span>PostgreSQL</span><span>Gemini</span><span>pytest + CI</span></div>
         <div class="actions">
           <a class="button primary" href="https://scorerent.onrender.com" target="_blank" rel="noopener noreferrer">Live app ↗</a>
           <a class="text-link" href="projects/scorerent.html">Case study →</a>
@@ -197,11 +147,10 @@
         <h3>🎲 Parallel Monte Carlo</h3>
         <p class="tagline">Fork/Join parallelism, benchmarked honestly</p>
         <ul>
-          <li><strong>Divide-and-conquer</strong> parallelisation with a configurable sequential cutoff.</li>
-          <li><strong>Measured, not assumed:</strong> slower on small grids, break-even near 2000², 1.76× at 5000², scaling flattening near 1.5× across cores.</li>
-          <li>Includes a dependency-free browser UI that visualises terrain and search coverage.</li>
+          <li>Divide-and-conquer with a configurable cutoff: slower on small grids, 1.76× at 5000².</li>
+          <li>Includes a browser UI that visualises terrain and search coverage.</li>
         </ul>
-        <div class="project-highlights"><span>Java</span><span>ForkJoinPool</span><span>Benchmarking</span><span>JDK HTTP server</span></div>
+        <div class="project-highlights"><span>Java</span><span>ForkJoinPool</span><span>Benchmarking</span></div>
         <div class="actions">
           <a class="button primary" href="projects/parallel-monte-carlo.html">Case study →</a>
           <a class="text-link" href="https://github.com/nonluthando/parallel-monte-carlo-optimization" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -210,81 +159,20 @@
     </article>
   </div>
 
-  <h2 id="ai-work">🤖 AI work &amp; integrations</h2>
-  <p class="muted">
-    I use AI in narrow, testable workflows: structured outputs, visible evidence and a person confirming
-    the result, rather than a chat box bolted onto a product.
-  </p>
-
+  <h2 id="ai-work">🤖 AI, used carefully</h2>
   <div class="callout row">
     <span class="emoji" aria-hidden="true">🧭</span>
     <div><strong>Design rule.</strong> Models extract, draft and retrieve. Deterministic code decides, validates and explains.</div>
   </div>
-
-  <h3 id="rag">🔎 Retrieval-augmented generation in ProofLoop</h3>
-  <p>
-    I introduced RAG to improve the platform’s discoverability and learnability: new users can ask how a feature works and get a cited
-    answer. The Help Assistant answers only from trusted project documentation, retrieves evidence first, and
-    refuses when the evidence is not enough.
-  </p>
-  <div class="workflow" aria-label="RAG pipeline">
-    <span>Markdown docs</span><span>Heading-aware chunks</span><span>Gemini embeddings</span><span>pgvector</span><span>Similarity floor</span><span>[Source N] answer</span>
-  </div>
   <ul>
-    <li><strong>Grounded:</strong> embeddings and relational data share one PostgreSQL database, retrieval over-fetches then filters by a similarity threshold, and instructions found inside documents are treated as data, not commands.</li>
-    <li><strong>Refuses safely:</strong> every citation is validated against the chunks actually retrieved, and an empty, weak or uncited result becomes a refusal, never a guess.</li>
-    <li><strong>Measured and observable:</strong> 21 hand-labelled retrieval cases scored with Mean Reciprocal Rank, an opt-in faithfulness judge, and a structured log of every call with its citations, similarity score and latency.</li>
+    <li><strong>RAG in ProofLoop:</strong> a Help Assistant that answers only from trusted documentation, cites its sources and refuses when evidence is weak, added to make the platform easier to discover and learn. <a href="projects/adaptive-interview-coach.html#rag">How it works →</a></li>
+    <li><strong>Models that suggest, rules that decide:</strong> multimodal extraction in <a href="projects/scorerent.html">ScoreRent</a>, and ML plus Gemini classification in the <a href="projects/sa-tech-job-market.html">job-market project</a>.</li>
+    <li><strong>NLP at an EdTech startup:</strong> spaCy NER training data and chatbot integration inside an existing Flask service.</li>
   </ul>
-  <p><a href="projects/adaptive-interview-coach.html#rag">How the RAG pipeline works →</a></p>
-
-  <h3>More AI integrations</h3>
-  <div class="feature-columns">
-    <article>
-      <p class="feature-number">ScoreRent</p>
-      <h3>Multimodal listing extraction</h3>
-      <p>
-        Gemini reads rental screenshots into structured, reviewable facts with evidence and confidence.
-        Users confirm every value before it is saved, and the verdict itself comes from explainable rules.
-      </p>
-      <p><a href="projects/scorerent.html">Case study →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">SA Tech Job Market</p>
-      <h3>Machine learning and Gemini classification</h3>
-      <p>
-        A TF-IDF + logistic regression model (91.0% macro-F1 on held-out data, with its weak junior recall reported) and Gemini suggest labels where
-        explainable rules cannot decide. They write to separate fields and never overwrite the canonical data.
-      </p>
-      <p><a href="https://sa-tech-job-market-3jqhrdat8echekjaasjvyv.streamlit.app" target="_blank" rel="noopener noreferrer">Live dashboard ↗</a> · <a href="projects/sa-tech-job-market.html">Case study →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">Commercial EdTech</p>
-      <h3>NLP and chatbot integration</h3>
-      <p>
-        spaCy NER training data, entity classification and pipeline changes, with tests, plus chatbot
-        feature integration inside an existing Flask service.
-      </p>
-      <p><a href="about/index.html">Experience →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">Everyday practice</p>
-      <h3>AI as an engineering tool</h3>
-      <p>
-        Architecture critique, test ideas, debugging hypotheses and documentation, with design decisions,
-        code review and final verification staying with me.
-      </p>
-      <p><a href="projects/index.html?skill=ai">AI projects →</a></p>
-    </article>
-  </div>
 
   <h2 id="experience">💼 Commercial experience</h2>
-  <p class="muted">
-    Software Engineering Contractor · EdTech startup · Fixed-term contract · 2026.
-    Work inside established Laravel/PHP and Python/Flask codebases, requiring careful behaviour tracing,
-    maintainable implementation, code-review feedback, automated tests, dependency work and production debugging.
-  </p>
-
-  <details class="toggle" open>
+  <p class="muted">Software Engineering Contractor · EdTech startup · Fixed-term contract · 2026.</p>
+  <details class="toggle">
     <summary>Established codebases</summary>
     <div class="toggle-body">Navigated and traced behaviour across existing Laravel and Flask services before making focused backend, API and NLP changes.</div>
   </details>
@@ -298,71 +186,25 @@
   </details>
 
   <h2 id="product">🧭 Product thinking</h2>
-  <p class="muted">
-    Alongside the engineering, I work the way a product owner does: start from a real user problem, decide what is in and out of
-    scope, make trade-offs explicit, and write the decisions down.
-  </p>
-
-  <div class="feature-columns">
-    <article>
-      <p class="feature-number">Problem framing</p>
-      <h3>Start from a real cost to a real user</h3>
-      <p>
-        ScoreRent began with my own final-year rental search, where non-refundable application fees and missing documents made every
-        rejected application expensive. The product exists to reduce wasted applications, aimed at students, graduates and first-time renters.
-      </p>
-      <p><a href="projects/scorerent.html">ScoreRent case study →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">Evidence-led scope</p>
-      <h3>Change the scope when the data says so</h3>
-      <p>
-        The job-market project found only 2 early-career technology roles in an early build, so I widened it to the whole South African tech
-        market and kept early career as a lens. Low availability became a measurable finding, with sample-size warnings, instead of a failure.
-      </p>
-      <p><a href="projects/sa-tech-job-market.html">Job-market case study →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">Reducing cognitive load</p>
-      <h3>Remove decisions, not options</h3>
-      <p>
-        ProofLoop was aimed at the decision fatigue of choosing what to study and when, using spaced review and a daily plan that recommends
-        the next action. ScoreRent applies progressive disclosure to avoid cognitive overload: the verdict leads, and the detail opens when the renter wants it.
-      </p>
-      <p><a href="projects/adaptive-interview-coach.html#product-decisions">Product decisions →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">Prioritisation</p>
-      <h3>Say what you will not build</h3>
-      <p>
-        ProofLoop’s user-created roadmaps shipped with up/down controls instead of drag-and-drop, and with no sharing, templates or
-        collaboration yet, because those added complexity without improving the core workflow. Application tracking is explicitly out of scope.
-      </p>
-      <p><a href="projects/adaptive-interview-coach.html#product-decisions">Product decisions →</a></p>
-    </article>
-    <article>
-      <p class="feature-number">Users &amp; usability</p>
-      <h3>Design for primary and secondary users</h3>
-      <p>
-        SeaClear was designed around beachgoers as primary users and administrators as secondary users, applying Nielsen’s usability
-        heuristics: safety status visible immediately, essential information without login, and plain-language explanations of scientific data.
-      </p>
-      <p><a href="projects/seaclear.html">SeaClear case study →</a></p>
-    </article>
-  </div>
-
-  <div class="callout row">
-    <span class="emoji" aria-hidden="true">📝</span>
-    <div>
-      <strong>Decisions are recorded.</strong>
-      ProofLoop keeps architecture decision records with status, context, decision, consequences, rejected alternatives and the conditions
-      for revisiting each one, so the reasoning outlasts the conversation.
-    </div>
-  </div>
+  <ul>
+    <li><strong>Start from a real problem:</strong> ScoreRent began with my own rental search and the cost of rejected applications. <a href="projects/scorerent.html">Case study →</a></li>
+    <li><strong>Change scope when the data says so:</strong> the job-market project widened from 2 early-career roles to the whole market. <a href="projects/sa-tech-job-market.html#product-decisions">Product decisions →</a></li>
+    <li><strong>Reduce cognitive load:</strong> ProofLoop's daily plan removes the "what should I study" decision, and ScoreRent discloses detail progressively. <a href="projects/adaptive-interview-coach.html#product-decisions">Product decisions →</a></li>
+    <li><strong>Say what you will not build,</strong> and write the decision down.</li>
+  </ul>
 
   <h2 id="more-work">🗂 More work</h2>
-  <p class="muted">More systems, data and human-centred computing. <a href="projects/index.html">View all projects →</a></p>
   <div class="proj-list">
+    <a class="proj-row" href="projects/rental-management-api.html">
+      <span class="emoji" aria-hidden="true">🏘️</span>
+      <span><span class="t">Rental Management API</span></span>
+      <span class="s">C# · ASP.NET Core · EF Core · Vue 3</span>
+    </a>
+    <a class="proj-row" href="projects/data-analysis.html">
+      <span class="emoji" aria-hidden="true">📊</span>
+      <span><span class="t">Data &amp; Statistical Analysis</span></span>
+      <span class="s">Python · R · SQL · ANOVA · segmentation</span>
+    </a>
     <a class="proj-row" href="projects/seaclear.html">
       <span class="emoji" aria-hidden="true">🌊</span>
       <span><span class="t">SeaClear</span></span>
@@ -373,25 +215,10 @@
       <span><span class="t">NetworkComm</span></span>
       <span class="s">Python · TCP sockets · threading</span>
     </a>
-    <a class="proj-row" href="projects/parallel-monte-carlo.html">
-      <span class="emoji" aria-hidden="true">🎲</span>
-      <span><span class="t">Parallel Monte Carlo</span></span>
-      <span class="s">Java · Fork/Join · concurrency</span>
-    </a>
-    <a class="proj-row" href="projects/rental-management-api.html">
-      <span class="emoji" aria-hidden="true">🏘️</span>
-      <span><span class="t">Rental Management API</span></span>
-      <span class="s">C# · ASP.NET Core · EF Core · Vue 3</span>
-    </a>
     <a class="proj-row" href="projects/cpu-scheduling.html">
       <span class="emoji" aria-hidden="true">⚙️</span>
       <span><span class="t">CPU Scheduling Simulation</span></span>
       <span class="s">Java · blocking queues · FCFS vs SJF</span>
-    </a>
-    <a class="proj-row" href="projects/data-analysis.html">
-      <span class="emoji" aria-hidden="true">📊</span>
-      <span><span class="t">Data &amp; Statistical Analysis</span></span>
-      <span class="s">Python · R · SQL · ANOVA · segmentation</span>
     </a>
     <a class="proj-row" href="projects/csv-pipeline.html">
       <span class="emoji" aria-hidden="true">🧹</span>
@@ -399,6 +226,7 @@
       <span class="s">Python · Pandas · validation</span>
     </a>
   </div>
+  <p class="muted"><a href="projects/index.html">View all projects →</a></p>
 
   <h2 id="contact">✉️ Let’s talk about the work</h2>
   <p class="muted">Open to graduate and junior software engineering, data and product owner / product management roles in South Africa, including relocation.</p>
