@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A rental property management system: an ASP.NET Core Web API on .NET 10 with Entity Framework Core and PostgreSQL, and a Vue 3 and TypeScript front end.">
+  <title>Rental Management API | Luthando Mbuyane</title>
+  <link rel="stylesheet" href="../assets/css/notion.css">
+  <script src="../assets/js/theme.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">🌿 Luthando</a><span class="sep">/</span><a href="index.html">🗂 Projects</a><span class="sep">/</span><span class="here">Rental Management API</span>
+    </nav>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a class="active" href="../projects/index.html">Projects</a>
+      <a href="../about/index.html">About</a>
+      <a href="https://github.com/nonluthando" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="../assets/files/Luthando_Mbuyane_JuniorSWE.pdf" download>CV</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+    </nav>
+  </div>
+</header>
+
+<div class="cover slim" role="img" aria-label="Decorative green banner"></div>
+
+<main>
+  <section class="case-hero container">
+    <p class="eyebrow">Full-stack build · C# and .NET</p>
+    <h1>Rental Management API</h1>
+    <p class="hero-summary">
+      A rental property management system for properties, tenants, leases and payments. It is a RESTful ASP.NET Core Web API on .NET 10 with
+      Entity Framework Core and PostgreSQL, and a Vue 3 and TypeScript front end that reads from it.
+    </p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/nonluthando/rental-management-api" target="_blank" rel="noopener noreferrer">View repository</a>
+      <a class="button text-button" href="index.html">Project directory</a>
+    </div>
+
+    <dl class="case-meta">
+      <div><dt>Back end</dt><dd>C#, ASP.NET Core Web API (.NET 10), Entity Framework Core, Npgsql, Swagger</dd></div>
+      <div><dt>Database</dt><dd>PostgreSQL 17 via Docker Compose, with an EF Core migration</dd></div>
+      <div><dt>Front end</dt><dd>Vue 3, TypeScript, Vite and Vue Router</dd></div>
+      <div><dt>Scope</dt><dd>Properties, tenants, leases and payments, with a portfolio dashboard</dd></div>
+    </dl>
+  </section>
+
+  <section class="section container" id="screens">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The system running</p>
+        <h2>API and front end, end to end.</h2>
+      </div>
+      <p>Screenshots from the API and Vue app running locally against PostgreSQL, with illustrative demo data entered through the API.</p>
+    </div>
+    <div class="shots">
+      <figure class="wide">
+        <img src="../assets/images/projects/rental-swagger.png" alt="Swagger UI listing the Dashboard, Leases and Payments endpoints" loading="lazy">
+        <figcaption><strong>Swagger UI</strong>Every controller documented and testable in the browser: dashboard summary, then full CRUD for properties, tenants, leases and payments.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/rental-dashboard.png" alt="Dashboard with occupancy, rental income, payments this month and outstanding payments" loading="lazy">
+        <figcaption><strong>Dashboard</strong>Occupancy, monthly rental income, payments this month and outstanding payments, all from one summary endpoint.</figcaption>
+      </figure>
+      <figure>
+        <img src="../assets/images/projects/rental-leases.png" alt="Leases table showing property, tenant, dates, monthly rent and status" loading="lazy">
+        <figcaption><strong>Leases</strong>Each lease joins a property and a tenant, with dates, monthly rent and status.</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="../assets/images/projects/rental-payments.png" alt="Payments table with paid, overdue and pending statuses" loading="lazy">
+        <figcaption><strong>Payments</strong>Rent payments recorded against leases, with paid, pending and overdue statuses.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">API design</p>
+        <h2>A small domain with the rules enforced on the server.</h2>
+      </div>
+    </div>
+
+    <div class="feature-columns">
+      <article>
+        <p class="feature-number">01 · Model</p>
+        <h3>Four related entities</h3>
+        <p>
+          <code>Property</code>, <code>Tenant</code>, <code>Lease</code> and <code>Payment</code>, related through EF Core. Deleting a property or tenant that
+          has leases is restricted, payments cascade from their lease, and money columns are fixed at <code>decimal(12,2)</code>.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">02 · Contracts</p>
+        <h3>DTOs for every operation</h3>
+        <p>
+          Separate create, update and response DTOs per entity keep the database model out of the API surface. Read endpoints use
+          <code>AsNoTracking</code> and project straight into response DTOs.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">03 · Rules</p>
+        <h3>Business rules in the controllers</h3>
+        <p>
+          A lease is rejected if the property or tenant does not exist, the property already has an active lease or is unavailable, or the end date is not after
+          the start date. Creating a lease marks the property unavailable and deleting it frees the property again. A payment needs an existing lease and an amount above zero.
+        </p>
+      </article>
+      <article>
+        <p class="feature-number">04 · Reporting</p>
+        <h3>One dashboard summary endpoint</h3>
+        <p>
+          <code>GET /api/Dashboard/summary</code> returns total, occupied and available properties, the occupancy rate, active leases, monthly rental income,
+          payments received this month and outstanding payments, using aggregate queries on the database.
+        </p>
+      </article>
+    </div>
+
+    <div class="decision-note">
+      <strong>Why it is built this way.</strong> Validation and state changes such as availability live on the server, so any client of the API gets the same rules, and the
+      Vue front end stays a thin reader and writer of data.
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Front end</p>
+        <h2>A typed Vue client.</h2>
+      </div>
+    </div>
+    <p>
+      A Vue 3 and TypeScript single-page app with Vue Router and five views: Dashboard, Properties, Tenants, Leases and Payments. It builds with Vite, passes
+      <code>vue-tsc</code> type-checking, and takes the API address from a <code>VITE_API_URL</code> environment variable, with CORS configured on the API for it.
+    </p>
+
+    <div class="development-panel">
+      <p class="eyebrow">What this project demonstrates</p>
+      <h2>A structured back end in C# and .NET.</h2>
+      <p>
+        An ASP.NET Core Web API with a clean controller, DTO and data-access split, Entity Framework Core modelling and migrations against PostgreSQL, server-side business rules,
+        aggregate reporting queries, OpenAPI documentation, and a typed Vue front end consuming it.
+      </p>
+    </div>
+
+    <p class="muted">
+      Scope: a focused CRUD and reporting API. Authentication and automated tests are not part of it yet.
+    </p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>© 2026 Luthando Mbuyane</p>
+    <p>Rental Management · C# · ASP.NET Core · EF Core · PostgreSQL · Vue 3</p>
+  </div>
+</footer>
+
+</body>
+</html>
